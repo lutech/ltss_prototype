@@ -1,0 +1,53 @@
+﻿@media all and (-ms-high-contrast: none) {
+  .panelbar-formheader-style .panel .header {
+    max-height: 35px;
+    background: inherit !important;
+  }
+  .panelbar-formheader-style .TaskDetailLink {
+    top: -53px;
+    position: relative;
+  }
+  .panelbar-formheader-style .disable-panel:not(.panel) .TaskDetailLink {
+    top: -30px !important;
+  }
+  .panelbar-formheader-style .disable-panel:not(.panel) > h4 {
+    margin-bottom: 0 !important;
+  }
+  .header-link a:visited {
+    background: rgba(12, 93, 150, 0.08) !important;
+    border: 1px solid rgba(12, 93, 150, 0.1) !important;
+  }
+  .header-link a:hover {
+    background: rgba(12, 93, 150, 0.12) !important;
+  }
+  .genericform-style.read-only h4 {
+    margin-bottom: 24px !important;
+  }
+  fieldset.fieldset-container-two {
+    position: relative !important;
+    top: 0 !important;
+    margin-left: 2px !important;
+  }
+  button,
+  input[type="submit"],
+  input[type="cancel"],
+  input[type="button"] {
+    padding-top: 5px !important;
+  }
+  /* Box shadow causes the horizontal lines in main container background */#workspace,
+  .workspace-content-container {
+    zoom: 1 !important;
+    box-shadow: none !important;
+  }
+  input[type=checkbox],
+  input[type=radio] {
+    margin-top: 3px !important;
+    margin-bottom: 3px !important;
+  }
+  fieldset.fieldset-container-three .legend-header-three {
+    top: 22px !important;
+  }
+  fieldset.fieldset-container-three hr {
+    top: -13px !important;
+  }
+}
