@@ -16,22 +16,21 @@
                 <button type="button" style="margin: 0;height: 25px;font-size: 11px;line-height: 11px;">Browse</button>
             </div>
             <div class="row">
-                <label for="clinicaldocument">Latest Clinical Documents:</label>
+                <label for="clinicaldocument">DIRECT Exchange Recent Clinical Documents:</label>
                 <table>
                     <tbody>
                         <tr>
-                            <td width="200px">
+                            <td width="150px">
                                 <select type="text" multiple="multiple" id="subject" id="origin">
                                     <option value="1">C-CDA</option>
                                     <option value="1">CARE Assessment</option>
-                                    <option value="1">LAB Results</option>
                                 </select>
                             </td>
-                            <td class="center">
+                            <td class="center" width="100px">
                                 <button type="button"><b><span class="icon-angle-right"></span></b></button>
                                 <button type="button"><span class="icon-angle-left"></span></button>
                             </td>
-                            <td width="200px">
+                            <td width="150px">
                                 <select type="text" multiple="multiple" id="subject" id="destination">
                                     <option value="1">CAHPS Survey</option>
                                     <option value="1">Plan of Care</option>

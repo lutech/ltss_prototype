@@ -22,8 +22,8 @@
 		if (isset($_COOKIE['user'])) {			
 			$user = $_COOKIE['user'];
 			if ($user == 'publicuser') {
-				$layout = '_ClientLayoutView_CP';	
-				
+				$layout = '_ClientLayoutView_CP';
+                $page = 'inbox_CP';
 				$data['layout'] = $layout;
 				$data['area'] = $area;
 				$data['page'] = $page;
@@ -58,8 +58,8 @@
 		if (isset($_COOKIE['user'])) {			
 			$user = $_COOKIE['user'];
 			if ($user == 'publicuser') {
-				$layout = '_ClientLayoutView_CP';	
-				
+				$layout = '_ClientLayoutView_CP';
+                $page = 'sent_CP';
 				$data['layout'] = $layout;
 				$data['area'] = $area;
 				$data['page'] = $page;

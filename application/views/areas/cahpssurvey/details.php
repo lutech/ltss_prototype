@@ -6,18 +6,22 @@
       </div>
     <div class="workspace-header-bar">
         <div class="float-right">
-
+            <button type="button" id="submitCahpsSurvey">Submit</button>
             <button id="expandCollapseAll" runat="server">
             </button>
-            <a class="button-style" href="'.base_url().'/index.php/cahpssurvey/history">Submit</a>
         </div>
     </div>
 '?>
 
 <?php require 'application/views/areas/cahpssurvey/shared/_CahpsSurveyQuestionsPartial.php'; ?>
 
-<?php $Script = '
+<?php
+    $url = base_url().'index.php/cahpssurvey/history';
+    $Script = '
     <script type="text/javascript">
         makeReadOnly();
+        $(document).ready(function(){
+            $("#submitCahpsSurvey").on("click", function(){window.location.href = "'.$url.'"});
+        });
     </script>
 '?>

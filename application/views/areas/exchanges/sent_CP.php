@@ -47,6 +47,9 @@
                     Attachments
                 </th>
                 <th>
+                    DIRECT Exchanges
+                </th>
+                <th>
                     Date Sent
                 </th>
                 <th class="action">
@@ -63,7 +66,10 @@
                     RE: Here is my CAHPS Survey.
                 </td>
                 <td>
-
+                    <a href="'.base_url('/application/content/files/ECHO_MCO_v3.0.pdf').'" target="_blank">CAHPS_Survey.PDF</a>
+                </td>
+                <td>
+                    <a href="'.base_url('/index.php/cahpssurvey/details').'" target="_blank">ECHO MCO v3.0</a>
                 </td>
                 <td>
                     Today
