@@ -397,7 +397,7 @@
             $('button.leftNav-dropDownButton').toggleClass('dropDownActive');
             if ($('button.leftNav-dropDownButton').hasClass('dropDownActive')) {
                 $('#sidenav.sidenav').css('margin', '0px');
-                $(".leftNav-dropDownButton").append('<span class="icon-folder-arrow"></span');
+                $(".leftNav-dropDownButton").append('<span class="icon-folder-arrow"></span>');
             } else {
                 $('#sidenav.sidenav').css('margin', '');
                 $(".leftNav-dropDownButton .icon-folder-arrow").remove();

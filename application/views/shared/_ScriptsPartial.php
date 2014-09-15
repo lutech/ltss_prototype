@@ -27,3 +27,4 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>application/Scripts/jquery.plugin.html2canvas.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>application/Scripts/ltss.leftnavigation.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>application/Scripts/jquery.qtip.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>application/Scripts/knockout-2.1.0.js"></script>
