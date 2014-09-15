@@ -871,6 +871,15 @@
             case "sectionc":
                 window.location.href = baseUrl + 'section_d_' + mode;
                 break;
+            case "sectiond":
+                window.location.href = baseUrl + 'section_e_' + mode;
+                break;
+            case "sectione":
+                window.location.href = baseUrl + 'section_f_' + mode;
+                break;
+            case "sectionf":
+                window.location.href = baseUrl + 'section_g_' + mode;
+                break;
         }
     }
 
@@ -886,6 +895,15 @@
                 break;
             case "sectiond":
                 window.location.href = baseUrl + 'section_c_' + mode;
+                break;
+            case "sectione":
+                window.location.href = baseUrl + 'section_d_' + mode;
+                break;
+            case "sectionf":
+                window.location.href = baseUrl + 'section_e_' + mode;
+                break;
+            case "sectiong":
+                window.location.href = baseUrl + 'section_f_' + mode;
                 break;
         }
     }

@@ -1,14 +1,5 @@
 <?php require "application/views/shared/assessment_builder.php"; ?>
 
-<?php $WorkspaceHeader = '
-    <h3>CARE Assessment - VII. Overall Plan of Care / Advance Care Directives</h3>
-    <div class="workspace-header-bar">
-        <div class="float-right">
-
-        </div>
-    </div>
-'?>
-
 <?php $Body = '
     <div class="genericform-style">
         <h4>VII. Overall Plan of Care / Advance Care Directives</h4>
