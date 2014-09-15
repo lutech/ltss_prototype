@@ -5,6 +5,7 @@
 		public $link;
 		public $linkname;
 		public $enabled;
+		public $subMenu;
 	}
 
 	// Client Menu
@@ -45,20 +46,52 @@
 	$caseManagementMenu = array($alertsMenuItem, $reportableEventsMenuItem, $casenotesMenuItem);
 
 
-	// Questionnaires Menu
-	$assessmentMenuItem = new Menu();
-	$assessmentMenuItem->area = 'careassessment';
-	$assessmentMenuItem->link = 'history';
-	$assessmentMenuItem->linkname = 'CARE Assessments';
-	$assessmentMenuItem->enabled = true;
+	// CAHPS Survey Sub Menu
+    $cahpsSurveyDetailsMenuItem = new Menu();
+    $cahpsSurveyDetailsMenuItem->area = 'careassessment';
+    $cahpsSurveyDetailsMenuItem->link = 'details';
+    $cahpsSurveyDetailsMenuItem->linkname = 'Survey Details';
+    $cahpsSurveyDetailsMenuItem->enabled = true;
 
-	$qualitySurveyMenuItem = new Menu();
-	$qualitySurveyMenuItem->area = 'cahpssurvey';
-	$qualitySurveyMenuItem->link = 'history';
-	$qualitySurveyMenuItem->linkname = 'CAHPS Surveys';
-	$qualitySurveyMenuItem->enabled = true;
+    $cahpsSurveyEditMenuItem = new Menu();
+    $cahpsSurveyEditMenuItem->area = 'careassessment';
+    $cahpsSurveyEditMenuItem->link = 'edit';
+    $cahpsSurveyEditMenuItem->linkname = 'Survey Details';
+    $cahpsSurveyEditMenuItem->enabled = true;
 
-	$questionnairesMenu = array($assessmentMenuItem, $qualitySurveyMenuItem);
+    $cahpsSurveySubMenuItems = array ($cahpsSurveyDetailsMenuItem, $cahpsSurveyEditMenuItem);
+
+    $cahpsSurveySubMenu = "";
+    foreach ($cahpsSurveySubMenuItems as $menuItem) {
+        $isactive = ($menuItem->link == $this->uri->segment(2)) ? 'selected' : "ui-hide";
+        $selectedindicator = ($menuItem->link == $this->uri->segment(2)) ? '<span class="offset-hidden js-selected-menu-item">selected</span>' : "";
+        $isenabled = ($menuItem->enabled == true) ? '' : 'onclick="return false;"';
+
+        $cahpsSurveySubMenu .= "<li>
+                                    <a class=\"list-group-item {$isactive}\" href=\"".base_url()."index.php/{$menuItem->area}/{$menuItem->link}\" {$isenabled}>
+                                        {$menuItem->linkname}
+                                        {$selectedindicator}
+                                    </a>
+                                </li>";
+    };
+
+    // Questionnaires Menu
+	$careAssessmentMenuItem = new Menu();
+    $careAssessmentMenuItem->area = 'careassessment';
+    $careAssessmentMenuItem->link = 'history';
+    $careAssessmentMenuItem->linkname = 'CARE Assessments';
+    $careAssessmentMenuItem->enabled = true;
+    $careAssessmentMenuItem->subMenu = "";
+
+	$cahpsSurveyMenuItem = new Menu();
+    $cahpsSurveyMenuItem->area = 'cahpssurvey';
+    $cahpsSurveyMenuItem->link = 'history';
+    $cahpsSurveyMenuItem->linkname = 'CAHPS Surveys';
+    $cahpsSurveyMenuItem->enabled = true;
+    $cahpsSurveyMenuItem->subMenu = $cahpsSurveySubMenu;
+
+
+	$questionnairesMenu = array($careAssessmentMenuItem, $cahpsSurveyMenuItem);
 
 ?>
 
@@ -109,15 +142,17 @@
             <ul class="leftnav-groupcontainer" style="display: none;">
                 <?php
                   foreach ($questionnairesMenu as $menuItem) {
-                        $isactive = ($menuItem->area == $this->uri->segment(1)) ? 'selected' : "";
-                        $selectedindicator = ($menuItem->area == $this->uri->segment(1)) ? '<span class="offset-hidden js-selected-menu-item">selected</span>' : "";
+                        $isactive = ($menuItem->area == $this->uri->segment(1) && $menuItem->link == $this->uri->segment(2)) ? 'selected' : "";
+                        $selectedindicator = ($menuItem->area == $this->uri->segment(1) && $menuItem->link == $this->uri->segment(2)) ? '<span class="offset-hidden js-selected-menu-item">selected</span>' : "";
 						$isenabled = ($menuItem->enabled == true) ? '' : 'onclick="return false;"';
+						$subMenu = (!empty($menuItem->subMenu)) ? "<ul>$menuItem->subMenu<ul>" : '';
 
                         echo "<li>
 								<a class=\"list-group-item {$isactive}\" href=\"".base_url()."index.php/{$menuItem->area}/{$menuItem->link}\" {$isenabled}>
 									{$menuItem->linkname}
 									{$selectedindicator}
 								</a>
+								{$subMenu}
 							</li>";
 
                     }
