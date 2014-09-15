@@ -1,14 +1,5 @@
 <?php require "application/views/shared/assessment_builder.php"; ?>
 
-<?php $WorkspaceHeader = '
-    <h3>CARE Assessment - II. Admission Information</h3>
-    <div class="workspace-header-bar">
-        <div class="float-right">
-
-        </div>
-    </div>
-'?>
-
 <?php $Body = '
     <div class="genericform-style">
         <h4>II. Admission Information</h4>

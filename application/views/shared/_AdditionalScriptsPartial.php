@@ -1,3 +1,4 @@
+
 <script type="text/javascript">
 
     // set jQuery validator defaults
@@ -856,6 +857,39 @@
            $(this).addClass('readonly').attr('disabled', 'disabled')
         });
     };
+
+    function goToNextCareSection(section, baseUrl, mode)
+    {
+        switch(section)
+        {
+            case "sectiona":
+                window.location.href = baseUrl + 'section_b_' + mode;
+                break;
+            case "sectionb":
+                window.location.href = baseUrl + 'section_c_' + mode;
+                break;
+            case "sectionc":
+                window.location.href = baseUrl + 'section_d_' + mode;
+                break;
+        }
+    }
+
+    function goToPrevCareSection(section, baseUrl, mode)
+    {
+        switch(section)
+        {
+            case "sectionb":
+                window.location.href = baseUrl + 'section_a_' + mode;
+                break;
+            case "sectionc":
+                window.location.href = baseUrl + 'section_b_' + mode;
+                break;
+            case "sectiond":
+                window.location.href = baseUrl + 'section_c_' + mode;
+                break;
+        }
+    }
+
     $(document).ready(function(){
 
         if ($("div.long-description").length > 0 ) {
