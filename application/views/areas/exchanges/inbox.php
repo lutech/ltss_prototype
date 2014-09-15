@@ -21,7 +21,7 @@
         </select>
         </div>
         <div class="row stacked">
-        <label for="">Sent From:</label>
+        <label for="">From:</label>
         <input type="text"></input>
         </div>
         <div class="searchspace-footer-bar">
@@ -38,13 +38,16 @@
         <thead>
             <tr>
                 <th>
-                    Sent From
+                    From
                 </th>
                 <th>
                     Subject
                 </th>
                 <th>
                     Attachments
+                </th>
+                <th>
+                    DIRECT Exchanges
                 </th>
                 <th>
                     Date Received
@@ -60,16 +63,79 @@
                     Cicio Smith
                 </td>
                 <td>
-                    Here is my CAHPS Survey.
+                    I completed a CAHPS survey which I am now sharing with you.
                 </td>
                 <td>
-                    <a href="'.base_url('/application/content/files/ECHO_MCO_v3.0.pdf').'" target="_blank">CAHPS_Survey.PDF</a>
+
+                </td>
+                <td>
+                    <a href="'.base_url('/index.php/cahpssurvey/details').'" target="_blank">ECHO MCO v3.0</a>
                 </td>
                 <td>
                     Today
                 </td>
                 <td class="action">
-                    <a href="#" onclick="newMessage(); return false;">View</a>
+                    <a href="#">View</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Joseph Hunt
+                </td>
+                <td>
+                    Hello Casey, I have attached my ATP Questionnaire as you requested.
+                </td>
+                <td>
+                    <a href="'.base_url('/index.php/cahpssurvey/details').'" target="_blank">ECHO MCO v3.0</a>
+                </td>
+                <td>
+
+                </td>
+                <td>
+                    Today
+                </td>
+                <td class="action">
+                    <a href="#">View</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Cicio Smith
+                </td>
+                <td>
+                    Casey, here is a PDF version of my Plan of Service.
+                </td>
+                <td>
+                    <a href="'.base_url('/application/content/files/POS.pdf').'" target="_blank">POS.PDF</a>
+                </td>
+                <td>
+
+                </td>
+                <td>
+                    Today
+                </td>
+                <td class="action">
+                    <a href="#">View</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Eric Test
+                </td>
+                <td>
+                    I have questions about my MA Approval...see attachment.
+                </td>
+                <td>
+                    <a href="'.base_url('/application/content/files/MAApproval.pdf').'" target="_blank">MA_Approval.PDF</a>
+                </td>
+                <td>
+
+                </td>
+                <td>
+                    Yesterday
+                </td>
+                <td class="action">
+                    <a href="#">View</a>
                 </td>
             </tr>
         </tbody>

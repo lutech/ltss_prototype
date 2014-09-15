@@ -845,6 +845,7 @@
             }
         });
     }
+
     function makeReadOnly(){
 
         $('.genericform-style').addClass('read-only');
@@ -855,6 +856,13 @@
            $(this).addClass('readonly').attr('disabled', 'disabled')
         });
     };
+    $(document).ready(function(){
+
+        initDotDotDot("div.long-description", 60);
+        $('.genericform-style.read-only').each(function(){
+            makeReadOnly()
+        });
+    });
 </script>
 
 

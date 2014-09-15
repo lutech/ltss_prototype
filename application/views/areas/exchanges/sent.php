@@ -21,7 +21,7 @@
         </select>
         </div>
         <div class="row stacked">
-        <label for="">Sent To:</label>
+        <label for="">To:</label>
         <input type="text"></input>
         </div>
         <div class="searchspace-footer-bar">
@@ -38,13 +38,16 @@
         <thead>
             <tr>
                 <th>
-                    Sent To
+                    To
                 </th>
                 <th>
                     Subject
                 </th>
                 <th>
                     Attachments
+                </th>
+                <th>
+                    DIRECT Exchanges
                 </th>
                 <th>
                     Date Sent
@@ -60,13 +63,76 @@
                     Cicio Smith
                 </td>
                 <td>
-                    RE: Here is my CAHPS Survey.
+                    RE: I completed a CAHPS survey which I am now sharing with you.
+                </td>
+                <td>
+
                 </td>
                 <td>
 
                 </td>
                 <td>
                     Today
+                </td>
+                <td class="action">
+                    <a href="#">View</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Joseph Hunt
+                </td>
+                <td>
+                    RE: Hello Casey, I have attached my ATP Questionnaire as you requested.
+                </td>
+                <td>
+
+                </td>
+                <td>
+
+                </td>
+                <td>
+                    Today
+                </td>
+                <td class="action">
+                    <a href="#">View</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Cicio Smith
+                </td>
+                <td>
+                    RE: Casey, here is a PDF version of my Plan of Service.
+                </td>
+                <td>
+
+                </td>
+                <td>
+
+                </td>
+                <td>
+                    Today
+                </td>
+                <td class="action">
+                    <a href="#">View</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Eric Test
+                </td>
+                <td>
+                    RE: I have questions about my MA Approval...see attachment.
+                </td>
+                <td>
+
+                </td>
+                <td>
+
+                </td>
+                <td>
+                    Yesterday
                 </td>
                 <td class="action">
                     <a href="#">View</a>

@@ -1,6 +1,6 @@
 <a href="#Main_Application_Menu" class="ui-hide">Skip to Main Application Menu</a>
 <div id="LtssMarylandHeaderInfo" class="three columns logo" role="presentation">
-    <h1><i>LTSS Prototype</i></h1>
+    <h1><i>TEFT Prototype</i></h1>
 </div>
 <div id="userinfo" class="six columns">               
     <ul>

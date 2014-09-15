@@ -21,7 +21,7 @@
         </select>
         </div>
         <div class="row stacked">
-        <label for="">Sent To:</label>
+        <label for="">To:</label>
         <input type="text"></input>
         </div>
         <div class="searchspace-footer-bar">
@@ -38,7 +38,7 @@
         <thead>
             <tr>
                 <th>
-                    Sent To
+                    To
                 </th>
                 <th>
                     Subject
@@ -60,16 +60,56 @@
         <tbody>
             <tr>
                 <td>
-                    Cicio Smith
+                    Casey Manajer
                 </td>
                 <td>
-                    RE: Here is my CAHPS Survey.
+                    Here is my latest CAHPS survey.
                 </td>
                 <td>
-                    <a href="'.base_url('/application/content/files/ECHO_MCO_v3.0.pdf').'" target="_blank">CAHPS_Survey.PDF</a>
+
                 </td>
                 <td>
                     <a href="'.base_url('/index.php/cahpssurvey/details').'" target="_blank">ECHO MCO v3.0</a>
+                </td>
+                <td>
+                    Today
+                </td>
+                <td class="action">
+                    <a href="#">View</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Dr. Graham
+                </td>
+                <td>
+                    Dr. Graham, I wanted to get your thoughts on this lab report. What do you think?
+                </td>
+                <td>
+                    <a href="'.base_url('/application/content/files/Lab_Report.pdf').'" target="_blank">Lab_Report.PDF</a>
+                </td>
+                <td>
+
+                </td>
+                <td>
+                    Today
+                </td>
+                <td class="action">
+                    <a href="#">View</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Casey Manajer
+                </td>
+                <td>
+                    Casey, here is a PDF version of my Plan of Service.
+                </td>
+                <td>
+                    <a href="'.base_url('/application/content/files/POS.pdf').'" target="_blank">POS.PDF</a>
+                </td>
+                <td>
+
                 </td>
                 <td>
                     Today

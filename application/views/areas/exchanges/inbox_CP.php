@@ -21,7 +21,7 @@
         </select>
         </div>
         <div class="row stacked">
-        <label for="">Sent From:</label>
+        <label for="">From:</label>
         <input type="text"></input>
         </div>
         <div class="searchspace-footer-bar">
@@ -38,13 +38,16 @@
         <thead>
             <tr>
                 <th>
-                    Sent From
+                    From
                 </th>
                 <th>
                     Subject
                 </th>
                 <th>
                     Attachments
+                </th>
+                <th>
+                    DIRECT Exchanges
                 </th>
                 <th>
                     Date Received
@@ -57,13 +60,36 @@
         <tbody>
             <tr>
                 <td>
-                    Cicio Smith
+                    Casey Manajer
                 </td>
                 <td>
-                    Here is my CAHPS Survey.
+                    RE: Here is my latest CAHPS survey.
                 </td>
                 <td>
-                    <a href="#">CAHPS_Survey.PDF</a>
+
+                </td>
+                <td>
+                    <a href="'.base_url('/index.php/cahpssurvey/details').'" target="_blank">ECHO MCO v3.0</a>
+                </td>
+                <td>
+                    Today
+                </td>
+                <td class="action">
+                    <a href="#">View</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Casey Manajer
+                </td>
+                <td>
+                    RE: Casey, here is a PDF version of my Plan of Service.
+                </td>
+                <td>
+                    <a href="'.base_url('/application/content/files/POS.pdf').'" target="_blank">POS.PDF</a>
+                </td>
+                <td>
+
                 </td>
                 <td>
                     Today

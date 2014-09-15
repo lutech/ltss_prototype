@@ -26,7 +26,8 @@
             <!-- Content Body -->
             <div aria-labelledby="Home Page Content">
                <div class="genericform-style announcements">
-                   <!--@Html.DynamicContent("_Root_Home_Index", true, null)--> 
+                   <h2>Announcements</h2>
+                   <p>No announcements at this time.</p>
                </div>
             </div>
         </div>

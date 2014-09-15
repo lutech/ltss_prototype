@@ -11,7 +11,7 @@
 
 
 <?php $Body ='
-<div class="panelbar-formheader-style no-auto-expand genericform-style read-only">
+<div class="panelbar-formheader-style genericform-style read-only">
     <div class="panel">
         <div class="header">
             <h4>Client Demographics</h4>
@@ -25,94 +25,100 @@
                     <legend class="legend-header-one">Client Information</legend>
                     <div class="row">
                         <label class="complete-required">Last Name:</label>
-                        <input type="text" readonly="readonly" class="readonly"/>
+                        <input type="text" value="Smith"/>
                     </div>
                     <div class="row">
                         <label class="complete-required">First Name:</label>
-                        <input type="text" readonly="readonly" class="readonly"/>
+                        <input type="text" value="Cicio"/>
                     </div>
                     <div class="row">
                         <label class="complete-required">Middle Name:</label>
-                        <input type="text" readonly="readonly" class="readonly"/>
+                        <input type="text" value="Alfred"/>
                     </div>
                     <div class="row">
                         <label>Preferred Name:</label>
-                        <input type="text" readonly="readonly" class="readonly"/>
+                        <input type="text" value="Cicio"/>
                     </div>
                     <div class="row">
                         <label >Suffix:</label>
-                        <input type="text" readonly="readonly" class="readonly"/>
+                        <input type="text"/>
                     </div>
                     <div class="row">
                         <label class="complete-required">Date of Birth:</label>
-                        <input type="text" readonly="readonly" class="readonly"/>
+                        <input type="text" value="01/01/1950"/>
                     </div>
                     <div class="row">
                         <label class="complete-required">Gender:</label>
-                        <select disabled="disabled" class="readonly"></select>
+                        <select>
+                            <option value="0" checked>Male</option>
+                            <option value="1" checked>Female</option>
+                        </select>
                     </div>
                     <div class="row">
                         <label>Race:</label>
-                        <input type="text" readonly="readonly" class="readonly"/>
+                        <input type="text" value="Caucasian"/>
                     </div>
                     <div class="row">
                         <label class="complete-required">Please Specify Other Race:</label>
-                        <textarea readonly="readonly" class="comments-textarea readonly"></textarea>
+                        <textarea class="comments-textarea"></textarea>
                     </div>
                     <div class="row">
                         <label class="complete-required">Hispanic?</label>
-                        <select disabled="disabled" class="readonly"></select>
+                        <select>
+                            <option value="0">Yes</option>
+                            <option value="1" checked>No</option>
+                        </select>
                     </div>
                     <div class="row">
                         <label class="complete-required">Jurisdiction:</label>
-                        <select disabled="disabled" class="readonly">
-                        	<option>Other</option>
+                        <select>
+                        	<option value="0" checked>Baltimore</option>
                         </select>
                     </div>                    
                     <div class="row">
                         <label>Moving to Jurisdiction:</label>
-                        <input type="text" readonly="readonly" class="readonly"/>
+                        <input type="text" value=""/>
                     </div>
                     <div class="row">
                         <label>Specify County:</label>
-                        <input type="text" readonly="readonly" class="readonly"/>
+                        <input type="text"/>
                     </div>
                 </fieldset>
                 <fieldset class="fieldset-container-one">
                     <legend class="legend-header-one">Additional Information</legend>
                     <div class="row">
                         <label>Client Identifier:</label>
-                        <input type="text" readonly="readonly" class="readonly"/>
+                        <input type="text" value="MD49384JD4830"/>
                     </div>
                     <div class="row">
                         <label class="complete-required">Social Security:</label>
-                        <input type="text" readonly="readonly" class="readonly"/>
+                        <input type="text" value="938-34-9583"/>
                     </div>
                     <div class="row">
                         <label>Medicare #</label>
-                        <input type="text" readonly="readonly" class="readonly"/>
+                        <input type="text" value="68434684684"/>
                     </div>
                     <div class="row">
                         <label>Marital Status:</label>
-                        <input type="text" readonly="readonly" class="readonly"/>
+                        <input type="text" value="Married"/>
                     </div>
                     <div class="row">
                         <label>Primary Language:</label>
                          <select disabled="disabled" class="readonly">
-                        	<option>Other</option>
+                        	<option value="0" checked>English</option>
                         </select>
                     </div>
                     <div class="row">
                        <label>Specify Language :</label>
-                    	<textarea class="comments-textarea"readonly="readonly" class="readonly"></textarea>
+                    	<textarea class="comments-textarea"></textarea>
                     </div>
                     <div class="row">
                         <label>Date of Death:</label>
-                        <input type="text" readonly="readonly" class="readonly"/>
+                        <input type="text"/>
                     </div>
                     <div class="row">
                         <label>Facility Name:</label>
-                        <input type="text" readonly="readonly" class="readonly"/>
+                        <input type="text" value="New Haven"/>
                     </div>
                 </fieldset>
                
@@ -188,7 +194,7 @@
                     </p>
                     <div class="row">
                         <label>Notes:</label>
-                        <textarea class="comments-textarea"readonly="readonly" class="readonly"></textarea>
+                        <textarea class="comments-textarea"></textarea>
                     </div>
 
                 </div>
@@ -208,7 +214,9 @@
                 <div class="fieldset-container-one">
                     <div class="row">
                         <label class="complete-required">Address Type:</label>
-                        <select disabled="disabled" class="readonly"></select>
+                        <select disabled="disabled" class="readonly">
+                            <option value="0"checked>Facility</option>
+                        </select>
                     </div>
                     <div class="row">
                         <label class="complete-required">Address Description:</label>
@@ -348,7 +356,7 @@
                     <div class="row">
                         <fieldset class="grouped-radiobuttons">
                             <legend>DNR:</legend>
-                            <input type="radio" id="DnrYes" name="dnr"/>
+                            <input type="radio" id="DnrYes" name="dnr" checked/>
                             <label for="DnrYes" class="grouped-radiobuttons-label">Yes</label>
                             <input type="radio" id="DnrNo" name="dnr"/>
                             <label for="DnrNo" class="grouped-radiobuttons-label">No</label>
@@ -359,7 +367,7 @@
                     <div class="row">
                         <fieldset class="grouped-radiobuttons">
                             <legend>Living Will:</legend>
-                            <input type="radio" id="LivingWillYes" name="LivingWill"/>
+                            <input type="radio" id="LivingWillYes" name="LivingWill" checked/>
                             <label for="DnrYes" class="grouped-radiobuttons-label">Yes</label>
                             <input type="radio" id="LivingWillNo" name="LivingWill"/>
                             <label for="DnrNo" class="grouped-radiobuttons-label">No</label>
@@ -370,7 +378,7 @@
                     <div class="row">
                         <fieldset class="grouped-radiobuttons">
                             <legend>Medical POA:</legend>
-                            <input type="radio" id="PoaYes" name="Poa"/>
+                            <input type="radio" id="PoaYes" name="Poa" checked/>
                             <label for="DnrYes" class="grouped-radiobuttons-label">Yes</label>
                             <input type="radio" id="PoaNo" name="Poa"/>
                             <label for="DnrNo" class="grouped-radiobuttons-label">No</label>
@@ -385,7 +393,7 @@
                             <label for="DnrYes" class="grouped-radiobuttons-label">Yes</label>
                             <input type="radio" id="PoadNo" name="Poad"/>
                             <label for="DnrNo" class="grouped-radiobuttons-label">No</label>
-                            <input type="radio" id="PoadUnknown" name="Poad"/>
+                            <input type="radio" id="PoadUnknown" name="Poad" checked/>
                             <label for="DnrUnknown" class="grouped-radiobuttons-label">Unknown</label>
                         </fieldset>
                     </div>
@@ -394,7 +402,7 @@
                             <legend>General POA:</legend>
                             <input type="radio" id="GpoaYes" name="Gpoa"/>
                             <label for="DnrYes" class="grouped-radiobuttons-label">Yes</label>
-                            <input type="radio" id="GpoaNo" name="Gpoa"/>
+                            <input type="radio" id="GpoaNo" name="Gpoa" checked/>
                             <label for="DnrNo" class="grouped-radiobuttons-label">No</label>
                             <input type="radio" id="GpoaUnknown" name="Gpoa"/>
                             <label for="DnrUnknown" class="grouped-radiobuttons-label">Unknown</label>
@@ -406,7 +414,7 @@
                             <input type="radio" id="GpoadYes" name="Gpoad"/>
                             <label for="DnrYes" class="grouped-radiobuttons-label">Yes</label>
                             <input type="radio" id="GpoadNo" name="Gpoad"/>
-                            <label for="DnrNo" class="grouped-radiobuttons-label">No</label>
+                            <label for="DnrNo" class="grouped-radiobuttons-label" checked>No</label>
                             <input type="radio" id="GpoadUnknown" name="Gpoad"/>
                             <label for="DnrUnknown" class="grouped-radiobuttons-label">Unknown</label>
                         </fieldset>
@@ -414,7 +422,7 @@
                     <div class="row">
                         <fieldset class="grouped-radiobuttons">
                             <legend>Guardian of Person:</legend>
-                            <input type="radio" id="GuardianYes" name="Guardian"/>
+                            <input type="radio" id="GuardianYes" name="Guardian" checked/>
                             <label for="DnrYes" class="grouped-radiobuttons-label">Yes</label>
                             <input type="radio" id="GuardianNo" name="Guardian"/>
                             <label for="DnrNo" class="grouped-radiobuttons-label">No</label>
@@ -425,7 +433,7 @@
                     <div class="row">
                         <fieldset class="grouped-radiobuttons">
                             <legend>Guardian of Property:</legend>
-                            <input type="radio" id="GuardianPropertyYes" name="GuardianProperty"/>
+                            <input type="radio" id="GuardianPropertyYes" name="GuardianProperty" checked/>
                             <label for="DnrYes" class="grouped-radiobuttons-label">Yes</label>
                             <input type="radio" id="GuardianPropertyNo" name="GuardianProperty"/>
                             <label for="DnrNo" class="grouped-radiobuttons-label">No</label>
@@ -438,7 +446,7 @@
                             <legend>Surrogate:</legend>
                             <input type="radio" id="SurrogateYes" name="Surrogate"/>
                             <label for="DnrYes" class="grouped-radiobuttons-label">Yes</label>
-                            <input type="radio" id="SurrogateNo" name="Surrogate"/>
+                            <input type="radio" id="SurrogateNo" name="Surrogate" checked/>
                             <label for="DnrNo" class="grouped-radiobuttons-label">No</label>
                             <input type="radio" id="SurrogateUnknown" name="Surrogate"/>
                             <label for="DnrUnknown" class="grouped-radiobuttons-label">Unknown</label>
@@ -449,23 +457,9 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
-    $(document).ready(function () {
-
-        $(".ProfileEditLink").click(function (event) {
-            event.stopPropagation();
-        });
-
-        $(".panelbar-formheader-style").panelBar();
-        ltssPanelBar.setup(".panelbar-formheader-style");
-    });
-</script>
 '?>
 
 <?php $Script ='
-    <script type="text/javascript">
-        $(document).ready(function () {
-            initDotDotDot("div.long-description", 60);
-        });
-    </script>
+<script type="text/javascript">
+</script>
 '?>
