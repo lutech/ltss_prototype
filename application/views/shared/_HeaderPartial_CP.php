@@ -1,7 +1,7 @@
 <a href="#Main_Application_Menu" class="ui-hide">Skip to Main Application Menu</a>
 <div class="column-row no-margin header-container">
     <div class="three columns logo" role="presentation">
-        <div class="logo">LTSS</div>
+        <h1><i>Client Portal</i></h1>
     </div>
     <div id="LtssMarylandHeaderInfo" class="three columns logo ui-hide" role="presentation">
         <h1><i>LTSS Client Portal Prototype</i></h1>
