@@ -850,10 +850,10 @@
     function makeReadOnly(){
 
         $('.genericform-style').addClass('read-only');
-        $('.genericform-style input,.genericform-style textarea').each(function(){
+        $('.genericform-style input,.genericform-style textarea,.genericform-style select').each(function(){
            $(this).addClass('readonly').attr('readonly', 'readonly')
         });
-        $('.genericform-style input[type=radio],.genericform-style input[type=checkbox],.genericform-style select').each(function(){
+        $('.genericform-style input[type=radio],.genericform-style input[type=checkbox]').each(function(){
            $(this).addClass('readonly').attr('disabled', 'disabled')
         });
     };

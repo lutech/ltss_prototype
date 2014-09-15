@@ -1,200 +1,131 @@
-<?php
-	
-	class Menu {
-		public $area;
-		public $link;
-		public $linkname;
-		public $enabled;
-        public $subMenu;
-	}
-	
-	// Client Menu
-	
-	$homeMenuItem = new Menu();
-	$homeMenuItem->area = 'site';
-	$homeMenuItem->link = 'home';
-	$homeMenuItem->linkname = 'Home';
-	$homeMenuItem->linkicon = 'icon-home';
-	$homeMenuItem->enabled = true;
-	
-	$profileMenuItem = new Menu();
-	$profileMenuItem->area = 'client';
-	$profileMenuItem->link = 'clientprofilesummary';
-	$profileMenuItem->linkname = 'My Profile';
-	$profileMenuItem->linkicon = 'icon-user';
-	$profileMenuItem->enabled = true;
-	
-	$calendarMenuItem = new Menu();
-	$calendarMenuItem->area = 'client';
-	$calendarMenuItem->link = 'calendar';
-	$calendarMenuItem->linkname = 'My Calendar';
-	$calendarMenuItem->linkicon = 'icon-calendar';
-	$calendarMenuItem->enabled = false;
-	
-	$alertsMenuItem = new Menu();
-	$alertsMenuItem->area = 'casemanagement';
-	$alertsMenuItem->link = 'alerts';
-	$alertsMenuItem->linkname = 'My Alerts';
-	$alertsMenuItem->linkicon = 'icon-warning-sign';
-	$alertsMenuItem->enabled = false;
-	
-	$clientMenu = array($homeMenuItem, $profileMenuItem, $calendarMenuItem, $alertsMenuItem);
-	
-	
-	// Case Management Menu
-	$alertsMenuItem = new Menu();
-	$alertsMenuItem->area = 'casemanagement';
-	$alertsMenuItem->link = 'alerts';
-	$alertsMenuItem->linkname = 'Alerts';
-	$alertsMenuItem->enabled = false;
-	
-	$reportableEventsMenuItem = new Menu();
-	$reportableEventsMenuItem->area = 'casemanagement';
-	$reportableEventsMenuItem->link = 'reportableevents';
-	$reportableEventsMenuItem->linkname = 'Reportable Events';
-	$reportableEventsMenuItem->enabled = false;
-	
-	$casenotesMenuItem = new Menu();
-	$casenotesMenuItem->area = 'casemanagement';
-	$casenotesMenuItem->link = 'casenotes';
-	$casenotesMenuItem->linkname = 'Case Notes';
-	$casenotesMenuItem->enabled = false;
-	
-	$caseManagementMenu = array($alertsMenuItem, $reportableEventsMenuItem, $casenotesMenuItem);
-	
-	
-	// Exchanges Menu
-	
-//	$newmessageMenuItem = new Menu();
-//	$newmessageMenuItem->area = '';
-//	$newmessageMenuItem->link = '';
-//	$newmessageMenuItem->linkname = 'New Message';
-//	$newmessageMenuItem->enabled = false;
-//	$newmessageMenuItem->script = 'newMessage();';
-	
-	$inboxMenuItem = new Menu();
-	$inboxMenuItem->area = 'exchanges';
-	$inboxMenuItem->link = 'inbox';
-	$inboxMenuItem->linkname = 'Inbox';
-	$inboxMenuItem->enabled = true;
-	$inboxMenuItem->script = '';
-	
-	$sentMenuItem = new Menu();
-	$sentMenuItem->area = 'exchanges';
-	$sentMenuItem->link = 'sent';
-	$sentMenuItem->linkname = 'Sent';
-	$sentMenuItem->enabled = true;
-	$sentMenuItem->script = '';
-	
-	$exchangesMenu = array($inboxMenuItem, $sentMenuItem);
-
-// CAHPS Survey Sub Menu
-    $cahpsSurveyDetailsMenuItem = new Menu();
-    $cahpsSurveyDetailsMenuItem->area = 'careassessment';
-    $cahpsSurveyDetailsMenuItem->link = 'details';
-    $cahpsSurveyDetailsMenuItem->linkname = 'Survey Details';
-    $cahpsSurveyDetailsMenuItem->enabled = true;
-
-    $cahpsSurveyEditMenuItem = new Menu();
-    $cahpsSurveyEditMenuItem->area = 'careassessment';
-    $cahpsSurveyEditMenuItem->link = 'edit';
-    $cahpsSurveyEditMenuItem->linkname = 'Survey Details';
-    $cahpsSurveyEditMenuItem->enabled = true;
-
-    $cahpsSurveySubMenuItems = array ($cahpsSurveyDetailsMenuItem, $cahpsSurveyEditMenuItem);
-
-    $cahpsSurveySubMenu = "";
-    foreach ($cahpsSurveySubMenuItems as $menuItem) {
-            $isactive = ($menuItem->link == $this->uri->segment(2)) ? 'selected' : "ui-hide";
-            $selectedindicator = ($menuItem->link == $this->uri->segment(2)) ? '<span class="offset-hidden js-selected-menu-item">selected</span>' : "";
-            $isenabled = ($menuItem->enabled == true) ? '' : 'onclick="return false;"';
-
-            $cahpsSurveySubMenu .= "<li>
-                                            <a class=\"list-group-item {$isactive}\" href=\"".base_url()."index.php/{$menuItem->area}/{$menuItem->link}\" {$isenabled}>
-                                                {$menuItem->linkname}
-                                                {$selectedindicator}
-                                            </a>
-                                        </li>";
-        };
-
-    // Questionnaires Menu
-    $careAssessmentMenuItem = new Menu();
-    $careAssessmentMenuItem->area = 'careassessment';
-    $careAssessmentMenuItem->link = 'history';
-    $careAssessmentMenuItem->linkname = 'CARE Assessments';
-    $careAssessmentMenuItem->enabled = true;
-    $careAssessmentMenuItem->subMenu = "";
-
-    $cahpsSurveyMenuItem = new Menu();
-    $cahpsSurveyMenuItem->area = 'cahpssurvey';
-    $cahpsSurveyMenuItem->link = 'history';
-    $cahpsSurveyMenuItem->linkname = 'CAHPS Surveys';
-    $cahpsSurveyMenuItem->enabled = true;
-    $cahpsSurveyMenuItem->subMenu = $cahpsSurveySubMenu;
-
-
-    $questionnairesMenu = array($careAssessmentMenuItem, $cahpsSurveyMenuItem);
-	
-?>
-
+<?php require "application/views/shared/menuItem_builder.php"; ?>
 <div>
     <ul class="left-side-nav js-accordion">
-        <?php
-		  foreach ($clientMenu as $menuItem) {
-				$isactive = ($menuItem->link == $this->uri->segment(2)) ? 'selected' : "";	
-				$selectedindicator = ($menuItem->link == $this->uri->segment(2)) ? '<span class="offset-hidden js-selected-menu-item">selected</span>' : "";
-				$isenabled = ($menuItem->enabled == true) ? '' : 'onclick="return false;"';	
-				
-				echo "<li>
-						<a class=\"{$isactive}\" href=\"".base_url()."index.php/{$menuItem->area}/{$menuItem->link}\" {$isenabled}>
-							<span class=".$menuItem->linkicon."></span>
-							{$menuItem->linkname}
-						</a>
-					</li>";	
-									
-			}
-		?>  
-          
+        <li>
+            <?php echo new MenuItem("Home", "site", "home", "icon-home", true, false, "" , $this->uri);?>
+        </li>
+        <li>
+            <?php  echo new MenuItem("My Profile", "client", "clientprofilesummary", "icon-user", true, false, "" , $this->uri);?>
+        </li>
         <li>
             <span class="leftNavHeader">My Exchanges</span>
             <ul class="leftnav-groupcontainer" style="display: none;">
-                <?php
-                  foreach ($exchangesMenu as $menuItem) {
-                        $isactive = ($menuItem->link == $this->uri->segment(2)) ? 'selected' : "";	
-                        $selectedindicator = ($menuItem->link == $this->uri->segment(2)) ? '<span class="offset-hidden js-selected-menu-item">selected</span>' : "";
-						$isenabled = ($menuItem->enabled == true) ? '' : 'return false;';		
-                        
-                        echo "<li>
-								<a class=\"list-group-item {$isactive}\" href=\"".base_url()."index.php/{$menuItem->area}/{$menuItem->link}\" onclick=\"{$menuItem->script} {$isenabled}\" >
-									{$menuItem->linkname}
-									{$selectedindicator}
-								</a>
-							</li>";	
-											
-                    }
-                ?>
+                <li>
+                    <?php echo new MenuItem("Inbox", "exchanges", "inbox", "", true, false, "" , $this->uri);?>
+                </li>
+                <li>
+                    <?php echo new MenuItem("Sent", "exchanges", "sent", "", true, false, "" , $this->uri);?>
+                </li>
             </ul>
         </li>
         <li>
             <span class="leftNavHeader">Questionnaires</span>
             <ul class="leftnav-groupcontainer" style="display: none;">
-                <?php
-                foreach ($questionnairesMenu as $menuItem) {
-                    $isactive = ($menuItem->area == $this->uri->segment(1) && $menuItem->link == $this->uri->segment(2)) ? 'selected' : "";
-                    $selectedindicator = ($menuItem->area == $this->uri->segment(1) && $menuItem->link == $this->uri->segment(2)) ? '<span class="offset-hidden js-selected-menu-item">selected</span>' : "";
-                    $isenabled = ($menuItem->enabled == true) ? '' : 'onclick="return false;"';
-                    $subMenu = (!empty($menuItem->subMenu)) ? "<ul>$menuItem->subMenu<ul>" : '';
+                <li>
 
-                    echo "<li>
-								<a class=\"list-group-item {$isactive}\" href=\"".base_url()."index.php/{$menuItem->area}/{$menuItem->link}\" {$isenabled}>
-									{$menuItem->linkname}
-									{$selectedindicator}
-								</a>
-								{$subMenu}
-							</li>";
-
-                }
-                ?>
+                    <?php echo new MenuItem("CARE Assessment", "careassessment", "history", "", true, false, "" , $this->uri);
+                    if ($this->uri->segment(1) == "careassessment" && $this->uri->segment(2) == "section_a_details" ||
+                        $this->uri->segment(1) == "careassessment" && $this->uri->segment(2) == "section_b_details" ||
+                        $this->uri->segment(1) == "careassessment" && $this->uri->segment(2) == "section_c_details" ||
+                        $this->uri->segment(1) == "careassessment" && $this->uri->segment(2) == "section_d_details" ||
+                        $this->uri->segment(1) == "careassessment" && $this->uri->segment(2) == "section_e_details" ||
+                        $this->uri->segment(1) == "careassessment" && $this->uri->segment(2) == "section_f_details" ||
+                        $this->uri->segment(1) == "careassessment" && $this->uri->segment(2) == "section_g_details" ||
+                        $this->uri->segment(1) == "careassessment" && $this->uri->segment(2) == "section_h_details" ||
+                        $this->uri->segment(1) == "careassessment" && $this->uri->segment(2) == "section_i_details" ||
+                        $this->uri->segment(1) == "careassessment" && $this->uri->segment(2) == "section_j_details" ) {
+                        echo '
+                                <ul>
+                                    <li>
+                                        ' .new MenuItem("I. Administrative Items", "careassessment", "section_a_details", "", true, false, "" , $this->uri). '
+                                    </li>
+                                    <li>
+                                        ' .new MenuItem("II. Admission Information", "careassessment", "section_b_details", "", true, false, "" , $this->uri). '
+                                    </li>
+                                    <li>
+                                       ' . new MenuItem("III. Current Medical Information", "careassessment", "section_c_details", "", true, false, "" , $this->uri). '
+                                    </li>
+                                    <li>
+                                        ' . new MenuItem("IV. Cognitive Status, Mood & Pain", "careassessment", "section_d_details", "", true, false, "" , $this->uri). '
+                                    </li>
+                                    <li>
+                                        ' . new MenuItem("V. Impairments", "careassessment", "section_e_details", "", true, false, "" , $this->uri). '
+                                    </li>
+                                    <li>
+                                        ' . new MenuItem("VI. Functional Status: Usual Performance", "careassessment", "section_f_details", "", true, false, "" , $this->uri). '
+                                    </li>
+                                    <li>
+                                        ' . new MenuItem("VII. Overall POC / Advance Care Directives", "careassessment", "section_g_details", "", true, false, "" , $this->uri). '
+                                    </li>
+                                    <li>
+                                        ' . new MenuItem("IX. ICD-9 Coding Information", "careassessment", "section_h_details", "", true, false, "" , $this->uri). '
+                                    </li>
+                                    <li>
+                                        ' . new MenuItem("X. Other Useful Information", "careassessment", "section_i_details", "", true, false, "" , $this->uri). '
+                                    </li>
+                                    <li>
+                                        ' . new MenuItem("XI. Feedback", "careassessment", "section_j_details", "", true, false, "" , $this->uri). '
+                                    </li>
+                                </ul>
+                            ';
+                    } else if ($this->uri->segment(1) == "careassessment" && $this->uri->segment(2) == "section_a_edit" ||
+                        $this->uri->segment(1) == "careassessment" && $this->uri->segment(2) == "section_b_edit" ||
+                        $this->uri->segment(1) == "careassessment" && $this->uri->segment(2) == "section_c_edit" ||
+                        $this->uri->segment(1) == "careassessment" && $this->uri->segment(2) == "section_d_edit" ||
+                        $this->uri->segment(1) == "careassessment" && $this->uri->segment(2) == "section_e_edit" ||
+                        $this->uri->segment(1) == "careassessment" && $this->uri->segment(2) == "section_f_edit" ||
+                        $this->uri->segment(1) == "careassessment" && $this->uri->segment(2) == "section_g_edit" ||
+                        $this->uri->segment(1) == "careassessment" && $this->uri->segment(2) == "section_h_edit" ||
+                        $this->uri->segment(1) == "careassessment" && $this->uri->segment(2) == "section_i_edit" ||
+                        $this->uri->segment(1) == "careassessment" && $this->uri->segment(2) == "section_j_edit" ) {
+                        echo '
+                                <ul>
+                                    <li>
+                                        ' .new MenuItem("I. Administrative Items", "careassessment", "section_a_edit", "", true, false, "" , $this->uri). '
+                                    </li>
+                                    <li>
+                                        ' .new MenuItem("II. Admission Information", "careassessment", "section_b_edit", "", true, false, "" , $this->uri). '
+                                    </li>
+                                    <li>
+                                       ' . new MenuItem("III. Current Medical Information", "careassessment", "section_c_edit", "", true, false, "" , $this->uri). '
+                                    </li>
+                                    <li>
+                                        ' . new MenuItem("IV. Cognitive Status, Mood & Pain", "careassessment", "section_d_edit", "", true, false, "" , $this->uri). '
+                                    </li>
+                                    <li>
+                                        ' . new MenuItem("V. Impairments", "careassessment", "section_e_edit", "", true, false, "" , $this->uri). '
+                                    </li>
+                                    <li>
+                                        ' . new MenuItem("VI. Functional Status: Usual Performance", "careassessment", "section_f_edit", "", true, false, "" , $this->uri). '
+                                    </li>
+                                    <li>
+                                        ' . new MenuItem("VII. Overall POC / Advance Care Directives", "careassessment", "section_g_edit", "", true, false, "" , $this->uri). '
+                                    </li>
+                                    <li>
+                                        ' . new MenuItem("IX. ICD-9 Coding Information", "careassessment", "section_h_edit", "", true, false, "" , $this->uri). '
+                                    </li>
+                                    <li>
+                                        ' . new MenuItem("X. Other Useful Information", "careassessment", "section_i_edit", "", true, false, "" , $this->uri). '
+                                    </li>
+                                    <li>
+                                        ' . new MenuItem("XI. Feedback", "careassessment", "section_j_edit", "", true, false, "" , $this->uri). '
+                                    </li>
+                                </ul>
+                            ';
+                    }
+                    ?>
+                </li>
+                <li>
+                    <?php echo new MenuItem("CAHPS Survey", "cahpssurvey", "history", "", true, false, "" , $this->uri);?>
+                    <ul>
+                        <li>
+                            <?php echo new MenuItem("Survey Details", "cahpssurvey", "details", "", true, true, "" , $this->uri);?>
+                        </li>
+                        <li>
+                            <?php echo new MenuItem("Survey Details", "cahpssurvey", "edit", "", true, true, "" , $this->uri);?>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </li>
     </ul>

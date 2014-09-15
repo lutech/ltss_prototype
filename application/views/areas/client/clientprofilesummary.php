@@ -104,7 +104,7 @@
                     </div>
                     <div class="row">
                         <label>Primary Language:</label>
-                         <select disabled="disabled" class="readonly">
+                         <select class="readonly">
                         	<option value="0" checked>English</option>
                         </select>
                     </div>
@@ -214,7 +214,7 @@
                 <div class="fieldset-container-one">
                     <div class="row">
                         <label class="complete-required">Address Type:</label>
-                        <select disabled="disabled" class="readonly">
+                        <select class="readonly">
                             <option value="0"checked>Facility</option>
                         </select>
                     </div>

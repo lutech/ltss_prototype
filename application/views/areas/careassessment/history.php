@@ -48,7 +48,7 @@
                     Active
                 </td>
                 <td>
-                    <a href="'.base_url()."index.php/careassessment/details".'">View</a>
+                    <a href="'.base_url()."index.php/careassessment/section_a_details".'">View</a>
                     <a href="#">Discard</a>
                 </td>
             </tr>
