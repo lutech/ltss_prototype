@@ -20,9 +20,9 @@
 			show_404();
 		}		
 		
-		if (isset($_COOKIE['user'])) {			
-			$user = $_COOKIE['user'];
-			if ($user == 'publicuser') {
+		if (isset($_COOKIE['role'])) {
+			$role = $_COOKIE['role'];
+			if ($role == 'client') {
 				$layout = '_ClientLayoutView_CP';	
 				
 				$data['layout'] = $layout;
@@ -32,7 +32,7 @@
 				$data['_leftnavigation'] = $this->load->view('shared/_LeftNavigationPartial_CP.php', $data, true);
 				$this->load->view("shared/_MasterLayout_CP.php", $data);
 				
-			} else if ($user == 'admin') {					
+			} else {
 				$data['layout'] = $layout;
 				$data['page'] = $page;
 				$data['area'] = $area;		

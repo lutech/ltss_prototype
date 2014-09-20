@@ -1,3 +1,5 @@
+<?php require "application/views/shared/commonLabels.php"; ?>
+
 <!doctype html>
 <html>
 

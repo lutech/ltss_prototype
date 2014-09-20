@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/teft.iml" filepath="$PROJECT_DIR$/.idea/teft.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/LTSS.iml" filepath="$PROJECT_DIR$/.idea/LTSS.iml" />
     </modules>
   </component>
 </project>

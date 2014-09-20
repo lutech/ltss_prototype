@@ -424,7 +424,7 @@
         var clientDob = $('#cliensummaryinfo #cs-dob').first().html();
         var clientMfpEligible = $('#cliensummaryinfo #cs-mfpe').html();
         var clientMfpEligible = $('#cliensummaryinfo #cs-mfpe').html();
-        $('nav.tabbed-nav li a.selected.client-details-icon').html('<div class="ltss-icon-container icon-left"></div><span class="toplevelTab">Client Details</span><span class="clientNameIdDob"><span class="p-label">Client Name:</span>' + clientFullName + clientId + clientDob + '</span>');
+        $('nav.tabbed-nav li a.selected.client-details-icon').html("<div class='ltss-icon-container icon-left'></div><span class='toplevelTab'><?php echo $_COOKIE["CommonLabel_Clients_Ownership"]; ?> Details</span><span class='clientNameIdDob'><span class='p-label'>Client Name:</span>" + clientFullName + clientId + clientDob + "</span>");
 
 
         // I-Form Intialization

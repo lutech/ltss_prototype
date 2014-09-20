@@ -1,6 +1,6 @@
 
 <?php $WorkspaceHeader ='
-    <h3>Client Profile — Summary</h3>
+    <h3>'.$_COOKIE["CommonLabel_Clients_Ownership"].' Profile — Overview</h3>
     <div class="workspace-header-bar">
         <div class="float-right">
             <button id="expandCollapseAll" runat="server">
@@ -14,7 +14,7 @@
 <div class="panelbar-formheader-style genericform-style read-only">
     <div class="panel">
         <div class="header">
-            <h4>Client Demographics</h4>
+            <h4>'.$_COOKIE["CommonLabel_Clients_Ownership"].' Demographics</h4>
             <div class="form-action TaskDetailLink">
                 <a href="#">Edit</a>
             </div>
@@ -22,7 +22,7 @@
         <div class="body">
             <div class="form-panelbar-content">
                 <fieldset class="fieldset-container-one">
-                    <legend class="legend-header-one">Client Information</legend>
+                    <legend class="legend-header-one">'.$_COOKIE["CommonLabel_Clients_Ownership"].' Information</legend>
                     <div class="row">
                         <label class="complete-required">Last Name:</label>
                         <input type="text" value="Smith"/>

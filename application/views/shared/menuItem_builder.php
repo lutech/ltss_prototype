@@ -43,5 +43,4 @@ class MenuItem {
         return $this->RenderMenuItem();
     }
 }
-
 ?>

@@ -1,27 +1,22 @@
 <a href="#Main_Application_Menu" class="ui-hide">Skip to Main Application Menu</a>
 <div id="LtssMarylandHeaderInfo" class="three columns logo" role="presentation">
-    <h1><i>TEFT Prototype</i></h1>
+    <h1><i><?php echo $_COOKIE['CommonLabel_Application']; ?></i></h1>
 </div>
 <div id="userinfo" class="six columns">               
     <ul>
-    	<?php 
-			if (isset($_COOKIE['user'])){
-				if ( $_COOKIE['user'] == 'admin'){													
-					$loginname = $_COOKIE['username'];
-					echo '
-							<strong>'.$loginname.'</strong>
-							<ul>
-								<li>Organization Unit: Test Organization</li>
-							</ul>
-						 ';
-				} 
-				else if ( $_COOKIE['user'] == 'publicuser'){							
-					$loginname = $_COOKIE['username'];
-					echo '
-							<strong>'.$loginname.'</strong>
-						 ';
-				}
-			}
+    	<?php
+			if (isset($_COOKIE['role'])){
+
+                $loginname = $_COOKIE['username'];
+                $organization = $_COOKIE['organization'];
+
+                echo '
+                        <strong>'.$loginname.'</strong>
+                        <ul>
+                            <li>Organization Unit: '.$organization.'</li>
+                        </ul>
+                     ';
+            }
 		?>        
     </ul>
 </div>
@@ -29,9 +24,8 @@
     <nav id="Main_Application_Menu" tabindex="0">
         <a href="#mainTabbedNav" class="ui-hide">Skip to Top Level Navigation</a>
         <?php
-        if (isset($_COOKIE['user'])){
-            if ( $_COOKIE['user'] == 'admin'){
-                $loginname = $_COOKIE['username'];
+        if (isset($_COOKIE['role'])){
+            if (!empty($_COOKIE['role'])){
                 echo '
 							<ul role="menubar" id="ltss-mainmenu" tabindex="0">
             <li role="menuitem"><a href="#Application_Menu" id="" onclick="return false" class="subMenuHeader">Menu</a>
@@ -39,7 +33,7 @@
                     <li role="menuitem"><a href="#" id="" onclick="return false" class="subMenuHeader">Main<span aria-hidden="true"> ></span></a>
                         <ul>
                             <li role="menuitem"><a href="#">Home</a></li>
-                            <li role="menuitem"><a href="#">Clients</a></li>
+                            <li role="menuitem"><a href="#">'.$_COOKIE["CommonLabel_Clients"].'</a></li>
                             <li role="menuitem"><a href="#">My Lists</a></li>
                             <li role="menuitem"><a href="#">Alerts</a></li>
                             <li role="menuitem"><a href="#">Dashboard</a></li>

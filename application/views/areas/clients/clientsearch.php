@@ -5,7 +5,7 @@
             <legend>Client Search</legend>
             <div class="p-column-left">
                 <div class="row stacked">
-                    <label>Client ID:</label>
+                    <label>'.$_COOKIE["CommonLabel_Clients_Ownership"].' ID:</label>
                     <input type="text"/>
                 </div>
                 <div class="row stacked">
@@ -52,7 +52,7 @@
 <table id="ClientSummaryGrid" class="dataTable">
     <thead>
         <tr>
-			<th>Client ID</th>
+			<th>'.$_COOKIE["CommonLabel_Clients_Ownership"].' ID</th>
             <th>Last Name</th>
             <th>First Name</th>
             <th>Date of Birth</th>

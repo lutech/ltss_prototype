@@ -3,7 +3,7 @@
         <h1 class="login-logo"><i>LTSS Prototype</i></h1>
         <a name="Login" id="Login" class="ui-hide"></a>
         <p>
-            This is a TEFT prototype.
+            The content displayed in this prototype are for proof of concept only and do not represent actual private data or finished product.
         </p>
     </div>
     

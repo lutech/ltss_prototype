@@ -14,8 +14,8 @@
     <div id="userinfo" class="four columns ui-hide">                  
             <ul>
                 <?php 
-					if (isset($_COOKIE['user'])){
-						if ( $_COOKIE['user'] == 'publicuser'){													
+					if (isset($_COOKIE['role'])){
+						if ( $_COOKIE['role'] == 'client'){
 							$loginname = $_COOKIE['username'];
 							echo '
 									<strong>'.$loginname.'</strong>
@@ -52,7 +52,7 @@
                                 <span class=" icon-user"></span>
                                 <h2>
                                     <?php 
-                                        if ( $_COOKIE['user'] == 'publicuser'){													
+                                        if ( $_COOKIE['role'] == 'client'){
                                             $loginname = $_COOKIE['username'];
                                             echo $loginname;
                                         } 

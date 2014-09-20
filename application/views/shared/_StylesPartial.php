@@ -1,13 +1,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>application/Content/jquery.dataTables.css"/>
 <?php 
-	if(isset($_COOKIE['user']))	{
-		if ( $_COOKIE['user'] == 'admin'){													
-				echo  '
-						<link rel="stylesheet" type="text/css" href="'.base_url().'application/Content/ltss.css"/>
-						<link rel="stylesheet" type="text/css" href="'.base_url().'application/Content/Grid.css"/>
-					';
-			} 
-			else if ( $_COOKIE['user'] == 'publicuser'){							
+	if(isset($_COOKIE['role']))	{
+		if ( $_COOKIE['role'] == 'client'){
 				echo '<link rel="stylesheet" type="text/css" href="'.base_url().'application/Content/ltss_clientportal.css"/>
 						<link rel="stylesheet" type="text/css" href="'.base_url().'application/Content/Grid_CP.css"/>
 					';

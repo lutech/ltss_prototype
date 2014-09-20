@@ -5,10 +5,10 @@
     <a href="#Client_Profile_Summary" class="ui-hide">Skip to Summary</a>
     <nav class="tabbed-nav">
         <ul>
-           <?php require 'application/views/shared/_TopNavClientDefault.php'; 
+           <?php require 'application/views/shared/_TopNavClientDefault.php';
 		   		if (!empty($topnavtab)) {
 					if ($topnavtab == 'client') {
-						echo '<li><a href="#" class="ltss-icon-left client-details-icon selected"> Client Details</a></li>';
+						echo '<li><a href="#" class="ltss-icon-left client-details-icon selected">'.$_COOKIE["CommonLabel_Clients_Ownership"].' Details</a></li>';
 					};
 				};
 		   ?>
@@ -30,9 +30,9 @@
         <nav id="Main_Content_Menu" tabindex="0">
             <a href="#workspace" class="ui-hide">Skip to Main Content</a>
             <div class="hide-for-print" id="lftNav">
-               <?php 
+               <?php
 						if(!empty($_leftnavigation)) {
-							echo $_leftnavigation; 
+							echo $_leftnavigation;
 						}
 					?>
             </div>

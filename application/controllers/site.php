@@ -30,9 +30,9 @@
 			show_404();
 		};
 		
-		if (isset($_COOKIE['user'])) {			
-			$user = $_COOKIE['user'];
-			if ($user == 'publicuser') {
+		if (isset($_COOKIE['role'])) {
+            $role = $_COOKIE['role'];
+			if ($role == 'client') {
 				$layout = '_ClientLayoutView_CP';
 				$page = "home_CP";
 				$data['layout'] = $layout;
@@ -42,7 +42,7 @@
 				$data['_leftnavigation'] = $this->load->view('shared/_LeftNavigationPartial_CP.php', $data, true);
 				$this->load->view("shared/_MasterLayout_CP.php", $data);
 				
-			} else if ($user == 'admin') {	
+			} else {
 				$data['area'] = $area;
 				$data['page'] = $page;			
 				$this->load->helper('url');
@@ -61,35 +61,55 @@
 		if(isset($_POST['submit']))	{
 			
 			$username = $_POST['username'];
-			
+
+            //ADD ALL USERS AND DEFINE USER ROLES HERE.
+
+            //Client = Cicio Smith
 			if ($username == 'ciciosmith') {		
-				setcookie('user', 'publicuser', time()+3600, '/');
-				setcookie('username', 'Cicio Smith', time()+3600, '/');
-				setcookie('loginname', $username, time()+3600, '/');
-				setcookie('gender', 'Female', time()+3600, '/');
-				setcookie('suffix', ' ', time()+3600, '/');
-				setcookie('userid', '98416818', time()+3600, '/');
+				setcookie('role', 'client', time()+36000000, '/');
+				setcookie('username', 'Cicio Smith', time()+36000000, '/');
+				setcookie('loginname', $username, time()+36000000, '/');
+				setcookie('gender', 'Male', time()+36000000, '/');
+				setcookie('suffix', ' ', time()+36000000, '/');
+				setcookie('userid', '98416818', time()+36000000, '/');
 				
 				$this->load->helper('url');
 				$url = base_url().'index.php/site/home';
 				header( "Location: $url" );
 			}
+            //Administrator = Admin
 			else if ($username == 'admin') {							
-				setcookie('user', 'admin', time()+3600, '/');
-				setcookie('username', 'Administrator', time()+3600, '/');
-				setcookie('loginname', $username, time()+3600, '/');
-				setcookie('gender', 'Male', time()+3600, '/');
-				setcookie('suffix', 'Jr.', time()+3600, '/');
-				setcookie('userid', '84918569', time()+3600, '/');
+				setcookie('role', 'admin', time()+36000000, '/');
+				setcookie('username', 'Administrator', time()+36000000, '/');
+				setcookie('organization', 'Division of Medicaid', time()+36000000, '/');
+				setcookie('loginname', $username, time()+36000000, '/');
+				setcookie('gender', 'Male', time()+36000000, '/');
+				setcookie('suffix', 'Jr.', time()+36000000, '/');
+				setcookie('userid', '84918569', time()+36000000, '/');
 				
 				$this->load->helper('url');
 				$url = base_url().'index.php/site/home';
 				header( "Location: $url" );
 			
+			} //Case Manager = Albert Jones
+			else if ($username == 'albertjones') {
+				setcookie('role', 'casemanager', time()+36000000, '/');
+				setcookie('username', 'Alfred Smith', time()+36000000, '/');
+				setcookie('organization', 'Case Managers R Us', time()+36000000, '/');
+				setcookie('loginname', $username, time()+36000000, '/');
+				setcookie('gender', 'Male', time()+36000000, '/');
+				setcookie('suffix', 'Jr.', time()+36000000, '/');
+				setcookie('userid', '84918569', time()+36000000, '/');
+
+				$this->load->helper('url');
+				$url = base_url().'index.php/site/home';
+				header( "Location: $url" );
+
 			} else {
-				setcookie('user', 'publicvisitor', time()+36000000, '/');
-				setcookie('username', 'unknown', time()+36000000, '/');
-				setcookie('loginname', ' ', time()+3600, '/');
+				setcookie('role', '', time()+36000000, '/');
+				setcookie('username', '', time()+36000000, '/');
+                setcookie('organization', '', time()+36000000, '/');
+                setcookie('loginname', ' ', time()+36000000, '/');
 				setcookie('gender', ' ', time()+36000000, '/');
 				setcookie('suffix', ' ', time()+36000000, '/');
 				setcookie('userid', ' ', time()+36000000, '/');
@@ -108,8 +128,8 @@
 	}
 	
 	public function logout(){
-		setcookie('user', 'publicvisitor', time()+36000000, '/');
-		setcookie('username', 'unknown', time()+36000000, '/');
+		setcookie('role', '', time()+36000000, '/');
+		setcookie('username', '', time()+36000000, '/');
 		setcookie('loginname', ' ', time()+3600, '/');
 		setcookie('gender', ' ', time()+36000000, '/');
 		setcookie('suffix', ' ', time()+36000000, '/');
