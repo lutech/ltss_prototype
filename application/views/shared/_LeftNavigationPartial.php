@@ -1,4 +1,5 @@
 <?php require "application/views/shared/menuItem_builder.php"; ?>
+
 <div>
     <ul class="left-side-nav js-accordion">
         <li>
@@ -26,18 +27,42 @@
                 </li>
             </ul>
         </li>
-        <!-- Sample Menu - Copy and Paste as Needed -->
+        <!-- Waivers -->
         <li>
-            <span class="leftNavHeader">Sample Menu 1</span>
+            <span class="leftNavHeader">Waivers</span>
             <ul class="leftnav-groupcontainer" style="display: none;">
                 <li>
-                    <?php echo new MenuItem("Sample Menu Item 1", "sample", "index", "", false, false, "" , $this->uri);?>
+                    <?php echo new MenuItem("Applications", "applications", "index", "", false, false, "" , $this->uri);?>
+                </li>
+                <li>
+                    <?php echo new MenuItem("Level of Care", "levelofcare", "history", "", true, false, "" , $this->uri);?>
+                    <ul>
+                        <li>
+                            <?php
+
+                                echo new MenuItem("Summary", "levelofcare", "details", "", true, true, "" , $this->uri);
+
+                                if ($this->uri->segment(2) == "nursedecision_edit" ||
+                                    $this->uri->segment(2) == "physiciandecision_edit" ){
+                                    echo new MenuItem("Summary", "levelofcare", "details", "", true, false, "" , $this->uri);
+                                }
+                            ?>
+                            <ul>
+                                <li>
+                                    <?php echo new MenuItem("Nurse LOC Decision", "levelofcare", "nursedecision_edit", "", true, true, "" , $this->uri);?>
+                                </li>
+                                <li>
+                                    <?php echo new MenuItem("Physician LOC Decision", "levelofcare", "physiciandecision_edit", "", true, true, "" , $this->uri);?>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </li>
     </ul>
 </div>
 
-/<!-- Menu Item Arguments
+<!-- Menu Item Arguments
 MenuItem( Friendly Label [string], Controller [string], Action [string], Icon Class [string], Clickable? [bool], Hidden Unless Active? [bool], Functions/Scripts [string], URI [Do Not Change]  )
 -->

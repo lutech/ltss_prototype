@@ -935,6 +935,12 @@
         $('.genericform-style.read-only').each(function(){
             makeReadOnly()
         });
+
+        $(".date").not('.read-only .date').kendoDatePicker();
+
+        $(".TaskDetailLink").click(function (event) {
+            event.stopPropagation();
+        });
     });
 </script>
 
