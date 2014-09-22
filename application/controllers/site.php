@@ -91,11 +91,53 @@
 				$url = base_url().'index.php/site/home';
 				header( "Location: $url" );
 			
-			} //Case Manager = Albert Jones
-			else if ($username == 'albertjones') {
+			} //Case Manager
+			else if ($username == 'casemanager') {
 				setcookie('role', 'casemanager', time()+36000000, '/');
-				setcookie('username', 'Alfred Smith', time()+36000000, '/');
-				setcookie('organization', 'Case Managers R Us', time()+36000000, '/');
+				setcookie('username', 'Case Manager', time()+36000000, '/');
+				setcookie('organization', 'Case Managers Org', time()+36000000, '/');
+				setcookie('loginname', $username, time()+36000000, '/');
+				setcookie('gender', 'Male', time()+36000000, '/');
+				setcookie('suffix', 'Jr.', time()+36000000, '/');
+				setcookie('userid', '84918569', time()+36000000, '/');
+
+				$this->load->helper('url');
+				$url = base_url().'index.php/site/home';
+				header( "Location: $url" );
+
+			} //Assessor = Albert Jones
+			else if ($username == 'assessor') {
+				setcookie('role', 'assessor', time()+36000000, '/');
+				setcookie('username', 'Assessor', time()+36000000, '/');
+				setcookie('organization', 'Assessor Org.', time()+36000000, '/');
+				setcookie('loginname', $username, time()+36000000, '/');
+				setcookie('gender', 'Male', time()+36000000, '/');
+				setcookie('suffix', 'Jr.', time()+36000000, '/');
+				setcookie('userid', '84918569', time()+36000000, '/');
+
+				$this->load->helper('url');
+				$url = base_url().'index.php/site/home';
+				header( "Location: $url" );
+
+			} //Nurse
+			else if ($username == 'nurse') {
+				setcookie('role', 'nurse', time()+36000000, '/');
+				setcookie('username', 'Nurse', time()+36000000, '/');
+				setcookie('organization', 'Nurse Org', time()+36000000, '/');
+				setcookie('loginname', $username, time()+36000000, '/');
+				setcookie('gender', 'Male', time()+36000000, '/');
+				setcookie('suffix', 'Jr.', time()+36000000, '/');
+				setcookie('userid', '84918569', time()+36000000, '/');
+
+				$this->load->helper('url');
+				$url = base_url().'index.php/site/home';
+				header( "Location: $url" );
+
+			} //Physician
+			else if ($username == 'physician') {
+				setcookie('role', 'physician', time()+36000000, '/');
+				setcookie('username', 'Physician', time()+36000000, '/');
+				setcookie('organization', 'Physician Org', time()+36000000, '/');
 				setcookie('loginname', $username, time()+36000000, '/');
 				setcookie('gender', 'Male', time()+36000000, '/');
 				setcookie('suffix', 'Jr.', time()+36000000, '/');
@@ -130,7 +172,7 @@
 	public function logout(){
 		setcookie('role', '', time()+36000000, '/');
 		setcookie('username', '', time()+36000000, '/');
-		setcookie('loginname', ' ', time()+3600, '/');
+		setcookie('loginname', ' ', time()+36000000, '/');
 		setcookie('gender', ' ', time()+36000000, '/');
 		setcookie('suffix', ' ', time()+36000000, '/');
 		setcookie('userid', ' ', time()+36000000, '/');

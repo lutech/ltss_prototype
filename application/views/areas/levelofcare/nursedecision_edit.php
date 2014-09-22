@@ -10,7 +10,7 @@
     </div>
 
     <div class="float-right">
-        <button type="button">Save</button>
+        <button type="button" id="submitNurseDecision">Save</button>
     </div>
 
 </div>
@@ -22,12 +22,16 @@
     <fieldset class="fieldset-container-one">
         <legend class="legend-header-one">Decision Information</legend>
         <div class="row">
-            <label for="loctype" class="complete-required">LOC Type:</label>
-            <input type="text" id="loctype"/>
+            <label for="nurseloctype" class="complete-required">LOC Type:</label>
+            <input type="text" id="nurseloctype"/>
+
         </div>
         <div class="row">
             <label for="nurse-nflocdecision" class="complete-required">NF LOC Decision:</label>
-            <input type="text" id="nurse-nflocdecision"/>
+             <select id="nurse-nflocdecision">
+                <option value="Approve">Approve</option>
+                <option value="Refer to Physician">Refer to Physician</option>
+            </select>
         </div>
         <div class="row">
             <label for="nurse-loceffectivedate" class="complete-required">Effective Date:</label>
@@ -48,3 +52,35 @@
 </div>
 
 ';?>
+<?php
+
+$confirmation ="";
+if (isset($_COOKIE['confirmation'])){
+    $confirmation = $_COOKIE['confirmation'];
+}
+$Script='
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            if ("'.$confirmation.'" == "success"){
+                showSuccessMessage("Document has been saved.");
+                document.cookie="confirmation=";
+            }
+
+            $("#submitNurseDecision").on("click", function(){
+
+                if ($("#nurse-nflocdecision").val() == "Approve"){
+                    document.cookie="nursedecision=Approve";
+                    document.cookie="confirmation=success";
+                } else if  ($("#nurse-nflocdecision").val() == "Refer to Physician"){
+                    document.cookie="nursedecision=Refer to Physician";
+                    document.cookie="referredToPhysician=true";
+                    document.cookie="confirmation=success";
+                };
+
+                location.reload();
+            })
+
+        });
+    </script>
+'?>

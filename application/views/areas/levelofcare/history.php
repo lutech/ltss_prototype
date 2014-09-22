@@ -5,7 +5,11 @@
     </div>
 '?>
 
-<?php $Body = '
+<?php
+if (!isset($_COOKIE['locstatus'])){
+    setcookie('locstatus', 'In Progress');
+};
+$Body = '
 <table class="dataTable-list-style" data-afterrender="afterRenderDataTable" summary="Nurse Monitoring List">
         <thead>
             <tr>
@@ -41,7 +45,7 @@
 
                 </td>
                 <td>
-                    In Progress
+                    '.((isset($_COOKIE["locstatus"])) ? $_COOKIE["locstatus"] : "In Progress" ).'
                 </td>
                 <td>
                     Inactive

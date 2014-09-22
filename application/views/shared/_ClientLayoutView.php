@@ -52,11 +52,10 @@
             </div>
             <!-- Messages/Alerts -->
             <div class="Message-Container hide-for-print" aria-live="assertive" aria-atomic="true" role="alert">
-                <?php 
-						if(!empty($Message)) {
-							echo $Message; 
-						}
-					?>
+                <section class="message-wrapper">
+                    <div id="messages">
+                    </div>
+                </section>
             </div>
             <!-- Content Body -->
             <div class="workspace-content-container" id="workspace-maincontent">

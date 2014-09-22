@@ -11,7 +11,7 @@
     </div>
 
     <div class="float-right">
-        <button type="button">Save</button>
+        <button type="button" id="submitPhysicianDecision">Save</button>
     </div>
 
 </div>
@@ -24,7 +24,10 @@
         <legend class="legend-header-one">Decision Information</legend>
         <div class="row">
             <label for="physician-nflocdecision" class="complete-required">NF LOC Decision:</label>
-            <input type="text" id="physician-nflocdecision"/>
+            <select id="physician-nflocdecision">
+                <option value="Approve">Approve</option>
+                <option value="Deny">Deny</option>
+            </select>
         </div>
         <div class="row">
             <label for="physician-loceffectivedate" class="complete-required">Effective Date:</label>
@@ -45,3 +48,34 @@
 </div>
 
 ';?>
+<?php
+
+$confirmation ="";
+if (isset($_COOKIE['confirmation'])){
+    $confirmation = $_COOKIE['confirmation'];
+}
+$Script='
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            if ("'.$confirmation.'" == "success"){
+                showSuccessMessage("Document has been saved.");
+                document.cookie="confirmation=";
+            }
+
+            $("#submitPhysicianDecision").on("click", function(){
+
+                if ($("#physician-nflocdecision").val() == "Approve"){
+                    document.cookie="physiciandecision=Approve";
+                    document.cookie="confirmation=success";
+                } else if  ($("#physician-nflocdecision").val() == "Deny"){
+                    document.cookie="physiciandecision=Deny";
+                    document.cookie="confirmation=success";
+                };
+
+                location.reload();
+            })
+
+        });
+    </script>
+'?>
