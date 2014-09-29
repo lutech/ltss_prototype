@@ -180,7 +180,10 @@ $Body = '
                                 New Status
                             </th>
                             <th>
-                                Comments
+                                Status Comments
+                            </th>
+                            <th>
+                                Attachments Added/Removed
                             </th>
                             <th>
                                 Actions
@@ -205,6 +208,10 @@ $Body = '
                                 I have attached a document that explains...
                             </td>
                             <td>
+                                <b>Added: </b>Explanation.PDF <br/>
+                                <b>Removed: </b>Reason.PDF
+                            </td>
+                            <td>
                                 <a href="#">Quick View</a>
                             </td>
                         </tr>
@@ -223,6 +230,9 @@ $Body = '
                             </td>
                             <td>
                                 I need further information regarding...
+                            </td>
+                            <td>
+                                <b>Added: </b>Reason.PDF
                             </td>
                             <td>
                                 <a href="#">Quick View</a>
