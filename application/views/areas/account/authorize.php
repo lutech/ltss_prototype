@@ -1,9 +1,12 @@
 <div class="login-body">
     <div class="six columns hide-for-print">
-        <h1 class="login-logo"><i>LTSS Prototype</i></h1>
+        <h1 class="login-logo"><i>LTSS Style Guide</i></h1>
         <a name="Login" id="Login" class="ui-hide"></a>
         <p>
-            The content displayed in this prototype are for proof of concept only and do not represent actual private data or finished product.
+            This site is intended to be a central reference UI guide for UX, Dev, BA's, and QA. It contains the latest
+            client side imlementations for eLTSS and any instance using the eLTSS architecture. This site is updated periodically so please
+            check back frequently for changes, fixes and/or enhancements.<br><br>
+            (This site is currently under development)
         </p>
     </div>
     
@@ -14,17 +17,8 @@
             
             <form id="loginform" method="post" name="form" action="<?php echo base_url().'index.php/site/login'?>">
                 <fieldset id="login-form">
-                    <legend>login</legend>
-                    <div class="row">
-                    	<label>Login Name:</label>
-                        <input type="text" name="username"/>
-                    </div>
-                    <div class="row">
-                    	<label>Password:</label>
-                        <input type="text" name="usernamepassword"/>
-                    </div>
                     <div style="text-align: center">
-                        <input type="submit" value="Login" name="submit" style="max-width: 50%; margin-top: 20px !important" title="Submit" id="btnLogin"/>
+                        <input type="submit" value="Continue" name="submit" style="max-width: 50%; margin-top: 20px !important" title="Submit" id="btnLogin"/>
                     </div>
                 </fieldset>
             </form>

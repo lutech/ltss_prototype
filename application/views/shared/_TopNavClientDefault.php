@@ -2,11 +2,9 @@
 require "application/views/shared/tabMenuItem_builder.php";
 
 echo new TabMenuItem("Home", "site", "alerts", "home-icon", true,  $this->uri);
-echo new TabMenuItem($_COOKIE['CommonLabel_Clients'], "clients", "index", "client-match-icon", true,  $this->uri);
-echo new TabMenuItem("My Lists", "mylists", "index", "list-icon", false,  $this->uri);
-echo new TabMenuItem("Alerts", "alerts", "index", "alerts-icon", false,  $this->uri);
-echo new TabMenuItem("Dashboard", "dashboard", "index", "dashboard-icon", false,  $this->uri);
-echo new TabMenuItem("Assignments", "assignments", "index", "client-match-icon", false,  $this->uri);
-echo new TabMenuItem("Reports", "reports", "index", "reports-icon", false,  $this->uri);
+echo new TabMenuItem("CSS", "css", "basecss", "client-match-icon", true,  $this->uri);
+echo new TabMenuItem("Components", "components", "index", "list-icon", false,  $this->uri);
+echo new TabMenuItem("Views", "views", "index", "alerts-icon", false,  $this->uri);
+echo new TabMenuItem("Workflows", "workflows", "index", "dashboard-icon", false,  $this->uri);
 
 ?>

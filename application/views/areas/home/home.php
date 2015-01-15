@@ -27,7 +27,8 @@
             <div aria-labelledby="Home Page Content">
                <div class="genericform-style announcements">
                    <h2>Announcements</h2>
-                   <p>No announcements at this time.</p>
+                   <p>Welcome to the LTSS Style/Code Guide! <br/><br/>
+                       This site is still under development. There's nothing to show yet but try back again at a later date.</p>
                </div>
             </div>
         </div>

@@ -19,7 +19,7 @@
 		{
 			show_404();
 		}
-		
+
 		$data['layout'] = $layout;
 		$data['page'] = $page;
 		$data['area'] = $area;
