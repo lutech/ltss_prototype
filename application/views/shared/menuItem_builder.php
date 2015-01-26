@@ -9,7 +9,7 @@ class MenuItem {
     public $menuItemIcon;
     public $menuItemScript;
     public $uri;
-
+    // Parameters: (Label, Area, View, Icon, Is Clickable (Boolean), Hide Unless Active (Boolean), Additional Script, URI)
     function __construct($menuItemLabel, $menuItemArea ,$menuItemView, $menuItemIcon, $menuItemClickable, $menuItemHideUnlessActive, $menuItemScript,$uri )
     {
         $this->menuItemLabel = $menuItemLabel;

@@ -1890,23 +1890,29 @@ function clearFormErrors(element) {
         $('.tableRowEdit').prepend('<span class="offset-hidden">Editing</span>')
     });
 
+
 function resizeFixedWorkarea() {
     if ($('.js-workarea-panel').length == 1) {
         if ($('.fieldset-container-searcharea').length == 1) {
-        $('.LeftNav-Fixed-Workarea').css('top', $('.js-workarea-panel').height());
-        } 
+            $('.LeftNav-Fixed-Workarea').css('top', $('.js-workarea-panel').height());
+        }
         else {
-        $('.LeftNav-Fixed-Workarea').css('top', $('.js-workarea-panel').height() + 10);
-        } 
+            $('.LeftNav-Fixed-Workarea').css('top', $('.js-workarea-panel').height() + 10);
+        }
     }
     if ($('.workspacenav-container').length == 1) {
         $('.fullworkspace-content-container').css('top', $('.workspacenav-container').height());
     }
 
-    if ($('.search-doubleRow-popup').length > 0) {
-        $('.search-doubleRow-popup').each(function() {
-            var newHeight = $(this).siblings('.js-workarea-panel').height() + 20;
-            $(this).find('.dataTable-summarylist-style').css('margin-top', newHeight);
+    if ($('.search-doubleRow-popup').length > 0 && $('.js-workarea-panel').length > 0) {
+        $('.search-doubleRow-popup').each(function () {
+            if ($(this).siblings('.js-workarea-panel').length > 0) {
+                var workareaPanelHeight = $(this).siblings('.js-workarea-panel').outerHeight();
+                var newTableMargin = workareaPanelHeight + 20;
+                var newTableContainerHeight = $(this).parents('[class*="-content"]').first().outerHeight() - workareaPanelHeight - 16;
+                $(this).find('.dataTable-summarylist-style').css('margin-top', newTableMargin);
+                $(this).css('height', newTableContainerHeight);
+            }
         });
     }
 }

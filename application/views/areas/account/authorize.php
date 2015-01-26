@@ -1,6 +1,6 @@
 <div class="login-body">
     <div class="six columns hide-for-print">
-        <h1 class="login-logo"><i>LTSS Prototype</i></h1>
+        <h1 class="login-logo"><i><?php print_r($_COOKIE["CommonLabel_Application"])?></i></h1>
         <a name="Login" id="Login" class="ui-hide"></a>
         <p>
             The content displayed in this prototype are for proof of concept only and do not represent actual private data or finished product.

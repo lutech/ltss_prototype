@@ -7,6 +7,7 @@ class TabMenuItem {
     public $tabMenuItemClickable;
     public $tabMenuItemUri;
 
+    //Paraemeters: ( Menu Item Label, Menu Item Area, Menu Item View, Menu Item Icon, Is Menu Clickable (Boolean), Menu Item Uti )
     function __construct($tabMenuItemLabel, $tabMenuItemArea ,$tabMenuItemView, $tabMenuItemIcon, $tabMenuItemClickable, $tabMenuItemUri )
     {
         $this->tabMenuItemLabel = $tabMenuItemLabel;
@@ -24,7 +25,7 @@ class TabMenuItem {
         $tabIcon = (!empty($this->tabMenuItemIcon)) ? 'ltss-icon-left '.$this->tabMenuItemIcon.'' : "";
 
         return "<li>
-				<a class=\"{$activeClass} {$tabIcon}\" href=\"".base_url()."index.php/{$this->tabMenuItemArea}/{$this->tabMenuItemView}\" {$returnFalse}>
+				<a class=\"{$activeClass} {$tabIcon}\" href=\"".base_url()."index.php/{$this->tabMenuItemArea}/{$this->tabMenuItemView}\" onclick=\"{$returnFalse}\">
 					{$this->tabMenuItemLabel}
 				</a>
 			</li>";
