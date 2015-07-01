@@ -5,13 +5,23 @@
     <a href="#Client_Profile_Summary" class="ui-hide">Skip to Summary</a>
     <nav class="tabbed-nav">
         <ul>
-           <?php require 'application/views/shared/_TopNavClientDefault.php';
-		   		if (!empty($topnavtab)) {
-					if ($topnavtab == 'client') {
-						echo '<li><a href="#" class="ltss-icon-left client-details-icon selected">'.$_COOKIE["CommonLabel_Clients_Ownership"].' Details</a></li>';
-					};
-				};
-		   ?>
+            <?php
+            if (empty($topnav)) {
+               require 'application/views/shared/_TopNavClientDefault.php';
+                if (!empty($topnavtab)) {
+                    if ($topnavtab == 'client') {
+                        echo '<li><a href="#" class="ltss-icon-left client-details-icon selected">'.$_COOKIE["CommonLabel_Clients_Ownership"].' Details</a></li>';
+                    };
+                };
+            } else {
+                require "{$topnav}";
+                if (!empty($topnavtab)) {
+                    if ($topnavtab == 'client') {
+                        echo '<li><a href="#" class="ltss-icon-left client-details-icon selected">'.$_COOKIE["CommonLabel_Clients_Ownership"].' Details</a></li>';
+                    };
+                };
+            }
+            ?>
         </ul>
     </nav>
 </div>

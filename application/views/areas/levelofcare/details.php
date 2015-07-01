@@ -98,6 +98,15 @@ $Body = '
                 <fieldset class="fieldset-container-one">
                     <legend class="legend-header-one">Decision Information</legend>
                     <div class="row">
+                        <fieldset class="grouped-radiobuttons">
+                            <legend>Transfer small objects from one hand to the other hand:</legend>
+                            <input type="radio"><label>1</label>
+                            <input type="radio"><label>2</label>
+                            <input type="radio"><label>3</label>
+                            <input type="radio"><label>4</label>
+                        </fieldset>
+                    </div>
+                    <div class="row">
                         <label for="loctype" class="complete-required">LOC Type:</label>
                         <input type="text" id="loctype"/>
                     </div>

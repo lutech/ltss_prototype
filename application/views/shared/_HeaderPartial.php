@@ -13,7 +13,8 @@
                 echo '
                         <strong>'.$loginname.'</strong>
                         <ul>
-                            <li>Organization Unit: '.$organization.'</li>
+//                            <li>Organization Unit: '.$organization.'</li>
+                                <li>Provider Agency ABC</li>
                         </ul>
                      ';
             }
@@ -32,8 +33,8 @@
                 <ul role="menu">
                     <li role="menuitem"><a href="#" id="" onclick="return false" class="subMenuHeader">Main<span aria-hidden="true"> ></span></a>
                         <ul>
-                            <li role="menuitem"><a href="#">Home</a></li>
-                            <li role="menuitem"><a href="#">'.$_COOKIE["CommonLabel_Clients"].'</a></li>
+                            <li role="menuitem"><a href="'.base_url().'index.php/site/home">Home</a></li>
+                            <li role="menuitem"><a href="'.base_url().'index.php/clients/index"">'.$_COOKIE["CommonLabel_Clients"].'</a></li>
                             <li role="menuitem"><a href="#">My Lists</a></li>
                             <li role="menuitem"><a href="#">Alerts</a></li>
                             <li role="menuitem"><a href="#">Dashboard</a></li>
@@ -60,11 +61,15 @@
                             <li role="menuitem"><a href="#">My Organization</a></li>
                         </ul>
                     </li>
+                    <li role="menuitem"><a href="'.base_url().'index.php/prototypes/index" id="" class="subMenuHeader">Prototypes<span aria-hidden="true"> ></span></a>
+                    </li>
                     <li role="menuitem"><a href="#">Print</a></li>
                 </ul>
             </li>
             <li role="menuitem"><a href="#Account_Menu" id="" onclick="return false" class="subMenuHeader">Account</a>
                 <ul role="menu">
+                    <li role="menuitem"><a href="'.base_url().'index.php/providerportal/home" id="" class="subMenuHeader">Provider Portal<span aria-hidden="true"> ></span></a>
+                    </li>
                     <li role="menuitem"><a href="'.base_url().'index.php/site/logout">Sign Out</a></li>
                 </ul>
             </li>

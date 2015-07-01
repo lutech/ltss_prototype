@@ -24,23 +24,27 @@ $(document).ready(function () {
     
     $('.js-accordion').each(function(idx, el) {
         var panels = $(el).children('li:visible');
-        var panel, header, body;
+        var panel, header, body, headerLink;
 
         if (panels.length == 1) {
             panel = $(panels[0]);
-            header = panel.children().first();
+            header = panel.children().not('a').first();
             body = header.next();
+            headerLink = panel.children('a').first();
             body.attr('collapsible', 'true');
 
             header.prepend('<span class="arrow expand"></span>');
+            headerLink.append('<span role="presentation" class="ltss-icon-container icon-arrow"></span>');
         }
         else {
             panels.each(function(idx, el) {
                 panel = $(el);
-                header = panel.children().first();
+                header = panel.children().not('a').first();
                 body = header.next();
+                headerLink = panel.children('a').first();
 
                 header.prepend('<span class="arrow collapse"></span>');
+                headerLink.append('<span role="presentation" class="ltss-icon-container icon-arrow"></span>');
                 body.attr('collapsible', 'true');
                 body.hide();
                 header.click(function() {

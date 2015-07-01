@@ -17,6 +17,7 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>application/Scripts/ltss.panelBar.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>application/Scripts/menu.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>application/Scripts/jquery.blockUI.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>application/Scripts/jquery.cycle.all.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>application/Scripts/jquery.list.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>application/Scripts/jquery.dotdotdot-1.5.1.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>application/Scripts/jquery.mousewheel.js"></script>
@@ -28,3 +29,7 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>application/Scripts/ltss.leftnavigation.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>application/Scripts/jquery.qtip.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>application/Scripts/knockout-2.1.0.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>application/Scripts/jSignature.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>application/Scripts/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>application/Scripts/ckeditor/adapters/jquery.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>application/Scripts/ckeditor/ckeditor-toolbar-config.js"></script>

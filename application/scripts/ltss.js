@@ -8,7 +8,9 @@ var localstoragekeys = {
     "staffInfo": "staffInfo",
     "messageNestPage": "messageNextPage",
     "programtasklist": "programtasklist",
-    "backupNurseMonitoring":"backupNurseMonitoring"
+    "backupNurseMonitoring": "backupNurseMonitoring",
+    "icapAssessmentParams": "icapAssessmentParams",
+    "icapAssessment": "icapAssessments"
 }
 var oTable;
 
@@ -92,7 +94,7 @@ var defaultDataTableOptions = {
 }
 
 function applyDataTables() {
-    
+
     //sort
     //date format: <span id="date" class="display-date">mm/dd/yyyy</span>
     jQuery.fn.dataTableExt.aTypes.unshift(
@@ -100,13 +102,15 @@ function applyDataTables() {
             if (sData) {
                 if (typeof sData == 'string' && sData.indexOf("display-date") >= 0) {
                     return 'date-mmddyyyy';
+                } else if (typeof sData == 'string' && sData.indexOf("title-sort") >= 0) {
+                    return 'title-numeric';
                 }
                 else {
                     return null;
                 }
             }
         }
-     );
+    );
     jQuery.fn.dataTableExt.oSort['date-mmddyyyy-asc'] = function (a, b) {
         var x = 19000101;
         var y = 19000101;
@@ -156,27 +160,39 @@ function applyDataTables() {
         return ((x < y) ? 1 : ((x > y) ? -1 : 0));
     };
 
+    jQuery.fn.dataTableExt.oSort['title-numeric-pre'] = function (a) {
+        var x = a.match(/title="*(-?[0-9\.]+)/)[1];
+        return parseFloat(x);
+    };
+
+    jQuery.fn.dataTableExt.oSort['title-numeric-asc'] = function (a, b) {
+        return ((a < b) ? -1 : ((a > b) ? 1 : 0));
+    };
+
+    jQuery.fn.dataTableExt.oSort['title-numeric-desc'] = function (a, b) {
+        return ((a < b) ? 1 : ((a > b) ? -1 : 0));
+    };
 
     $(".dataTable:not(.rowgrouping)").not('[noInit]').each(function (idx, el) {
         buildDataTable($(this));
-        });
+    });
     $(".dataTableWithColumnFilter").not('[noInit]').each(function () {
         buildDataTable($(this), {
-            "oLanguage": {
-                "sSearch": "Filter all columns xxx:"
+                "oLanguage": {
+                    "sSearch": "Filter all columns xxx:"
+                },
+                "sScrollY": "300px",
+                "sScrollX": "250%",
             },
-            "sScrollY": "300px",
-            "sScrollX": "250%",
-        },
-        "columnFilter");
+            "columnFilter");
     });
 
     $(".dataTable.rowgrouping").not('[noInit]').each(function () {
         buildDataTable($(this), {
-            "sScrollY": "330px",
-            "sScrollX": "100%",
-        },
-        "rowGrouping");
+                "sScrollY": "330px",
+                "sScrollX": "100%",
+            },
+            "rowGrouping");
     });
 
     $(".inline-dataTable:not(.rowgrouping)").not('[noInit]').each(function () {
@@ -196,11 +212,11 @@ function applyDataTables() {
 
     $(".inline-dataTable.rowgrouping").not('[noInit]').each(function () {
         buildDataTable($(this), {
-            "sScrollY": "330px",
-            "sScrollX": "100%",
-            "sDom": '',
-        },
-        "rowGrouping");
+                "sScrollY": "330px",
+                "sScrollX": "100%",
+                "sDom": '',
+            },
+            "rowGrouping");
     });
 
     $(".inline-table-noFilter").not('[noInit]').each(function () {
@@ -213,11 +229,21 @@ function applyDataTables() {
 
     $.fn.dataTableExt.oJUIClasses.sWrapper = "dataTable-summarylist-style";
 
-    $(".dataTable-list-style").not('[noInit]').each(function () {
-        buildDataTable($(this),  {
+    $(".dataTable-list-style:not(.rowgrouping)").not('[noInit]').each(function () {
+        buildDataTable($(this), {
             "sScrollY": "330px",
             "sScrollX": "100%",
         });
+    });
+
+    $.fn.dataTableExt.oJUIClasses.sWrapper = "dataTable-summarylist-style";
+
+    $(".dataTable-list-style.rowgrouping").not('[noInit]').each(function () {
+        buildDataTable($(this), {
+                "sScrollY": "330px",
+                "sScrollX": "100%"
+            },
+            "rowGrouping");
     });
 
     $.fn.dataTableExt.oJUIClasses.sWrapper = "dataTable-summarylist-style-footer";
@@ -229,6 +255,26 @@ function applyDataTables() {
             "sDom": 'rt',
             "bInfo": false,
             "bfilter": false,
+        });
+    });
+
+    $.fn.dataTableExt.oJUIClasses.sWrapper = "dataTable-summarylist-style-footer";
+
+    $(".dataTable-list-style-footer-checkbox").not('[noInit]').each(function () {
+        buildDataTable($(this), {
+            "sScrollY": "330px",
+            "sScrollX": "100%",
+            "sDom": 'rt',
+            "bInfo": false,
+            "bfilter": false,
+
+            "aoColumnDefs": [
+                {
+                    "bSortable": false,
+                    "sWidth": "30px",
+                    "aTargets": [0]
+                }
+            ]
         });
     });
 
@@ -260,7 +306,7 @@ function applyDataTables() {
             ]
         });
     });
-    
+
     $.fn.dataTableExt.oJUIClasses.sWrapper = "dataTable-list-style-footer-filter";
 
     $(".dataTable-footer-filter:not(.rowgrouping)").not('[noInit]').each(function () {
@@ -273,27 +319,29 @@ function applyDataTables() {
 
     $(".dataTable-footer-filter.rowgrouping").not('[noInit]').each(function () {
         buildDataTable($(this), {
-            "sScrollY": "330px",
-            "sScrollX": "100%",
-        },
-        "rowGrouping");
+                "sScrollY": "330px",
+                "sScrollX": "100%",
+            },
+            "rowGrouping");
     });
-                }
+}
 
 function buildDataTable(table, opts, plugin) {
 
     var expr = new RegExp('>[ \t\r\n\v\f]*<', 'g');
     var tbhtml = table.html();
+    if (table.data('datatable-options')) {
+        var inlineOptions = table.data('datatable-options');
+    }
+    var options = $.extend(true, {}, defaultDataTableOptions, opts, inlineOptions);
     table.html(tbhtml.replace(expr, '><'));
-   
-    var options = $.extend(true, {}, defaultDataTableOptions, opts);
 
     // Check for unsortable columns
     var unsortableColumns = [];
     $.each(table.find('th'), function (idx, el) {
         if ($.trim($(this).text()).match(/^action|editing/i) || $(el).data('nosorting')) {
             unsortableColumns.push(idx)
-            }
+        }
     });
 
     if (unsortableColumns.length > 0) {
@@ -319,7 +367,7 @@ function buildDataTable(table, opts, plugin) {
         options.sScrollY = table.data('scrolly').toString();
         options.sScrollX = "100%";
     }
-    
+
     if (table.data('displaylength')) {
         options.bPaginate = true;
         options.iDisplayLength = table.data('displaylength');
@@ -345,6 +393,14 @@ function buildDataTable(table, opts, plugin) {
                     "aTargets": [$(this).index()]
                 });
             }
+
+            if ($(this).data('afterrender')) {
+                options.aoColumnDefs.push({
+                    "fnCreatedCell": eval($(this).data('afterrender')),
+                    "aTargets": [$(this).index()]
+                });
+            }
+
             if ($(this).data('datatablesort')) {
                 if ($(this).data('datatablesort') == "asc") {
                     options.aaSorting.push([$(this).index(), "asc"]);
@@ -360,7 +416,7 @@ function buildDataTable(table, opts, plugin) {
             options.bServerSide = false;
 
             if (table.data('autoload') && table.data('autoload') == true) {
-            options.sAjaxSource = table.data('ajaxsource');
+                options.sAjaxSource = table.data('ajaxsource');
                 options.fnServerData = function (sSource, aoData, fnCallback, oSettings) {
                     activateBlockUi();
                     oSettings.jqXHR = $.ajax({
@@ -385,9 +441,9 @@ function buildDataTable(table, opts, plugin) {
             options.sDom = 't<"dataTableInfoPanelWrap"<"dataTableInfoPanel"i<"dataTableInfoPanelRight clearfix"lfp>>>r';
             options.iDisplayLength = 25;
             options.bPaginate = true;
-            
+
             options.sPaginationType = "full_numbers";
-            $(table.data('sessioncleartag')).click(function() {
+            $(table.data('sessioncleartag')).click(function () {
                 DataSessionStorageClear();
             });
         }
@@ -468,20 +524,20 @@ function buildDataTable(table, opts, plugin) {
                     else
                         fnCallback(data);
                 }
-    });
+            });
         };
-}
+    }
 }
 function DataSessionStorageClear() {
     var table = $.fn.dataTable.fnTables(true);
     if (table.length > 0) {
-        $.each(table, function(index, value) {
+        $.each(table, function (index, value) {
             sessionStorage.removeItem(value.id);
         });
     }
 }
 
-window.onbeforeunload = function(e) {
+window.onbeforeunload = function (e) {
     DataSessionStorageClear();
 };
 
@@ -502,8 +558,8 @@ function dataTableAjaxLoad(table, url, params, successFn) {
                     dataTableObj.fnAddData(dataObj);
                     //table.attr('role', 'alert');
                     /*setTimeout(function () {
-                        msgDiv.text('Results complete.  A total of ' + dataObj.length + ' results were found.');
-                    }, 1000);*/
+                     msgDiv.text('Results complete.  A total of ' + dataObj.length + ' results were found.');
+                     }, 1000);*/
                     //table.attr('aria-hidden', false);
                 }
 
@@ -568,7 +624,7 @@ function parseDates(data) {
 
 function checkTimeOrder(beforeTime, afterTime, fnValid, fnInvalid) {
     var isValid = true;
-    
+
     if (beforeTime instanceof Date && afterTime instanceof Date) {
         isValid = afterTime > beforeTime;
     }
@@ -635,7 +691,7 @@ function checkTimeOrder(beforeTime, afterTime, fnValid, fnInvalid) {
             isValid = false;
         }
     }
-    
+
     if (!isValid) {
         fnInvalid();
         return false;
@@ -753,7 +809,7 @@ function buildMessage(msg, messageType, options) {
                     }
                 }
             }
-        }else {
+        } else {
             var currentAttr = options.attribute;
             if (currentAttr.name && $.type(currentAttr.name) === "string") {
                 if (currentAttr.value && $.type(currentAttr.value) === "string") {
@@ -764,10 +820,10 @@ function buildMessage(msg, messageType, options) {
             }
         }
     }
-    result = "<div class='" + cssClassName +"'>";
+    result = "<div class='" + cssClassName + "'>";
     if ($.isArray(msg) && msg.length > 0) {
         for (var i = 0; i < msg.length; i++) {
-            result += "<div class=\"notification\" "+ attribute + ">" + messagePrepend + msg[i] + "<div role=\"button\" tabindex=\"0\" class=\"closeButton\" onclick=\"closeMessage(this);\"></div></div>";
+            result += "<div class=\"notification\" " + attribute + ">" + messagePrepend + msg[i] + "<div role=\"button\" tabindex=\"0\" class=\"closeButton\" onclick=\"closeMessage(this);\"></div></div>";
         }
         result += "</div>";
     }
@@ -885,7 +941,7 @@ function InitPopupDialog(popupDialogOptions) {
         editLink: options.editLink || {},
         hideButtons: options.hideButtons || null,
         saveBtnText: options.saveBtnText || null,
-        cancelBtnText: options.cancelBtnText||null
+        cancelBtnText: options.cancelBtnText || null
     };
 
     var dialogDiv = $("#" + options.dialogId);
@@ -905,9 +961,9 @@ function InitPopupDialog(popupDialogOptions) {
                 return;
             }
         }
-        
+
         $(saveButtonSelector).button("disable");
-        
+
         $.post(url, postdata, function (data) {
 
             var hasGlobalError = !IsJsonString(data) && $(data).find("#messages:has(.error, .message-error)").children().length > 0;
@@ -919,7 +975,7 @@ function InitPopupDialog(popupDialogOptions) {
                 $(dialogDiv).html(data);
             }
             else {
-                    if (!ajaxResultPartialView(data) && refreshPanelDiv) {
+                if (!ajaxResultPartialView(data) && refreshPanelDiv) {
                     $(refreshPanelDiv).html(data);
                 }
                 //applyDataTables();
@@ -986,13 +1042,13 @@ function InitPopupDialog(popupDialogOptions) {
         var cancelBtnText = options.cancelBtnText || 'Cancel';
         if (!options.hideButtons) {
             buttons = [
-            {
-                text: saveBtnText,
-                click: function () {
-                    save(true);
-        }
-            }, {
-                text: cancelBtnText,
+                {
+                    text: saveBtnText,
+                    click: function () {
+                        save(true);
+                    }
+                }, {
+                    text: cancelBtnText,
                     click: function () {
                         $(dialogDiv).dialog("close");
                     }
@@ -1024,13 +1080,13 @@ function InitPopupDialog(popupDialogOptions) {
 
         if (!options.hideButtons) {
             buttons = [
-            {
-                text: saveBtnText,
-                click: function () {
-                    save(true);
-                }
-            }, {
-                text: cancelBtnText,
+                {
+                    text: saveBtnText,
+                    click: function () {
+                        save(true);
+                    }
+                }, {
+                    text: cancelBtnText,
                     click: function () {
                         $(dialogDiv).dialog("close");
                     }
@@ -1069,8 +1125,8 @@ function ajaxResultPartialView(data) {
 }
 
 /***
-* jQuery extensions
-*/
+ * jQuery extensions
+ */
 //  Load options from data
 $.fn.loadOptions = function (data, textProperty, valueProperty, blank) {
     if (textProperty == undefined) {
@@ -1232,10 +1288,10 @@ $.fn.completeRequired = function () {
         }
         else {
             if ($(this).children('.complete-required-indicator').length == 0) {
-                $(this).append('<span class="ui-hide complete-required-title">This field is required to save.</span><span class="complete-required-indicator" title="This field is required to save." aria-hidden="true" role="presentation">*</span>');
+                $(this).append('<span class="complete-required-indicator" title="This field is required to save." aria-hidden="true" role="presentation">*</span><span class="ui-hide complete-required-title">This field is required to save.</span>');
             }
         }
-    });     
+    });
 };
 
 //$.fn.selectionRequired = function () {
@@ -1259,12 +1315,26 @@ $.fn.selectionRequired = function () {
         }
         else {
             if ($(this).children('[class*="-indicator"]').length == 0) {
-                $(this).append('<span class="ui-hide complete-required-title">At least one selection is required to save.</span><span class="complete-required-indicator" title="At least one selection is required to save." aria-hidden="true" role="presentation">*</span>');
+                $(this).append('<span class="complete-required-indicator" title="At least one selection is required to save." aria-hidden="true" role="presentation">*</span><span class="ui-hide complete-required-title">At least one selection is required to save.</span>');
             }
         }
     });
 };
-
+$.fn.selectionAssignRequired = function () {
+    return this.each(function () {
+        if (!$(this).hasClass("selection-assign-required")) {
+            if ($(this).children('.complete-required-indicator').length == 1) {
+                $(this).children('span.complete-required-indicator').remove();
+                $(this).children('span.complete-required-title').remove();
+            }
+        }
+        else {
+            if ($(this).children('[class*="-indicator"]').length == 0) {
+                $(this).append('<span class="complete-required-indicator" title="At least one selection is required to assign." aria-hidden="true" role="presentation">*</span><span class="ui-hide complete-required-title">At least one selection is required to assign.</span>');
+            }
+        }
+    });
+};
 $.fn.completeToSubmitRequired = function () {
     return this.each(function () {
         if (!$(this).hasClass("complete-required")) {
@@ -1275,7 +1345,7 @@ $.fn.completeToSubmitRequired = function () {
         }
         else {
             if ($(this).children('.submit-required-indicator').length == 0) {
-                $(this).append('<span class="ui-hide submit-required-title">This field is required to submit.</span><span class="submit-required-indicator" title="This field is required to submit." aria-hidden="true" role="presentation">**</span>');
+                $(this).append('<span class="submit-required-indicator" title="This field is required to submit." aria-hidden="true" role="presentation">**</span><span class="ui-hide submit-required-title">This field is required to submit.</span>');
             }
         }
     });
@@ -1291,7 +1361,7 @@ $.fn.submitRequired = function () {
         }
         else {
             if ($(this).children('.submit-required-indicator').length == 0) {
-                $(this).append('<span class="ui-hide submit-required-title">This field is required to submit.</span><span class="submit-required-indicator" title="This field is required to submit." aria-hidden="true" role="presentation">**</span>');
+                $(this).append('<span class="submit-required-indicator" title="This field is required to submit." aria-hidden="true" role="presentation">**</span><span class="ui-hide submit-required-title">This field is required to submit.</span>');
             }
         }
     });
@@ -1303,7 +1373,7 @@ $.fn.submitRequired = function () {
 //            $(this).addClass("section-submit-required");
 //        }
 //        if ($(this).hasClass('section-submit-required')) {
-//            $(this).append('<span class="ui-hide submit-required-title">Completion of this section is required to submit.</span><span class="section-submit-required-indicator" title="Completion of this section is required to submit.">**</span>');
+//            $(this).append('<span class="section-submit-required-indicator" title="Completion of this section is required to submit.">**</span><span class="ui-hide submit-required-title">Completion of this section is required to submit.</span>');
 //        }
 //    });
 //};
@@ -1318,7 +1388,7 @@ $.fn.sectionSubmitRequired = function () {
         }
         else {
             if ($(this).children('.section-submit-required-indicator').length == 0) {
-                $(this).append('<span class="ui-hide section-submit-required-title">Completion of this section is required to submit.</span><span class="section-submit-required-indicator" title="Completion of this section is required to submit." aria-hidden="true" role="presentation">**</span>');
+                $(this).append('<span class="section-submit-required-indicator" title="Completion of this section is required to submit." aria-hidden="true" role="presentation">**</span><span class="ui-hide section-submit-required-title">Completion of this section is required to submit.</span>');
             }
         }
     });
@@ -1335,7 +1405,7 @@ $.fn.selectionSubmitRequired = function () {
         }
         else if ($(this).children('.submit-required-indicator').length == 0) {
             $(this).addClass('submit-required');
-            $(this).append('<span class="ui-hide submit-required-title">At least one selection is required to submit.</span><span class="submit-required-indicator" title="At least one selection is required to submit." aria-hidden="true" role="presentation">**</span>');
+            $(this).append('<span class="submit-required-indicator" title="At least one selection is required to submit." aria-hidden="true" role="presentation">**</span><span class="ui-hide submit-required-title">At least one selection is required to submit.</span>');
         }
     });
 };
@@ -1350,7 +1420,7 @@ $.fn.selectionSubmitRequired = function () {
 //        }
 //        else {
 //            if ($(this).children('.submit-required-indicator').length == 0) {
-//                $(this).append('<span class="ui-hide submit-required-title">At least one selection is required to submit.</span><span class="submit-required-indicator" title="At least one selection is required to submit." aria-hidden="true" role="presentation">**</span>');
+//                $(this).append('<span class="submit-required-indicator" title="At least one selection is required to submit." aria-hidden="true" role="presentation">**</span><span class="ui-hide submit-required-title">At least one selection is required to submit.</span>');
 //            }
 //        }
 //    });
@@ -1377,7 +1447,7 @@ $.fn.filterRequired = function () {
         }
         else {
             if ($(this).children('.filter-required-indicator').length == 0) {
-                $(this).append('<span class="ui-hide filter-required-title">Selection required to apply filter.</span><span class="filter-required-indicator" title="Selection required to apply filter." aria-hidden="true" role="presentation">*</span>');
+                $(this).append('<span class="filter-required-indicator" title="Selection required to apply filter." aria-hidden="true" role="presentation">*</span><span class="ui-hide filter-required-title">Selection required to apply filter.</span>');
             }
         }
     });
@@ -1429,7 +1499,9 @@ function requiredToSaveAndSubmitByParent(parent) {
 //This function will re-size an input text field depending on the amount of characters in the field.
 
 function dynamicTextboxWidth(textBox) {
-        var charCount = textBox.val().length;
+    if (textBox.not('[input-resize-enabled]')) {
+        var charCount = textBox.val() ? textBox.val().length : 0;
+        textBox.attr('input-resize-enabled', true);
         if (charCount < 26) {
             textBox.removeClass('textbox-medium');
             textBox.removeClass('textbox-large');
@@ -1444,29 +1516,80 @@ function dynamicTextboxWidth(textBox) {
             textBox.removeClass('textbox-large');
             textBox.addClass('textbox-large');
         }
+    }
 }
 
 //This function will re-size a select input depending on the amount of characters in the field.
 function dynamicSelectWidth(select) {
-    var charCount = select.find('option:selected').text().length;
-    if (charCount < 26) {
-        select.removeClass('selector-medium');
-        select.removeClass('selector-large');
-    }
-    else if (charCount >= 26 && charCount < 44) {
-        select.removeClass('selector-medium');
-        select.removeClass('selector-large');
-        select.addClass('selector-medium');
-    }
-    else if (charCount >= 44) {
-        select.removeClass('selector-medium');
-        select.removeClass('selector-large');
-        select.addClass('selector-large');
+    if (select.not('[input-resize-enabled]')) {
+        var charCount = select.find('option:selected').text().length;
+        select.attr('input-resize-enabled', true);
+        if (charCount < 26) {
+            select.removeClass('selector-medium');
+            select.removeClass('selector-large');
+        }
+        else if (charCount >= 26 && charCount < 44) {
+            select.removeClass('selector-medium');
+            select.removeClass('selector-large');
+            select.addClass('selector-medium');
+        }
+        else if (charCount >= 44) {
+            select.removeClass('selector-medium');
+            select.removeClass('selector-large');
+            select.addClass('selector-large');
+        }
     }
 }
+
+//Re-size TextAreas based on character length.
+function dynamicTextAreaWidth(textarea) {
+    if (textarea.not('[input-resize-enabled]')) {
+        var charCount = textarea.val() ? textarea.val().length : 0;
+        textarea.attr('input-resize-enabled', true);
+
+        if (textarea.width() < 500) {
+            var lineBreak = (textarea.val().split('\n').length - 1) * 75;
+
+            if ((charCount + lineBreak) < 150) {
+                textarea.removeClass('textarea-medium');
+                textarea.removeClass('textarea-large');
+            }
+            else if ((charCount + lineBreak) >= 151 && (charCount + lineBreak) < 400) {
+                textarea.removeClass('textarea-medium');
+                textarea.removeClass('textarea-large');
+                textarea.addClass('textarea-medium');
+            }
+            else if ((charCount + lineBreak) >= 401) {
+                textarea.removeClass('textarea-medium');
+                textarea.removeClass('textarea-large');
+                textarea.addClass('textarea-large');
+            }
+        } else {
+            var lineBreak = (textarea.val().split('\n').length - 1) * 200;
+
+            if ((charCount + lineBreak) < 275) {
+                textarea.removeClass('textarea-medium');
+                textarea.removeClass('textarea-large');
+            }
+            else if ((charCount + lineBreak) >= 276 && (charCount + lineBreak) < 700) {
+                textarea.removeClass('textarea-medium');
+                textarea.removeClass('textarea-large');
+                textarea.addClass('textarea-medium');
+            }
+            else if ((charCount + lineBreak) >= 701) {
+                textarea.removeClass('textarea-medium');
+                textarea.removeClass('textarea-large');
+                textarea.addClass('textarea-large');
+            }
+        }
+    }
+}
+
+
 function initInputResize() {
     $('.workspace-content-container input[type=text]:not(.textbox-small), .searchspace-content-container-one input[type=text]:not(.textbox-small), input[type=text].input-auto-resize').keyup();
     $('.workspace-content-container select:not(.selector-small), .searchspace-content-container-one select:not(.selector-small), select.input-auto-resize').change();
+    $('.workspace-content-container textarea.comments-textarea').keyup;
 };
 
 function deleteConfirm(url, msg) {
@@ -1509,31 +1632,32 @@ function initDotDotDot(selector, maxHeight) {
     $(selector).css('max-height', startingHeight + 'px');
 
     $(selector).dotdotdot(
-		{
-		    callback: function (isTruncated, orgContent) {
-		        if (isTruncated) {
-		            var me = $(this);
-		            me.wrap("<div style='position:relative; padding-bottom:10px; padding-right:15px'/>");
-		            me.after('<div class="plusMinus plus"></div>');
-		            var plusMinus = $(this).siblings('.plusMinus');
-		            plusMinus.toggle(function () {
-		                plusMinus.removeClass('plus').addClass('minus');
-		                $('.minus').attr({ title: 'Collapse text area', tabindex: '0' });
-		                me.parent().css('max-height', 'auto');
-		                me.css('max-height', 'none');
-		                me.trigger('destroy');
-		            }, function () {
-		                plusMinus.removeClass('minus').addClass('plus');
-		                $('.plus').attr({ title: 'Expand text area', tabindex: '0' });
-		                me.parent().css('height', 'auto');
-		                me.css('max-height', startingHeight + 'px');
-		                me.dotdotdot();
-		            });
-		        }
-		        //console.log($(this));
-		    }
-		}
-	);
+        {
+            callback: function (isTruncated, orgContent) {
+                if (isTruncated) {
+                    var me = $(this);
+                    me.wrap("<div style='position:relative; padding-bottom:10px; padding-right:15px'/>");
+                    if (me.siblings().length == 0)
+                        me.after('<div class="plusMinus plus"></div>');
+                    var plusMinus = $(this).siblings('.plusMinus');
+                    plusMinus.toggle(function () {
+                        plusMinus.removeClass('plus').addClass('minus');
+                        $('.minus').attr({ title: 'Collapse text area', tabindex: '0' });
+                        me.parent().css('max-height', 'auto');
+                        me.css('max-height', 'none');
+                        me.trigger('destroy');
+                    }, function () {
+                        plusMinus.removeClass('minus').addClass('plus');
+                        $('.plus').attr({ title: 'Expand text area', tabindex: '0' });
+                        me.parent().css('height', 'auto');
+                        me.css('max-height', startingHeight + 'px');
+                        me.dotdotdot();
+                    });
+                }
+                //console.log($(this));
+            }
+        }
+    );
 }
 
 function getLocalStorageObject(name) {
@@ -1547,15 +1671,15 @@ function getLocalStorageObject(name) {
 
 function setLocalStorageObject(name, obj) {
     if (JSON.stringify(obj)) {
-    localStorage[name] = JSON.stringify(obj);
-}
+        localStorage[name] = JSON.stringify(obj);
+    }
 }
 
 function getSessionStorageObject(name) {
     if (sessionStorage[name]) {
         return JSON.parse(sessionStorage[name]);
     }
-    
+
     return undefined;
 }
 
@@ -1819,14 +1943,14 @@ function decryptAssessmentObj(stdAssessments, aferDecryptedCallback) {
 //referrance url http://wangli1314666.blog.163.com/blog/static/23331789201092321619860/
 function number_format(number, decimals, dec_point, thousands_sep) {
     var n = !isFinite(+number) ? 0 : +number,
-         prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
-         sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
-         dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
-         s = '',
-         toFixedFix = function (n, prec) {
-             var k = Math.pow(10, prec);
-             return '' + Math.round(n * k) / k;
-         };
+        prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+        sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+        dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+        s = '',
+        toFixedFix = function (n, prec) {
+            var k = Math.pow(10, prec);
+            return '' + Math.round(n * k) / k;
+        };
     // Fix for IE parseFloat(0.55).toFixed(0) = 0;   
     s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
     if (s[0].length > 3) {
@@ -1880,33 +2004,38 @@ function clearFormErrors(element) {
     $(element).find('span.field-validation-error').find('label').remove();
     $(element).find('span.field-validation-error').removeClass('field-validation-error')
         .addClass('field-validation-valid').removeAttr('role');
-    
+
     $(element).find('.input-validation-error').removeClass('input-validation-error').removeAttr('aria-invalid').removeAttr('aria-required');
 
     $(element).find('span.error').remove();
 }
 
-    $(document).ready(function () {
-        $('.tableRowEdit').prepend('<span class="offset-hidden">Editing</span>')
-    });
+$(document).ready(function () {
+    $('.tableRowEdit').prepend('<span class="offset-hidden">Editing</span>')
+});
 
 function resizeFixedWorkarea() {
     if ($('.js-workarea-panel').length == 1) {
         if ($('.fieldset-container-searcharea').length == 1) {
-        $('.LeftNav-Fixed-Workarea').css('top', $('.js-workarea-panel').height());
-        } 
+            $('.LeftNav-Fixed-Workarea').css('top', $('.js-workarea-panel').height());
+        }
         else {
-        $('.LeftNav-Fixed-Workarea').css('top', $('.js-workarea-panel').height() + 10);
-        } 
+            $('.LeftNav-Fixed-Workarea').css('top', $('.js-workarea-panel').height() + 10);
+        }
     }
     if ($('.workspacenav-container').length == 1) {
         $('.fullworkspace-content-container').css('top', $('.workspacenav-container').height());
     }
 
-    if ($('.search-doubleRow-popup').length > 0) {
-        $('.search-doubleRow-popup').each(function() {
-            var newHeight = $(this).siblings('.js-workarea-panel').height() + 20;
-            $(this).find('.dataTable-summarylist-style').css('margin-top', newHeight);
+    if ($('.search-doubleRow-popup').length > 0 && $('.js-workarea-panel').length > 0) {
+        $('.search-doubleRow-popup').each(function () {
+            if ($(this).siblings('.js-workarea-panel').length > 0) {
+                var workareaPanelHeight = $(this).siblings('.js-workarea-panel').outerHeight();
+                var newTableMargin = workareaPanelHeight + 20;
+                var newTableContainerHeight = $(this).parents('[class*="-content"]').first().outerHeight() - workareaPanelHeight - 16;
+                $(this).find('.dataTable-summarylist-style').css('margin-top', newTableMargin);
+                $(this).css('height', newTableContainerHeight);
+            }
         });
     }
 }
@@ -1991,7 +2120,7 @@ function setFullscreenButton(select) {
                 'left': offsetLeftOrigin
             }, 500, "easeOutCirc");
 
-            setTimeout(function() {
+            setTimeout(function () {
                 $("#mainHeader-MenuBar").css("z-index", "9999");
                 $("#ltss-mainmenu").css("z-index", "99");
             }, 500);
@@ -2063,7 +2192,7 @@ function setupAnchorMenu(parentContainer, section) {
                 $('.anchor-groupcontainer .leftnav-sublink li').each(function () {
                     if ($(this).prevAll('.first-active').length > 0 && $(this).nextAll('.last-active').length > 0) {
                         $(this).addClass('active');
-            }
+                    }
                 });
             }
 
@@ -2114,16 +2243,16 @@ function setupAnchorMenu(parentContainer, section) {
         }
 
         (function () {
-            $(section).each(function() {
+            $(section).each(function () {
                 var sectionName = $(this).attr('id');
-                $('.anchor-groupcontainer li a[name=' + sectionName + ']').click(function() {
+                $('.anchor-groupcontainer li a[name=' + sectionName + ']').click(function () {
                     ltssPanelBar.expand("#" + sectionName);
                     location.hash = "#" + sectionName;
                     $("#" + sectionName).find(".iform-fieldset").first().focus();
                     $("#" + sectionName)[0].scrollIntoView();
                     return false;
                 });
-                $('.anchor-groupcontainer .leftnav-sublink a[name=' + sectionName + ']').click(function() {
+                $('.anchor-groupcontainer .leftnav-sublink a[name=' + sectionName + ']').click(function () {
                     var panelBarName = $("#" + sectionName).parents(".panel").first().attr("id");
                     ltssPanelBar.expand("#" + panelBarName);
                     location.hash = "#" + panelBarName;
@@ -2138,7 +2267,7 @@ function setupAnchorMenu(parentContainer, section) {
 
 function backupAssessment(assessmentId, mode, key) {
     var assessmentsObj = getLocalStorageObject(key);
-    
+
     if (key = localstoragekeys.interRaiAssessment) {
         key = localstoragekeys.backupStdAssessments;
     } else if (key = localstoragekeys.nurseMonitoring) {
@@ -2146,7 +2275,7 @@ function backupAssessment(assessmentId, mode, key) {
     } else {
         showErrorMessage("backup localstorage key error. Please contact developer.");
     }
-    
+
     var backedUpAssessment = assessmentsObj[assessmentId];
 
     var backupStdAssessments;
@@ -2181,7 +2310,7 @@ function backupAssessment(assessmentId, mode, key) {
     }
     else {
         backedUpAssessment.backupMode = "Save";
-        
+
         var idx = isBackupExists(assessmentId);
 
         if (idx > -1) {
@@ -2202,6 +2331,62 @@ function highlightTd(selector) {
 }
 function removeHighlightTd() {
     $('.tableRowHighlight').removeClass('tableRowHighlight');
+}
+
+function icapAssessmentRefreshOffline(refreshOfflineUrl, offlineAssessmentListUrl) { // get called through callRefreshOffline
+    $.getJSON(refreshOfflineUrl,
+        function (result) {
+            HandleAjaxResult(result, function () {
+                var icapAssessmentJson = result.data;
+                var icapAssessmentObjs = JSON.parse(icapAssessmentJson);
+
+                var serverIcapAssessmentObjs = icapAssessmentObjs;
+
+                var lsIcapAssessmentsObj;
+                lsIcapAssessmentsObjNew = {};
+                if (localStorage[localstoragekeys.icapAssessment]) {
+                    lsIcapAssessmentsObj = JSON.parse(localStorage[localstoragekeys.icapAssessment]);
+                } else {
+                    lsIcapAssessmentsObj = {};
+                }
+
+                function ServerContains(icapAssessmentId) {
+                    for (var i = 0; i < serverIcapAssessmentObjs.length; i++) {
+                        if (icapAssessmentId == serverIcapAssessmentObjs[i].IcapAssessment.Id) {
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+
+                //clear orphaned assessment
+                for (prop in lsIcapAssessmentsObj) {
+                    if (lsIcapAssessmentsObj.hasOwnProperty(prop)) {
+                        if (!ServerContains(prop)) {
+                            delete lsIcapAssessmentsObj[prop];
+                        }
+                    }
+                }
+                if (icapAssessmentObjs.length > 0) {
+                    for (var index = 0; index < icapAssessmentObjs.length; index++) {
+                        var icapAssessmentObj = icapAssessmentObjs[index];
+                        if (lsIcapAssessmentsObj[icapAssessmentObj.IcapAssessment.Id]) {
+                            lsIcapAssessmentsObjNew[icapAssessmentObj.IcapAssessment.Id] = lsIcapAssessmentsObj[icapAssessmentObj.IcapAssessment.Id];
+                            continue;
+                        } else {
+                            fixDates(icapAssessmentObj);
+                            lsIcapAssessmentsObjNew[icapAssessmentObj.IcapAssessment.Id] = icapAssessmentObj;
+                        }
+                    }
+                    localStorage.removeItem(localstoragekeys.icapAssessment);
+                    localStorage[localstoragekeys.icapAssessment] = JSON.stringify(lsIcapAssessmentsObjNew);
+                    showSuccessMessage("Offline ICAP Assessments refreshed.");
+                    window.location = offlineAssessmentListUrl;
+                } else {
+                    showErrorMessage("You do not have any prepared offline ICAP Assessments.");
+                }
+            });
+        });
 }
 
 function assessmentRefreshOffline(refreshOfflineUrl, offlineAssessmentListUrl) { // get called through callRefreshOffline
@@ -2260,7 +2445,7 @@ function assessmentRefreshOffline(refreshOfflineUrl, offlineAssessmentListUrl) {
             }
         });
 
-  
+
 }
 
 function nurseMonitoringRefreshOffline(refreshOfflineUrl, downloadLink, redirectUrl) { // get called through callRefreshOffline
@@ -2374,24 +2559,24 @@ function downloadNurseMonitoringProcess(processId, clientId, downloadLink) {
                 if (typeof (lsStaffInfo) == "undefined") { // no staff defined.
                     lsStaffInfo = {};
                 }
-               
-                    lsStaffInfo.StaffId = viewModel.StaffInfo.StaffId;
-                    lsStaffInfo.StaffName = viewModel.StaffInfo.StaffName;
-                    lsStaffInfo.StaffPhone = processObj.CaseMonitorPhoneNumbers;
-                    //lsStaffInfo.permission = {
-                    //    "nurseMonitoring": processObj.NurseMonitoringOfflinePermission,
-                    //    "interRAI": processObj.InterRaiOfflinePermission
-                    //};
+
+                lsStaffInfo.StaffId = viewModel.StaffInfo.StaffId;
+                lsStaffInfo.StaffName = viewModel.StaffInfo.StaffName;
+                lsStaffInfo.StaffPhone = processObj.CaseMonitorPhoneNumbers;
+                //lsStaffInfo.permission = {
+                //    "nurseMonitoring": processObj.NurseMonitoringOfflinePermission,
+                //    "interRAI": processObj.InterRaiOfflinePermission
+                //};
 
                 setLocalStorageObject(localstoragekeys.staffInfo, lsStaffInfo);
 
                 showSuccessMessage("Assessment successfully downloaded", 2000);
             }
         }
-        });
+    });
 }
 
-  
+
 function pushMessageToSessionStorage(content, type, id) {
     var messages = getSessionStorageObject(localstoragekeys.messageNestPage);
     if (typeof (messages) == "undefined") {
@@ -2429,9 +2614,16 @@ function popMessageFromSessionStorage(id, time) {
             }
         }
         setSessionStorageObject(localstoragekeys.messageNestPage, messages);
-}
+    }
 }
 
+function updateCollapsibleRowHighlighting($selector) {
+    $selector.not('.parent-child-table').each(function () {
+        if (!$(this).prevAll('tr').not('.parent-child-table').first().hasClass("alternate-row")) {
+            $(this).addClass("alternate-row");
+        };
+    });
+}
 function fixDates(obj) {
     for (var prop in obj) {
         if (obj.hasOwnProperty(prop)) {
@@ -2439,7 +2631,7 @@ function fixDates(obj) {
                 fixDates(obj[prop]);
             }
             else {
-                var patt = /\/Date\((\d+)\)\//
+                var patt = /\/Date\((-?\d+)\)\//;
                 if (typeof obj[prop] == "string" && obj[prop].match(patt)) {
                     obj[prop] = new Date(parseInt(obj[prop].match(patt)[1]));
                 }
@@ -2500,6 +2692,15 @@ function getPlatform() {
     }
 }
 
+function getIcapAssessmentCount() {
+    var length = 0;
+    if (localStorage[localstoragekeys.icapAssessment]) {
+        for (var i in JSON.parse(localStorage[localstoragekeys.icapAssessment]))
+            length++;
+    }
+    return length;
+}
+
 function getAssessmentCount() {
     var length = 0;
     if (localStorage[localstoragekeys.interRaiAssessment]) {
@@ -2514,30 +2715,41 @@ function getNurseMonitoringCount() {
     if (localStorage[localstoragekeys.nurseMonitoring]) {
         for (var i in getLocalStorageObject(localstoragekeys.nurseMonitoring)) {
             length++;
-    }
+        }
     }
     return length;
-}
-
-function resizeKendoWindow() {
-
-    var windowHeight = $(window).height() * .6;
-    var kWindowContent = $('.k-window-content:visible').children().first().height();
-    if (kWindowContent > windowHeight) {
-        $('.k-window-content:visible').parent(".k-window").css({ "height": "75%" })       
-    }
-    else {
-        $('.k-window-content:visible').parent(".k-window").css({ "height": "auto" })        
-    }
 }
 
 function initCheckForErrors(form) {
     form.valid();
 
-    $('.submit-required').each(function (idx, el) {
-        if (!$(this).attr('dataval') || $(this).attr('dataval') === "" && !$('#' + $(this).attr('for')).is(":disabled")) {
-            var parent = $(this).closest('.iform-fieldset, .row');
-            parent.addClass('errorBox');
+    $('.submit-required:visible, .selection-submit-required:visible').each(function (idx, el) {
+        //if (!$(this).attr('dataval') || $(this).attr('dataval') === "" && !$('#' + $(this).attr('for')).is(":disabled")) {
+        //    var parent = $(this).closest('.iform-fieldset, .row');
+        //    parent.addClass('errorBox');
+        //}
+
+        var parent = $(this).closest('.iform-fieldset');
+        if (!$('#' + $(this).attr('for')).is(":disabled")) {
+            if ($(this).attr('dataval') && $(this).attr('dataval') != "") {
+                return true;
+            }
+            else {
+                var firstInput = parent.find(':input:visible').first();
+
+                if (firstInput.is(':radio, :checkbox')) {
+                    var groupName = firstInput.attr('name');
+
+                    if ($('[name="' + groupName + '"]:checked').length == 0) {
+                        parent.addClass('errorBox');
+                    }
+                }
+                else if (firstInput.is(':text, textarea, select')) {
+                    if (firstInput.val() == "") {
+                        parent.addClass('errorBox');
+                    }
+                }
+            }
         }
     });
 
@@ -2549,7 +2761,7 @@ function initCheckForErrors(form) {
 
     showErrorMessage("There are errors in this section that prevent submission.", { attribute: { name: "replaceTag", value: "checkErrorForElement" } });
 
-    $('input[type=radio], select, input[type=text], textarea').change(function () {
+    $('input[type=radio], input[type=checkbox], select, input[type=text], textarea').change(function () {
         checkErrorsForElement($(this), form);
     });
 
@@ -2583,31 +2795,64 @@ function initCheckForErrors(form) {
 
 function checkErrorsForElement(el, form) {
     var element = el;
-
+    var isValid = false;
     var iFormParent = element.parents('.iform-fieldset').first();
     var rowParent = element.parents('.row').first();
 
-    var parent = iFormParent[0] ? iFormParent : rowParent;
-    if (parent.find('.submit-required').length > 0) {
-        if (element.val() != "" || (element.attr('ko-val') && eval(element.attr('ko-val')) != null && eval(element.attr('ko-val')) != "")) {
-            if (element.attr('hasValidationError')) {
-                if (form.valid()) {
-                    element.closest('.errorBox').removeClass('errorBox');
-                }
+    //var parent = iFormParent[0] ? iFormParent : rowParent;
+    var parent = $(element).parents('.iform-fieldset').first();
+    if (rowParent.find('.submit-required, .selection-submit-required').length > 0 || iFormParent.find('.submit-required, .selection-submit-required').length > 0) {
+        if ($(element).is(':radio, :checkbox')) {
+            var groupName = $(element).attr('name');
+
+            if ($('[name="' + groupName + '"]:checked').length == 0) {
+                isValid = false;
             }
             else {
-                element.closest('.errorBox').removeClass('errorBox');
+                isValid = true;
             }
+        }
+        else if ($(element).is(':text, textarea, select')) {
+            if ($(element).val() == "") {
+                isValid = false;
+            }
+            else {
+                isValid = true;
+            }
+        }
 
+        if (isValid) {
+            parent.removeClass('errorBox');
             form.valid();
-        } else {
+        }
+        else {
             parent.addClass('errorBox');
         }
 
         removeMessageByAttribute({ name: "replaceTag", value: "checkErrorForElement" });
         if ($('.errorBox:visible').length > 0) {
-            showErrorMessage("There are errors in this section that prevent submission.", {attribute: { name: "replaceTag", value: "checkErrorForElement" }});
+            showErrorMessage("There are errors in this section that prevent submission.", { attribute: { name: "replaceTag", value: "checkErrorForElement" } });
         }
+
+        //if (element.val() != "" || (element.attr('ko-val') && eval(element.attr('ko-val')) != null && eval(element.attr('ko-val')) != "")) {
+        //    if (element.attr('hasValidationError')) {
+        //        if (form.valid()) {
+        //            element.closest('.errorBox').removeClass('errorBox');
+        //        }
+        //    }
+        //    else {
+        //        element.closest('.errorBox').removeClass('errorBox');
+        //    }
+
+        //    form.valid();
+        //} else {
+        //    parent.addClass('errorBox');
+        //}
+
+        //removeMessageByAttribute({ name: "replaceTag", value: "checkErrorForElement" });
+        //if ($('.errorBox:visible').length > 0) {
+        //    showErrorMessage("There are errors in this section that prevent submission.", { attribute: { name: "replaceTag", value: "checkErrorForElement" } });
+        //}
     }
 }
 
@@ -2617,15 +2862,15 @@ $(function () {
         for (idx in messages) {
             if (!messages[idx].Id) {
                 switch (messages[idx].type) {
-                case "success":
-                    showSuccessMessage(messages[idx].content, 5000);
-                    break;
-                case "error":
-                    showErrorMessage(messages[idx].content, 5000);
-                    break;
-                case "info":
-                    showInfoMessage(messages[idx].content, 5000);
-                    break;
+                    case "success":
+                        showSuccessMessage(messages[idx].content, 5000);
+                        break;
+                    case "error":
+                        showErrorMessage(messages[idx].content, 5000);
+                        break;
+                    case "info":
+                        showInfoMessage(messages[idx].content, 5000);
+                        break;
                 }
                 messages.splice(idx, 1);
             }
@@ -2680,7 +2925,7 @@ function uploadAssessment(id, uploadInterRaiUrl, uploadNurseMonitoringUrl, uploa
             assessmentObj = getLocalStorageObject(localstoragekeys.interRaiAssessment)[assessmentId];
         }
     }
-    
+
     removeNoneNeedAttributeForUpload(assessmentObj);
     removeNoneNeedAttributeForUpload(processObj);
 
@@ -2750,7 +2995,7 @@ function uploadAssessment(id, uploadInterRaiUrl, uploadNurseMonitoringUrl, uploa
                     pushMessageToSessionStorage('Assessment uploaded for ' + processObj.ClientInfo.FirstName + ' ' + processObj.ClientInfo.LastName + '.', "success");
                     removeProcess(contextSelf.ProcessInfo.Id);
                     removeAssessment(contextSelf.ProcessInfo.MarylandStandardizedAssessmentId);
-                    
+
 
                 }
 
@@ -2910,15 +3155,16 @@ function statusComment(table) {
             },
             show: {
                 solo: true,
-                event: 'click',
+                //MC 7/23/14 added mouseover focus for keyboard accessibility
+                event: 'mouseover focus click',
                 effect: function () {
-                    $(this).fadeTo(500, 1);
+                    $(this).fadeIn(500);
                 }
             },
             hide: {
-                event: 'unfocus click',
+                event: 'mouseout unfocus click',
                 effect: function () {
-                    $(this).slideUp();
+                    $(this).fadeOut(300);
                 }
             },
             position: {
@@ -2927,7 +3173,7 @@ function statusComment(table) {
             }
         });
     });
-    $(function() {
+    $(function () {
         window.onkeydown = function (e) {
             if (e.keyCode == 27) {
                 $("[data-qtip=comment]").qtip("hide");
@@ -2940,7 +3186,9 @@ $(function () {
     $("[data-qtip=default]").each(function () {
         var newTitle = "";
         var content = $(this).attr('title');
-
+        if (content == undefined || content === "") {
+            content = " ";
+        }
         if ($(this).attr('qtipHeader') !== undefined) {
             newTitle = $(this).attr('qtipHeader');
         } else {
@@ -2950,8 +3198,11 @@ $(function () {
         $(this).qtip({
             content: {
                 title: newTitle,
+                text: content,
             },
             show: {
+                //MC 7/23/14 added mouseover focus for keyboard accessibility
+                event: 'mouseover focus click',
                 button: true,
                 solo: true,
                 effect: function () {
@@ -2960,6 +3211,7 @@ $(function () {
             },
             hide: {
                 fixed: true,
+                event: 'mouseout unfocus click',
                 effect: function () {
                     $(this).fadeOut(300);
                 }
@@ -2989,8 +3241,8 @@ $(function () {
     });
 });
 
-$(function () {
-    $("[data-qtip=locked],[data-qtip=not-started],[data-qtip=in-progress],[data-qtip=completed],[data-qtip=submitted]").each(function () {
+function initQTipIcons(selectors) {
+    $(selectors).each(function () {
         var newTitle = "",
             status = $(this).attr('data-qtip').toUpperCase();
 
@@ -3028,11 +3280,11 @@ $(function () {
     $(function () {
         window.onkeydown = function (e) {
             if (e.keyCode == 27) {
-                $("[data-qtip=locked],[data-qtip=not-started],[data-qtip=in-progress],[data-qtip=completed],[data-qtip=submitted]").qtip("hide");
+                $(selectors).qtip("hide");
             }
         };
     });
-});
+}
 
 (function ($) {
     $.fn.hasScrollBar = function () {
@@ -3123,27 +3375,27 @@ function initErrorMessagesWidget() {
         }
 
         //Dismiss All Error Messages and Destroy the Widget
-        $('#closeAllMessages').on('click', function() {
+        $('#closeAllMessages').on('click', function () {
             closeErrorMessage();
             updateNotificationCount();
             $('.error-msg-container').css({ height: "40px" });
-            setTimeout(function() {
+            setTimeout(function () {
                 destroyErrorMessages();
             }, 401);
         });
 
         //Click Event Toggles Slide Animation on Error Messages Widget
-        $('.error-msg-container .messages-header').on('click', function() {
+        $('.error-msg-container .messages-header').on('click', function () {
             slideToggleErrorMessages();
         });
 
         // Click Event triggers Error Messages Widget to Pop-Out
-        $('#popOutErrorMessages').click(function() {
+        $('#popOutErrorMessages').click(function () {
             popOutErrorMessages();
         });
 
         // Keyup (Enter or Space Bar) Event triggers Error Messages Widget to Pop-Out
-        $('.error-msg-container .messages-header').on('keyup', function(event) {
+        $('.error-msg-container .messages-header').on('keyup', function (event) {
             if (event.which == 13 || event.which == 32) {
                 slideToggleErrorMessages();
             };
@@ -3160,7 +3412,7 @@ function initErrorMessagesWidget() {
     }
 
     //Dismiss individual Error Message and updated Error Count
-    $('.closeButton').on('click', function() {
+    $('.closeButton').on('click', function () {
         updateNotificationCount();
     });
 }
@@ -3191,5 +3443,174 @@ function initScrollToCenter(element, parentContainer, elementContainer) {
         var centerPosition = ($(parentContainer).scrollTop()) - ($(parentContainer).outerHeight() / 2);
         var offsetToCenter = centerPosition + elementPosition;
         $(parentContainer).animate({ scrollTop: offsetToCenter });
-    }, 200);
+    }, 250);
 }
+
+// KENDO UI specific fixes
+
+function resizeKendoWindow() {
+
+    var windowHeight = $(window).height() * .6;
+    var kWindowContent = $('.k-window-content:visible').children().first().height();
+    if ($('.k-window-content:visible').children('.js-workarea-panel') < 1 && $('.k-window-content:visible').children('.search-doublerow-popup') < 1) {
+        if (kWindowContent > windowHeight) {
+            $('.k-window-content:visible').parent(".k-window").css({ "height": "75%" })
+        }
+        else {
+            $('.k-window-content:visible').parent(".k-window").css({ "height": "auto" })
+        }
+    }
+
+}
+
+function resetCaretOnKendoPhoneInput() {
+    $('.js-phonenumber, .phone').each(function () {
+        var target = this,
+            selectText = function () {
+                target.selectionStart = 0;
+                target.selectionEnd = 999999;
+            };
+        $(target).on('focus', function () {
+            setTimeout(function () {
+                selectText();
+            }, 1);
+        });
+    });
+}
+
+(function ($) {
+
+    //re-set all client validation given a jQuery selected form or child
+    $.fn.resetValidation = function () {
+
+        var $form = this.closest('form');
+
+        //reset jQuery Validate's internals
+        $form.validate().resetForm();
+
+        //reset unobtrusive validation summary, if it exists
+        $form.find("[data-valmsg-summary=true]")
+            .removeClass("validation-summary-errors")
+            .addClass("validation-summary-valid")
+            .find("ul").empty();
+
+        //reset unobtrusive field level, if it exists
+        $.each($form.find("[data-valmsg-replace]"), function (idx, el) {
+
+            $(el).removeClass("field-validation-error")
+                .addClass("field-validation-valid")
+                .empty();
+            $(el).siblings(':input').first().removeClass('error').removeClass('input-validation-error');
+        });
+
+        return $form;
+    };
+
+    //reset a form given a jQuery selected form or a child
+    //by default validation is also reset
+    $.fn.formReset = function (resetValidation) {
+        var $form = this.closest('form');
+
+        $form[0].reset();
+
+        if (resetValidation == undefined || resetValidation) {
+            $form.resetValidation();
+        }
+
+        return $form;
+    }
+})(jQuery);
+
+/* Pass in the form instance */
+var applyCkEditorChangeValidation = function (control) {
+    CKEDITOR.on('instanceCreated', function (e) {
+        e.editor.on('change', function (event) {
+            var validator = control.validate();
+            validator.element($("#" + e.editor.name));
+        });
+    });
+}
+
+/* Pass in the CK Editor instance and message */
+var applyCkEditorRequired = function (control, msg) {
+    control.rules("add", {
+        //event: 'blur',
+        required: function (textarea) {
+            for (var i in CKEDITOR.instances) {
+                var currentInstance = i;
+                var editor = CKEDITOR.instances[currentInstance];
+                if (editor.name == textarea.id) {
+                    editor.updateElement(); // update textarea
+                    var editorcontent = textarea.value.replace(/<[^>]*>/gi, ''); // strip tags
+                    if (editorcontent.length === 0) {
+                        $('*[data-valmsg-for="' + textarea.id + '"]').show();
+                    } else {
+                        $('*[data-valmsg-for="' + textarea.id + '"]').hide();
+                    }
+                    return editorcontent.length === 0;
+                }
+            }
+            return true;
+        },
+        messages: {
+            required: msg
+        }
+    });
+}
+
+var isValidUsDate = function (value) {
+    value = String(value || '');
+    if (value.trim().length == 0) return true;
+    var matches = /^(\d{1,2})[-\/](\d{1,2})[-\/](\d{4})$/.exec(value);
+    if (matches == null) return false;
+    var d = matches[2];
+    var m = matches[1] - 1;
+    var y = matches[3];
+    var composedDate = new Date(y, m, d);
+    return composedDate.getDate() == d &&
+        composedDate.getMonth() == m &&
+        composedDate.getFullYear() == y;
+}
+
+// "\/Date(1239018869048)\/" --> actual JS date
+var getUsDateFormat = function (input) {
+    if (isValidUsDate(input)) {
+        return input || null;
+    }
+    var date = new Date(new Date(parseInt(input.replace("/Date(", "").replace(")/", ""), 10)));
+    return (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear();
+};
+
+function buildAllStatusIcons() {
+    $("a[sectionStatusClass]").each(function () {
+        buildIndividualStatusIcon($(this));
+    });
+}
+
+function buildIndividualStatusIcon($anchor) {
+    $anchor.children('[js-statusSpan]').remove();
+    var $statusSpan = $(document.createElement('span'));
+    $statusSpan.addClass($anchor.attr('sectionStatusClass'));
+    $statusSpan.attr('title', $anchor.attr('sectionStatusTitle'));
+    $statusSpan.text(" ");
+    $statusSpan.attr('js-statusSpan', true);
+    $anchor.prepend($statusSpan);
+}
+
+function buildAllStatusIcons() {
+    $("a[sectionStatusClass]").each(function () {
+        buildIndividualStatusIcon($(this));
+    });
+}
+
+function buildIndividualStatusIcon($anchor) {
+    $anchor.children('[js-statusSpan]').remove();
+    var $statusSpan = $(document.createElement('span'));
+    $statusSpan.addClass($anchor.attr('sectionStatusClass'));
+    $statusSpan.attr('title', $anchor.attr('sectionStatusTitle'));
+    $statusSpan.text(" ");
+    $statusSpan.attr('js-statusSpan', true);
+    $anchor.prepend($statusSpan);
+}
+
+

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>A Simple Page with CKEditor</title>
+        <!-- Make sure the path to CKEditor is correct. -->
+        <script src="ckeditor.js"></script>
+    </head>
+    <body>
+        <form>
+            <div style="width: 300px; min-height:200px; background-color:red" contenteditable=true>
+			
+			</div>
+            <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'editor1' );
+            </script>
+        </form>
+    </body>
+</html>

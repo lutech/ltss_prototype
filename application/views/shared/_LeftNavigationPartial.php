@@ -58,6 +58,65 @@
                         </li>
                     </ul>
                 </li>
+
+                <li>
+                    <?php echo new MenuItem("PSS", "pss", "history", "", true, false, "" , $this->uri);?>
+                    <ul>
+                        <li>
+                            <?php echo new MenuItem("Summary", "pss", "summary", "", true, true, "" , $this->uri);
+
+                            if ($this->uri->segment(2) == "medicationchangerequestreview" ||
+                                $this->uri->segment(2) == "medicationchangerequestview" ||
+                                $this->uri->segment(1) == "activitysupportplan" ){
+                                echo new MenuItem("Summary", "pss", "summary", "", true, false, "" , $this->uri);
+                            }
+                            ?>
+                            <ul>
+                                <li>
+                                    <?php echo new MenuItem("Medication Change Request", "pss", "medicationchangerequestreview", "", true, true, "" , $this->uri);?>
+                                </li>
+                                <li>
+                                    <?php echo new MenuItem("Medication Change Request", "pss", "medicationchangerequestview", "", true, true, "" , $this->uri);?>
+                                </li>
+                                <li>
+                                    <?php echo new MenuItem("Activity Support Plan Details", "activitysupportplan", "details", "", true, true, "" , $this->uri);?>
+                                </li>
+
+                            </ul>
+                        <li>
+
+<!--                        <li>-->
+<!--                            --><?php //echo new MenuItem("Activity Support Plan", "activitysupportplan", "history", "", true, true, "" , $this->uri);
+//
+//                            if ($this->uri->segment(1) == "pss" && $this->uri->segment(2) != "history" ){
+//                                echo new MenuItem("Activity Support Plan", "activitysupportplan", "history", "", true, false, "" , $this->uri);
+//                            }
+//                            ?>
+<!---->
+<!--                            <ul>-->
+<!--                                <li>-->
+<!--                                    --><?php //echo new MenuItem("Summary", "activitysupportplan", "summary", "", true, true, "" , $this->uri);
+//
+//                                    if ($this->uri->segment(1) == "activitysupportplan" &&  $this->uri->segment(2) == "details" ||
+//                                        $this->uri->segment(1) == "activitysupportplan" &&  $this->uri->segment(2) == "edit"
+//                                    )
+//                                    {
+//                                        echo new MenuItem("Summary", "activitysupportplan", "summary", "", true, false, "" , $this->uri);
+//                                    }
+//                                    ?>
+<!--                                    <ul>-->
+<!--                                        <li>-->
+<!--                                            --><?php //echo new MenuItem("Activity Support Plan Details", "activitysupportplan", "details", "", true, true, "" , $this->uri);?>
+<!--                                        </li>-->
+<!--                                        <li>-->
+<!--                                            --><?php //echo new MenuItem("Activity Support Plan Details", "activitysupportplan", "edit", "", true, true, "" , $this->uri);?>
+<!--                                        </li>-->
+<!--                                </li>-->
+<!---->
+<!--                            </ul>-->
+<!--                        </li>-->
+                    </ul>
+                </li>
             </ul>
         </li>
     </ul>

@@ -2627,3 +2627,85 @@ ul.bullet-list li {
     list-style: disc !important;
     list-style-type: disc !important;
 }
+
+
+#sidenav .left-side-nav > li > a {
+    border-bottom: 1px solid #cccccc;
+    color: #044272;
+    list-style: none;
+    font-size: 115%;
+    font-weight: bold;
+    background: transparent;
+    display: block;
+    padding: 10px 0px 10px 20px;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+
+}
+#sidenav .left-side-nav > li > a.selected {
+    background: #2b7bb4;
+    color: white;
+}
+#sidenav .left-side-nav > li > a span.ltss-icon-container.icon-arrow{
+    display : none;
+}
+#sidenav .left-side-nav > li > a:hover span.ltss-icon-container.icon-arrow{
+    background: transparent url(images/ltss-Icons-16px-blue.png) no-repeat -212px -508px;
+    display: inline-block !important;
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    margin: -8px 0px 0px 0px;
+}
+
+#sidenav .left-side-nav > li > a.selected span.ltss-icon-container.icon-arrow,
+#sidenav .left-side-nav > li > a.selected:hover span.ltss-icon-container.icon-arrow{
+    background: transparent url(images/ltss-Icons-16px-white.png) no-repeat -212px -508px;
+    display: inline-block !important;
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    margin: -8px 0px 0px 0px;
+}
+
+.icon-signout {
+    color: red !important;
+}
+
+.icon-signin {
+    color: red !important;
+}
+
+td.group > span{
+    font-weight: normal;
+    font-size: 80%;
+    margin-left: 30px;
+}
+.icon-warning-sign {
+    color: #ff9900;
+    margin-right: 3px;
+}
+.text-right {
+    text-align: right;
+}
+.icon-circle.badge {
+    vertical-align: top !important;
+    line-height: 140% !important;
+    text-align: center !important;
+    font-weight: bold !important;
+    color: white;
+}
+.icon-circle.badge:before{
+    content: "\f111";
+    color: red;
+    font-size: 140%;
+    margin-right: -12px;
+}
+.k-edit-form-container {
+    width: 100% !important;
+}
+.row textarea:not(.k-input) {
+    margin-left: 5px;
+    width: 97%;
+}

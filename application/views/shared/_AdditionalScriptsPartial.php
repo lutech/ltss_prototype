@@ -823,8 +823,8 @@
 
     }
 
-    $(".panelbar-formheader-style, .panelbar-form-style").panelBar();
-    ltssPanelBar.setup(".panelbar-formheader-style, .panelbar-form-style");
+    $(".panelbar-formheader-style, .panelbar-form-style, .panelbar-task-style").panelBar();
+    ltssPanelBar.setup(".panelbar-formheader-style, .panelbar-form-style, .panelbar-task-style");
 
     function newMessage(){
         $( "#newMessage" ).dialog({
