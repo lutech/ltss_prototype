@@ -8,5 +8,7 @@ echo new TabMenuItem("Alerts", "alerts", "index", "alerts-icon", false,  $this->
 echo new TabMenuItem("Dashboard", "dashboard", "index", "dashboard-icon", false,  $this->uri);
 echo new TabMenuItem("Assignments", "assignments", "index", "client-match-icon", false,  $this->uri);
 echo new TabMenuItem("Reports", "reports", "index", "reports-icon", false,  $this->uri);
+echo new TabMenuItem("Contact Notes", "contactNotes", "index", "client-match-icon", false,  $this->uri);
+//echo new TabMenuItem("New Contact", "contactNotes", "", "client-match-icon", true,  $this->uri);
 
 ?>

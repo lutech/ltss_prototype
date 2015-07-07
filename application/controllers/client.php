@@ -49,5 +49,37 @@
 		}
 		
 	}
+
+    public function newclientprofile( $area = 'client', $page = 'newclientprofile', $layout= '_ClientLayoutView', $topnavtab = 'client') {
+
+        if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
+        {
+            show_404();
+        }
+
+        $data['layout'] = $layout;
+        $data['page'] = $page;
+        $data['area'] = $area;
+        $this->load->helper('url');
+        $data['_breadcrumbarea'] = $this->load->view('shared/_ClientProfileBreadCrumbPartial.php', $data, true);
+        $data['_leftnavigation'] = $this->load->view('shared/_LeftNavigationPartial.php', $data, true);
+        $this->load->view("shared/_MasterLayout.php", $data);
+    }
+
+    public function manageAddress( $area = 'client', $page = 'manageAddress', $layout= '_ClientLayoutView', $topnavtab = 'client') {
+
+        if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
+        {
+            show_404();
+        }
+
+        $data['layout'] = $layout;
+        $data['page'] = $page;
+        $data['area'] = $area;
+        $this->load->helper('url');
+        $data['_breadcrumbarea'] = $this->load->view('shared/_ClientProfileBreadCrumbPartial.php', $data, true);
+        $data['_leftnavigation'] = $this->load->view('shared/_LeftNavigationPartial.php', $data, true);
+        $this->load->view("shared/_MasterLayout.php", $data);
+    }
 	
 }

@@ -27,5 +27,4 @@
 		$this->load->view("shared/_MasterLayout.php", $data);
 	}
 	
-	
 }

@@ -75,3 +75,6 @@
 </div>
 <div style="clear: both;">
 </div>
+
+<?php require "application/views/shared/_ProgramSelectionDialog.php"; ?>
+

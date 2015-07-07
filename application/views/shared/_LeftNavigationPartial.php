@@ -5,6 +5,9 @@
             <span class="leftNavHeader"><?php echo $_COOKIE["CommonLabel_Clients_Ownership"]; ?> Profile</span>
             <ul class="leftnav-groupcontainer" style="display: none;">
                 <li>
+                    <?php echo new MenuItem("New Profile", "client", "newclientprofile", "", true, false, "" , $this->uri);?>
+                </li>
+                <li>
                     <?php echo new MenuItem("Overview", "client", "clientprofilesummary", "", true, false, "" , $this->uri);?>
                 </li>
                 <li>
@@ -28,16 +31,45 @@
         </li>
         <!-- Sample Menu - Copy and Paste as Needed -->
         <li>
-            <span class="leftNavHeader">Sample Menu 1</span>
+            <span class="leftNavHeader">Waivers</span>
             <ul class="leftnav-groupcontainer" style="display: none;">
                 <li>
-                    <?php echo new MenuItem("Sample Menu Item 1", "sample", "index", "", false, false, "" , $this->uri);?>
+                    <?php echo new MenuItem("Personal Record", "pr", "history", "", false, false, "" , $this->uri);?>
+                    <ul>
+                        <li>
+                            <?php echo new MenuItem("Summary", "pr", "summary", "", false, false, "" , $this->uri);?>
+                            <ul>
+                                <li>
+                                    <?php echo new MenuItem("Social History", "pr", "socHist", "", false, false, "" , $this->uri);?>
+                                    <ul>
+                                        <li>
+                                            <?php echo new MenuItem("F. Family Information", "pr", "familyInfo", "", true, false, "" , $this->uri);?>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <?php echo new MenuItem("PSS", "pss", "history", "", true, false, "" , $this->uri);?>
+                    <ul>
+                        <li>
+                            <?php echo new MenuItem("Summary", "pss", "summary", "", true, "enableforchildnode", "" , $this->uri);?>
+                            <ul>
+                                <li>
+                                    <?php echo new MenuItem("Overview Information", "pss", "overview", "", true, "enableforchildnode", "" , $this->uri);?>
+                                </li>
+                            </ul>
+
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </li>
     </ul>
 </div>
 
-/<!-- Menu Item Arguments
+<!-- Menu Item Arguments
 MenuItem( Friendly Label [string], Controller [string], Action [string], Icon Class [string], Clickable? [bool], Hidden Unless Active? [bool], Functions/Scripts [string], URI [Do Not Change]  )
 -->

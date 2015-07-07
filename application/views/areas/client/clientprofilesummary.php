@@ -14,7 +14,159 @@
 <div class="panelbar-formheader-style genericform-style read-only">
     <div class="panel">
         <div class="header">
-            <h4>'.$_COOKIE["CommonLabel_Clients_Ownership"].' Demographics</h4>
+            <h4>Demographic Information</h4>
+            <div class="form-action TaskDetailLink">
+                <a href="#">Edit</a>
+            </div>
+        </div>
+        <div class="body">
+            <div class="form-panelbar-content">
+                <fieldset class="fieldset-container-one">
+            <legend class="legend-header-one">'.$_COOKIE["CommonLabel_Clients_Ownership"].' Information</legend>
+                    <div class="row">
+                        <label class="complete-required">Last Name:</label>
+                        <input type="text" value="Smith" class="readonly"/>
+                    </div>
+                    <div class="row">
+                        <label class="complete-required">First Name:</label>
+                        <input type="text" value="Cicio" class="readonly"/>
+                    </div>
+                    <div class="row">
+                    <label class="complete-required">Middle Name:</label>
+                    <input type="text" value="Alfred" class="readonly" />
+                </div>
+                    <div class="row">
+                        <label>Suffix:</label>
+                        <input type="text" value="" class="readonly frequency"/>
+                    </div>
+                    <div class="row">
+                        <label class="complete-required">Date of Birth:</label>
+                        <input type="text" value="01/01/1950"  class="readonly"/>
+                    </div>
+                    <div class="row">
+                        <label class="complete-required">Gender:</label>
+                        <select class="readonly">
+                            <option value="0" checked>Male</option>
+                            <option value="1" checked>Female</option>
+                        </select>
+                    </div>
+                    <div class="row">
+                        <label>Individual identifier:</label>
+                        <input type="text" value="Caucasian" readonly/>
+                    </div>
+                    <div class="row">
+                <label class="complete-required">SSN #</label>
+                <input type="text" class="readonly" />
+            </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel">
+        <div class="header">
+            <h4>Phone #</h4>
+            <div class="form-action TaskDetailLink">
+                <a href="#">Manage</a>
+            </div>
+        </div>
+        <div class="body">
+            <table class="inline-dataTable">
+                <thead>
+                    <tr>
+                        <th width="10%">Primary</td>
+                        <th width="20%">Phone Type</td>
+                        <th width="20%">Phone #</td>
+                        <th width="50%">Notes</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Primary</td>
+                        <td>Home</td>
+                        <td>666-444-3213</td>
+                        <td>
+                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="panel">
+        <div class="header">
+            <h4>Address</h4>
+            <div class="form-action TaskDetailLink">
+                <a href="'.base_url()."index.php/client/manageAddress".'">Manage</a>
+            </div>
+        </div>
+        <div class="body">
+            <table class="inline-dataTable">
+                <thead>
+                    <tr>
+                        <th width="15%">Address Type</td>
+                        <th width="20%">Address</td>
+                        <th width="15%">County</td>
+                        <th width="15%">Township Code</td>
+                        <th width="25%">Address Description</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="addedAddress">
+                        <td>Mailing, Current Physical</td>
+                        <td>123 ABC Street, Childsburg, IL 00000</td>
+                        <td>Adams County</td>
+                        <td></td>
+                        <td>Sister&#8217;s House</td>
+                    </tr>
+                    <tr>
+                        <td>Current Mailing</td>
+                        <td>123 Sesame Street, Childsburg, IL 00000</td>
+                        <td>Adams County</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="panel">
+        <div class="header">
+            <h4>Email</h4>
+            <div class="form-action TaskDetailLink">
+                <a href="#">Manage</a>
+            </div>
+        </div>
+        <div class="body">
+            <table class="inline-dataTable">
+                <thead>
+                    <tr>
+                        <th width="10%"></td>
+                        <th width="20%"></td>
+                        <td width="20%"></td>
+                        <td width="20%"></td>
+                        <td width="50%"></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="panel">
+        <div class="header">
+            <h4>Additional Information</h4>
             <div class="form-action TaskDetailLink">
                 <a href="#">Edit</a>
             </div>
@@ -74,7 +226,7 @@
                         <select>
                         	<option value="0" checked>Baltimore</option>
                         </select>
-                    </div>                    
+                    </div>
                     <div class="row">
                         <label>Moving to Jurisdiction:</label>
                         <input type="text" value=""/>
@@ -121,125 +273,12 @@
                         <input type="text" value="New Haven"/>
                     </div>
                 </fieldset>
-               
-            </div>
-        </div>
-    </div>
-    <div class="panel">
-        <div class="header">
-            <h4>Medicaid #</h4>
-            <div class="form-action TaskDetailLink">
-                <a href="#">Manage</a>
-            </div>
-        </div>
-        <div class="body">
-            <div class="form-panelbar-content">
-                <h5>Current Medicaid #</h5>
-                <div class="fieldset-container-one">
-                    <p class="row summary">
-                        <span class="label">Medicaid #</span>
-                        <span class="data-element">16843854176</span>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="panel">
-        <div class="header">
-            <h4>Phone #</h4>
-            <div class="form-action TaskDetailLink">
-                <a href="#">Manage</a>
-            </div>
-        </div>
-        <div class="body">
-            <div class="form-panelbar-content">
-                <h5>Primary Phone #</h5>
-                <div class="fieldset-container-one">
-                    <div class="row">
-                        <div class="column-left">
-                            <p class="row summary">
-                                <span class="label">Phone Type:</span>
-                                <span class="data-element">Home</span>
-                            </p>
-                        </div>
-                        <div class="column-right">
-                            <p class="row summary">
-                                <span class="label">Phone #</span>
-                                <span class="data-element">(123) 456-7890</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <label>Notes:</label>
-                        <textarea class="comments-textarea"readonly="readonly" class="readonly"></textarea>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="panel">
-        <div class="header">
-            <h4>Email</h4>
-            <div class="form-action TaskDetailLink">
-                <a href="#">Manage</a>
-            </div>
-        </div>
-        <div class="body">
-            <div class="form-panelbar-content">
-                <h5>Primary Email</h5>
-                <div class="fieldset-container-one">
-                    <p class="row summary">
-                        <span class="label">Primary Email</span>
-                        <span class="data-element">Cicio.Smith@yipee.com</span>
-                    </p>
-                    <div class="row">
-                        <label>Notes:</label>
-                        <textarea class="comments-textarea"></textarea>
-                    </div>
 
-                </div>
             </div>
         </div>
     </div>
-    <div class="panel">
-        <div class="header">
-            <h4>Address</h4>
-            <div class="form-action TaskDetailLink">
-                <a href="#">Manage</a>
-            </div>
-        </div>
-        <div class="body">
-            <div class="form-panelbar-content">
-                <h5>Current Address</h5>
-                <div class="fieldset-container-one">
-                    <div class="row">
-                        <label class="complete-required">Address Type:</label>
-                        <select class="readonly">
-                            <option value="0"checked>Facility</option>
-                        </select>
-                    </div>
-                    <div class="row">
-                        <label class="complete-required">Address Description:</label>
-                        <input type="text" readonly="readonly" class="readonly"/>
-                    </div>
-                    <div class="row">
-                        <span class="label">Address:</span>
-                        <div class="data-element">
-                        	<span>
-                            	123 Main Wasy <br/>
-                                Baltimore, MD 20010
-                            </span>
-                        </div>
-                    </div>
-                    <div class="row">                        
-                        <label>Notes:</label>
-                        <textarea class="comments-textarea"readonly="readonly" class="readonly"></textarea>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="panel">
+
+<!--  <div class="panel">
         <div class="header">
             <h4>Representatives</h4>
             <div class="form-action TaskDetailLink">
@@ -341,7 +380,8 @@
                     </div>
             </div>
         </div>
-    </div>
+    </div> -->
+<!--
     <div class="panel">
         <div class="header">
             <h4>Advanced Directives</h4>
@@ -455,11 +495,21 @@
                 </fieldset>
             </div>
         </div>
-    </div>
+    </div> -->
+
 </div>
 '?>
 
 <?php $Script ='
 <script type="text/javascript">
+    $( document ).ready(function() {
+        $("#addedAddress").hide();
+
+        var referrer = document.referrer;
+        if (referrer == "http://localhost/ltss_prototype/index.php/client/manageAddress") {
+            $("#addedAddress").show();
+        }
+    });
+
 </script>
 '?>
