@@ -5,6 +5,11 @@
     .header-info.alert {
         background: rgba(255, 0, 0, 0.2);
     }
+
+    #serviceActivityDialogAlt {
+        width: 750px !important;
+        overflow-y: auto !important;
+    }
 </style>
 <div id="serviceActivityDialogAlt" title="Service Activity" style="display: none; width: 750px !important; overflow-y: auto !important;">
     <div class="cycle-prev cycle-wrapper">

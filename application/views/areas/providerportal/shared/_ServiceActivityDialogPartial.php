@@ -2,8 +2,12 @@
     .cycle-wrapper {
         width: 775px !important;
     }
+    #serviceActivityDialog {
+        width: 750px !important;
+        overflow-y: auto !important;
+    }
 </style>
-<div id="serviceActivityDialog" title="Service Activity" style="display: none; width: 750px !important; overflow-y: auto !important;">
+<div id="serviceActivityDialog" title="Service Activity" style="display: none; ">
     <div class="cycle-prev cycle-wrapper">
         <fieldset class="fieldset-container-one">
             <legend class="legend-header-one">Service Activity</legend>
