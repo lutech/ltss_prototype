@@ -154,7 +154,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr id="editItemRow">
+                    <tr class="editItemRow" style="display: none;">
                         <td data-bind="text: Medication">Tylenol</td>
                         <td data-bind="text: Physician">Dr. Hibbert</td>
                         <td data-bind="text: Dosage">200mg</td>
@@ -162,14 +162,14 @@
                         <td data-bind="text: ReasonsPrescribed">Migraines</td>
                         <td data-bind="yesNo: Psychotropic">Yes</td>
                         <td data-bind="yesNo: Psychotropic">
-                            <a href="#" id="remove">Undo Removal</a>
-                            <span id="editRowIndicator" style="display: none;">
+                            <a href="#" id="undoRemoval">Undo Removal</a>
+                            <span class="editRowIndicator" style="display: none;">
                                 <span class="icon-pencil"></span>
                                 <b>Editing...</b>
                             </span>
                         </td>
                     </tr>
-                    <tr id="editItemRow" style="display: none;">
+                    <tr class="editItemRow">
                         <td data-bind="text: Medication">Tylenol</td>
                         <td data-bind="text: Physician">Dr. Hibbert</td>
                         <td data-bind="text: Dosage">50mg</td>
@@ -177,15 +177,15 @@
                         <td data-bind="text: ReasonsPrescribed">Headaches</td>
                         <td data-bind="yesNo: Psychotropic">Yes</td>
                         <td data-bind="yesNo: Psychotropic">
-                            <a href="#" id="edit">Update</a>
+                            <a href="#" id="update">Update</a>
                             <a href="#" id="remove">Remove</a>
-                            <span id="editRowIndicator" style="display: none;">
+                            <span class="editRowIndicator" style="display: none;">
                                 <span class="icon-pencil"></span>
                                 <b>Editing...</b>
                             </span>
                         </td>
                     </tr>
-                    <tr id="editItemRow">
+                    <tr class="editItemRow">
                         <td data-bind="text: Medication">Advil</td>
                         <td data-bind="text: Physician">Dr. Hibbert</td>
                         <td data-bind="text: Dosage">50mg</td>
@@ -195,7 +195,7 @@
                         <td data-bind="yesNo: Psychotropic">
                             <a href="#" id="edit">Edit</a>
                             <a href="#" id="remove">Delete</a>
-                            <span id="editRowIndicator" style="display: none;">
+                            <span class="editRowIndicator" style="display: none;">
                                 <span class="icon-pencil"></span>
                                 <b>Editing...</b>
                             </span>
@@ -214,28 +214,64 @@
 
 <?php $Script='
     <script type="text/javascript">
+        $(".CancelEdit-link").hide();
 
-        function enableEditMedication(){
-            $(".edit-mode, #editMedication, #editRowIndicator").show()
-            $("#addMedication, #edit, #remove").hide();
-            $("#editItemRow").addClass("tableRowHighlight");
+        function editForm(){
+            $("#Medication_Medication").val("Advil");
+            $("#Medication_Physician").val("Dr. Hibbert");
+            $("#Medication_Dosage").val("50mg");
+            $("#Medication_Frequency").val("As Needed");
+            $("#Reason_prescribed").val("Headaches");
+            $("#Medication_Psychotropic_Yes").attr("checked", "checked");
         }
 
-        function disableEditMedication(){
-            $(".edit-mode, #editMedication, #editRowIndicator").hide()
-            $("#addMedication, #edit, #remove").show();
-            $("#editItemRow").removeClass("tableRowHighlight");
+        function clearForm(){
+            $("#Medication_Medication").val("");
+            $("#Medication_Physician").val("");
+            $("#Medication_Dosage").val("");
+            $("#Medication_Frequency").val("");
+            $("#Reason_prescribed").val("");
+            $("#Medication_Psychotropic_Yes").removeAttr("checked");
+        }
+
+        function enableEditMedication(elem){
+            $(".edit-mode").show();
+            $(elem).siblings(".editRowIndicator").first().show();
+            $(".CancelEdit-link").show();
+            $(elem).parents(".editItemRow").first().addClass("tableRowHighlight");
+            $(" #update, #edit, #remove").hide();
+            editForm();
+        }
+
+        function enableUpdateMedication(elem){
+            $(".edit-mode, #editMedication").show();
+            $(elem).siblings(".editRowIndicator").first().show();
+            $(".CancelEdit-link").show();
+            $(elem).parents(".editItemRow").first().addClass("tableRowHighlight");
+            $("#addMedication, #update, #edit, #remove").hide();
+        }
+
+        function cancelAll(){
+            $(".edit-mode, #editMedication").hide();
+            $(".editRowIndicator").hide();
+            $(".editItemRow").removeClass("tableRowHighlight");
+            $("#addMedication, #update, #edit, #remove").show();
+            $(".CancelEdit-link").hide();
+            clearForm();
         }
 
         $(document).ready(function(){
+            $("#update").on("click", function(){
+                enableUpdateMedication(this);
+            });
             $("#edit").on("click", function(){
-                enableEditMedication();
+                enableEditMedication(this);
             });
             $("#save").on("click", function(){
-                disableEditMedication();
+                cancelAll();
             });
             $("#cancel").on("click", function(){
-                disableEditMedication();
+                cancelAll();
             });
         });
 
