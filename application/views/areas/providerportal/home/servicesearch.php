@@ -25,12 +25,12 @@ $Body = '
                     <input type="text" value=""/>
                 </div>
                 <div class="row stacked">
-                    <label>Service Date:</label>
+                    <label>Service Date From:</label>
                     <input type="text" class="date required" value="06/11/2015" max-date="today"/>
                 </div>
                 <div class="row stacked">
-                    <label>Exception Type:</label>
-                    <select></select>
+                    <label>Service Date To:</label>
+                    <input type="text" class="date required" value="06/11/2015" max-date="today"/>
                 </div>
             </div>
             <div>
@@ -41,6 +41,14 @@ $Body = '
                 <div class="row stacked">
                     <label>Staff Name:</label>
                     <input type="text"/>
+                </div>
+                <div class="row stacked">
+                    <label>Service Status:</label>
+                    <select></select>
+                </div>
+                <div class="row stacked">
+                    <label>Claim Status:</label>
+                    <select></select>
                 </div>
             </div>
             <div class="searchspace-footer-bar">
