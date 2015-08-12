@@ -200,6 +200,10 @@
 <div class=" cycle-next cycle-wrapper">
     <div style="background: #efefef; padding: 10px; border-bottom: 1px solid #999;">
         <button onclick="backToServiceActivityAlt()">Back</button>
+        <div style="display: inline-block; float: right; margin-right: 10px;">
+            <button onclick="backToServiceActivityAlt()">Submit Updated Time</button>
+            <button onclick="backToServiceActivityAlt()">Discard</button>
+        </div>
     </div>
     <fieldset class="fieldset-container-one">
         <legend class="legend-header-one">Service Activity</legend>
