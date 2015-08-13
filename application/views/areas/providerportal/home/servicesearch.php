@@ -91,10 +91,10 @@ $Body = '
         <tbody>
             <tr>
                 <td>
-                    Cicio Smith <span class="small-text">ID# 234863516846314</span><span class="small-text">MA# 598742368</span><span class="small-text"><a href="#" onclick="callServiceAcitivityDialog()">View</a></span>
+                    Cicio Smith <span class="small-text">ID# 234863516846314</span><span class="small-text">MA# 598742368</span><span class="small-text"><a href="#" onclick="callServiceAcitivityDialogAltTwo()">View</a></span>
                 </td>
                 <td>
-                    Grocery Delivery
+                   Personal Assistance
                 </td>
                 <td>
                     ABC Provider
@@ -114,10 +114,10 @@ $Body = '
             </tr>
             <tr>
                 <td>
-                    Cicio Smith <span class="small-text">ID# 234863516846314</span><span class="small-text">MA# 598742368</span><span class="small-text"><a href="#" onclick="callServiceAcitivityDialog()">View</a></span>
+                    Cicio Smith <span class="small-text">ID# 234863516846314</span><span class="small-text">MA# 598742368</span><span class="small-text"><a href="#" onclick="callServiceAcitivityDialogAltTwo()">View</a></span>
                 </td>
                 <td>
-                    Dental Care
+                   Personal Assistance
                 </td>
                 <td>
                     123 Provider
@@ -129,19 +129,17 @@ $Body = '
                     Candace Kind
                 </td>
                     <td>
-                        12:15pm - N/A
+                        12:15pm - 12:30pm
                     </td>
                 <td >
-                    <span class="icon-warning-sign"></span>
-                    Missing Clock-Out
                 </td>
             </tr>
             <tr>
                 <td>
-                    Cicio Smith <span class="small-text">ID# 234863516846314</span><span class="small-text">MA# 598742368</span><span class="small-text"><a href="#" onclick="callServiceAcitivityDialog()">View</a></span>
+                    Cicio Smith <span class="small-text">ID# 234863516846314</span><span class="small-text">MA# 598742368</span><span class="small-text"><a href="#" onclick="callServiceAcitivityDialogAltTwo()">View</a></span>
                 </td>
                 <td>
-                    Immunizations
+                    Shared Attendant
                 </td>
                 <td>
                     ABC Provider
@@ -160,10 +158,10 @@ $Body = '
             </tr>
             <tr>
                 <td>
-                    Cicio Smith <span class="small-text">ID# 234863516846314</span><span class="small-text">MA# 598742368</span><span class="small-text"><a href="#" onclick="callServiceAcitivityDialog()">View</a></span>
+                    Cicio Smith <span class="small-text">ID# 234863516846314</span><span class="small-text">MA# 598742368</span><span class="small-text"><a href="#" onclick="callServiceAcitivityDialogAltTwo()">View</a></span>
                 </td>
                 <td>
-                    Eye Care
+                    Personal Assistance
                 </td>
                 <td>
                     XYZ Provider
@@ -185,7 +183,7 @@ $Body = '
                     Demi Moore <span class="small-text">ID# 97426545545485552</span><span class="small-text">MA# 982654895</span><span class="small-text"><a href="#" onclick="callServiceAcitivityDialogAlt()">View</a></span>
                 </td>
                 <td>
-                    Bathe
+                    Personal Assistance
                 </td>
                 <td>
                     ABC Provider
@@ -197,9 +195,9 @@ $Body = '
                     Carrol Lot
                 </td>
                     <td>
-                        9:45am - 10:30am
+                        9:45am - 10:15am
                     </td>
-                <td align="center">
+                <td>
                 </td>
             </tr>
             <tr>
@@ -207,7 +205,7 @@ $Body = '
                     Demi Moore <span class="small-text">ID# 97426545545485552</span><span class="small-text">MA# 982654895</span><span class="small-text"><a href="#" onclick="callServiceAcitivityDialogAlt()">View</a></span>
                 </td>
                 <td>
-                    Restrooom Assistance
+                    Personal Assistance
                 </td>
                 <td>
                     XYZ Provider
@@ -218,10 +216,12 @@ $Body = '
                 <td>
                     Hellen Troy
                 </td>
-                    <td>
-                        11:45pm - 12:15am (6/12/2015)
-                    </td>
-                <td align="center">
+                <td>
+                    11:45pm - N/A
+                </td>
+                <td>
+                    <span class="icon-warning-sign"></span>
+                    Missing Clock-Out
                 </td>
             </tr>
         </tbody>
@@ -230,5 +230,5 @@ $Body = '
 '?>
 
 
-<?php include_once "application/views/areas/providerportal/shared/_ServiceActivityDialogPartial.php"?>
+<?php include_once "application/views/areas/providerportal/shared/_ServiceActivityDialogAlt2Partial.php"?>
 <?php include_once "application/views/areas/providerportal/shared/_ServiceActivityDialogAltPartial.php"?>

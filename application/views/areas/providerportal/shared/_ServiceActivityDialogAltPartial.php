@@ -37,6 +37,25 @@
             <!--                </div>-->
         </div>
         <br/>
+        <div style="font-size: 125%; font-weight: bold">
+            <div class="column-left">
+            </div>
+            <div class="column-left text-right">
+                <div class="column-left" style="vertical-align: bottom">
+                    <h3>POS Limit:</h3>
+                </div>
+                <div class="column-left">
+                    <h2>
+                        $125.00
+                    </h2>
+                    <h4>
+                        (75 min - 5 units)
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <br/>
         <table class="generalTable">
             <caption class="caption-header">Services
                 <div class="TaskDetailLink"><a href="#">Add Service Activity</a></div>
@@ -55,7 +74,7 @@
                 <tr>
                     <td>Personal Assistance</td>
                     <td>
-                        10:00am - 10:30am
+                        9:45am - 10:15am
                     </td>
                     <td>
                         234321452345
@@ -70,51 +89,38 @@
                 <tr>
                     <td>Personal Assistance</td>
                     <td>
-                        12:15pm - N/A
+                        11:45pm - N/A
                     </td>
                     <td>
-                        8946848988
+                        68464646889
                     </td>
-                    <td>Candace Kind</td>
-                    <td><span class="icon-warning-sign"></span>Pending Activity</td>
+                    <td>Hellen Troy</td>
+                    <td><span class="icon-warning-sign"></span>Pending</td>
                     <td>
                         <a href="#">Add to Watch List</a>
                         <a href="#" onclick="resolvePendingActivityAlt()">Review</a>
                         <!--                        <a href="#" onclick="callResolveServiceDialogAlt()">Review</a>-->
                     </td>
                 </tr>
-                <tr>
-                    <td>Shared Attendant</td>
-                    <td>
-                        12:45pm - 1:00pm
-                    </td>
-                    <td>
-                        234321452345
-                    </td>
-                    <td>Carrol Lot</td>
-                    <td>Closed</td>
-                    <td>
-                        <a href="#">Add to Watch List</a>
-                        <a href="#">Review</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Personal Assistance</td>
-                    <td>
-                        12:45pm - 1:15pm
-                    </td>
-                    <td>
-                        68464646889
-                    </td>
-                    <td>Hellen Troy</td>
-                    <td>Closed</td>
-                    <td>
-                        <a href="#">Add to Watch List</a>
-                        <a href="#">Review</a>
-                    </td>
-                </tr>
             </tbody>
         </table>
+        <div class="header-info" style="font-size: 125%; font-weight: bold">
+            <div class="row">
+                <div class="column-left">
+                    <div class="">
+                    </div>
+                </div>
+                <div class="column-left">
+                    <div class="column-left text-right">
+                        Total Billable:
+                    </div>
+                    <div class="column-left text-right">
+                        <h3>0</h3>
+                        <small>(Pending Exception)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
         <br/>
         <br/>
         <table class="generalTable">
@@ -131,65 +137,35 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>04/05/2015</td>
-                    <td>10001</td>
-                    <td>$75.00</td>
-                    <td>$25.00</td>
-                    <td>Original</td>
-                    <td>Paid</td>
-                    <td><a href="#" onclick="callServiceAcitivityDialogAlt()">View</a></td>
-                </tr>
-                <tr>
-                    <td>04/08/2015</td>
-                    <td>10002</td>
-                    <td>$75.00</td>
-                    <td>$70.00</td>
-                    <td>Adjustment</td>
-                    <td>Paid</td>
-                    <td><a href="#">View</a></td>
-                </tr>
-                <tr>
-                    <td>04/21/2015</td>
-                    <td>10003</td>
-                    <td>$5.00</td>
-                    <td>$0.00</td>
-                    <td>Original</td>
-                    <td><span class="icon-warning-sign"></span>Rejected</td>
-                    <td><a href="#">View</a></td>
-                </tr>
             </tbody>
         </table>
-
-        <div style="background: #efefef; padding: 10px; font-size: 125%; font-weight: bold">
+        <div class="header-info" style="font-size: 125%; font-weight: bold">
             <div class="row">
                 <div class="column-left">
-                    <div class="column-left">
-                        Total Billed:
-                    </div>
-                    <div class="column-left text-right">
-                        $80.00
+                    <div class="">
                     </div>
                 </div>
                 <div class="column-left">
+                    <div class="column-left text-right">
+                        Total Billed:
+                    </div>
+                    <div class="column-left text-right">
+                        <h3>$0.00</h3>
+                        <small>(0 min - 0 units)</small>
+                    </div>
                 </div>
             </div>
             <hr/>
             <div class="row">
                 <div class="column-left">
-                    <div class="column-left">
-                        Total Rejected:
-                    </div>
-                    <div class="column-left text-right" style="color: red">
-                        $5.00
-                    </div>
                 </div>
                 <div class="column-left">
                     <div class="column-left text-right">
                         Total Paid:
                     </div>
-                    <div class="column-left text-right">
-                        $70.00
+                    <div class="column-right text-right">
+                        <h3>$0.00</h3>
+                        <small>(0 min - 0 units)</small>
                     </div>
                 </div>
             </div>
@@ -259,147 +235,43 @@
         </div>
         <br/>
 
+
+        <h4><span class="icon-warning-sign"></span>Pending Reason:</h4>
+        <div class="header-info alert">
+            Missing Clock-Out
+        </div>
+        <br/>
         <div class="row">
+            <h4 style="padding-right: 15px">Service Time:<a href="#" style="float: right" onclick="callResolveServiceDialogAlt()">Update</a></h4>
             <div class="column-left">
-                <h4>Time Billed:</h4>
                 <div class="header-info">
-                    <div class="column-left">
-                        <h3>07:00 AM</h3>
-                        <h4>Clock-In</h4>
-                    </div>
-                    <div class="column-left">
-                        <h3>07:48 AM</h3>
-                        <h4>Clock-Out</h4>
-                    </div>
-                    <hr/>
-                    <div class="row">
-                        <div class="column-left"></div>
-                        <div class="column-left">
-                            <div class="column-left text-right" style="
-    vertical-align: baseline;
-">
-                                <h4>Total Billed:</h4>
-                            </div>
-                            <div class="column-left text-right" style="
-    vertical-align: baseline;
-">
-                                <h2>48 min</h2>
-                            </div>
-                        </div>
-                    </div>
+                    <h2>11:45 pm</h2>
+                    <h3>Clock-In</h3>
                 </div>
             </div>
-            <div class="column-right">
-                <h4>Time Paid:</h4>
-                <div class="header-info">
-                    <div class="column-left">
-                        <h3>07:15 AM</h3>
-                        <h4>Clock-In</h4>
-                    </div>
-                    <div class="column-left">
-                        <h3>07:45 AM</h3>
-                        <h4>Clock-Out</h4>
-                    </div>
-                    <hr/>
-                    <div class="row">
-                        <div class="column-left"></div>
-                        <div class="column-left">
-                            <div class="column-left text-right" style="
-    vertical-align: baseline;
-">
-                                <h4>Total Paid:</h4>
-                            </div>
-                            <div class="column-left text-right" style="
-    vertical-align: baseline;
-">
-                                <h2>30 min</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <br/><br/>
-            </div>
-            <br/>
             <div class="column-left">
-                <h4>Updated Billable Time <a href="#" style="float: right" onclick="callResolveServiceDialogAlt()">Update</a></h4>
                 <div class="header-info">
-                    <div class="row">
-                        <div class="column-left">
-                            <h3>--</h3>
-                            <h4>Clock-In</h4>
-                        </div>
-                        <div class="column-right">
-                            <h3>--</h3>
-                            <h4>Clock-Out</h4>
-                        </div>
-                    </div>
-                    <hr/>
-                    <div class="row">
-                        <div class="column-left"></div>
-                        <div class="column-left">
-                            <div class="column-left text-right" style="
-    vertical-align: baseline;
-">
-                                <h4>Total Paid:</h4>
-                            </div>
-                            <div class="column-left text-right" style="
-    vertical-align: baseline;
-">
-                                <h2>-</h2>
-                            </div>
-                        </div>
-                    </div>
+                    <h2>--</h2>
+                    <h3>Clock-Out</h3>
                 </div>
             </div>
+        </div>
+        <br/><br/>
 
-            <h4><span class="icon-warning-sign"></span>Pending Reason:</h4>
-            <div class="header-info alert">
-                Possible overlapping service.
-            </div>
-            <br/><br/>
-
-            <table class="generalTable">
-                <caption class="caption-header">Service Activity Snapshot History</caption>
-                <thead>
-                    <tr>
-                        <th>Status</th>
-                        <th>Service Time</th>
-                        <th>Updated By</th>
-                        <th>Update Method</th>
-                        <th>Date Updated</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Pending</td>
-                        <td>07:12AM - N/A</td>
-                        <td>John Smith</td>
-                        <td>IVR</td>
-                        <td>06/01/15 - 07:12AM</td>
-                    </tr>
-                    <tr>
-                        <td>Pending</td>
-                        <td>N/A - 07:45AM</td>
-                        <td>Jane Doe (Help Desk)</td>
-                        <td>ISAS</td>
-                        <td>06/01/15 - 08:05AM</td>
-                    </tr>
-                    <tr>
-                        <td>Ready</td>
-                        <td>07:12AM - 07:45AM</td>
-                        <td>ISAS Billing Process</td>
-                        <td>ISAS</td>
-                        <td>06/01/15 - 07:12AM</td>
-                    </tr>
-                    <tr>
-                        <td>Closed</td>
-                        <td>07:12AM - 07:45AM</td>
-                        <td>ISAS Billing Process</td>
-                        <td>ISAS</td>
-                        <td>06/01/15 - 07:12AM</td>
-                    </tr>
-                </tbody>
-            </table>
+        <table class="generalTable">
+            <caption class="caption-header">Service Activity Snapshot History</caption>
+            <thead>
+                <tr>
+                    <th>Status</th>
+                    <th>Service Time</th>
+                    <th>Updated By</th>
+                    <th>Update Method</th>
+                    <th>Date Updated</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
     </fieldset>
 </div>
 </div>
