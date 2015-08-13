@@ -29,10 +29,19 @@
         </li>
         <!-- Waivers -->
         <li>
-            <span class="leftNavHeader">Waivers</span>
+            <span class="leftNavHeader">Programs</span>
             <ul class="leftnav-groupcontainer" style="display: none;">
                 <li>
-                    <?php echo new MenuItem("Application Packets", "applications", "index", "", false, false, "" , $this->uri);?>
+                    <?php echo new MenuItem("Application Packet", "applicationpacket", "history", "", true, false, "" , $this->uri);?>
+                </li>
+                <li>
+                    <?php echo new MenuItem("Assessments", "assessments", "history", "", true, false, "" , $this->uri);?>
+                </li>
+                <li>
+                    <?php echo new MenuItem("DDA Application", "ddaapplication", "history", "", true, false, "" , $this->uri);?>
+                </li>
+                <li>
+                    <?php echo new MenuItem("MA Application", "maapplication", "history", "", true, false, "" , $this->uri);?>
                 </li>
                 <li>
                     <?php echo new MenuItem("Level of Care", "levelofcare", "history", "", true, false, "" , $this->uri);?>
@@ -60,62 +69,13 @@
                 </li>
 
                 <li>
-                    <?php echo new MenuItem("PSS", "pss", "history", "", true, false, "" , $this->uri);?>
-                    <ul>
-                        <li>
-                            <?php echo new MenuItem("Summary", "pss", "summary", "", true, true, "" , $this->uri);
-
-                            if ($this->uri->segment(2) == "medicationchangerequestreview" ||
-                                $this->uri->segment(2) == "medicationchangerequestview" ||
-                                $this->uri->segment(1) == "activitysupportplan" ){
-                                echo new MenuItem("Summary", "pss", "summary", "", true, false, "" , $this->uri);
-                            }
-                            ?>
-                            <ul>
-                                <li>
-                                    <?php echo new MenuItem("Medication Change Request", "pss", "medicationchangerequestreview", "", true, true, "" , $this->uri);?>
-                                </li>
-                                <li>
-                                    <?php echo new MenuItem("Medication Change Request", "pss", "medicationchangerequestview", "", true, true, "" , $this->uri);?>
-                                </li>
-                                <li>
-                                    <?php echo new MenuItem("Activity Support Plan Details", "activitysupportplan", "details", "", true, true, "" , $this->uri);?>
-                                </li>
-
-                            </ul>
-                        <li>
-
-<!--                        <li>-->
-<!--                            --><?php //echo new MenuItem("Activity Support Plan", "activitysupportplan", "history", "", true, true, "" , $this->uri);
-//
-//                            if ($this->uri->segment(1) == "pss" && $this->uri->segment(2) != "history" ){
-//                                echo new MenuItem("Activity Support Plan", "activitysupportplan", "history", "", true, false, "" , $this->uri);
-//                            }
-//                            ?>
-<!---->
-<!--                            <ul>-->
-<!--                                <li>-->
-<!--                                    --><?php //echo new MenuItem("Summary", "activitysupportplan", "summary", "", true, true, "" , $this->uri);
-//
-//                                    if ($this->uri->segment(1) == "activitysupportplan" &&  $this->uri->segment(2) == "details" ||
-//                                        $this->uri->segment(1) == "activitysupportplan" &&  $this->uri->segment(2) == "edit"
-//                                    )
-//                                    {
-//                                        echo new MenuItem("Summary", "activitysupportplan", "summary", "", true, false, "" , $this->uri);
-//                                    }
-//                                    ?>
-<!--                                    <ul>-->
-<!--                                        <li>-->
-<!--                                            --><?php //echo new MenuItem("Activity Support Plan Details", "activitysupportplan", "details", "", true, true, "" , $this->uri);?>
-<!--                                        </li>-->
-<!--                                        <li>-->
-<!--                                            --><?php //echo new MenuItem("Activity Support Plan Details", "activitysupportplan", "edit", "", true, true, "" , $this->uri);?>
-<!--                                        </li>-->
-<!--                                </li>-->
-<!---->
-<!--                            </ul>-->
-<!--                        </li>-->
-                    </ul>
+                    <?php echo new MenuItem("Initial Placement", "initialplacement", "history", "", true, false, "" , $this->uri);?>
+                </li>
+                <li>
+                    <?php echo new MenuItem("ATP", "atp", "history", "", true, false, "" , $this->uri);?>
+                </li>
+                <li>
+                    <?php echo new MenuItem("Financial and Overall Decision", "financialandoveralldecision", "history", "", true, false, "" , $this->uri);?>
                 </li>
             </ul>
         </li>
