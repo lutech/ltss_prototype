@@ -36,24 +36,24 @@
         <!--                    </div>-->
         <!--                </div>-->
     </div>
-    <br/>
-    <div style="font-size: 125%; font-weight: bold">
-        <div class="column-left">
-        </div>
-        <div class="column-left text-right">
-            <div class="column-left" style="vertical-align: bottom">
-                <h3>POS Limit:</h3>
-            </div>
-            <div class="column-left">
-                <h2>
-                    $100.00
-                </h2>
-                <h4>
-                    (60 min - 4 units)
-                </h4>
-            </div>
-        </div>
-    </div>
+<!--    <br/>-->
+<!--    <div style="font-size: 125%; font-weight: bold">-->
+<!--        <div class="column-left">-->
+<!--        </div>-->
+<!--        <div class="column-left text-right">-->
+<!--            <div class="column-left" style="vertical-align: bottom">-->
+<!--                <h3>POS Limit:</h3>-->
+<!--            </div>-->
+<!--            <div class="column-left">-->
+<!--                <h2>-->
+<!--                    $100.00-->
+<!--                </h2>-->
+<!--                <h4>-->
+<!--                    (60 min - 4 units)-->
+<!--                </h4>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
     <br/>
     <br/>
     <table class="generalTable">
@@ -262,8 +262,7 @@
 
     <h4>Service Information:</h4>
     <div class="header-info">
-        <h2>Personal Assistance <span style="font-size: 70%; float: right"><small>Status:</small><span class="icon-warning-sign" style="color: #ff9900 !important;
-"></span>Pending Activity</span></h2>
+        <h2>Personal Assistance <span style="font-size: 70%; float: right"><small>Status:</small> Closed</span></h2>
         <h3>
             <small>Service Date:</small>
             06/11/2015

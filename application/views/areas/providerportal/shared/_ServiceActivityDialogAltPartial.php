@@ -36,24 +36,24 @@
             <!--                    </div>-->
             <!--                </div>-->
         </div>
-        <br/>
-        <div style="font-size: 125%; font-weight: bold">
-            <div class="column-left">
-            </div>
-            <div class="column-left text-right">
-                <div class="column-left" style="vertical-align: bottom">
-                    <h3>POS Limit:</h3>
-                </div>
-                <div class="column-left">
-                    <h2>
-                        $125.00
-                    </h2>
-                    <h4>
-                        (75 min - 5 units)
-                    </h4>
-                </div>
-            </div>
-        </div>
+<!--        <br/>-->
+<!--        <div style="font-size: 125%; font-weight: bold">-->
+<!--            <div class="column-left">-->
+<!--            </div>-->
+<!--            <div class="column-left text-right">-->
+<!--                <div class="column-left" style="vertical-align: bottom">-->
+<!--                    <h3>POS Limit:</h3>-->
+<!--                </div>-->
+<!--                <div class="column-left">-->
+<!--                    <h2>-->
+<!--                        $125.00-->
+<!--                    </h2>-->
+<!--                    <h4>-->
+<!--                        (75 min - 5 units)-->
+<!--                    </h4>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
         <br/>
         <br/>
         <table class="generalTable">
