@@ -32,7 +32,7 @@
             <span class="leftNavHeader">Waivers</span>
             <ul class="leftnav-groupcontainer" style="display: none;">
                 <li>
-                    <?php echo new MenuItem("Applications", "applications", "index", "", false, false, "" , $this->uri);?>
+                    <?php echo new MenuItem("Application Packets", "applications", "index", "", false, false, "" , $this->uri);?>
                 </li>
                 <li>
                     <?php echo new MenuItem("Level of Care", "levelofcare", "history", "", true, false, "" , $this->uri);?>
