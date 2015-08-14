@@ -1,8 +1,8 @@
 <?php
 
-class InitialPlacement extends CI_Controller {
+class ResponsibleRegionAssignment extends CI_Controller {
 
-    public function index( $area = 'initialplacement', $page = 'history') {
+    public function index( $area = 'responsibleregionassignment', $page = 'history') {
 
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {
@@ -13,7 +13,7 @@ class InitialPlacement extends CI_Controller {
     }
 
 
-    public function history( $area = 'initialplacement', $page = 'history', $layout= '_ClientLayoutView', $topnavtab = 'client') {
+    public function history( $area = 'responsibleregionassignment', $page = 'history', $layout= '_ClientLayoutView', $topnavtab = 'client') {
 
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {
@@ -50,7 +50,7 @@ class InitialPlacement extends CI_Controller {
 
     }
 
-    public function details( $area = 'initialplacement', $page = 'details', $layout= '_ClientLayoutView', $topnavtab = 'client') {
+    public function details( $area = 'responsibleregionassignment', $page = 'details', $layout= '_ClientLayoutView', $topnavtab = 'client') {
 
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {

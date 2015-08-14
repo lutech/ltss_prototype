@@ -20,10 +20,16 @@
                     <?php echo new MenuItem("Alerts", "casemanagement", "alerts", "", false, false, "" , $this->uri);?>
                 </li>
                 <li>
-                    <?php echo new MenuItem("Reportable Events", "casemanagement", "reportableevent", "", false, false, "" , $this->uri);?>
+                    <?php echo new MenuItem("Reponsible Region Assignment", "responsibleregionassignment", "history", "", true, false, "" , $this->uri);?>
+                </li>
+                <li>
+                    <?php echo new MenuItem("CSS Provider Agency Assignment", "cssprovideragencyassignment", "history", "", true, false, "" , $this->uri);?>
                 </li>
                 <li>
                     <?php echo new MenuItem("Case Notes", "casemanagement", "casenotes", "", false, false, "" , $this->uri);?>
+                </li>
+                <li>
+                    <?php echo new MenuItem("Attachments", "clientattachments", "history", "", false, false, "" , $this->uri);?>
                 </li>
             </ul>
         </li>
@@ -32,16 +38,10 @@
             <span class="leftNavHeader">Programs</span>
             <ul class="leftnav-groupcontainer" style="display: none;">
                 <li>
-                    <?php echo new MenuItem("Application Packet", "applicationpacket", "history", "", true, false, "" , $this->uri);?>
-                </li>
-                <li>
-                    <?php echo new MenuItem("Assessments", "assessments", "history", "", true, false, "" , $this->uri);?>
-                </li>
-                <li>
                     <?php echo new MenuItem("DDA Application", "ddaapplication", "history", "", true, false, "" , $this->uri);?>
                 </li>
                 <li>
-                    <?php echo new MenuItem("MA Application", "maapplication", "history", "", true, false, "" , $this->uri);?>
+                    <?php echo new MenuItem("Application Packet", "applicationpacket", "history", "", true, false, "" , $this->uri);?>
                 </li>
                 <li>
                     <?php echo new MenuItem("Level of Care", "levelofcare", "history", "", true, false, "" , $this->uri);?>
@@ -69,7 +69,7 @@
                 </li>
 
                 <li>
-                    <?php echo new MenuItem("Initial Placement", "initialplacement", "history", "", true, false, "" , $this->uri);?>
+                    <?php echo new MenuItem("Individual Plan", "individualplan", "history", "", true, false, "" , $this->uri);?>
                 </li>
                 <li>
                     <?php echo new MenuItem("ATP", "atp", "history", "", true, false, "" , $this->uri);?>
