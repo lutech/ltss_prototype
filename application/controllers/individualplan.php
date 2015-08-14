@@ -50,7 +50,7 @@ class IndividualPlan extends CI_Controller {
 
     }
 
-    public function details( $area = 'individualplan', $page = 'details', $layout= '_ClientLayoutView', $topnavtab = 'client') {
+    public function summary( $area = 'individualplan', $page = 'summary', $layout= '_ClientLayoutView', $topnavtab = 'client') {
 
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {

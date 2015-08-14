@@ -85,7 +85,7 @@ $Body = '
                             </td>
                             <td>
                                 <a href="#">Quick View</a>
-                                <a href="#">View List</a>
+                                <a href="'.base_url()."index.php/levelofcare/history".'">View List</a>
                             </td>
                         </tr>
                         <tr>
@@ -101,7 +101,7 @@ $Body = '
                             </td>
                             <td>
                                 <a href="#">Quick View</a>
-                                <a href="#">View List</a>
+                                <a href="'.base_url()."index.php/individualplan/history".'">View List</a>
                             </td>
                         </tr>
                     </tbody>

@@ -15,7 +15,7 @@ $Body = '
         <div class="header">
             <h5>DDA Application</h5>
             <div class="TaskDetailLink">
-                <a href="#">Create New</a>
+                <a href="#">Add</a>
             </div>
         </div>
         <div class="body">
@@ -48,7 +48,7 @@ $Body = '
         <div class="header">
             <h5>Eligibility and Priority Decision Form</h5>
             <div class="TaskDetailLink">
-                <a href="#">Create New</a>
+                <a href="#">Add</a>
             </div>
         </div>
         <div class="body">
@@ -81,7 +81,7 @@ $Body = '
         <div class="header">
             <h5>Emergency Situation</h5>
             <div class="TaskDetailLink">
-                <a href="#">Create New</a>
+                <a href="#">Add</a>
             </div>
         </div>
         <div class="body">

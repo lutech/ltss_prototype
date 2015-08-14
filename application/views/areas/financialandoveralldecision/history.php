@@ -6,56 +6,260 @@
 '?>
 
 <?php
-if (!isset($_COOKIE['locstatus'])){
+if (!isset($_COOKIE['locstatus'])) {
     setcookie('locstatus', 'In Progress');
 };
 $Body = '
-<table class="dataTable-list-style" data-afterrender="afterRenderDataTable" summary="Nurse Monitoring List">
-        <thead>
-            <tr>
-                <th>
-                    Create Date
-                </th>
-                <th>
-                    Effective Date
-                </th>
-                <th>
-                    Expiration Date
-                </th>
-                <th>
-                    Status
-                </th>
-                <th>
-                    Active/Inactive
-                </th>
-                <th>
-                    Actions
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    09/15/2014
-                </td>
-                <td>
+<div class="panelbar-task-style">
+    <div class="panel startExpanded">
+        <div class="header">
+            <h5>Financial Eligibility Determinations and Redertimations</h5>
+            <div class="TaskDetailLink">
+                <a href="#">Add</a>
+            </div>
+        </div>
+        <div class="body">
+            <div class="panelbar-content">
+                <table class="inline-dataTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                Last Modified By
+                            </th>
+                            <th>
+                                Last Modified Date
+                            </th>
+                            <th>
+                                Program Type
+                            </th>
+                            <th>
+                                Decision
+                            </th>
+                            <th>
+                                Status
+                            </th>
+                            <th>
+                                Active/Inactive
+                            </th>
+                            <th class="actions">
+                                Actions
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                </td>
-                <td>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="panel startExpanded">
+        <div class="header">
+            <h5>Eligibility Worksheets</h5>
+            <div class="TaskDetailLink">
+                <a href="#">Add</a>
+            </div>
+        </div>
+        <div class="body">
+            <div class="panelbar-content">
+                <table class="inline-dataTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                Last Modified By
+                            </th>
+                            <th>
+                                Last Modified Date
+                            </th>
+                            <th>
+                                Program Type
+                            </th>
+                            <th>
+                                Status
+                            </th>
+                            <th>
+                                Active/Inactive
+                            </th>
+                            <th class="actions">
+                                Actions
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                </td>
-                <td>
-                    '.((isset($_COOKIE["locstatus"])) ? $_COOKIE["locstatus"] : "In Progress" ).'
-                </td>
-                <td>
-                    Inactive
-                </td>
-                <td>
-                    <a href="'.base_url()."index.php/levelofcare/details".'">View</a>
-                    <a href="#">Print</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="panel startExpanded">
+        <div class="header">
+            <h5>Cost of Care Worksheets</h5>
+            <div class="TaskDetailLink">
+                <a href="#">Add</a>
+            </div>
+        </div>
+        <div class="body">
+            <div class="panelbar-content">
+                <table class="inline-dataTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                Last Modified By
+                            </th>
+                            <th>
+                                Last Modified Date
+                            </th>
+                            <th>
+                                Program Type
+                            </th>
+                            <th>
+                                Status
+                            </th>
+                            <th>
+                                Active/Inactive
+                            </th>
+                            <th class="actions">
+                                Actions
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="panel startExpanded">
+        <div class="header">
+            <h5>SRT Review</h5>
+            <div class="TaskDetailLink">
+                <a href="#">Add</a>
+            </div>
+        </div>
+        <div class="body">
+            <div class="panelbar-content">
+                <table class="inline-dataTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                Last Modified By
+                            </th>
+                            <th>
+                                Last Modified Date
+                            </th>
+                            <th>
+                                Program Type
+                            </th>
+                            <th>
+                                Decision
+                            </th>
+                            <th>
+                                Status
+                            </th>
+                            <th>
+                                Active/Inactive
+                            </th>
+                            <th class="actions">
+                                Actions
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="panel startExpanded">
+        <div class="header">
+            <h5>MMIS Waiver Transaction</h5>
+            <div class="TaskDetailLink">
+                <a href="#">Add</a>
+            </div>
+        </div>
+        <div class="body">
+            <div class="panelbar-content">
+                <table class="inline-dataTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                Last Modified By
+                            </th>
+                            <th>
+                                Last Modified Date
+                            </th>
+                            <th>
+                                Program Type
+                            </th>
+                            <th>
+                                Decision
+                            </th>
+                            <th>
+                                Status
+                            </th>
+                            <th>
+                                Active/Inactive
+                            </th>
+                            <th class="actions">
+                                Actions
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="panel startExpanded">
+        <div class="header">
+            <h5>Overall Decision</h5>
+            <div class="TaskDetailLink">
+                <a href="#">Add</a>
+            </div>
+        </div>
+        <div class="body">
+            <div class="panelbar-content">
+                <table class="inline-dataTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                Last Modified By
+                            </th>
+                            <th>
+                                Last Modified Date
+                            </th>
+                            <th>
+                                Program Type
+                            </th>
+                            <th>
+                                Status
+                            </th>
+                            <th>
+                                Active/Inactive
+                            </th>
+                            <th>
+                                Acknowledged By
+                            </th>
+                            <th>
+                                Acknowledged
+                            </th>
+                            <th class="actions">
+                                Actions
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 '?>
 

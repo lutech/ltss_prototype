@@ -88,9 +88,31 @@
 
                 <li>
                     <?php echo new MenuItem("Individual Plan", "individualplan", "history", "", true, false, "", $this->uri); ?>
+                    <ul>
+                        <li>
+                            <?php
+
+                            echo new MenuItem("Summary", "individualplan", "summary", "", true, true, "", $this->uri);
+
+                            if ($this->uri->segment(2) == "nursedecision_edit" ||
+                                $this->uri->segment(2) == "physiciandecision_edit"
+                            ) {
+                                echo new MenuItem("Summary", "levelofcare", "details", "", true, false, "", $this->uri);
+                            }
+                            ?>
+                            <ul>
+                                <li>
+                                    <?php echo new MenuItem("Nurse LOC Decision", "levelofcare", "nursedecision_edit", "", true, true, "", $this->uri); ?>
+                                </li>
+                                <li>
+                                    <?php echo new MenuItem("Physician LOC Decision", "levelofcare", "physiciandecision_edit", "", true, true, "", $this->uri); ?>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </li>
                 <li>
-                    <?php echo new MenuItem("ATP", "atp", "history", "", true, false, "", $this->uri); ?>
+                    <?php echo new MenuItem("Authorization to Participate", "atp", "history", "", true, false, "", $this->uri); ?>
                 </li>
                 <li>
                     <?php echo new MenuItem("Financial and Overall Decision", "financialandoveralldecision", "history", "", true, false, "", $this->uri); ?>

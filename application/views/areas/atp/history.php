@@ -1,61 +1,61 @@
 <?php $WorkspaceHeader = '
-    <h3>ATP</h3>
+    <h3>Authorization to Participate</h3>
     <div class="workspace-header-bar">
 
     </div>
 '?>
 
 <?php
-if (!isset($_COOKIE['locstatus'])){
+if (!isset($_COOKIE['locstatus'])) {
     setcookie('locstatus', 'In Progress');
 };
 $Body = '
-<table class="dataTable-list-style" data-afterrender="afterRenderDataTable" summary="Nurse Monitoring List">
-        <thead>
-            <tr>
-                <th>
-                    Create Date
-                </th>
-                <th>
-                    Effective Date
-                </th>
-                <th>
-                    Expiration Date
-                </th>
-                <th>
-                    Status
-                </th>
-                <th>
-                    Active/Inactive
-                </th>
-                <th>
-                    Actions
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    09/15/2014
-                </td>
-                <td>
+<div class="panelbar-task-style">
+    <div class="panel">
+        <div class="header">
+            <h5>ATP Questionnanires</h5>
+            <div class="TaskDetailLink">
+                <a href="#">Add</a>
+            </div>
+        </div>
+        <div class="body">
+            <div class="panelbar-content">
+                <table class="inline-dataTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                Program Type
+                            </th>
+                            <th>
+                                ATP Type
+                            </th>
+                            <th>
+                                Last Modified Date
+                            </th>
+                            <th>
+                                Last Modified By
+                            </th>
+                            <th>
+                                Date Alerted
+                            </th>
+                            <th>
+                                Status
+                            </th>
+                            <th>
+                                Active/Inactive
+                            </th>
+                            <th class="actions">
+                                Actions
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                </td>
-                <td>
-
-                </td>
-                <td>
-                    '.((isset($_COOKIE["locstatus"])) ? $_COOKIE["locstatus"] : "In Progress" ).'
-                </td>
-                <td>
-                    Inactive
-                </td>
-                <td>
-                    <a href="'.base_url()."index.php/levelofcare/details".'">View</a>
-                    <a href="#">Print</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 '?>
 

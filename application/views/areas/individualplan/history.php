@@ -17,13 +17,25 @@ $Body = '
                     Create Date
                 </th>
                 <th>
+                    Program
+                </th>
+                <th>
+                    PSS Type
+                </th>
+                <th>
+                    IP Cost
+                </th>
+                <th>
+                    Cost Neutrality
+                </th>
+                <th>
                     Effective Date
                 </th>
                 <th>
-                    Expiration Date
+                    End Date
                 </th>
                 <th>
-                    Status
+                   Status
                 </th>
                 <th>
                     Active/Inactive
@@ -39,19 +51,31 @@ $Body = '
                     09/15/2014
                 </td>
                 <td>
-
+                    DDA
+                </td>
+                <td>
+                    Initial
+                </td>
+                <td>
+                    $18,000.00
+                </td>
+                <td>
+                    $20,000.00
+                </td>
+                <td>
+                    07/20/2015
                 </td>
                 <td>
 
                 </td>
                 <td>
-                    '.((isset($_COOKIE["locstatus"])) ? $_COOKIE["locstatus"] : "In Progress" ).'
+                    Approved
                 </td>
                 <td>
-                    Inactive
+                    Active
                 </td>
                 <td>
-                    <a href="'.base_url()."index.php/levelofcare/details".'">View</a>
+                    <a href="'.base_url()."index.php/individualplan/summary".'">View</a>
                     <a href="#">Print</a>
                 </td>
             </tr>
