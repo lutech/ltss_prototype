@@ -1,7 +1,9 @@
 <?php $WorkspaceHeader = '
     <h3>Application Packet</h3>
     <div class="workspace-header-bar">
-
+        <div class="float-right">
+            <button>Create New</button>
+        </div>
     </div>
 '?>
 

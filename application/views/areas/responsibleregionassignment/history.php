@@ -1,7 +1,9 @@
 <?php $WorkspaceHeader = '
-    <h3>Initial Placement</h3>
+    <h3>Responsible Region Assignment</h3>
     <div class="workspace-header-bar">
-
+        <div class="float-right">
+            <button>New Assignment</button>
+        </div>
     </div>
 '?>
 
@@ -17,16 +19,19 @@ $Body = '
                     Create Date
                 </th>
                 <th>
+                    Initiated By
+                </th>
+                <th>
                     Effective Date
                 </th>
                 <th>
                     Expiration Date
                 </th>
                 <th>
-                    Status
+                    Responsible Region Selection
                 </th>
                 <th>
-                    Active/Inactive
+                   Selection Status
                 </th>
                 <th>
                     Actions
@@ -34,27 +39,6 @@ $Body = '
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>
-                    09/15/2014
-                </td>
-                <td>
-
-                </td>
-                <td>
-
-                </td>
-                <td>
-                    '.((isset($_COOKIE["locstatus"])) ? $_COOKIE["locstatus"] : "In Progress" ).'
-                </td>
-                <td>
-                    Inactive
-                </td>
-                <td>
-                    <a href="'.base_url()."index.php/levelofcare/details".'">View</a>
-                    <a href="#">Print</a>
-                </td>
-            </tr>
         </tbody>
     </table>
 '?>

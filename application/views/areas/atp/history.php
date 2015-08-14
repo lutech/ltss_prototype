@@ -1,7 +1,6 @@
 <?php $WorkspaceHeader = '
     <h3>Authorization to Participate</h3>
     <div class="workspace-header-bar">
-
     </div>
 '?>
 
