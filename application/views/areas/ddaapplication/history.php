@@ -6,56 +6,110 @@
 '?>
 
 <?php
-if (!isset($_COOKIE['locstatus'])){
+if (!isset($_COOKIE['locstatus'])) {
     setcookie('locstatus', 'In Progress');
 };
 $Body = '
-<table class="dataTable-list-style" data-afterrender="afterRenderDataTable" summary="Nurse Monitoring List">
-        <thead>
-            <tr>
-                <th>
-                    Create Date
-                </th>
-                <th>
-                    Effective Date
-                </th>
-                <th>
-                    Expiration Date
-                </th>
-                <th>
-                    Status
-                </th>
-                <th>
-                    Active/Inactive
-                </th>
-                <th>
-                    Actions
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    09/15/2014
-                </td>
-                <td>
+<div class="panelbar-task-style">
+    <div class="panel">
+        <div class="header">
+            <h5>DDA Application</h5>
+            <div class="TaskDetailLink">
+                <a href="#">Create New</a>
+            </div>
+        </div>
+        <div class="body">
+            <div class="panelbar-content">
+                <table class="inline-dataTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                Column 1
+                            </th>
+                            <th>
+                                Column 2
+                            </th>
+                            <th>
+                                Column 3
+                            </th>
+                            <th class="actions">
+                                Actions
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                </td>
-                <td>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="panel">
+        <div class="header">
+            <h5>Eligibility and Priority Decision Form</h5>
+            <div class="TaskDetailLink">
+                <a href="#">Create New</a>
+            </div>
+        </div>
+        <div class="body">
+            <div class="panelbar-content">
+                <table class="inline-dataTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                Column 1
+                            </th>
+                            <th>
+                                Column 2
+                            </th>
+                            <th>
+                                Column 3
+                            </th>
+                            <th class="actions">
+                                Actions
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                </td>
-                <td>
-                    '.((isset($_COOKIE["locstatus"])) ? $_COOKIE["locstatus"] : "In Progress" ).'
-                </td>
-                <td>
-                    Inactive
-                </td>
-                <td>
-                    <a href="'.base_url()."index.php/levelofcare/details".'">View</a>
-                    <a href="#">Print</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="panel">
+        <div class="header">
+            <h5>Emergency Situation</h5>
+            <div class="TaskDetailLink">
+                <a href="#">Create New</a>
+            </div>
+        </div>
+        <div class="body">
+            <div class="panelbar-content">
+                <table class="inline-dataTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                Column 1
+                            </th>
+                            <th>
+                                Column 2
+                            </th>
+                            <th>
+                                Column 3
+                            </th>
+                            <th class="actions">
+                                Actions
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 '?>
 

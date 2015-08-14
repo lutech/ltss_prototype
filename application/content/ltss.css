@@ -14099,7 +14099,7 @@ select.required.input-validation-error {
     }*/
     /*Style: Section Element*/
     padding: 0px 0px 0px 0px;
-    background: inherit;
+    background: transparent;
     border: none;
 }
 .panelbar-task-style .panel .header h4 [class^="icon-"],

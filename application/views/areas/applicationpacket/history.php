@@ -17,16 +17,19 @@ $Body = '
                     Create Date
                 </th>
                 <th>
-                    Effective Date
+                    Created By
                 </th>
                 <th>
-                    Expiration Date
+                    Program Type
+                </th>
+                <th>
+                    Eligbility Type
+                </th>
+                <th>
+                    Application Type
                 </th>
                 <th>
                     Status
-                </th>
-                <th>
-                    Active/Inactive
                 </th>
                 <th>
                     Actions
@@ -39,19 +42,22 @@ $Body = '
                     09/15/2014
                 </td>
                 <td>
-
+                    Adam Samuels
                 </td>
                 <td>
-
+                    DDA
                 </td>
                 <td>
-                    '.((isset($_COOKIE["locstatus"])) ? $_COOKIE["locstatus"] : "In Progress" ).'
+                    N/A
                 </td>
                 <td>
-                    Inactive
+                    Initial
                 </td>
                 <td>
-                    <a href="'.base_url()."index.php/levelofcare/details".'">View</a>
+                    In-Progress
+                </td>
+                <td>
+                    <a href="'.base_url()."index.php/applicationpacket/summary".'">Summary</a>
                     <a href="#">Print</a>
                 </td>
             </tr>
