@@ -4,6 +4,7 @@ require "application/views/shared/tabMenuItem_builder.php";
 echo new TabMenuItem("Home", "site", "home", "home-icon", true,  $this->uri);
 echo new TabMenuItem($_COOKIE['CommonLabel_Clients'], "clients", "index", "client-match-icon", true,  $this->uri);
 echo new TabMenuItem("My Lists", "mylists", "index", "list-icon", false,  $this->uri);
+echo new TabMenuItem("Waiting List", "ddawaitinglist", "history", "list-icon", false,  $this->uri);
 echo new TabMenuItem("Alerts", "alerts", "index", "alerts-icon", false,  $this->uri);
 echo new TabMenuItem("Dashboard", "dashboard", "index", "dashboard-icon", false,  $this->uri);
 echo new TabMenuItem("Assignments", "assignments", "index", "client-match-icon", false,  $this->uri);
