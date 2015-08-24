@@ -2,17 +2,33 @@
 
 if (isset($_COOKIE['role'])){
 
-    //CCS Cooridnator Permissions
+    //CCS Cooridnator
     if ($_COOKIE['role'] == "ccscoordinator"){
         // DDA Eligibility Application
+
+        //View
         $ddaEligibilityApplication->view = true;
 
+        //Edit
         if (
             $ddaEligibilityApplicationData->status == "Information Requested"
         ) {
-            $ddaEligibilityApplication->ccssubmit = true;
             $ddaEligibilityApplication->edit = true;
             $ddaEligibilityApplication->save = true;
+        }
+
+        //Save
+        if (
+            $ddaEligibilityApplicationData->status == "Information Requested"
+        ) {
+            $ddaEligibilityApplication->save = true;
+        }
+
+        //Submit
+        if (
+            $ddaEligibilityApplicationData->status == "Information Requested"
+        ) {
+            $ddaEligibilityApplication->submit = true;
         }
 
         // Eligibility and Priority Decision Form

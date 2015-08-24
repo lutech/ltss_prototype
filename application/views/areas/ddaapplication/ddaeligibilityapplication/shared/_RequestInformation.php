@@ -1,7 +1,7 @@
 <div id="requestInformationDdaEligibilityApplicationDialog" style="display: none; max-width: 600">
     <form>
         <fieldset class="fieldset-container-one">
-            <legend class="legend-header-one">Place Client On Hold</legend>
+            <legend class="legend-header-one">Information Request</legend>
             <div class="row">
                 <label for="" class="complete-required">Comments:</label>
                 <textarea class="required comments-textarea" required="required"></textarea>

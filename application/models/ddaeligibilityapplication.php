@@ -2,8 +2,14 @@
 
 // DDA Eligibility Application
 $ddaEligibilityApplicationData = (object) [
-    'status' => '', //In Progress; Information Requested; Abandoned; Complete; Discarded;
-    'active' => '', //Active; Inactive;
+    'status' => '', //In Progress
+                    //Information Requested
+                    //Abandoned
+                    //Complete
+                    //Discarded
+
+    'active' => '', //Active
+                    //Inactive;
     'lastmodifiedby' => '',
     'date'   => (object) [
                 'lastmodified' => '',

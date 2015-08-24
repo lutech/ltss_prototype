@@ -140,32 +140,22 @@ class DdaEligibilityApplication extends CI_Controller {
         if (isset($_COOKIE['username'])){
             $username = $_COOKIE['username'];
         }
-        setcookie('ddaeligibilityapplicationlastmodifiedby', $username, time()+36000000, '/');
 
-        setcookie('ddaeligibilityapplicationstatus', 'Complete', time()+36000000, '/');
-        setcookie('ddaeligibilityapplicationactive', 'Active', time()+36000000, '/');
+        if (isset($_COOKIE['ddaapplicationpacketstatus'])){
+            if ($_COOKIE['ddaeligibilityapplicationstatus'] == "In Progress") {
+                setcookie('ddaeligibilityapplicationstatus', 'Complete', time()+36000000, '/');
+                setcookie('ddaeligibilityapplicationactive', 'Active', time()+36000000, '/');
+            }
+            else  if ($_COOKIE['ddaeligibilityapplicationstatus'] == "Information Requested") {
+                setcookie('ddaeligibilityapplicationstatus', 'In Progress', time()+36000000, '/');
+            }
+        }
+
+        setcookie('ddaeligibilityapplicationlastmodifiedby', $username, time()+36000000, '/');
         setcookie('confirmation', 'submitted', time()+36000000, '/');
         setcookie('ddaeligibilityapplicationlastmodifieddate', $date, time()+36000000, '/');
         setcookie('ddaeligibilityapplicationdatecurrentstatusattained', $date, time()+36000000, '/');
         setcookie('ddaeligibilityapplicationcompletiondate', $date, time()+36000000, '/');
-
-        $this->load->helper('url');
-        $url = base_url().'index.php/ddaapplication/summary';
-        header( "Location: $url" );
-    }
-    public function ccssubmit() {
-        $newdate = new DateTime();
-        $date =  $newdate->format('m/d/Y') . "\n";
-        if (isset($_COOKIE['username'])){
-            $username = $_COOKIE['username'];
-        }
-        setcookie('ddaeligibilityapplicationlastmodifiedby', $username, time()+36000000, '/');
-
-        setcookie('ddaeligibilityapplicationstatus', 'In Progress', time()+36000000, '/');
-        setcookie('ddaeligibilityapplicationactive', 'Inactive', time()+36000000, '/');
-        setcookie('confirmation', 'submitted', time()+36000000, '/');
-        setcookie('ddaeligibilityapplicationlastmodifieddate', $date, time()+36000000, '/');
-        setcookie('ddaeligibilityapplicationdatecurrentstatusattained', $date, time()+36000000, '/');
 
         $this->load->helper('url');
         $url = base_url().'index.php/ddaapplication/summary';

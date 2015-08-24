@@ -11,7 +11,6 @@ $ddaEligibilityApplication = (object) [
     'edit' => false,
     'revise' => false,
     'submit' => false,
-    'ccssubmit' => false,
     'requestinformation' => false,
 ];
 
@@ -24,29 +23,9 @@ $eligibilityAndPriorityDecisionForm = (object) [
     'revise' => false,
     'submit' => false,
 ];
-// Eligibility and Priority Decision Form
-$emergencySituation = (object) [
-    'add' => false,
-    'view' => false,
-    'discard' => false,
-    'edit' => false,
-    'revise' => false,
-    'submit' => false,
-];
 require_once "users/ccscoordinator.php";
 require_once "users/dhmhadmin.php";
 require_once "users/regionalstaff.php";
-
-
-$role ="";
-if (isset($_COOKIE['role'])){
-    $role = $_COOKIE['role'];
-}
-
-$confirmation ="";
-if (isset($_COOKIE['confirmation'])){
-    $confirmation = $_COOKIE['confirmation'];
-}
 
 
 // DDA Eligibility Application
@@ -63,9 +42,6 @@ $saveDdaEligibilityApplication = $ddaEligibilityApplication->save?
 //Submit
 $submitDdaEligibilityApplication = $ddaEligibilityApplication->submit?
     '<a href="'.base_url()."index.php/ddaeligibilityapplication/submit".'">Submit</a>' : '';
-//CCS Submit
-$submitDdaEligibilityApplication = $ddaEligibilityApplication->ccssubmit?
-    '<a href="'.base_url()."index.php/ddaeligibilityapplication/ccssubmit".'">Submit</a>' : '';
 //Request Information
 $requestInformationDdaEligibilityApplication = $ddaEligibilityApplication->requestinformation?
     '<a href="#" id="requestInformationDdaEligibilityApplication">Request Information</a>' : '';
@@ -111,6 +87,3 @@ $manageDocumentation = $ddaEligibilityApplication->edit?
 $addEligibilityAndPriorityDecisionForm = $eligibilityAndPriorityDecisionForm->add?
     '<a href="'.base_url()."index.php/eligibilityAndPriorityDecisionForm/create".'">Add</a>' : '';
 
-// Emergency Situation
-$addEmergencySituation = $emergencySituation->add?
-    '<a href="'.base_url()."index.php/eligibilityAndPriorityDecisionForm/create".'">Add</a>' : '';

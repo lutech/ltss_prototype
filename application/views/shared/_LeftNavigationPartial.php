@@ -52,12 +52,12 @@
                         <li>
                             <?php
 
-                            echo new MenuItem("DDA Eligibility Application Summary", "ddaeligibilityapplication", "details", "", true, true, "", $this->uri);
+                            echo new MenuItem("DDA Eligibility Application", "ddaeligibilityapplication", "details", "", true, true, "", $this->uri);
 
                             if ($this->uri->segment(1) == "ddaeligibilityapplication" &&
                                 ($this->uri->segment(3) == "edit" ||  $this->uri->segment(3) == "manage" )
                             ) {
-                                echo new MenuItem("DDA Eligibility Application Summary", "ddaeligibilityapplication", "details", "", true, false, "", $this->uri);
+                                echo new MenuItem("DDA Eligibility Application", "ddaeligibilityapplication", "details", "", true, false, "", $this->uri);
 
                             echo '
                                 <ul>
@@ -73,6 +73,35 @@
                                 </ul>
                                 ';
                             }
+                            ?>
+                        </li>
+                        <li>
+                            <?php echo new MenuItem("New Emergency Situation", "ddaemergencysituation", "create", "", true, true, "", $this->uri); ?>
+                        </li>
+                        <li>
+                            <?php
+
+                            echo new MenuItem("Emergency Situation", "ddaemergencysituation", "details", "", true, true, "", $this->uri);
+
+//                            if ($this->uri->segment(1) == "ddaeligibilityapplication" &&
+//                                ($this->uri->segment(3) == "edit" ||  $this->uri->segment(3) == "manage" )
+//                            ) {
+//                                echo new MenuItem("DDA Eligibility Application Summary", "ddaeligibilityapplication", "details", "", true, false, "", $this->uri);
+//
+//                                echo '
+//                                <ul>
+//                                    <li>
+//                                        '.new MenuItem("Applicant's Information", "ddaeligibilityapplication", "applicantsinformation/edit", "", true, false, "", $this->uri).'
+//                                    </li>
+//                                    <li>
+//                                        '.new MenuItem("Applicant's Self Assessment", "ddaeligibilityapplication", "applicantsselfassessment/edit", "", true, false, "", $this->uri).'
+//                                    </li>
+//                                    <li>
+//                                        '.new MenuItem("Documentation", "ddaeligibilityapplication", "documentation/manage", "", true, false, "", $this->uri).'
+//                                    </li>
+//                                </ul>
+//                                ';
+//                            }
                             ?>
                         </li>
                     </ul>

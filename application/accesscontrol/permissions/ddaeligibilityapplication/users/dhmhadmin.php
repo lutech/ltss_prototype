@@ -2,7 +2,7 @@
 
 if (isset($_COOKIE['role'])){
 
-    //DHMH Admin Permissions
+    //DHMH Admin
     if ($_COOKIE['role'] == "dhmhadmin"){
         // DDA Eligibility Application
         $ddaEligibilityApplication->view = true;

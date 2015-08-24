@@ -29,9 +29,12 @@
                         <select name="username" id="username"
                             <option value="0"></option>
                             <option value="1">DHMH Admin</option>
-                            <option value="2">CCS Coordinator</option>
-                            <option value="3">Regional Staff</option>
-                            <option value="4">Waiver Unit Staff</option>
+                            <option value="2">DDA Director</option>
+                            <option value="3">CCS Coordinator</option>
+                            <option value="4">Regional Director</option>
+                            <option value="5">Regional Staff</option>
+                            <option value="6">Regional Supervisor</option>
+                            <option value="7">Waiver Unit Staff</option>
                         </select>
                     </div>
                     <div class="row">

@@ -65,6 +65,7 @@
                             <li role="menuitem"><a href="'.base_url().'index.php/reset/all">All</a></li>
                             <li role="menuitem"><a href="'.base_url().'index.php/reset/ddaeligibilityapplication"">DDA Eligibility Application</a></li>
                             <li role="menuitem"><a href="'.base_url().'index.php/reset/ddaapplicationpacket"">DDA Application Packet</a></li>
+                            <li role="menuitem"><a href="'.base_url().'index.php/reset/ddaemergencysituation"">DDA Emergency Situation</a></li>
                         </ul>
                     </li>
                     <li role="menuitem"><a href="#">Print</a></li>

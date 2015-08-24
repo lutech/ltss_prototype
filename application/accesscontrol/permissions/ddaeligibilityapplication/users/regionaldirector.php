@@ -2,34 +2,44 @@
 
 if (isset($_COOKIE['role'])){
 
-    //DHMH Admin Permissions
-    if ($_COOKIE['role'] == "regionalstaff"){
+    //Regional Director
+    if ($_COOKIE['role'] == "regionaldirector"){
         // DDA Eligibility Application
         $ddaEligibilityApplication->view = true;
         $ddaEligibilityApplication->save = true;
 
+        //Add
         if (
             $ddaEligibilityApplicationData->status != "In Progress" &&
             $ddaEligibilityApplicationData->status != "Information Requested"
         ) {
             $ddaEligibilityApplication->add = true;
         }
+        //Discard
         if (
             $ddaEligibilityApplicationData->status == "In Progress"
         ) {
             $ddaEligibilityApplication->discard = true;
         }
+        //Edit
         if (
             $ddaEligibilityApplicationData->status == "In Progress"
         ) {
             $ddaEligibilityApplication->edit = true;
         }
+        //Submit
+        if (
+            $ddaEligibilityApplicationData->status == "In Progress"
+        ) {
+            $ddaEligibilityApplication->submit = true;
+        }
+        //Request Information
         if (
             $ddaEligibilityApplicationData->status == "In Progress"
         ) {
             $ddaEligibilityApplication->requestinformation = true;
-            $ddaEligibilityApplication->submit = true;
         }
+        //Revise
         if (
             $ddaEligibilityApplicationData->status == "Abandoned" ||
             $ddaEligibilityApplicationData->status == "Complete"

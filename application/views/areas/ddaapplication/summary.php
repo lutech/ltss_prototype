@@ -8,22 +8,58 @@
 <?php
 
 $ddaEligibilityApplicationRow = $ddaEligibilityApplicationData->status != '' ? '
-                        <tr>
-                            <td>'.$ddaEligibilityApplicationData->date->lastmodified.'</td>
-                            <td>'.$ddaEligibilityApplicationData->lastmodifiedby.'</td>
-                            <td>Responsible Region Staff Person</td>
-                            <td>CCS Coordinator</td>
-                            <td>'.$ddaEligibilityApplicationData->date->application.'</td>
-                            <td>'.$ddaEligibilityApplicationData->date->completion.'</td>
-                            <td>'.$ddaEligibilityApplicationData->status.'</td>
-                            <td>'.$ddaEligibilityApplicationData->date->currentstatusattained.'</td>
-                            <td>'.$ddaEligibilityApplicationData->active.'</td>
-                            <td>
-                                '.$viewDdaEligibilityApplication.'
-                                '.$reviseDdaEligibilityApplication.'
-                                <a href="#">Print</a>
-                            </td>
-                        </tr>' : '';
+    <tr>
+        <td>'.$ddaEligibilityApplicationData->date->lastmodified.'</td>
+        <td>'.$ddaEligibilityApplicationData->lastmodifiedby.'</td>
+        <td>Responsible Region Staff Person</td>
+        <td>CCS Coordinator</td>
+        <td>'.$ddaEligibilityApplicationData->date->application.'</td>
+        <td>'.$ddaEligibilityApplicationData->date->completion.'</td>
+        <td>'.$ddaEligibilityApplicationData->status.'</td>
+        <td>'.$ddaEligibilityApplicationData->date->currentstatusattained.'</td>
+        <td>'.$ddaEligibilityApplicationData->active.'</td>
+        <td>
+            '.$viewDdaEligibilityApplication.'
+            '.$reviseDdaEligibilityApplication.'
+            <a href="#">Print</a>
+        </td>
+    </tr>
+' : '';
+
+$ddaEligibilityAndPriorityDecisionRow = $ddaEligibilityApplicationData->status == 'Complete' ? '
+    <tr>
+        <td>
+            '.$ddaEligibilityApplicationData->date->completion.'
+        </td>
+        <td>
+            '.$ddaEligibilityApplicationData->lastmodifiedby.'
+        </td>
+        <td>
+            Comprehensive Assessment
+        </td>
+        <td>
+            Complete
+        </td>
+        <td>
+            <a href="#">View</a>
+        </td>
+    </tr>
+' : '';
+
+$ddaEmergencySituationRow = $ddaEmergencySituationData->status != '' ? '
+    <tr>
+        <td>'.$ddaEmergencySituationData->date->created.'</td>
+        <td>'.$ddaEmergencySituationData->date->lastmodified.'</td>
+        <td>'.$ddaEmergencySituationData->lastmodifiedby.'</td>
+        <td>Meests Criteria</td>
+        <td>'.$ddaEmergencySituationData->status.'</td>
+        <td>'.$ddaEmergencySituationData->active.'</td>
+        <td>
+            '.$viewDdaEmergencySituation.'
+        </td>
+    </tr>
+' : '';
+
 $Body = '
 <div class="panelbar-task-style">
     <div class="panel">
@@ -81,7 +117,7 @@ $Body = '
         <div class="header">
             <h5>Eligibility and Priority Decision Form</h5>
             <div class="TaskDetailLink">
-                '.$addEligibilityAndPriorityDecisionForm.'
+
             </div>
         </div>
         <div class="body">
@@ -90,13 +126,16 @@ $Body = '
                     <thead>
                         <tr>
                             <th>
-                                Column 1
+                                Create Date
                             </th>
                             <th>
-                                Column 2
+                                Created By
                             </th>
                             <th>
-                                Column 3
+                               Type
+                            </th>
+                            <th>
+                               Status
                             </th>
                             <th class="actions">
                                 Actions
@@ -104,7 +143,7 @@ $Body = '
                         </tr>
                     </thead>
                     <tbody>
-
+                        '.$ddaEligibilityAndPriorityDecisionRow.'
                     </tbody>
                 </table>
             </div>
@@ -114,7 +153,7 @@ $Body = '
         <div class="header">
             <h5>Emergency Situation</h5>
             <div class="TaskDetailLink">
-                <a href="#">Add</a>
+                '.$createDdaEmergencySituation.'
             </div>
         </div>
         <div class="body">
@@ -123,13 +162,22 @@ $Body = '
                     <thead>
                         <tr>
                             <th>
-                                Column 1
+                                Create Date
                             </th>
                             <th>
-                                Column 2
+                                Last Modified Date
                             </th>
                             <th>
-                                Column 3
+                                Last Modified By
+                            </th>
+                            <th>
+                                Determination
+                            </th>
+                            <th>
+                                Status
+                            </th>
+                            <th>
+                                Active/Inactive
                             </th>
                             <th class="actions">
                                 Actions
@@ -137,7 +185,7 @@ $Body = '
                         </tr>
                     </thead>
                     <tbody>
-
+                        '.$ddaEmergencySituationRow.'
                     </tbody>
                 </table>
             </div>
