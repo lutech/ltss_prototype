@@ -1,4 +1,3 @@
-
 <?php $SearchFieldArea = '
 <form>
         <fieldset class="fieldset-container-searcharea">
@@ -39,11 +38,12 @@
                 <div class="float-left">
                     Search:
                    <button type="submit" id="searchProfiles" onclick=" $("#SearchFor").val("Profiles"); ">Profiles</button>
-                    <input type="button" id="btnClearFormElements" name="clear" value="Clear" onclick=" clearFormElements(this.form); " />
+        <input type="button" id="btnClearFormElements" name="clear" value="Clear" onclick=" clearFormElements(this.form); " />
                 </div>
                <div class="float-right">
-                        <a href="#" id="_contentlinkCreateClient" onclick=" window.location.href = CreateClientUrl() ">Add New Profile</a>
-                    </div>
+                    <a href="'.base_url()."index.php/client/newclientprofile".'">Create New</a>
+                <!--     <a href="newclientprofile" id="newclientprofile" onclick=" window.location.href = CreateClientUrl() ">Create New</a>  -->
+                </div>
             </div>
         </fieldset>
 </form>
@@ -65,8 +65,7 @@
         </tr>
     </thead>
     <tbody>
-       
-            <tr>
+          <tr>
                 <td>
                     589785412589
                 </td>

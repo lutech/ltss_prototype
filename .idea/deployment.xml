@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="LTSS_MS_PSS" uploadOnCheckin="d384e997-cb37-47e2-a906-86e487a47b71" showDifferentInSync="false" showNewOnTargetInSync="false">
+    <serverData>
+      <paths name="LTSS_MD_DDA">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="LTSS_MS_PROTOTYPE">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="LTSS_MS_PSS">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myUploadOnCheckinName" value="LTSS_MS_PSS" />
+  </component>
+</project>
+
