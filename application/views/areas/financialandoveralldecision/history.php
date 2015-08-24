@@ -13,7 +13,7 @@ $Body = '
 <div class="panelbar-task-style">
     <div class="panel startExpanded">
         <div class="header">
-            <h5>Financial Eligibility Determinations and Redertimations</h5>
+            <h5>Financial Eligibility Determinations and Redeterminations</h5>
             <div class="TaskDetailLink">
                 <a href="#">Add</a>
             </div>

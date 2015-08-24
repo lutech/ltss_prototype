@@ -1,5 +1,5 @@
 <?php
-setcookie('CommonLabel_Application', 'LTSS MD DDA', time()+36000000, '/');
+setcookie('CommonLabel_Application', 'LTSS MD DDA Pilot', time()+36000000, '/');
 setcookie('CommonLabel_Client', 'Client', time()+36000000, '/');
 setcookie('CommonLabel_Clients', "Clients", time()+36000000, '/');
 setcookie('CommonLabel_Clients_Ownership', "Client's", time()+36000000, '/');

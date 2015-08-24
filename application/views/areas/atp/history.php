@@ -12,7 +12,7 @@ $Body = '
 <div class="panelbar-task-style">
     <div class="panel">
         <div class="header">
-            <h5>ATP Questionnanires</h5>
+            <h5>ATP Questionnaires</h5>
             <div class="TaskDetailLink">
                 <a href="#">Add</a>
             </div>

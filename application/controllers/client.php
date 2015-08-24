@@ -14,8 +14,10 @@
 	
 	
 	public function clientprofilesummary( $area = 'client', $page = 'clientprofilesummary', $layout= '_ClientLayoutView', $topnavtab = 'client') {
-		
-		if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
+
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
+
+        if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
 		{
 			show_404();
 		}		

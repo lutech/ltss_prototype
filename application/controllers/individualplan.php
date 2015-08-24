@@ -15,6 +15,8 @@ class IndividualPlan extends CI_Controller {
 
     public function history( $area = 'individualplan', $page = 'history', $layout= '_ClientLayoutView', $topnavtab = 'client') {
 
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
+
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {
             show_404();
@@ -51,6 +53,8 @@ class IndividualPlan extends CI_Controller {
     }
 
     public function summary( $area = 'individualplan', $page = 'summary', $layout= '_ClientLayoutView', $topnavtab = 'client') {
+
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
 
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {

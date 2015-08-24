@@ -4,6 +4,8 @@ class ProviderClient extends CI_Controller {
 
     public function clientsummary( $area = 'providerportal', $page = 'client/clientsummary', $layout= '_ClientLayoutView', $topnav = 'application/views/areas/providerportal/shared/_TopNavPartial.php', $topnavtab = 'client') {
 
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
+
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {
             show_404();
@@ -21,6 +23,8 @@ class ProviderClient extends CI_Controller {
 
     }
     public function psshistory( $area = 'providerportal', $page = 'client/pss/history', $layout= '_ClientLayoutView', $topnav = 'application/views/areas/providerportal/shared/_TopNavPartial.php', $topnavtab = 'client') {
+
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
 
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {
@@ -40,6 +44,8 @@ class ProviderClient extends CI_Controller {
     }
     public function psssummary( $area = 'providerportal', $page = 'client/pss/summary', $layout= '_ClientLayoutView', $topnav = 'application/views/areas/providerportal/shared/_TopNavPartial.php', $topnavtab = 'client') {
 
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
+
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {
             show_404();
@@ -57,6 +63,8 @@ class ProviderClient extends CI_Controller {
 
     }
     public function psstasks( $area = 'providerportal', $page = 'client/pss/tasks', $layout= '_ClientLayoutView', $topnav = 'application/views/areas/providerportal/shared/_TopNavPartial.php', $topnavtab = 'client') {
+
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
 
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {
@@ -76,6 +84,8 @@ class ProviderClient extends CI_Controller {
     }
     public function psstasksalt( $area = 'providerportal', $page = 'client/pss/tasksalternate', $layout= '_ClientLayoutView', $topnav = 'application/views/areas/providerportal/shared/_TopNavPartial.php', $topnavtab = 'client') {
 
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
+
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {
             show_404();
@@ -93,6 +103,8 @@ class ProviderClient extends CI_Controller {
 
     }
     public function medicationchangerequestnew( $area = 'providerportal', $page = 'client/pss/medicationchangerequest/create', $layout= '_ClientLayoutView', $topnav = 'application/views/areas/providerportal/shared/_TopNavPartial.php', $topnavtab = 'client') {
+
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
 
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {
@@ -112,6 +124,8 @@ class ProviderClient extends CI_Controller {
     }
     public function medicationchangerequestview( $area = 'providerportal', $page = 'client/pss/medicationchangerequest/view', $layout= '_ClientLayoutView', $topnav = 'application/views/areas/providerportal/shared/_TopNavPartial.php', $topnavtab = 'client') {
 
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
+
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {
             show_404();
@@ -129,6 +143,8 @@ class ProviderClient extends CI_Controller {
 
     }
     public function activitysupportplanmanage( $area = 'providerportal', $page = 'client/activitysupportplan/manage', $layout= '_ClientLayoutView', $topnav = 'application/views/areas/providerportal/shared/_TopNavPartial.php', $topnavtab = 'client') {
+
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
 
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {
@@ -148,6 +164,8 @@ class ProviderClient extends CI_Controller {
     }
     public function activitysupportplandetails( $area = 'providerportal', $page = 'client/activitysupportplan/details', $layout= '_ClientLayoutView', $topnav = 'application/views/areas/providerportal/shared/_TopNavPartial.php', $topnavtab = 'client') {
 
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
+
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {
             show_404();
@@ -165,6 +183,8 @@ class ProviderClient extends CI_Controller {
 
     }
     public function activitysupportplanedit( $area = 'providerportal', $page = 'client/activitysupportplan/edit', $layout= '_ClientLayoutView', $topnav = 'application/views/areas/providerportal/shared/_TopNavPartial.php', $topnavtab = 'client') {
+
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
 
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {

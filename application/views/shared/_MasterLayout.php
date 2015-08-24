@@ -1,4 +1,6 @@
 <?php require "application/views/shared/commonLabels.php"; ?>
+<?php require "application/models/_models.php"; ?>
+<?php require "application/accesscontrol/permissions.php"; ?>
 
 <!doctype html>
 <html>

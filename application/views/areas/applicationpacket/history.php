@@ -2,17 +2,49 @@
     <h3>Application Packet</h3>
     <div class="workspace-header-bar">
         <div class="float-right">
-            <button>Create New</button>
+            '.$createNewDdaApplicationPacket.'
         </div>
     </div>
 '?>
 
 <?php
-if (!isset($_COOKIE['locstatus'])){
-    setcookie('locstatus', 'In Progress');
-};
+
+
+$ddaApplicationPacketRow = $ddaApplicationPacketData->status != '' ? '
+    <tr>
+        <td>
+            '.$ddaApplicationPacketData->date->created.'
+        </td>
+        <td>
+            '.$ddaApplicationPacketData->createdby.'
+        </td>
+        <td>
+            '.$ddaApplicationPacketData->programtype.'
+        </td>
+        <td>
+            Yes
+        </td>
+        <td>
+            DD
+        </td>
+        <td>
+            '.$ddaApplicationPacketData->status.'
+        </td>
+        <td>
+            '.$ddaApplicationPacketData->date->completed.'
+        </td>
+        <td>
+            '.$ddaApplicationPacketData->active.'
+        </td>
+        <td>
+            <a href="'.base_url()."index.php/applicationpacket/summary".'">Summary</a>
+            <a href="#">Print</a>
+        </td>
+    </tr>
+' : '';
+
 $Body = '
-<table class="dataTable-list-style" data-afterrender="afterRenderDataTable" summary="Nurse Monitoring List">
+<table class="dataTable-list-style">
         <thead>
             <tr>
                 <th>
@@ -25,13 +57,19 @@ $Body = '
                     Program Type
                 </th>
                 <th>
-                    Eligbility Type
+                    Level of Care Certified?
                 </th>
                 <th>
-                    Application Type
+                    Category of Eligibility
                 </th>
                 <th>
                     Status
+                </th>
+                <th>
+                    Review Completion Date
+                </th>
+                <th>
+                    Active/Inactive
                 </th>
                 <th>
                     Actions
@@ -39,31 +77,35 @@ $Body = '
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>
-                    09/15/2014
-                </td>
-                <td>
-                    Adam Samuels
-                </td>
-                <td>
-                    DDA
-                </td>
-                <td>
-                    N/A
-                </td>
-                <td>
-                    Initial
-                </td>
-                <td>
-                    In-Progress
-                </td>
-                <td>
-                    <a href="'.base_url()."index.php/applicationpacket/summary".'">Summary</a>
-                    <a href="#">Print</a>
-                </td>
-            </tr>
+            '.$ddaApplicationPacketRow.'
         </tbody>
     </table>
 '?>
 
+
+<?php require_once "shared/_CreateNew.php"?>
+
+<?php
+$Script='
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            $("#createNewDdaApplicationPacket").on("click", function(){
+                ltss.overlay.show(
+                    {
+                    contentSelector: "#createNewDdaApplicationPacketDialog",
+                    options: {
+                            modal: true,
+                            helpers: {
+                            overlay: {
+                                    opacity: 0.3
+                                    }
+                            }
+                    }
+                });
+
+            });
+
+        });
+    </script>
+'?>

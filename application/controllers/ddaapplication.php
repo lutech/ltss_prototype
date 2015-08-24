@@ -13,7 +13,9 @@ class DdaApplication extends CI_Controller {
     }
 
 
-    public function history( $area = 'ddaapplication', $page = 'history', $layout= '_ClientLayoutView', $topnavtab = 'client') {
+    public function summary( $area = 'ddaapplication', $page = 'summary', $layout= '_ClientLayoutView', $topnavtab = 'client') {
+
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
 
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {
@@ -51,6 +53,8 @@ class DdaApplication extends CI_Controller {
     }
 
     public function details( $area = 'ddaapplication', $page = 'details', $layout= '_ClientLayoutView', $topnavtab = 'client') {
+
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
 
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {

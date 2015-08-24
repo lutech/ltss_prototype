@@ -4,6 +4,8 @@ class ProviderPortal extends CI_Controller {
 
     public function home( $area = 'providerportal', $page = 'home/home', $layout= '_MasterDetailLayout', $topnav = 'application/views/areas/providerportal/shared/_TopNavPartial.php') {
 
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
+
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {
             show_404();
@@ -21,6 +23,8 @@ class ProviderPortal extends CI_Controller {
     }
 
     public function clientsearch( $area = 'providerportal', $page = 'home/clientsearch', $layout= '_MasterDetailLayout', $topnav = 'application/views/areas/providerportal/shared/_TopNavPartial.php') {
+
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
 
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {
@@ -40,6 +44,8 @@ class ProviderPortal extends CI_Controller {
 
     public function servicesearch( $area = 'providerportal', $page = 'home/servicesearch', $layout= '_MasterDetailLayout', $topnav = 'application/views/areas/providerportal/shared/_TopNavPartial.php') {
 
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
+
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {
             show_404();
@@ -56,6 +62,8 @@ class ProviderPortal extends CI_Controller {
 
     }
     public function myclients( $area = 'providerportal', $page = 'home/myclients', $layout= '_MasterDetailLayout', $topnav = 'application/views/areas/providerportal/shared/_TopNavPartial.php') {
+
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
 
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {
@@ -74,6 +82,8 @@ class ProviderPortal extends CI_Controller {
     }
     public function alerts( $area = 'providerportal', $page = 'home/alerts', $layout= '_MasterDetailLayout', $topnav = 'application/views/areas/providerportal/shared/_TopNavPartial.php') {
 
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
+
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {
             show_404();
@@ -90,6 +100,8 @@ class ProviderPortal extends CI_Controller {
 
     }
     public function announcements( $area = 'providerportal', $page = 'home/announcements', $layout= '_MasterDetailLayout', $topnav = 'application/views/areas/providerportal/shared/_TopNavPartial.php') {
+
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
 
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {
@@ -108,6 +120,8 @@ class ProviderPortal extends CI_Controller {
     }
 
     public function helpandsupport( $area = 'providerportal', $page = 'home/helpandsupport', $layout= '_MasterDetailLayout', $topnav = 'application/views/areas/providerportal/shared/_TopNavPartial.php') {
+
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
 
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {

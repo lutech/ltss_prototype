@@ -1,14 +1,20 @@
 <?php $WorkspaceHeader = '
-    <h3>Application Packet — Summary</h3>
+    <h3>Application Packet — Summary <span>Status: '.$ddaApplicationPacketData->status.'</span><span>Program Type: '.$ddaApplicationPacketData->programtype.'</span></h3>
     <div class="workspace-header-bar">
-
+        <div class="float-left">
+            <button type="button" onclick="window.location.href= \''.base_url('/index.php/applicationpacket/history').'\'">Back to List</button>
+        </div>
+        <div class="float-right">
+            '.$requestClarificationDdaApplicationPacket.'
+            '.$submitDdaApplicationPacket.'
+            '.$discardDdaApplicationPacket.'
+            <button id="expandCollapseAll" runat="server"></button>
+        </div>
     </div>
 '?>
 
 <?php
-if (!isset($_COOKIE['locstatus'])) {
-    setcookie('locstatus', 'In Progress');
-};
+
 $Body = '
 <div class="panelbar-task-style">
     <div class="panel startExpanded">
@@ -22,25 +28,29 @@ $Body = '
                     <div class="column-left">
                         <p class="row summary">
                             <span class="label">Create Date:</span>
-                            <span class="data-element">01/22/2015</span>
+                            <span class="data-element">'.$ddaApplicationPacketData->date->created.'</span>
                         </p>
                         <p class="row summary">
                             <span class="label">Status:</span>
-                            <span class="data-element">Approved</span>
+                            <span class="data-element">'.$ddaApplicationPacketData->status.'</span>
+                        </p>
+                        <p class="row summary">
+                            <span class="label">Eligibility Type:</span>
+                            <span class="data-element">1915i</span>
                         </p>
                     </div>
                     <div class="column-right">
                         <p class="row summary">
                             <span class="label">Created By:</span>
-                            <span class="data-element">John Wall</span>
+                            <span class="data-element">'.$ddaApplicationPacketData->createdby.'</span>
                         </p>
                         <p class="row summary">
                             <span class="label">Application Type:</span>
                             <span class="data-element">Initial</span>
                         </p>
                         <p class="row summary">
-                            <span class="label">Referral Agency:</span>
-                            <span class="data-element">DOM AL</span>
+                            <span class="label">Case Management/Support Coordination Agency:</span>
+                            <span class="data-element">CCS Agency</span>
                         </p>
                     </div>
                 </div>
@@ -77,7 +87,7 @@ $Body = '
                                 Level of Care
                             </td>
                             <td>
-                                07/20/2015
+                                06/15/2015
                             </td>
                             <td>
                                 <span style="margin-right: 20px"><strong>Effective Date: </strong><span class="data-element">07/23/2015</span></span>
@@ -94,7 +104,7 @@ $Body = '
                                 Individual Plan
                             </td>
                             <td>
-                                07/20/2015
+                                06/15/2015
                             </td>
                             <td>
                                 <span style="margin-right: 20px"><strong>Effective Date: </strong><span class="data-element">07/23/2015</span></span>
@@ -113,7 +123,7 @@ $Body = '
         <div class="header">
             <h5>Attachments</h5>
             <div class="TaskDetailLink">
-                <a href="#">Upload Document</a>
+                '.$uploadDocumentDdaApplicationPacket.'
             </div>
         </div>
         <div class="body">
@@ -132,6 +142,9 @@ $Body = '
                             </th>
                             <th>
                                 Uploaded By
+                            </th>
+                            <th class="actions">
+                                Actions
                             </th>
                         </tr>
                     </thead>
@@ -173,5 +186,32 @@ $Body = '
         </div>
     </div>
 </div>
+'?>
+
+<?php require_once "shared/_RequestClarification.php"?>
+
+<?php
+$Script='
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            $("#requestClarificationDdaApplicationPacket").on("click", function(){
+                ltss.overlay.show(
+                    {
+                    contentSelector: "#requestClarificationDdaApplicationPacketDialog",
+                    options: {
+                            modal: true,
+                            helpers: {
+                            overlay: {
+                                    opacity: 0.3
+                                    }
+                            }
+                    }
+                });
+
+            });
+
+        });
+    </script>
 '?>
 

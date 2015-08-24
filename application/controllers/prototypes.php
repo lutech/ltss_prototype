@@ -4,6 +4,8 @@ class Prototypes extends CI_Controller {
     var $topnav = "areas/prototypes/shared/_LeftNavigationPartial.php";
     public function index( $area = 'prototypes', $page = 'index', $layout= '_ClientLayoutView', $topnav = 'application/views/areas/prototypes/shared/_TopNavPartial.php') {
 
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
+
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {
             show_404();
@@ -23,6 +25,8 @@ class Prototypes extends CI_Controller {
 
     public function esignbillofrightsdetails( $area = 'prototypes', $page = 'esignatures/billofrights/details', $layout= '_ClientLayoutView', $topnav = 'application/views/areas/prototypes/shared/_TopNavPartial.php') {
 
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
+
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {
             show_404();
@@ -40,6 +44,8 @@ class Prototypes extends CI_Controller {
     }
 
     public function esignbillofrightsedit( $area = 'prototypes', $page = 'esignatures/billofrights/edit', $layout= '_ClientLayoutView', $topnav = 'application/views/areas/prototypes/shared/_TopNavPartial.php') {
+
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
 
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {
@@ -59,6 +65,8 @@ class Prototypes extends CI_Controller {
 
     public function esignpssmanage( $area = 'prototypes', $page = 'esignatures/pss/manage', $layout= '_ClientLayoutView', $topnav = 'application/views/areas/prototypes/shared/_TopNavPartial.php') {
 
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
+
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {
             show_404();
@@ -77,6 +85,8 @@ class Prototypes extends CI_Controller {
 
     public function icfocdetails( $area = 'prototypes', $page = 'icfocform/details', $layout= '_ClientLayoutView', $topnav = 'application/views/areas/prototypes/shared/_TopNavPartial.php') {
 
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
+
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {
             show_404();
@@ -94,6 +104,8 @@ class Prototypes extends CI_Controller {
     }
 
     public function icfocedit( $area = 'prototypes', $page = 'icfocform/edit', $layout= '_ClientLayoutView', $topnav = 'application/views/areas/prototypes/shared/_TopNavPartial.php') {
+
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
 
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {

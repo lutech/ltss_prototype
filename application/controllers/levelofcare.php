@@ -15,6 +15,8 @@ class LevelOfCare extends CI_Controller {
 
     public function history( $area = 'levelofcare', $page = 'history', $layout= '_ClientLayoutView', $topnavtab = 'client') {
 
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
+
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {
             show_404();
@@ -52,6 +54,8 @@ class LevelOfCare extends CI_Controller {
 
     public function details( $area = 'levelofcare', $page = 'details', $layout= '_ClientLayoutView', $topnavtab = 'client') {
 
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
+
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {
             show_404();
@@ -88,6 +92,8 @@ class LevelOfCare extends CI_Controller {
     }
     public function nursedecision_edit( $area = 'levelofcare', $page = 'nursedecision_edit', $layout= '_ClientLayoutView', $topnavtab = 'client') {
 
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
+
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {
             show_404();
@@ -123,6 +129,8 @@ class LevelOfCare extends CI_Controller {
 
     }
     public function physiciandecision_edit( $area = 'levelofcare', $page = 'physiciandecision_edit', $layout= '_ClientLayoutView', $topnavtab = 'client') {
+
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
 
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {

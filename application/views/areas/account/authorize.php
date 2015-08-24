@@ -1,6 +1,14 @@
 <div class="login-body">
     <div class="six columns hide-for-print">
-        <h1 class="login-logo"><i>LTSS Prototype</i></h1>
+        <h1 class="login-logo"><i>
+                <?php
+                        if (!isset($_COOKIE['CommonLabel_Application'])){
+                            echo $_COOKIE['CommonLabel_Application'];
+                        } else {
+                            echo "LTSS MD DDA Pilot";
+                        }
+                ?>
+        </i></h1>
         <a name="Login" id="Login" class="ui-hide"></a>
         <p>
             The content displayed in this prototype are for proof of concept only and do not represent actual private data or finished product.
@@ -17,14 +25,21 @@
                     <legend>login</legend>
                     <div class="row">
                     	<label>Login Name:</label>
-                        <input type="text" name="username"/>
+<!--                        <input type="text" name="username"/>-->
+                        <select name="username" id="username"
+                            <option value="0"></option>
+                            <option value="1">DHMH Admin</option>
+                            <option value="2">CCS Coordinator</option>
+                            <option value="3">Regional Staff</option>
+                            <option value="4">Waiver Unit Staff</option>
+                        </select>
                     </div>
                     <div class="row">
                     	<label>Password:</label>
                         <input type="text" name="usernamepassword"/>
                     </div>
                     <div style="text-align: center">
-                        <input type="submit" value="Login" name="submit" style="max-width: 50%; margin-top: 20px !important" title="Submit" id="btnLogin"/>
+                        <input type="submit" value="Login" name="submit" title="Submit" id="btnLogin" style="max-width: 50%; margin-top: 20px !important"/>
                     </div>
                 </fieldset>
             </form>
@@ -52,6 +67,15 @@
         });
 
         resizeDropdowns();
+        $("#username").kendoComboBox({
+            ignoreCase: false,
+            dataTextField: "Text",
+            dataValueField: "Value",
+            filter: "startswith",
+            placeholder: "Type to search...",
+            autoBind: true,
+            minLength: 3
+        });
     });
 
 

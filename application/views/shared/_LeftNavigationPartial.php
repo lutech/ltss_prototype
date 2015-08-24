@@ -38,11 +38,45 @@
             </ul>
         </li>
 
-        <!-- Applications -->
+        <!-- Waivers -->
         <li>
-            <span class="leftNavHeader">Applications</span>
+            <span class="leftNavHeader">Programs</span>
 
             <ul class="leftnav-groupcontainer" style="display: none;">
+                <li>
+                    <?php echo new MenuItem("DDA Application", "ddaapplication", "summary", "", true, false, "", $this->uri); ?>
+                    <ul>
+                        <li>
+                            <?php echo new MenuItem("New DDA Eligibility Application", "ddaeligibilityapplication", "create", "", true, true, "", $this->uri); ?>
+                        </li>
+                        <li>
+                            <?php
+
+                            echo new MenuItem("DDA Eligibility Application Summary", "ddaeligibilityapplication", "details", "", true, true, "", $this->uri);
+
+                            if ($this->uri->segment(1) == "ddaeligibilityapplication" &&
+                                ($this->uri->segment(3) == "edit" ||  $this->uri->segment(3) == "manage" )
+                            ) {
+                                echo new MenuItem("DDA Eligibility Application Summary", "ddaeligibilityapplication", "details", "", true, false, "", $this->uri);
+
+                            echo '
+                                <ul>
+                                    <li>
+                                        '.new MenuItem("Applicant's Information", "ddaeligibilityapplication", "applicantsinformation/edit", "", true, false, "", $this->uri).'
+                                    </li>
+                                    <li>
+                                        '.new MenuItem("Applicant's Self Assessment", "ddaeligibilityapplication", "applicantsselfassessment/edit", "", true, false, "", $this->uri).'
+                                    </li>
+                                    <li>
+                                        '.new MenuItem("Documentation", "ddaeligibilityapplication", "documentation/manage", "", true, false, "", $this->uri).'
+                                    </li>
+                                </ul>
+                                ';
+                            }
+                            ?>
+                        </li>
+                    </ul>
+                </li>
                 <li>
                     <?php echo new MenuItem("Application Packet", "applicationpacket", "history", "", true, false, "", $this->uri); ?>
                     <ul>
@@ -50,15 +84,6 @@
                             <?php echo new MenuItem("Summary", "applicationpacket", "summary", "", true, true, "", $this->uri); ?>
                         </li>
                     </ul>
-                </li>
-            </ul>
-            <!-- Waivers -->
-        <li>
-            <span class="leftNavHeader">Programs</span>
-
-            <ul class="leftnav-groupcontainer" style="display: none;">
-                <li>
-                    <?php echo new MenuItem("DDA Application", "ddaapplication", "history", "", true, false, "", $this->uri); ?>
                 </li>
                 <li>
                     <?php echo new MenuItem("Level of Care", "levelofcare", "history", "", true, false, "", $this->uri); ?>

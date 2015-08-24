@@ -15,6 +15,8 @@ class Pss extends CI_Controller {
 
     public function history( $area = 'pss', $page = 'history', $layout= '_ClientLayoutView', $topnavtab = 'client') {
 
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
+
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {
             show_404();
@@ -52,6 +54,8 @@ class Pss extends CI_Controller {
 
     public function summary( $area = 'pss', $page = 'summary', $layout= '_ClientLayoutView', $topnavtab = 'client') {
 
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
+
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {
             show_404();
@@ -87,6 +91,8 @@ class Pss extends CI_Controller {
 
     }
     public function medicationchangerequestview( $area = 'pss', $page = 'medicationchangerequestview', $layout= '_ClientLayoutView', $topnavtab = 'client') {
+
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
 
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {
@@ -124,6 +130,8 @@ class Pss extends CI_Controller {
     }
     public function medicationchangerequestreview( $area = 'pss', $page = 'medicationchangerequestreview', $layout= '_ClientLayoutView', $topnavtab = 'client') {
 
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
+
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {
             show_404();
@@ -160,6 +168,8 @@ class Pss extends CI_Controller {
     }
 
     public function activitysupportplandetails( $area = 'pss', $page = 'activitysupportplan/details', $layout= '_ClientLayoutView', $topnavtab = 'client') {
+
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
 
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {

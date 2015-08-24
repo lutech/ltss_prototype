@@ -15,6 +15,8 @@ class ClientAttachments extends CI_Controller {
 
     public function history( $area = 'clientattachments', $page = 'history', $layout= '_ClientLayoutView', $topnavtab = 'client') {
 
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
+
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {
             show_404();
@@ -51,6 +53,8 @@ class ClientAttachments extends CI_Controller {
     }
 
     public function details( $area = 'clientattachments', $page = 'details', $layout= '_ClientLayoutView', $topnavtab = 'client') {
+
+        setcookie('currenturl', $_SERVER['REQUEST_URI'], time()+36000000, '/');
 
         if ( ! file_exists('application/views/areas/'.$area.'/'.$page.'.php'))
         {

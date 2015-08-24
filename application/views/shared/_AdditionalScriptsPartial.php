@@ -941,6 +941,58 @@
         $(".TaskDetailLink").click(function (event) {
             event.stopPropagation();
         });
+
+        if ("<?php echo $confirmation ?>" == "error"){
+            var msg = "";
+            if ("<?php echo $confirmationmsg ?>" != "") {
+                msg = "<?php echo $confirmationmsg ?>";
+            } else {
+                msg = "Your changes could not be saved.";
+            }
+            showErrorMessage(msg);
+            document.cookie="confirmation=;path=/";
+            document.cookie="confirmationmsg=;path=/";
+        }  else if("<?php echo $confirmation ?>" == "success"){
+            var msg = "";
+            if ("<?php echo $confirmationmsg ?>" != "") {
+                msg = "<?php echo $confirmationmsg ?>";
+            } else {
+                msg = "Success.";
+            }
+            showSuccessMessage(msg);
+            document.cookie="confirmation=;path=/";
+            document.cookie="confirmationmsg=;path=/";
+        }  else if("<?php echo $confirmation ?>" == "saved"){
+            var msg = "";
+            if ("<?php echo $confirmationmsg ?>" != "") {
+                msg = "<?php echo $confirmationmsg ?>";
+            } else {
+                msg = "Record has been saved";
+            }
+            showSuccessMessage(msg);
+            document.cookie="confirmation=;path=/";
+            document.cookie="confirmationmsg=;path=/";
+        } else if("<?php echo $confirmation ?>" == "submitted"){
+            var msg = "";
+            if ("<?php echo $confirmationmsg ?>" != "") {
+                msg = "<?php echo $confirmationmsg ?>";
+            } else {
+                msg = "Record has been submitted.";
+            }
+            showSuccessMessage(msg);
+            document.cookie="confirmation=;path=/";
+            document.cookie="confirmationmsg=;path=/";
+        } else if("<?php echo $confirmation ?>" == "discarded"){
+            var msg = "";
+            if ("<?php echo $confirmationmsg ?>" != "") {
+                msg = "<?php echo $confirmationmsg ?>";
+            } else {
+                msg = "Record has been discarded.";
+            }
+            showSuccessMessage(msg);
+            document.cookie="confirmation=;path=/";
+            document.cookie="confirmationmsg=;path=/";
+        }
     });
 </script>
 

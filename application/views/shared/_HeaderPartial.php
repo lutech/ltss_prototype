@@ -13,8 +13,7 @@
                 echo '
                         <strong>'.$loginname.'</strong>
                         <ul>
-//                            <li>Organization Unit: '.$organization.'</li>
-                                <li>Provider Agency ABC</li>
+                            <li>Organization Unit: '.$organization.'</li>
                         </ul>
                      ';
             }
@@ -61,15 +60,18 @@
                             <li role="menuitem"><a href="#">My Organization</a></li>
                         </ul>
                     </li>
-                    <li role="menuitem"><a href="'.base_url().'index.php/prototypes/index" id="" class="subMenuHeader">Prototypes<span aria-hidden="true"> ></span></a>
+                    <li role="menuitem"><a href="#" id="" onclick="return false" class="subMenuHeader">Reset Prototype<span aria-hidden="true"> ></span></a>
+                        <ul>
+                            <li role="menuitem"><a href="'.base_url().'index.php/reset/all">All</a></li>
+                            <li role="menuitem"><a href="'.base_url().'index.php/reset/ddaeligibilityapplication"">DDA Eligibility Application</a></li>
+                            <li role="menuitem"><a href="'.base_url().'index.php/reset/ddaapplicationpacket"">DDA Application Packet</a></li>
+                        </ul>
                     </li>
                     <li role="menuitem"><a href="#">Print</a></li>
                 </ul>
             </li>
             <li role="menuitem"><a href="#Account_Menu" id="" onclick="return false" class="subMenuHeader">Account</a>
                 <ul role="menu">
-                    <li role="menuitem"><a href="'.base_url().'index.php/providerportal/home" id="" class="subMenuHeader">Provider Portal<span aria-hidden="true"> ></span></a>
-                    </li>
                     <li role="menuitem"><a href="'.base_url().'index.php/site/logout">Sign Out</a></li>
                 </ul>
             </li>
