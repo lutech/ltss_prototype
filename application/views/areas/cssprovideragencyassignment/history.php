@@ -31,6 +31,9 @@ $Body = '
                     CSS Provider Agency Selection
                 </th>
                 <th>
+                    Service Type
+                </th>
+                <th>
                    Selection Status
                 </th>
                 <th>
@@ -39,6 +42,16 @@ $Body = '
             </tr>
         </thead>
         <tbody>
+        <tr>
+            <td>07/01/2015</td>
+            <td>Regional Staff</td>
+            <td>07/01/2015</td>
+            <td></td>
+            <td>CCS Provider Agency of Baltimore</td>
+            <td>Comprehensive Assessment</td>
+            <td>Active</td>
+            <td><a href="#">View</a></td>
+        </tr>
         </tbody>
     </table>
 '?>

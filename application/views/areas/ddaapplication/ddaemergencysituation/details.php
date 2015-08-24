@@ -1,7 +1,7 @@
 <?php
 
 $WorkspaceHeader = '
-<h3>DDA Emergency Situation - Summary <span>Status: '.$ddaEmergencySituationData->status.'</span></h3>
+<h3>DDA Emergency Situation<span>Status: '.$ddaEmergencySituationData->status.'</span></h3>
 <div class="read-edit-toggle">
     <span>View</span>
 </div>

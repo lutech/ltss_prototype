@@ -35,7 +35,7 @@ else if ($username == 2) {
 else if ($username == 3) {
     setcookie('role', 'ccscoordinator', time()+36000000, '/');
     setcookie('username', 'CCS Coordinator', time()+36000000, '/');
-    setcookie('organization', 'CCS Agency', time()+36000000, '/');
+    setcookie('organization', 'CCS Provider Agency of Baltimore', time()+36000000, '/');
     setcookie('loginname', $username, time()+36000000, '/');
     setcookie('gender', 'Male', time()+36000000, '/');
     setcookie('suffix', '', time()+36000000, '/');

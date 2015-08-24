@@ -2,7 +2,7 @@
     <div class="six columns hide-for-print">
         <h1 class="login-logo"><i>
                 <?php
-                        if (!isset($_COOKIE['CommonLabel_Application'])){
+                        if (isset($_COOKIE['CommonLabel_Application'])){
                             echo $_COOKIE['CommonLabel_Application'];
                         } else {
                             echo "LTSS MD DDA Pilot";
