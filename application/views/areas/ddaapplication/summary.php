@@ -38,7 +38,7 @@ $ddaEligibilityAndPriorityDecisionRow = $ddaEligibilityApplicationData->status =
             Comprehensive Assessment
         </td>
         <td>
-            Complete
+            In Progress
         </td>
         <td>
             <a href="#">View</a>

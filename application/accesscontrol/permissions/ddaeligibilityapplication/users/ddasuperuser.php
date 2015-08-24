@@ -23,10 +23,15 @@ if (isset($_COOKIE['role'])){
         }
         //Edit
         if (
-            $ddaEligibilityApplicationData->status == "In Progress" ||
-            $ddaEligibilityApplicationData->status == "Information Requested"
+            $ddaEligibilityApplicationData->status == "In Progress"
         ) {
             $ddaEligibilityApplication->edit = true;
+        }
+        //Manage
+        if (
+            $ddaEligibilityApplicationData->status == "Information Requested"
+        ) {
+            $ddaEligibilityApplication->manage = true;
         }
         //Submit
         if (
