@@ -27,14 +27,18 @@
                     	<label>Login Name:</label>
 <!--                        <input type="text" name="username"/>-->
                         <select name="username" id="username"
-                            <option value="0"></option>
-                            <option value="1">DDA Super User</option>
-                            <option value="2">DDA Director</option>
-                            <option value="3">CCS Coordinator</option>
-                            <option value="4">Regional Director</option>
-                            <option value="5">Regional Staff</option>
-                            <option value="6">Regional Supervisor</option>
-                            <option value="7">Waiver Unit Staff</option>
+                            <option value=""></option>
+                            <option value="ddasuperuser">DDA Super User</option>
+                            <option value="ddadirector">DDA Director</option>
+                            <option value="ccsagencysupervisor">CCS Agency Supervisor</option>
+                            <option value="ccscoordinator">CCS Coordinator</option>
+                            <option value="regionaldirector">Regional Director</option>
+                            <option value="regionaleligibilitystaff">Regional Eligibility Staff</option>
+                            <option value="regionaleligibilitysupervisor">Regional Eligibility Supervisor</option>
+                            <option value="regionalprogramstaff">Regional Program Staff</option>
+                            <option value="regionalprogramsupervisor">Regional Program Supervisor</option>
+                            <option value="waiverunitstaff">Waiver Unit Staff</option>
+                            <option value="waiverunitsupervisor">Waiver Unit Supervisor</option>
                         </select>
                     </div>
                     <div class="row">

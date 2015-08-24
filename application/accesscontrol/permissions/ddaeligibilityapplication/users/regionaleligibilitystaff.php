@@ -3,7 +3,7 @@
 if (isset($_COOKIE['role'])){
 
     //Regional Staff
-    if ($_COOKIE['role'] == "regionalstaff"){
+    if ($_COOKIE['role'] == "regionaleligibilitystaff"){
         // DDA Eligibility Application
         $ddaEligibilityApplication->view = true;
         $ddaEligibilityApplication->save = true;
@@ -26,6 +26,12 @@ if (isset($_COOKIE['role'])){
             $ddaEligibilityApplicationData->status == "In Progress"
         ) {
             $ddaEligibilityApplication->edit = true;
+        }
+        //Manage
+        if (
+            $ddaEligibilityApplicationData->status == "In Progress"
+        ) {
+            $ddaEligibilityApplication->manage = true;
         }
         //Submit
         if (

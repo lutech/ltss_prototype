@@ -3,12 +3,11 @@
 if (isset($_COOKIE['role'])){
 
     //CCS Cooridnator
-    if ($_COOKIE['role'] == "ccscoordinator"){
+    if ($_COOKIE['role'] == "ccsagencysupervisor"){
         // DDA Eligibility Application
 
         //View
         $ddaEligibilityApplication->view = true;
-
 
         //Manage
         if (

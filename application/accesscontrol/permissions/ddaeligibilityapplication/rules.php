@@ -24,12 +24,12 @@ $eligibilityAndPriorityDecisionForm = (object) [
     'revise' => false,
     'submit' => false,
 ];
+require_once "users/ccsagencysupervisor.php";
 require_once "users/ccscoordinator.php";
 require_once "users/ddasuperuser.php";
 require_once "users/regionaldirector.php";
-require_once "users/regionalstaff.php";
-require_once "users/regionalsupervisor.php";
-
+require_once "users/regionaleligibilitystaff.php";
+require_once "users/regionaleligibilitysupervisor.php";
 
 // DDA Eligibility Application
 

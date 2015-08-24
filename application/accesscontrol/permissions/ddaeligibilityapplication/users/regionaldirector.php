@@ -27,6 +27,12 @@ if (isset($_COOKIE['role'])){
         ) {
             $ddaEligibilityApplication->edit = true;
         }
+        //Manage
+        if (
+            $ddaEligibilityApplicationData->status == "In Progress"
+        ) {
+            $ddaEligibilityApplication->manage = true;
+        }
         //Submit
         if (
             $ddaEligibilityApplicationData->status == "In Progress"

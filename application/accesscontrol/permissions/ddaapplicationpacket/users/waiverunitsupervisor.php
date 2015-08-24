@@ -12,27 +12,27 @@ if (isset($_COOKIE['role'])){
     //Discarded
     //Complete
 
-    //Regional Staff Permissions
-    if ($_COOKIE['role'] == "regionalstaff"){
+    //Waiver Unit Staff Permissions
+    if ($_COOKIE['role'] == "waiverunitsupervisor"){
 
         //View
         $ddaApplicationPacket->view = true;
 
         //Submit
         if (
-            $ddaApplicationPacketData->status == "Pending Regional Staff Review"
+            $ddaApplicationPacketData->status == "Pending Waiver Unit Staff Review"
         ) {
             $ddaApplicationPacket->submit = true;
         }
         //Request Clarification (Dialog)
         if (
-            $ddaApplicationPacketData->status == "Pending Regional Staff Review"
+            $ddaApplicationPacketData->status == "Pending Waiver Unit Staff Review"
         ) {
             $ddaApplicationPacket->requestclarification = true;
         }
         //Submit Clarification Request (Dialog)
         if (
-            $ddaApplicationPacketData->status == "Pending Regional Staff Review"
+            $ddaApplicationPacketData->status == "Pending Waiver Unit Staff Review"
         ) {
             $ddaApplicationPacket->submitclarificationrequest = true;
         }
