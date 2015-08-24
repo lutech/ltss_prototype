@@ -218,20 +218,42 @@ $Script='
     <script type="text/javascript">
         $(document).ready(function(){
 
+//            $("#requestClarificationDdaApplicationPacket").on("click", function(){
+//                ltss.overlay.show(
+//                    {
+//                    contentSelector: "#requestClarificationDdaApplicationPacketDialog",
+//                    options: {
+//                            modal: true,
+//                            helpers: {
+//                            overlay: {
+//                                    opacity: 0.3
+//                                    }
+//                            }
+//                    }
+//                });
+//
+//            });
+
             $("#requestClarificationDdaApplicationPacket").on("click", function(){
-                ltss.overlay.show(
-                    {
-                    contentSelector: "#requestClarificationDdaApplicationPacketDialog",
-                    options: {
-                            modal: true,
-                            helpers: {
-                            overlay: {
-                                    opacity: 0.3
-                                    }
-                            }
+                $( "#requestClarificationDdaApplicationPacketDialog" ).dialog({
+                    modal: true,
+                    height: "auto",
+                    width: "auto",
+                    title: "Request Clarification",
+                    minWidth: 800,
+                    maxHeight: 600,
+                    resizable: false,
+                    draggable : true,
+                    fluid: true,
+                    buttons: {
+                        "Submit": function(){
+                                $("#requestClarificationDdaApplicationPacketForm").submit()
+                            },
+                        "Cancel": function() {
+                            $(this).dialog("close");
+                        }
                     }
                 });
-
             });
 
         });
