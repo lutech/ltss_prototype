@@ -1,7 +1,9 @@
 <?php $WorkspaceHeader = '
     <h3>Financial and Overall Decision</h3>
     <div class="workspace-header-bar">
-
+        <div class="float-right">
+            <button id="expandCollapseAll" runat="server"></button>
+        </div>
     </div>
 '?>
 
@@ -47,7 +49,15 @@ $Body = '
                         </tr>
                     </thead>
                     <tbody>
-
+                            <tr>
+                                <td>CCS Coordinator</td>
+                                <td>07/01/2015</td>
+                                <td>DDA</td>
+                                <td>Approved</td>
+                                <td>Submitted</td>
+                                <td>Active</td>
+                                <td><a href="#">View</a></td>
+                            </tr>
                     </tbody>
                 </table>
             </div>
@@ -86,7 +96,14 @@ $Body = '
                         </tr>
                     </thead>
                     <tbody>
-
+                        <tr>
+                            <td>CCS Coordinator</td>
+                            <td>07/01/2015</td>
+                            <td>DDA</td>
+                            <td>Submitted</td>
+                            <td>Active</td>
+                            <td><a href="#">View</a></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -125,7 +142,14 @@ $Body = '
                         </tr>
                     </thead>
                     <tbody>
-
+                        <tr>
+                            <td>CCS Coordinator</td>
+                            <td>07/01/2015</td>
+                            <td>DDA</td>
+                            <td>Submitted</td>
+                            <td>Active</td>
+                            <td><a href="#">View</a></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -167,7 +191,15 @@ $Body = '
                         </tr>
                     </thead>
                     <tbody>
-
+                        <tr>
+                            <td>CCS Coordinator</td>
+                            <td>07/01/2015</td>
+                            <td>DDA</td>
+                            <td>Approved</td>
+                            <td>Submitted</td>
+                            <td>Active</td>
+                            <td><a href="#">View</a></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -209,7 +241,15 @@ $Body = '
                         </tr>
                     </thead>
                     <tbody>
-
+                        <tr>
+                            <td>CCS Coordinator</td>
+                            <td>07/01/2015</td>
+                            <td>DDA</td>
+                            <td>Approved</td>
+                            <td>Submitted</td>
+                            <td>Active</td>
+                            <td><a href="#">View</a></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -254,7 +294,16 @@ $Body = '
                         </tr>
                     </thead>
                     <tbody>
-
+                        <tr>
+                            <td>Admin</td>
+                            <td>07/01/2015</td>
+                            <td>DDA</td>
+                            <td>Submitted</td>
+                            <td>Admin</td>
+                            <td>07/01/2015</td>
+                            <td>Active</td>
+                            <td><a href="#">View</a></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

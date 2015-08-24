@@ -172,7 +172,7 @@
                     <?php echo new MenuItem("Financial and Overall Decision", "financialandoveralldecision", "history", "", true, false, "", $this->uri); ?>
                 </li>
                 <li>
-                    <?php echo new MenuItem("Letters", "clientletters", "history", "", false, false, "", $this->uri); ?>
+                    <?php echo new MenuItem("Letters", "letters", "history", "", true, false, "", $this->uri); ?>
                 </li>
             </ul>
         </li>
