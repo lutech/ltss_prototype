@@ -34,7 +34,7 @@ $Body = '
             <th>Date of Birth</th>
             <th>Age</th>
             <th>Jurisdiction</th>
-            <th>Resposnible Region</th>
+            <th>Responsible Region</th>
             <th>Eligibility Type</th>
             <th>Assigned CSS Provider</th>
             <th>Status</th>
@@ -52,9 +52,9 @@ $Body = '
             <td>01/01/1950</td>
             <td>65</td>
             <td>Baltimore</td>
+            <td>Responsible Region of Baltimore</td>
             <td></td>
-            <td></td>
-            <td></td>
+            <td>CCS Provider Agency</td>
             <td>Active</td>
         </tr>
     </tbody>

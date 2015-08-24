@@ -11,10 +11,10 @@ if ($username == $users.$role) {
     setcookie('suffix', ' ', time()+36000000, '/');
     setcookie('userid', '98416818', time()+36000000, '/');
 }
-//DHMH Administrator
+//DDA Super User
 else if ($username == 1) {
-    setcookie('role', 'dhmhadmin', time()+36000000, '/');
-    setcookie('username', 'DHMH Administrator', time()+36000000, '/');
+    setcookie('role', 'ddasuperuser', time()+36000000, '/');
+    setcookie('username', 'DDA Super User', time()+36000000, '/');
     setcookie('organization', 'Division of Medicaid', time()+36000000, '/');
     setcookie('loginname', $username, time()+36000000, '/');
     setcookie('gender', 'Male', time()+36000000, '/');

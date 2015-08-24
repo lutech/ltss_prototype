@@ -3,39 +3,45 @@
 if (isset($_COOKIE['role'])){
 
     //DHMH Admin
-    if ($_COOKIE['role'] == "dhmhadmin"){
+    if ($_COOKIE['role'] == "ddasuperuser"){
         // DDA Eligibility Application
         $ddaEligibilityApplication->view = true;
         $ddaEligibilityApplication->save = true;
 
+        //Add
         if (
             $ddaEligibilityApplicationData->status != "In Progress" &&
             $ddaEligibilityApplicationData->status != "Information Requested"
         ) {
             $ddaEligibilityApplication->add = true;
         }
+        //Discard
         if (
             $ddaEligibilityApplicationData->status == "In Progress"
         ) {
             $ddaEligibilityApplication->discard = true;
         }
+        //Edit
         if (
             $ddaEligibilityApplicationData->status == "In Progress" ||
             $ddaEligibilityApplicationData->status == "Information Requested"
         ) {
             $ddaEligibilityApplication->edit = true;
         }
+        //Submit
         if (
+            $ddaEligibilityApplicationData->status == "In Progress" ||
             $ddaEligibilityApplicationData->status == "Information Requested"
         ) {
-            $ddaEligibilityApplication->ccssubmit = true;
+            $ddaEligibilityApplication->submit = true;
         }
+        //Request Information
         if (
             $ddaEligibilityApplicationData->status == "In Progress"
         ) {
             $ddaEligibilityApplication->requestinformation = true;
-            $ddaEligibilityApplication->submit = true;
         }
+        //Revise
         if (
             $ddaEligibilityApplicationData->status == "Abandoned" ||
             $ddaEligibilityApplicationData->status == "Complete"

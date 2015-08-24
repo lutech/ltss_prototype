@@ -12,7 +12,7 @@ if (isset($_COOKIE['role'])){
     //Approved
 
     //DHMH Admin Permissions
-    if ($_COOKIE['role'] == "dhmhadmin"){
+    if ($_COOKIE['role'] == "ddasuperuser"){
 
         //View
         $ddaEmergencySituation->view = true;

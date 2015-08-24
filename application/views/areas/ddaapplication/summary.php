@@ -51,7 +51,7 @@ $ddaEmergencySituationRow = $ddaEmergencySituationData->status != '' ? '
         <td>'.$ddaEmergencySituationData->date->created.'</td>
         <td>'.$ddaEmergencySituationData->date->lastmodified.'</td>
         <td>'.$ddaEmergencySituationData->lastmodifiedby.'</td>
-        <td>Meests Criteria</td>
+        <td>Meets Criteria</td>
         <td>'.$ddaEmergencySituationData->status.'</td>
         <td>'.$ddaEmergencySituationData->active.'</td>
         <td>
@@ -151,7 +151,7 @@ $Body = '
     </div>
     <div class="panel">
         <div class="header">
-            <h5>Emergency Situation</h5>
+            <h5>Emergency Situation Form</h5>
             <div class="TaskDetailLink">
                 '.$createDdaEmergencySituation.'
             </div>

@@ -15,7 +15,7 @@ $ddaApplicationPacket = (object) [
 ];
 
 require_once "users/ccscoordinator.php";
-require_once "users/dhmhadmin.php";
+require_once "users/ddasuperuser.php";
 require_once "users/regionalstaff.php";
 require_once "users/waiverunitstaff.php";
 

@@ -55,16 +55,12 @@ class ApplicationPacket extends CI_Controller {
 
     public function save(){
 
-        if($_POST['programtype'] != 0)	{
+        if($_POST['programtype'] != "")	{
 
             $newdate = new DateTime();
             $date =  $newdate->format('m/d/Y') . "\n";
             $username = "";
-            $programtype = "";
-
-            if ($_POST['programtype'] == 1) {
-                $programtype =  "NRW";
-            }
+            $programtype = $_POST['programtype'];
 
             if (isset($_COOKIE['username'])){
                 $username = $_COOKIE['username'];
@@ -132,6 +128,26 @@ class ApplicationPacket extends CI_Controller {
 
     }
 
+    public function discard(){
+
+        $newdate = new DateTime();
+        $username = "";
+        $programtype = $_POST['programtype'];
+
+        if (isset($_COOKIE['username'])){
+            $username = $_COOKIE['username'];
+        }
+
+        setcookie('ddaapplicationpacketcreatedby', $username, time()+36000000, '/');
+        setcookie('ddaapplicationpacketstatus', 'Discarded', time()+36000000, '/');
+        setcookie('ddaapplicationpacketactive', 'Inactive', time()+36000000, '/');
+        setcookie('confirmation', 'discarded', time()+36000000, '/');
+
+        $this->load->helper('url');
+        $url = base_url().'index.php/applicationpacket/history';
+        header( "Location: $url" );
+
+    }
     public function requestclarification(){
 
             $newdate = new DateTime();

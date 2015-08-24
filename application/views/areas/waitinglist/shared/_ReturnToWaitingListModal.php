@@ -6,7 +6,6 @@
                 <label for="" class="complete-required">Reason</label>
                 <select class="required" required="required">
                     <option value="0"></option>
-                    <option value="1">Military Hold</option>
                     <option value="2">Voluntary Hold</option>
                     <option value="3">Other Hold</option>
                     <option value="4">Other (Return as Active)</option>

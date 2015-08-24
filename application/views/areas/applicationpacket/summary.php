@@ -36,7 +36,7 @@ $Body = '
                         </p>
                         <p class="row summary">
                             <span class="label">Eligibility Type:</span>
-                            <span class="data-element">1915i</span>
+                            <span class="data-element">DDA</span>
                         </p>
                     </div>
                     <div class="column-right">
@@ -49,8 +49,31 @@ $Body = '
                             <span class="data-element">Initial</span>
                         </p>
                         <p class="row summary">
-                            <span class="label">Case Management/Support Coordination Agency:</span>
+                            <span class="label">CCS Provider Agency:</span>
                             <span class="data-element">CCS Agency</span>
+                        </p>
+                    </div>
+                </div>
+                <h5>Waiver Application Status</h5>
+                <div class="fieldset-container-one">
+                    <div class="column-left">
+                        <p class="row summary">
+                            <span class="label">ATP Status:</span>
+                            <span class="data-element">Active</span>
+                        </p>
+                        <p class="row summary">
+                            <span class="label">ATP Submission Date:</span>
+                            <span class="data-element">07/01/2015</span>
+                        </p>
+                    </div>
+                    <div class="column-right">
+                        <p class="row summary">
+                            <span class="label">Financial Decision:</span>
+                            <span class="data-element">Approved</span>
+                        </p>
+                        <p class="row summary">
+                            <span class="label">Overall Decision:</span>
+                            <span class="data-element">Approved</span>
                         </p>
                     </div>
                 </div>

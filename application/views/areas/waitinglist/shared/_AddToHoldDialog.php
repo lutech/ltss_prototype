@@ -6,7 +6,6 @@
                 <label for="" class="complete-required">Reason:</label>
                 <select name="" id="" class="required">
                     <option value="0"></option>
-                    <option value="1">Military Family</option>
                     <option value="2">Voluntary Hold</option>
                     <option value="3">Other</option>
                 </select>

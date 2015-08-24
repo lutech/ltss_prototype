@@ -32,54 +32,24 @@ $Body = '
         </div>
         <div class="body">
             <div class="form-panelbar-content">
-                <fieldset class="fieldset-container-one">
+                 <fieldset class="fieldset-container-one">
                     <legend class="legend-header-one">Emergency Situation Information</legend>
                     <img src="http://placehold.it/800x300/cccccc?text=(Form+Placeholder)" style="width: 100%;">
                 </fieldset>
-            </div>
-        </div>
-    </div>
-    <div class="panel">
-        <div class="header">
-            <h4>Emergency Request</h4>
-            <div class="TaskDetailLink">
-            </div>
-        </div>
-        <div class="body">
-            <div class="form-panelbar-content">
                 <fieldset class="fieldset-container-one">
-                    <legend class="legend-header-one">Emergency Request Information</legend>
+                    <legend class="legend-header-one">Emergency Request</legend>
                     <img src="http://placehold.it/800x300/cccccc?text=(Form+Placeholder)" style="width: 100%;">
                 </fieldset>
-            </div>
-        </div>
-    </div>
-    <div class="panel">
-        <div class="header">
-            <h4>Determinations - Eligibility For DDA Services</h4>
-            <div class="TaskDetailLink">
-            </div>
-        </div>
-        <div class="body">
-            <div class="form-panelbar-content">
                 <fieldset class="fieldset-container-one">
-                    <legend class="legend-header-one">General Information</legend>
-                    <img src="http://placehold.it/800x300/cccccc?text=(Form+Placeholder)" style="width: 100%;">
-                </fieldset>
-            </div>
-        </div>
-    </div>
-    <div class="panel">
-        <div class="header">
-            <h4>Determinations - Emergency Situations</h4>
-            <div class="TaskDetailLink">
-            </div>
-        </div>
-        <div class="body">
-            <div class="form-panelbar-content">
-                <fieldset class="fieldset-container-one">
-                    <legend class="legend-header-one">General Information</legend>
-                    <img src="http://placehold.it/800x300/cccccc?text=(Form+Placeholder)" style="width: 100%;">
+                    <legend class="legend-header-one">Determinations</legend>
+                    <fieldset class="fieldset-container-two">
+                        <legend class="legend-header-two">Eligbility For DDA Services</legend>
+                        <img src="http://placehold.it/800x300/cccccc?text=(Form+Placeholder)" style="width: 100%;">
+                    </fieldset>
+                    <fieldset class="fieldset-container-two">
+                        <legend class="legend-header-two">Emergency Situations</legend>
+                        <img src="http://placehold.it/800x300/cccccc?text=(Form+Placeholder)" style="width: 100%;">
+                    </fieldset>
                 </fieldset>
             </div>
         </div>

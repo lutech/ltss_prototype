@@ -5,8 +5,8 @@
             <div class="row">
                 <label for="programtype" class="complete-required">Program Type:</label>
                 <select class="required" required="required" name="programtype" id="programtype">
-                    <option value="0"></option>
-                    <option value="1">NRW</option>
+                    <option value=""></option>
+                    <option value="DDA">DDA</option>
                 </select>
             </div>
         </fieldset>

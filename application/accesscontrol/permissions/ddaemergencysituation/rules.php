@@ -15,17 +15,10 @@ $ddaEmergencySituation = (object) [
 ];
 
 //USERS_
-
-
-
-if (isset($_COOKIE['ddaeligibilityapplicationstatus'])) {
-    if ($_COOKIE['ddaeligibilityapplicationstatus'] == "Complete") {
-        require_once "users/ddadirector.php";
-        require_once "users/dhmhadmin.php";
-        require_once "users/regionaldirector.php";
-        require_once "users/regionalsupervisor.php";
-    }
-};
+require_once "users/ddadirector.php";
+require_once "users/ddasuperuser.php";
+require_once "users/regionaldirector.php";
+require_once "users/regionalsupervisor.php";
 
 //ACTIONS_
 

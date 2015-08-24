@@ -9,6 +9,7 @@ $ddaEligibilityApplication = (object) [
     'view' => false,
     'discard' => false,
     'edit' => false,
+    'manage' => false,
     'revise' => false,
     'submit' => false,
     'requestinformation' => false,
@@ -24,7 +25,7 @@ $eligibilityAndPriorityDecisionForm = (object) [
     'submit' => false,
 ];
 require_once "users/ccscoordinator.php";
-require_once "users/dhmhadmin.php";
+require_once "users/ddasuperuser.php";
 require_once "users/regionaldirector.php";
 require_once "users/regionalstaff.php";
 require_once "users/regionalsupervisor.php";
@@ -81,7 +82,7 @@ $saveNextApplicantsSelfAssessment = $ddaEligibilityApplication->save?
 
 
 //Manage Documentation
-$manageDocumentation = $ddaEligibilityApplication->edit?
+$manageDocumentation = $ddaEligibilityApplication->manage?
     '<a href="'.base_url()."index.php/ddaeligibilityapplication/documentation/manage".'">Manage</a>' : '';
 
 

@@ -3,7 +3,7 @@
 <div>
     <ul class="left-side-nav js-accordion">
         <li>
-            <span class="leftNavHeader"><?php echo $_COOKIE["CommonLabel_Clients_Ownership"]; ?> Profile</span>
+            <span class="leftNavHeader"><?php echo $_COOKIE["CommonLabel_Client"]; ?> Profile</span>
 
             <ul class="leftnav-groupcontainer" style="display: none;">
                 <li>
@@ -27,7 +27,7 @@
                     <?php echo new MenuItem("Reponsible Region Assignment", "responsibleregionassignment", "history", "", true, false, "", $this->uri); ?>
                 </li>
                 <li>
-                    <?php echo new MenuItem("CSS Provider Agency Assignment", "cssprovideragencyassignment", "history", "", true, false, "", $this->uri); ?>
+                    <?php echo new MenuItem("CCS Provider Agency Assignment", "cssprovideragencyassignment", "history", "", true, false, "", $this->uri); ?>
                 </li>
                 <li>
                     <?php echo new MenuItem("Case Notes", "casemanagement", "casenotes", "", false, false, "", $this->uri); ?>

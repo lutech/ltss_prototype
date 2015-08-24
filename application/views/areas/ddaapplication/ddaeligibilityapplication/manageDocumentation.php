@@ -3,7 +3,6 @@
 $WorkspaceHeader = '
 <h3>DDA Eligibility Application - Documentation</h3>
 <div class="read-edit-toggle">
-    <a href= \''.base_url('/index.php/ddaeligibilityapplication/details').'\'">View</a>
     <span>Manage</span>
 </div>
 <div class="workspace-header-bar">
@@ -20,9 +19,9 @@ $WorkspaceHeader = '
 $Body = '
 
 <div class="genericform-style">
-    <h4>Applicant&apos;s Information</h4>
+    <h4>Documentation</h4>
     <fieldset class="fieldset-container-one">
-        <legend class="legend-header-one">Applicant&apos;s Information</legend>
+        <legend class="legend-header-one">Documents</legend>
         <img src="http://placehold.it/800x300/E6E6E6?text=(Form+Placeholder)" style="width: 100%;">
     </fieldset>
 </div>

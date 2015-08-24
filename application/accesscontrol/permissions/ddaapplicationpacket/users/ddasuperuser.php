@@ -13,7 +13,7 @@ if (isset($_COOKIE['role'])){
     //Complete
 
     //DHMH Admin Permissions
-    if ($_COOKIE['role'] == "dhmhadmin"){
+    if ($_COOKIE['role'] == "ddasuperuser"){
 
         //View
         $ddaApplicationPacket->view = true;
