@@ -25,7 +25,9 @@ $eligibilityAndPriorityDecisionForm = (object) [
 ];
 require_once "users/ccscoordinator.php";
 require_once "users/dhmhadmin.php";
+require_once "users/regionaldirector.php";
 require_once "users/regionalstaff.php";
+require_once "users/regionalsupervisor.php";
 
 
 // DDA Eligibility Application

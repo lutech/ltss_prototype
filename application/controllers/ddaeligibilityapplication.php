@@ -141,7 +141,7 @@ class DdaEligibilityApplication extends CI_Controller {
             $username = $_COOKIE['username'];
         }
 
-        if (isset($_COOKIE['ddaapplicationpacketstatus'])){
+        if (isset($_COOKIE['ddaeligibilityapplicationstatus'])){
             if ($_COOKIE['ddaeligibilityapplicationstatus'] == "In Progress") {
                 setcookie('ddaeligibilityapplicationstatus', 'Complete', time()+36000000, '/');
                 setcookie('ddaeligibilityapplicationactive', 'Active', time()+36000000, '/');
