@@ -41,8 +41,8 @@
         <input type="button" id="btnClearFormElements" name="clear" value="Clear" onclick=" clearFormElements(this.form); " />
                 </div>
                <div class="float-right">
-                    <a href="'.base_url()."index.php/client/newclientprofile".'">Create New</a>
-                <!--     <a href="newclientprofile" id="newclientprofile" onclick=" window.location.href = CreateClientUrl() ">Create New</a>  -->
+                  <!--     <a href="'.base_url()."index.php/client/newclientprofile".'">Create New</a> -->
+                  <a href="newclientprofile" id="newclientprofile" onclick=" window.location.href = CreateClientUrl() ">Create New</a>
                 </div>
             </div>
         </fieldset>
