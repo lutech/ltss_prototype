@@ -73,7 +73,7 @@ $Body = '
             </thead>
             <tbody>
                 <tr>
-                    <td>DDA Waiting List</td>
+                    <td>Crisis Funding</td>
                     <td>2015</td>
                     <td>99</td>
                     <td>100</td>

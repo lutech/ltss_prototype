@@ -24,7 +24,7 @@
                     <?php echo new MenuItem("Alerts", "casemanagement", "alerts", "", false, false, "", $this->uri); ?>
                 </li>
                 <li>
-                    <?php echo new MenuItem("Reponsible Region Assignment", "responsibleregionassignment", "history", "", true, false, "", $this->uri); ?>
+                    <?php echo new MenuItem("Responsible Region Assignment", "responsibleregionassignment", "history", "", true, false, "", $this->uri); ?>
                 </li>
                 <li>
                     <?php echo new MenuItem("CCS Provider Agency Assignment", "cssprovideragencyassignment", "history", "", true, false, "", $this->uri); ?>

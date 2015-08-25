@@ -23,7 +23,7 @@ $Body = '
                 <div class="row stacked">
                     <label class="filter-required"> Classification:</label>
                     <select class="required" required="required">
-                        <option value="0">DDA Waiting List</option>
+                        <option value="0">Waiting List</option>
                         <option value="1">Future Needs Registry</option>
                     </select>
                 </div>

@@ -59,21 +59,21 @@ $Body = '
                     <div class="column-left">
                         <p class="row summary">
                             <span class="label">ATP Status:</span>
-                            <span class="data-element">Active</span>
+                            <span class="data-element">N/A</span>
                         </p>
                         <p class="row summary">
                             <span class="label">ATP Submission Date:</span>
-                            <span class="data-element">07/01/2015</span>
+                            <span class="data-element">N/A</span>
                         </p>
                     </div>
                     <div class="column-right">
                         <p class="row summary">
                             <span class="label">Financial Decision:</span>
-                            <span class="data-element">Approved</span>
+                            <span class="data-element">N/A</span>
                         </p>
                         <p class="row summary">
                             <span class="label">Overall Decision:</span>
-                            <span class="data-element">Approved</span>
+                            <span class="data-element">N/A</span>
                         </p>
                     </div>
                 </div>

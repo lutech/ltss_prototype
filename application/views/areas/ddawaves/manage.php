@@ -1,7 +1,7 @@
 <?php
 
 $WorkspaceHeader = '
-<h3>DDA Wave - Wave Management</h3>
+<h3>DDA Wave - Wave Management <span>Wave Type: Crisis Funding</span><span>Fiscal Year: 2015</span></h3>
 <div class="read-edit-toggle">
     <span>Manage</span>
 </div>

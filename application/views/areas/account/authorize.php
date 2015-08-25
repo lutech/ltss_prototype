@@ -41,10 +41,10 @@
                             <option value="waiverunitsupervisor">Waiver Unit Supervisor</option>
                         </select>
                     </div>
-                    <div class="row">
-                    	<label>Password:</label>
-                        <input type="text" name="usernamepassword"/>
-                    </div>
+<!--                    <div class="row">-->
+<!--                    	<label>Password:</label>-->
+<!--                        <input type="text" name="usernamepassword"/>-->
+<!--                    </div>-->
                     <div style="text-align: center">
                         <input type="submit" value="Login" name="submit" title="Submit" id="btnLogin" style="max-width: 50%; margin-top: 20px !important"/>
                     </div>
