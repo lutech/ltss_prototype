@@ -48,27 +48,6 @@
     function closeDialog() {
         ltss.overlay.close();
     }
-    function toggleCommentVisibility(target, bool){
-       var target = target,
-           show = bool;
-
-        if (show == true) {
-            $(target).show();
-        } else {
-            $(target).hide();
-        }
-    }
-    function triggerToggle(element) {
-        $(element).on('click', function(){
-            var target = $(this).siblings('.fieldset-container-three');
-            if (this.checked) {
-                toggleCommentVisibility(target, true);
-            } else {
-                toggleCommentVisibility(target, false);
-            }
-        })
-    }
-
     $(document).ready(function(){
         triggerToggle('#ddalevelofcare, #ddaindividualplan');
     });

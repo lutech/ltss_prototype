@@ -28,6 +28,11 @@ class Reset extends CI_Controller {
         setcookie('ddaemergencysituationlastmodifiedby', '', time()+36000000, '/');
         setcookie('ddaemergencysituationlastmodifieddate', '', time()+36000000, '/');
         setcookie('ddaemergencysituationcreatedate', '', time()+36000000, '/');
+        //Decision on Authorization Section
+        setcookie('regionalProgramSupervisorDecision', '', time()+36000000, '/');
+        setcookie('regionalDirectorDecision', '', time()+36000000, '/');
+        setcookie('ddaDeputySecretaryDecision', '', time()+36000000, '/');
+        setcookie('denyReason', '', time()+36000000, '/');
 
         $this->load->helper('url');
         $url = base_url().'index.php/';

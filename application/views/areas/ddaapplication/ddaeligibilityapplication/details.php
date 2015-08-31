@@ -1,4 +1,10 @@
 <?php
+    require "shared/_ViewApplicantsInformationPartial.php";
+    require "shared/_ViewApplicantsSelfAssessmentPartial.php";
+    require "shared/_ViewDocumentationPartial.php";
+?>
+
+<?php
 
 $WorkspaceHeader = '
 <h3>DDA Eligibility Application - Summary <span>Status: '.$ddaEligibilityApplicationData->status.'</span></h3>
@@ -21,6 +27,7 @@ $WorkspaceHeader = '
 </div>
 ';?>
 <?php
+
 $Body = '
 
 <div class="genericform-style read-only panelbar-formheader-style">
@@ -33,10 +40,7 @@ $Body = '
         </div>
         <div class="body">
             <div class="form-panelbar-content">
-                <fieldset class="fieldset-container-one">
-                    <legend class="legend-header-one">Applicant&apos;s Information</legend>
-                    <img src="http://placehold.it/800x300/cccccc?text=(Form+Placeholder)" style="width: 100%;">
-                </fieldset>
+                '.$applicantsInformationContent.'
             </div>
         </div>
     </div>
@@ -49,10 +53,7 @@ $Body = '
         </div>
         <div class="body">
             <div class="form-panelbar-content">
-                <fieldset class="fieldset-container-one">
-                    <legend class="legend-header-one">Applicant&apos;s Self Assessment</legend>
-                    <img src="http://placehold.it/800x300/cccccc?text=(Form+Placeholder)" style="width: 100%;">
-                </fieldset>
+                '.$applicantsSelfAssessmentContent.'
             </div>
         </div>
     </div>
@@ -65,10 +66,7 @@ $Body = '
         </div>
         <div class="body">
             <div class="form-panelbar-content">
-                <fieldset class="fieldset-container-one">
-                    <legend class="legend-header-one">Documentation</legend>
-                    <img src="http://placehold.it/800x300/cccccc?text=(Form+Placeholder)" style="width: 100%;">
-                </fieldset>
+                '.$documentationContent.'
             </div>
         </div>
     </div>
@@ -99,6 +97,9 @@ $Body = '
                         </tr>
                     </thead>
                     <tbody>
+                        <tr>
+                            <td colspan="5" class="text-center">No data available in table</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

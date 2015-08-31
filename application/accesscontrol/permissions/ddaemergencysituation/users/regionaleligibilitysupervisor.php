@@ -12,7 +12,7 @@ if (isset($_COOKIE['role'])){
     //Approved
 
     //Regional Supervisor
-    if ($_COOKIE['role'] == "regionalsupervisor"){
+    if ($_COOKIE['role'] == "regionaleligibilitysupervisor"){
 
         //View
         $ddaEmergencySituation->view = true;

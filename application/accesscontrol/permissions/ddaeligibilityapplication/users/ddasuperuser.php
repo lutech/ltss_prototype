@@ -29,6 +29,7 @@ if (isset($_COOKIE['role'])){
         }
         //Manage
         if (
+            $ddaEligibilityApplicationData->status == "In Progress" ||
             $ddaEligibilityApplicationData->status == "Information Requested"
         ) {
             $ddaEligibilityApplication->manage = true;

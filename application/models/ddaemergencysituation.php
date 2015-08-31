@@ -36,3 +36,23 @@ if (isset($_COOKIE['ddaemergencysituationlastmodifieddate'])) {
 if (isset($_COOKIE['ddaemergencysituationcreatedate'])) {
     $ddaEmergencySituationData->date->created = $_COOKIE['ddaemergencysituationcreatedate'];
 };
+
+
+//Decision on Authorization Section
+$regionalProgramSupervisorDecision = "";
+$regionalDirectorDecision = "";
+$ddaDeputySecretaryDecision = "";
+$denyReason = "";
+
+if (isset($_COOKIE['regionalProgramSupervisorDecision'])) {
+    $regionalProgramSupervisorDecision = $_COOKIE['regionalProgramSupervisorDecision'];
+};
+if (isset($_COOKIE['regionalDirectorDecision'])) {
+    $regionalDirectorDecision = $_COOKIE['regionalDirectorDecision'];
+};
+if (isset($_COOKIE['ddaDeputySecretaryDecision'])) {
+    $ddaDeputySecretaryDecision = $_COOKIE['ddaDeputySecretaryDecision'];
+};
+if (isset($_COOKIE['denyReason'])) {
+    $denyReason = $_COOKIE['denyReason'];
+};

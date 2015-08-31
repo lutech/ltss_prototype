@@ -926,7 +926,64 @@
         }
     }
 
+
+    function toggleCommentVisibility(target, bool){
+        var target = target,
+            show = bool;
+
+        if (show == true) {
+            $(target).show();
+        } else {
+            $(target).hide();
+        }
+    }
+    function triggerToggle(element, target) {
+        $(element).on('click', function(){
+            if (target) {
+                if (this.checked) {
+                    toggleCommentVisibility(target, true);
+                } else {
+                    toggleCommentVisibility(target, false);
+                }
+            } else {
+                var target = $(this).siblings('.fieldset-container-three');
+                if (this.checked) {
+                    toggleCommentVisibility(target, true);
+                } else {
+                    toggleCommentVisibility(target, false);
+                }
+
+            }
+        })
+    }
+
+
+    function closeDialog() {
+        ltss.overlay.close();
+    }
+
     $(document).ready(function(){
+
+        $("[id*=Container]").each(function(){
+            var targetName = $(this).attr("id"),
+                target = "#" + targetName,
+                idName = targetName.replace("Container", ""),
+                trigger = "#"+ idName,
+                inputTypeRadio = $('[name*='+idName+']').attr("type"),
+                inputTypeCheckbox = $('[id*='+idName+']').attr("type");
+
+            if (inputTypeCheckbox == "checkbox") {
+                    triggerToggle(trigger, target);
+            } else if ( inputTypeRadio == "radio") {
+                $('[name*='+idName+']').on("click", function (){
+                    if ($(this).val() == "yes") {
+                        toggleCommentVisibility(target, true);
+                    } else {
+                        toggleCommentVisibility(target, false);
+                    }
+                })
+            }
+        })
 
         if ($("div.long-description").length > 0 ) {
             initDotDotDot("div.long-description", 60);

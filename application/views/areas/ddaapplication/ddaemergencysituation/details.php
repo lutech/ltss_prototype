@@ -1,7 +1,7 @@
 <?php
 
 $WorkspaceHeader = '
-<h3>DDA Emergency Situation<span>Status: '.$ddaEmergencySituationData->status.'</span></h3>
+<h3>DDA Emergency Situation Form<span>Status: '.$ddaEmergencySituationData->status.'</span></h3>
 <div class="read-edit-toggle">
     <span>View</span>
 </div>
@@ -12,8 +12,7 @@ $WorkspaceHeader = '
     </div>
 
     <div class="float-right">
-        '.$approveDdaEmergencySituation.'
-        '.$denyDdaEmergencySituation.'
+        '.$submitDdaEmergencySituation.'
         '.$discardDdaEmergencySituation.'
         <button id="expandCollapseAll" runat="server"></button>
     </div>
@@ -58,13 +57,36 @@ $Body = '
         <div class="header">
             <h4>Decision on Authorization of Initiation of Services</h4>
             <div class="TaskDetailLink">
+                '.$editDecisionOnAuthorization.'
             </div>
         </div>
         <div class="body">
             <div class="form-panelbar-content">
                 <fieldset class="fieldset-container-one">
-                    <legend class="legend-header-one">General Information</legend>
-                    <img src="http://placehold.it/800x300/cccccc?text=(Form+Placeholder)" style="width: 100%;">
+                    <legend class="legend-header-one">Decision</legend>
+
+                    <div class="row">
+                        <label for="regionalProgramSupervisorDecision" class="submit-required">Regional Office Program Supervisor:</label>
+                        <input type="text" name="regionalProgramSupervisorDecision" id="regionalProgramSupervisorDecision"/>
+                    </div>
+                    <div class="row" id="regionalDirectorDecisionContainer" style="display:none">
+                        <label for="regionalDirectorDecision" class="submit-required">Regional Director:</label>
+                        <input type="text" name="regionalDirectorDecision" id="regionalDirectorDecision"/>
+                    </div>
+                    <div class="row" id="ddaDeputySecretaryDecisionContainer" style="display:none">
+                        <label for="ddaDeputySecretaryDecision" class="submit-required">DDA Deputy Secretary:</label>
+                        <input type="text" name="ddaDeputySecretaryDecision" id="ddaDeputySecretaryDecision"/>
+                    </div>
+                    <div class="row" id="denyReasonContainer" style="display: none">
+                        <label for="denyReason" class="submit-required">Reason for Denial:</label>
+                        <textarea name="denyReason" id="denyReason"></textarea>
+                    </div>
+                </fieldset>
+                <fieldset class="fieldset-container-one">
+                    <legend class="legend-header-one">Authorization Summary</legend>
+                    <div class="header-info" id="authorizationInfo">
+                        Pending final decision on authorization.
+                    </div>
                 </fieldset>
             </div>
         </div>
@@ -77,7 +99,50 @@ $Body = '
 $Script='
     <script type="text/javascript">
         $(document).ready(function(){
+            if ("'.$regionalProgramSupervisorDecision.'" == "approve"){
+                $("#regionalProgramSupervisorDecision").val("Approve");
+            } else if ("'.$regionalProgramSupervisorDecision.'" == "deny"){
+                $("#regionalProgramSupervisorDecision").val("Deny");
+                $("#denyReasonContainer").show();
+            }
+            if ("'.$regionalDirectorDecision.'" == "approve"){
+                $("#regionalDirectorDecision").val("Approve");
+            } else if ("'.$regionalDirectorDecision.'" == "deny"){
+                $("#regionalDirectorDecision").val("Deny");
+                $("#denyReasonContainer").show();
+            }
+            if ("'.$ddaDeputySecretaryDecision.'" == "approve"){
+                $("#ddaDeputySecretaryDecision").val("Approve");
+            } else if ("'.$ddaDeputySecretaryDecision.'" == "deny"){
+                $("#ddaDeputySecretaryDecision").val("Deny");
+                $("#denyReasonContainer").show();
+            }
 
+            if ("'.$denyReason.'" != ""){
+                $("#denyReason").val("'.$denyReason.'");
+            }
+
+            if ("'.$regionalProgramSupervisorDecision.'" == "approve" &&
+                "'.$ddaEmergencySituationData->status.'" != "In Progress" ||
+                "'.$regionalProgramSupervisorDecision.'" == "approve" &&
+                "'.$ddaEmergencySituationData->status.'" == "Pending Regional Director Review" ) {
+                $("#regionalDirectorDecisionContainer").show();
+            }
+
+            if ("'.$regionalDirectorDecision.'" == "approve" &&
+                "'.$ddaEmergencySituationData->status.'" != "In Progress" &&
+                "'.$ddaEmergencySituationData->status.'" != "Pending Regional Director Review" ||
+                "'.$regionalDirectorDecision.'" == "approve" &&
+                "'.$ddaEmergencySituationData->status.'" == "Pending DDA Director Review" ){
+                $("#ddaDeputySecretaryDecisionContainer").show();
+            }
+
+            var authorizationMsg = "The individual’s emergency request for initiation of services for a maximum of 15 days is";
+            if ( "'.$ddaEmergencySituationData->status.'" == "Approved") {
+                $("#authorizationInfo").html(authorizationMsg+" <b>Approved</b>.");
+            } else if ( "'.$ddaEmergencySituationData->status.'" == "Denied") {
+                $("#authorizationInfo").html(authorizationMsg+" <b>Denied</b>.");
+            }
         });
     </script>
 '?>

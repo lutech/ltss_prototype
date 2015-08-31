@@ -11,8 +11,8 @@ if (isset($_COOKIE['role'])){
     //Denied
     //Approved
 
-    //DHMH Admin Permissions
-    if ($_COOKIE['role'] == "ddasuperuser"){
+    //Regional Supervisor
+    if ($_COOKIE['role'] == "regionalprogramsupervisor"){
 
         //View
         $ddaEmergencySituation->view = true;
@@ -31,33 +31,25 @@ if (isset($_COOKIE['role'])){
         }
         //Edit
         if (
-            $ddaEmergencySituationData->status == "In Progress" ||
-            $ddaEmergencySituationData->status == "Pending Regional Director Review" ||
-            $ddaEmergencySituationData->status == "Pending DDA Director Review"
+            $ddaEmergencySituationData->status == "In Progress"
         ) {
             $ddaEmergencySituation->edit = true;
         }
         //Submit
         if (
-            $ddaEmergencySituationData->status == "In Progress" ||
-            $ddaEmergencySituationData->status == "Pending Regional Director Review" ||
-            $ddaEmergencySituationData->status == "Pending DDA Director Review"
+            $ddaEmergencySituationData->status == "In Progress"
         ) {
             $ddaEmergencySituation->submit = true;
         }
         //Approve
         if (
-            $ddaEmergencySituationData->status == "In Progress" ||
-            $ddaEmergencySituationData->status == "Pending Regional Director Review" ||
-            $ddaEmergencySituationData->status == "Pending DDA Director Review"
+            $ddaEmergencySituationData->status == "In Progress"
         ) {
             $ddaEmergencySituation->approve = true;
         }
         //Deny
         if (
-            $ddaEmergencySituationData->status == "In Progress" ||
-            $ddaEmergencySituationData->status == "Pending Regional Director Review" ||
-            $ddaEmergencySituationData->status == "Pending DDA Director Review"
+            $ddaEmergencySituationData->status == "In Progress"
         ) {
             $ddaEmergencySituation->deny = true;
         }

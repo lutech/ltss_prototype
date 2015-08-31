@@ -23,6 +23,18 @@ if (isset($_COOKIE['role'])){
         ) {
             $ddaEmergencySituation->approve = true;
         }
+        //Edit
+        if (
+            $ddaEmergencySituationData->status == "Pending Regional Director Review"
+        ) {
+            $ddaEmergencySituation->edit = true;
+        }
+        //Submit
+        if (
+            $ddaEmergencySituationData->status == "Pending Regional Director Review"
+        ) {
+            $ddaEmergencySituation->submit = true;
+        }
         //Deny
         if (
             $ddaEmergencySituationData->status == "Pending Regional Director Review"

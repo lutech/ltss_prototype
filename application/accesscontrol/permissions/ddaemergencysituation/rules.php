@@ -18,7 +18,8 @@ $ddaEmergencySituation = (object) [
 require_once "users/ddadirector.php";
 require_once "users/ddasuperuser.php";
 require_once "users/regionaldirector.php";
-require_once "users/regionalsupervisor.php";
+require_once "users/regionaleligibilitysupervisor.php";
+require_once "users/regionalprogramsupervisor.php";
 
 //ACTIONS_
 
@@ -43,3 +44,11 @@ $denyDdaEmergencySituation = $ddaEmergencySituation->deny?
 //Discard
 $discardDdaEmergencySituation = $ddaEmergencySituation->discard?
     '<a href="'.base_url()."index.php/ddaemergencysituation/discard".'">Discard</a>' : '';
+
+
+//Edit Decision on Authorization
+$editDecisionOnAuthorization = $ddaEmergencySituation->edit?
+    '<a href="'.base_url()."index.php/ddaemergencysituation/decisiononauthorization/edit".'">Edit</a>' : '';
+//Save Decision on Authorization
+$saveDecisionOnAuthorization = $ddaEmergencySituation->save?
+    '<a href="#" onclick=\'$("#submitDecisionAuthorizationForm").click();\'>Save</a>' : '';
