@@ -1,6 +1,8 @@
-<?php require_once "application/views/shared/commonLabels.php"; ?>
-<?php require_once "application/models/_models.php"; ?>
-<?php require_once "application/accesscontrol/permissions.php"; ?>
+<?php
+    require_once "application/views/shared/commonLabels.php";
+    require_once "application/models/_models.php";
+    //require_once "application/accesscontrol/permissions.php";
+?>
 
 <!doctype html>
 <html>
