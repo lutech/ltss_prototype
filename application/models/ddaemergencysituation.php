@@ -2,14 +2,20 @@
 
 // DDA Emergency Situation
 $ddaEmergencySituationData = (object) [
-    'status' => '', //In Progress
-                    //Pending Regional Director Review
-                    //Pending DDA Director Review
-                    //Discarded
-                    //Denied
-                    //Approved
-    'active' => '', //Active
-                    //Inactive;
+    'status' => '',     //In Progress
+                        //Pending Regional Director Review
+                        //Pending DDA Director Review
+                        //Discarded
+                        //Completed
+
+    'active' => '',     //Active
+                        //Inactive;
+
+    'decision' => '',   //Approved
+                        //Denied by Regional Program Supervisor;
+                        //Denied by Regional Director;
+                        //Denied by DDA Director;
+
     'lastmodifiedby' => '',
     'date'   => (object) [
                 'lastmodified' => '',
@@ -23,6 +29,10 @@ if (isset($_COOKIE['ddaemergencysituationstatus'])) {
 //Active
 if (isset($_COOKIE['ddaemergencysituationactive'])) {
     $ddaEmergencySituationData->active = $_COOKIE['ddaemergencysituationactive'];
+};
+//Decision
+if (isset($_COOKIE['ddaemergencysituationdecision'])) {
+    $ddaEmergencySituationData->decision = $_COOKIE['ddaemergencysituationdecision'];
 };
 //Last Modified By
 if (isset($_COOKIE['ddaemergencysituationlastmodifiedby'])) {
@@ -41,7 +51,7 @@ if (isset($_COOKIE['ddaemergencysituationcreatedate'])) {
 //Decision on Authorization Section
 $regionalProgramSupervisorDecision = "";
 $regionalDirectorDecision = "";
-$ddaDeputySecretaryDecision = "";
+$ddaDirectorDecision = "";
 $denyReason = "";
 
 if (isset($_COOKIE['regionalProgramSupervisorDecision'])) {
@@ -50,8 +60,8 @@ if (isset($_COOKIE['regionalProgramSupervisorDecision'])) {
 if (isset($_COOKIE['regionalDirectorDecision'])) {
     $regionalDirectorDecision = $_COOKIE['regionalDirectorDecision'];
 };
-if (isset($_COOKIE['ddaDeputySecretaryDecision'])) {
-    $ddaDeputySecretaryDecision = $_COOKIE['ddaDeputySecretaryDecision'];
+if (isset($_COOKIE['ddaDirectorDecision'])) {
+    $ddaDirectorDecision = $_COOKIE['ddaDirectorDecision'];
 };
 if (isset($_COOKIE['denyReason'])) {
     $denyReason = $_COOKIE['denyReason'];

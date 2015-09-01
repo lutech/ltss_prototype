@@ -96,11 +96,12 @@ class DdaEmergencySituation extends CI_Controller {
         setcookie('ddaemergencysituationlastmodifieddate', $date, time()+36000000, '/');
         setcookie('ddaemergencysituationstatus', 'In Progress', time()+36000000, '/');
         setcookie('ddaemergencysituationactive', 'Inactive', time()+36000000, '/');
+        setcookie('ddaemergencysituationdecision', '', time()+36000000, '/');
         setcookie('ddaemergencysituationcreatedate', $date, time()+36000000, '/');
 
         setcookie('regionalProgramSupervisorDecision', '', time()+36000000, '/');
         setcookie('regionalDirectorDecision', '', time()+36000000, '/');
-        setcookie('ddaDeputySecretaryDecision', '', time()+36000000, '/');
+        setcookie('ddaDirectorDecision', '', time()+36000000, '/');
         setcookie('denyReason', '', time()+36000000, '/');
 
         setcookie('confirmation', 'saved', time()+36000000, '/');
@@ -176,13 +177,13 @@ class DdaEmergencySituation extends CI_Controller {
                         }
                     }
                 }
-                if(isset($_POST['ddaDeputySecretaryDecision']))	{
-                    $ddaDeputySecretaryDecision = $_POST['ddaDeputySecretaryDecision'];
-                    setcookie('ddaDeputySecretaryDecision', $ddaDeputySecretaryDecision, time()+36000000, '/');
+                if(isset($_POST['ddaDirectorDecision']))	{
+                    $ddaDirectorDecision = $_POST['ddaDirectorDecision'];
+                    setcookie('ddaDirectorDecision', $ddaDirectorDecision, time()+36000000, '/');
 
-                    if ($ddaDeputySecretaryDecision == "approve") {
+                    if ($ddaDirectorDecision == "approve") {
                         setcookie('denyReason', "", time()+36000000, '/');
-                    } else if  ($ddaDeputySecretaryDecision == "deny") {
+                    } else if  ($ddaDirectorDecision == "deny") {
                         if(isset($_POST['denyReason']))	{
                             $denyReason = $_POST['denyReason'];
                             setcookie('denyReason', $denyReason, time()+36000000, '/');
@@ -220,7 +221,8 @@ class DdaEmergencySituation extends CI_Controller {
                     if ($_COOKIE['regionalProgramSupervisorDecision'] == "approve") {
                         setcookie('ddaemergencysituationstatus', 'Pending Regional Director Review', time()+36000000, '/');
                     } else if ($_COOKIE['regionalProgramSupervisorDecision'] == "deny") {
-                        setcookie('ddaemergencysituationstatus', 'Denied', time()+36000000, '/');
+                        setcookie('ddaemergencysituationstatus', 'Complete', time()+36000000, '/');
+                        setcookie('ddaemergencysituationdecision', 'Denied by Regional Program Supervisor', time()+36000000, '/');
                     }
                 }
             }
@@ -229,17 +231,20 @@ class DdaEmergencySituation extends CI_Controller {
                     if ($_COOKIE['regionalDirectorDecision'] == "approve") {
                         setcookie('ddaemergencysituationstatus', 'Pending DDA Director Review', time()+36000000, '/');
                     } else if ($_COOKIE['regionalDirectorDecision'] == "deny") {
-                        setcookie('ddaemergencysituationstatus', 'Denied', time()+36000000, '/');
+                        setcookie('ddaemergencysituationstatus', 'Complete', time()+36000000, '/');
+                        setcookie('ddaemergencysituationdecision', 'Denied by Regional Director', time()+36000000, '/');
                     }
                 }
             }
             else  if ($_COOKIE['ddaemergencysituationstatus'] == "Pending DDA Director Review") {
-                if (isset($_COOKIE['ddaDeputySecretaryDecision'])) {
-                    if ($_COOKIE['ddaDeputySecretaryDecision'] == "approve") {
-                        setcookie('ddaemergencysituationstatus', 'Approved', time()+36000000, '/');
+                if (isset($_COOKIE['ddaDirectorDecision'])) {
+                    if ($_COOKIE['ddaDirectorDecision'] == "approve") {
+                        setcookie('ddaemergencysituationstatus', 'Complete', time()+36000000, '/');
                         setcookie('ddaemergencysituationactive', 'Active', time()+36000000, '/');
-                    } else if ($_COOKIE['ddaDeputySecretaryDecision'] == "deny") {
-                        setcookie('ddaemergencysituationstatus', 'Denied', time()+36000000, '/');
+                        setcookie('ddaemergencysituationdecision', 'Approved', time()+36000000, '/');
+                    } else if ($_COOKIE['ddaDirectorDecision'] == "deny") {
+                        setcookie('ddaemergencysituationstatus', 'Complete', time()+36000000, '/');
+                        setcookie('ddaemergencysituationdecision', 'Denied by DDA Director', time()+36000000, '/');
                     }
                 }
 

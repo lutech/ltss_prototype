@@ -51,7 +51,7 @@ $ddaEmergencySituationRow = $ddaEmergencySituationData->status != '' ? '
         <td>'.$ddaEmergencySituationData->date->created.'</td>
         <td>'.$ddaEmergencySituationData->date->lastmodified.'</td>
         <td>'.$ddaEmergencySituationData->lastmodifiedby.'</td>
-        <td>Meets Criteria</td>
+        <td>'.$ddaEmergencySituationData->decision.'</td>
         <td>'.$ddaEmergencySituationData->status.'</td>
         <td>'.$ddaEmergencySituationData->active.'</td>
         <td>
@@ -171,7 +171,7 @@ $Body = '
                                 Last Modified By
                             </th>
                             <th>
-                                Determination
+                                Decision
                             </th>
                             <th>
                                 Status

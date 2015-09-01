@@ -23,8 +23,7 @@ if (isset($_COOKIE['role'])){
         //Create New
         if (
             $ddaEmergencySituationData->status == "" ||
-            $ddaEmergencySituationData->status == "Approved" ||
-            $ddaEmergencySituationData->status == "Denied" ||
+            $ddaEmergencySituationData->status == "Complete" ||
             $ddaEmergencySituationData->status == "Discarded"
         ) {
             $ddaEmergencySituation->create = true;

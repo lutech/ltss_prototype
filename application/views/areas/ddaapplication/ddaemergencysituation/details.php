@@ -1,7 +1,7 @@
 <?php
 
 $WorkspaceHeader = '
-<h3>DDA Emergency Situation Form<span>Status: '.$ddaEmergencySituationData->status.'</span></h3>
+<h3>DDA Emergency Situation Form<span>Status: '.$ddaEmergencySituationData->status.'</span><span id="decisionStatus">Decision: '.$ddaEmergencySituationData->decision.'</span></h3>
 <div class="read-edit-toggle">
     <span>View</span>
 </div>
@@ -73,9 +73,9 @@ $Body = '
                         <label for="regionalDirectorDecision" class="submit-required">Regional Director:</label>
                         <input type="text" name="regionalDirectorDecision" id="regionalDirectorDecision"/>
                     </div>
-                    <div class="row" id="ddaDeputySecretaryDecisionContainer" style="display:none">
-                        <label for="ddaDeputySecretaryDecision" class="submit-required">DDA Deputy Secretary:</label>
-                        <input type="text" name="ddaDeputySecretaryDecision" id="ddaDeputySecretaryDecision"/>
+                    <div class="row" id="ddaDirectorDecisionContainer" style="display:none">
+                        <label for="ddaDirectorDecision" class="submit-required">DDA Director:</label>
+                        <input type="text" name="ddaDirectorDecision" id="ddaDirectorDecision"/>
                     </div>
                     <div class="row" id="denyReasonContainer" style="display: none">
                         <label for="denyReason" class="submit-required">Reason for Denial:</label>
@@ -111,10 +111,10 @@ $Script='
                 $("#regionalDirectorDecision").val("Deny");
                 $("#denyReasonContainer").show();
             }
-            if ("'.$ddaDeputySecretaryDecision.'" == "approve"){
-                $("#ddaDeputySecretaryDecision").val("Approve");
-            } else if ("'.$ddaDeputySecretaryDecision.'" == "deny"){
-                $("#ddaDeputySecretaryDecision").val("Deny");
+            if ("'.$ddaDirectorDecision.'" == "approve"){
+                $("#ddaDirectorDecision").val("Approve");
+            } else if ("'.$ddaDirectorDecision.'" == "deny"){
+                $("#ddaDirectorDecision").val("Deny");
                 $("#denyReasonContainer").show();
             }
 
@@ -134,14 +134,21 @@ $Script='
                 "'.$ddaEmergencySituationData->status.'" != "Pending Regional Director Review" ||
                 "'.$regionalDirectorDecision.'" == "approve" &&
                 "'.$ddaEmergencySituationData->status.'" == "Pending DDA Director Review" ){
-                $("#ddaDeputySecretaryDecisionContainer").show();
+                $("#ddaDirectorDecisionContainer").show();
             }
 
             var authorizationMsg = "The individual’s emergency request for initiation of services for a maximum of 15 days is";
-            if ( "'.$ddaEmergencySituationData->status.'" == "Approved") {
+            if ( "'.$ddaEmergencySituationData->decision.'" == "Approved") {
                 $("#authorizationInfo").html(authorizationMsg+" <b>Approved</b>.");
-            } else if ( "'.$ddaEmergencySituationData->status.'" == "Denied") {
+            } else if ( "'.$ddaEmergencySituationData->decision.'" != "" &&
+                         "'.$ddaEmergencySituationData->decision.'" != "Approved")  {
                 $("#authorizationInfo").html(authorizationMsg+" <b>Denied</b>.");
+            }
+
+            if ( "'.$ddaEmergencySituationData->decision.'" != "") {
+                $("#decisionStatus").show();
+            } else {
+                $("#decisionStatus").hide();
             }
         });
     </script>

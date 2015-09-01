@@ -42,9 +42,9 @@ $Body = '
                     <option value="deny">Deny</option>
                 </select>
             </div>
-            <div class="row" id="ddaDeputySecretaryDecisionContainer" style="display: none">
-                <label for="ddaDeputySecretaryDecision" class="submit-required">DDA Deputy Secretary:</label>
-                <select name="ddaDeputySecretaryDecision" id="ddaDeputySecretaryDecision">
+            <div class="row" id="ddaDirectorDecisionContainer" style="display: none">
+                <label for="ddaDirectorDecision" class="submit-required">DDA Director:</label>
+                <select name="ddaDirectorDecision" id="ddaDirectorDecision">
                     <option value=""></option>
                     <option value="approve">Approve</option>
                     <option value="deny">Deny</option>
@@ -69,7 +69,7 @@ $Body = '
 $Script='
     <script type="text/javascript">
         $(document).ready(function(){
-            $("#regionalProgramSupervisorDecision, #regionalDirectorDecision, #ddaDeputySecretaryDecision").on("change", function(){
+            $("#regionalProgramSupervisorDecision, #regionalDirectorDecision, #ddaDirectorDecision").on("change", function(){
                 if ($(this).val() == "deny") {
                     $("#denyReasonContainer").show()
                 } else {
@@ -89,10 +89,10 @@ $Script='
                 $("#regionalDirectorDecision option[value=\'deny\']").attr("selected","selected")
                 $("#denyReasonContainer").show();
             }
-            if ("'.$ddaDeputySecretaryDecision.'" == "approve"){
-                $("#ddaDeputySecretaryDecision option[value=\'approve\']").attr("selected","selected")
-            } else if ("'.$ddaDeputySecretaryDecision.'" == "deny"){
-                $("#ddaDeputySecretaryDecision option[value=\'deny\']").attr("selected","selected")
+            if ("'.$ddaDirectorDecision.'" == "approve"){
+                $("#ddaDirectorDecision option[value=\'approve\']").attr("selected","selected")
+            } else if ("'.$ddaDirectorDecision.'" == "deny"){
+                $("#ddaDirectorDecision option[value=\'deny\']").attr("selected","selected")
                 $("#denyReasonContainer").show();
             }
 
@@ -114,7 +114,7 @@ $Script='
                 "'.$ddaEmergencySituationData->status.'" != "Pending Regional Director Review" ||
                 "'.$regionalDirectorDecision.'" == "approve" &&
                 "'.$ddaEmergencySituationData->status.'" == "Pending DDA Director Review" ){
-                $("#ddaDeputySecretaryDecisionContainer").show();
+                $("#ddaDirectorDecisionContainer").show();
                 $("#regionalDirectorDecision").attr("disabled", "disabled").addClass("readonly");
             }
         });
