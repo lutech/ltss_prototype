@@ -926,18 +926,19 @@
         }
     }
 
+    //Manage Tables
     function enableEditManageTable(elem){
         $(".edit-mode").show();
-        $(elem).siblings(".editRowIndicator").first().show();
+        $(elem).parents(".editItemRow").first().find(".editRowIndicator").show();
         $(elem).parents(".editItemRow").first().addClass("tableRowHighlight");
-        $(".editItemRow").first().find("a").hide();
+        $(".tableRowActions").hide();
     }
 
     function disableEditManageTable(){
         $(".edit-mode").hide();
         $(".editRowIndicator").hide();
         $(".editItemRow").removeClass("tableRowHighlight");
-        $(".editItemRow").find("a").show();
+        $(".tableRowActions").show();
     }
 
 

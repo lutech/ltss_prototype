@@ -12,8 +12,8 @@ $documentationContent = '
             <th>
                 Description
             </th>
-            <th class="actions">
-                Actions
+            <th>
+                File Name
             </th>
         </tr>
     </thead>
@@ -48,7 +48,7 @@ $documentationContent = '
                 "</td>" +
                 "<td>" +
                     "<a href=\''.base_url("application/content/files/sample_document.pdf").'\' target=\'_blank\' id=\'viewDocument\'>" +
-                    "View</a>" +
+                    "sample_document.pdf</a>" +
                 "</td>" +
              "</tr>";
             });

@@ -78,6 +78,9 @@ $documentationContent = '
                         Description
                     </th>
                     <th>
+                        File Name
+                    </th>
+                    <th class="actions">
                         Actions
                     </th>
                 </tr>
@@ -90,6 +93,7 @@ $documentationContent = '
 <script type="text/javascript">
       function clearForm() {
         $("#fileName").val("");
+        $("#documentId").val("");
         $("#documentCategory").val("").change();
         $("#documentTitle").val("");
         $("#documentDescription").val("");
@@ -101,7 +105,7 @@ $documentationContent = '
                 reloadTable();
 
             } else {
-            $("#manageDocumentsTable tbody").append("<tr><td colspan=\'4\' class=\'text-center\' id=\'noDataRow\'>No data available in table</td></tr>");
+            $("#manageDocumentsTable tbody").append("<tr><td colspan=\'5\' class=\'text-center\' id=\'noDataRow\'>No data available in table</td></tr>");
             }
         }
       function reloadTable() {
@@ -120,12 +124,16 @@ $documentationContent = '
                     document.description +
                 "</td>" +
                 "<td>" +
-                    "<a href=\''.base_url("application/content/files/sample_document.pdf").'\' target=\'_blank\' id=\'viewDocument\'>" +
-                    "View</a>" +
-                    "<a href=\'#\' id=\'editDocumentRow" + document.ID + "\' onclick=\'enableEditManageTable(this); editDocument\(" + document.ID + "\)\'>" +
-                    "Edit</a>" +
-                    "<a href=\'#\' id=\'deleteDocumentRow" + document.ID + "\' onclick=\'deleteDocument\(" + document.ID + "\)\'>" +
-                    "Delete</a>" +
+                    "<a href=\''.base_url("application/content/files/sample_document.pdf").'\' target=\'_blank\' id=\'viewDocument" + document.ID + "\'>" +
+                    "sample_document.pdf</a>" +
+                "</td>" +
+                "<td>" +
+                    "<span class=\'tableRowActions\'>" +
+                        "<a href=\'#\' id=\'editDocumentRow" + document.ID + "\' onclick=\'enableEditManageTable(this); editDocument\(" + document.ID + "\)\'>" +
+                        "Edit</a>" +
+                        "<a href=\'#\' id=\'deleteDocumentRow" + document.ID + "\' onclick=\'deleteDocument\(" + document.ID + "\)\'>" +
+                        "Delete</a>" +
+                    "</span>" +
                     "<span class=\'editRowIndicator\' style=\'display: none;\'>" +
                         "<span class=\'icon-pencil\'></span>" +
                         "<b>Editing...</b> " +
@@ -165,7 +173,7 @@ $documentationContent = '
                 reloadTable();
 
             } else {
-                $("#manageDocumentsTable tbody").append("<tr><td colspan=\'4\' class=\'text-center\' id=\'noDataRow\'>No data available in table</td></tr>");
+                $("#manageDocumentsTable tbody").append("<tr><td colspan=\'5\' class=\'text-center\' id=\'noDataRow\'>No data available in table</td></tr>");
             }
         }
         function updateCheckList() {
@@ -225,7 +233,6 @@ $documentationContent = '
                 reloadTable();
                 updateCheckList();
                 disableEditManageTable();
-
                 showSuccessMessage("Record has been saved.");
 
             } else if ($(form).valid() && documentId != "") {
@@ -236,6 +243,7 @@ $documentationContent = '
                 reloadTable();
                 updateCheckList();
                 disableEditManageTable();
+                showSuccessMessage("Record has been saved.");
             }
 
         })
