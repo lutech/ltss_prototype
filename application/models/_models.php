@@ -23,3 +23,5 @@ require_once "ddaapplicationpacket.php";
 
 // DDA Emergency Situation
 require_once "ddaemergencysituation.php";
+
+?>

@@ -44,7 +44,7 @@
 
             <ul class="leftnav-groupcontainer" style="display: none;">
                 <li>
-                    <?php echo new MenuItem("DDA Application", "ddaapplication", "summary", "", true, false, "", $this->uri); ?>
+                    <?php echo new MenuItem("DDA Eligibility", "ddaapplication", "summary", "", true, false, "", $this->uri); ?>
                     <ul>
                         <li>
                             <?php echo new MenuItem("New DDA Eligibility Application", "ddaeligibilityapplication", "create", "", true, true, "", $this->uri); ?>

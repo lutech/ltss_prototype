@@ -19,7 +19,7 @@ $WorkspaceHeader = '
 
     <div class="float-right">
         '.$requestInformationDdaEligibilityApplication.'
-        '.$submitDdaEligibilityApplication.'
+        '.$checkDdaEligibilityApplication.'
         '.$discardDdaEligibilityApplication.'
         <button id="expandCollapseAll" runat="server"></button>
     </div>
@@ -110,6 +110,7 @@ $Body = '
 
 ';?>
 <?php require_once "shared/_RequestInformation.php"?>
+<?php require_once "shared/_DocumentationWarning.php"?>
 <?php
 $Script='
     <script type="text/javascript">
@@ -130,6 +131,33 @@ $Script='
                 });
 
             });
+             $("#checkDocumentsForSubmit").on("click", function(){
+                if (ddaEligbilityApplicationDocuments.queryAll("documents", {query : {category : "application"}}).length > 0) {
+                    if (ddaEligbilityApplicationDocuments.queryAll("documents", {query : {category : "psychologicalEvaluations"}}).length == 0 ||
+                        ddaEligbilityApplicationDocuments.queryAll("documents", {query : {category : "specialEducationRecords"}}).length == 0 ) {
+
+                            ltss.overlay.show(
+                                {
+                                contentSelector: "#documentationWarningDialog",
+                                options: {
+                                        modal: true,
+                                        helpers: {
+                                        overlay: {
+                                                opacity: 0.3
+                                                }
+                                        }
+                                }
+                            });
+                        } else {
+                            window.location.href = "'.base_url()."index.php/ddaeligibilityapplication/submit".'";
+                        }
+                } else {
+                    showErrorMessage("Your record could not be submitted. The \'Application\' document must be uploaded in order to submit.");
+                }
+
+
+            });
+
 
         });
     </script>

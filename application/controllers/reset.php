@@ -5,15 +5,6 @@ class Reset extends CI_Controller {
     public function all() {
         setcookie('confirmation', '', time()+36000000, '/');
 
-        //DDA Eligbility Application
-        setcookie('ddaeligibilityapplicationstatus', '', time()+36000000, '/');
-        setcookie('ddaeligibilityapplicationactive', '', time()+36000000, '/');
-        setcookie('ddaeligibilityapplicationlastmodifiedby', '', time()+36000000, '/');
-        setcookie('ddaeligibilityapplicationlastmodifieddate', '', time()+36000000, '/');
-        setcookie('ddaeligibilityapplicationapplicationdate', '', time()+36000000, '/');
-        setcookie('ddaeligibilityapplicationcompletiondate', '', time()+36000000, '/');
-        setcookie('ddaeligibilityapplicationdatecurrentstatusattained', '', time()+36000000, '/');
-
         //DDA Application Packet
         setcookie('ddaapplicationpacketstatus', '', time()+36000000, '/');
         setcookie('ddaapplicationpacketactive', '', time()+36000000, '/');
@@ -22,12 +13,23 @@ class Reset extends CI_Controller {
         setcookie('ddaapplicationpacketcreatedate', '', time()+36000000, '/');
         setcookie('ddaapplicationpacketcompletedate', '', time()+36000000, '/');
 
+        //DDA Eligbility Application
+        setcookie('ddaeligibilityapplicationstatus', '', time()+36000000, '/');
+        setcookie('ddaeligibilityapplicationactive', '', time()+36000000, '/');
+        setcookie('ddaeligibilityapplicationlastmodifiedby', '', time()+36000000, '/');
+        setcookie('ddaeligibilityapplicationlastmodifieddate', '', time()+36000000, '/');
+        setcookie('ddaeligibilityapplicationapplicationdate', '', time()+36000000, '/');
+        setcookie('ddaeligibilityapplicationcompletiondate', '', time()+36000000, '/');
+        setcookie('ddaeligibilityapplicationdatecurrentstatusattained', '', time()+36000000, '/');
+        setcookie('ddaeligibilityapplicationreset', "true", time()+36000000, '/');
+
         //DDA Emergnecy Situation
         setcookie('ddaemergencysituationstatus', '', time()+36000000, '/');
         setcookie('ddaemergencysituationactive', '', time()+36000000, '/');
         setcookie('ddaemergencysituationlastmodifiedby', '', time()+36000000, '/');
         setcookie('ddaemergencysituationlastmodifieddate', '', time()+36000000, '/');
         setcookie('ddaemergencysituationcreatedate', '', time()+36000000, '/');
+
         //Decision on Authorization Section
         setcookie('regionalProgramSupervisorDecision', '', time()+36000000, '/');
         setcookie('regionalDirectorDecision', '', time()+36000000, '/');
@@ -49,6 +51,7 @@ class Reset extends CI_Controller {
         setcookie('ddaeligibilityapplicationapplicationdate', '', time()+36000000, '/');
         setcookie('ddaeligibilityapplicationcompletiondate', '', time()+36000000, '/');
         setcookie('ddaeligibilityapplicationdatecurrentstatusattained', '', time()+36000000, '/');
+        setcookie('ddaeligibilityapplicationreset', "true", time()+36000000, '/');
 
         $this->load->helper('url');
         $url = base_url().'index.php/ddaapplication/summary';

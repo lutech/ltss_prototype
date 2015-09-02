@@ -926,6 +926,20 @@
         }
     }
 
+    function enableEditManageTable(elem){
+        $(".edit-mode").show();
+        $(elem).siblings(".editRowIndicator").first().show();
+        $(elem).parents(".editItemRow").first().addClass("tableRowHighlight");
+        $(".editItemRow").first().find("a").hide();
+    }
+
+    function disableEditManageTable(){
+        $(".edit-mode").hide();
+        $(".editRowIndicator").hide();
+        $(".editItemRow").removeClass("tableRowHighlight");
+        $(".editItemRow").find("a").show();
+    }
+
 
     function toggleCommentVisibility(target, bool){
         var target = target,
@@ -1005,6 +1019,16 @@
                 msg = "<?php echo $confirmationmsg ?>";
             } else {
                 msg = "Your changes could not be saved.";
+            }
+            showErrorMessage(msg);
+            document.cookie="confirmation=;path=/";
+            document.cookie="confirmationmsg=;path=/";
+        }  else if ("<?php echo $confirmation ?>" == "error-submit"){
+            var msg = "";
+            if ("<?php echo $confirmationmsg ?>" != "") {
+                msg = "<?php echo $confirmationmsg ?>";
+            } else {
+                msg = "Your record could not be submitted. Please ensure all required fields have been entered.";
             }
             showErrorMessage(msg);
             document.cookie="confirmation=;path=/";

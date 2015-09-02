@@ -1,5 +1,5 @@
 <?php $WorkspaceHeader = '
-    <h3>DDA Application</h3>
+    <h3>DDA Eligibility</h3>
     <div class="workspace-header-bar">
 
     </div>

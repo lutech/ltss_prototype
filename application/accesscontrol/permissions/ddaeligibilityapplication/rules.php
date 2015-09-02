@@ -12,7 +12,7 @@ $ddaEligibilityApplication = (object) [
     'manage' => false,
     'revise' => false,
     'submit' => false,
-    'requestinformation' => false,
+    'requestinformation' => false
 ];
 
 // Eligibility and Priority Decision Form
@@ -44,7 +44,10 @@ $saveDdaEligibilityApplication = $ddaEligibilityApplication->save?
     '<a href="'.base_url()."index.php/ddaeligibilityapplication/save".'">Save</a>' : '';
 //Submit
 $submitDdaEligibilityApplication = $ddaEligibilityApplication->submit?
-    '<a href="'.base_url()."index.php/ddaeligibilityapplication/submit".'">Submit</a>' : '';
+    '<button type="button" onclick="window.location.href=\''.base_url().'index.php/ddaeligibilityapplication/submit\'">Submit</button>' : '';
+//Submit (Call Dialog)
+$checkDdaEligibilityApplication = $ddaEligibilityApplication->submit?
+    '<a href="#" id="checkDocumentsForSubmit">Submit</a>' : '';
 //Request Information
 $requestInformationDdaEligibilityApplication = $ddaEligibilityApplication->requestinformation?
     '<a href="#" id="requestInformationDdaEligibilityApplication">Request Information</a>' : '';

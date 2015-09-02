@@ -21,7 +21,7 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         
 	</head>
-    
+
     <body id="body">
         <div id="main-layout" class="container ">
             <div id="layoutWrapper">
@@ -47,8 +47,8 @@
 
                             //Common Dialog Modals
                         require_once "application/views/shared/_NewMessagePartial.php";
-
                         require_once '_AdditionalScriptsPartial.php';
+                        require_once 'application/models/_db.php"';
 							
 							if (!empty($Script)) {
 								echo $Script;

@@ -109,6 +109,7 @@ class DdaEligibilityApplication extends CI_Controller {
         setcookie('ddaeligibilityapplicationlastmodifieddate', $date, time()+36000000, '/');
         setcookie('ddaeligibilityapplicationdatecurrentstatusattained', $date, time()+36000000, '/');
         setcookie('ddaeligibilityapplicationapplicationdate', $date, time()+36000000, '/');
+        setcookie('ddaeligibilityapplicationreset', "true", time()+36000000, '/');
 
         $this->load->helper('url');
         $url = base_url().'index.php/ddaeligibilityapplication/details';

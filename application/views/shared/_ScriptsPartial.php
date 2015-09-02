@@ -16,6 +16,7 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>application/Scripts/ltss.overlay.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>application/Scripts/ltss.panelBar.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>application/Scripts/menu.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>application/Scripts/jquery.validate.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>application/Scripts/jquery.blockUI.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>application/Scripts/jquery.cycle.all.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>application/Scripts/jquery.list.js"></script>
@@ -33,3 +34,4 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>application/Scripts/ckeditor/ckeditor.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>application/Scripts/ckeditor/adapters/jquery.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>application/Scripts/ckeditor/ckeditor-toolbar-config.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>application/Scripts/localstoragedb.min.js"></script>

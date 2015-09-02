@@ -220,20 +220,66 @@ class DdaEmergencySituation extends CI_Controller {
                 if (isset($_COOKIE['regionalProgramSupervisorDecision'])) {
                     if ($_COOKIE['regionalProgramSupervisorDecision'] == "approve") {
                         setcookie('ddaemergencysituationstatus', 'Pending Regional Director Review', time()+36000000, '/');
+
+                        setcookie('ddaemergencysituationlastmodifiedby', $username, time()+36000000, '/');
+                        setcookie('ddaemergencysituationlastmodifieddate', $date, time()+36000000, '/');
+                        setcookie('confirmation', 'submitted', time()+36000000, '/');
+                        $this->load->helper('url');
+                        $url = base_url().'index.php/ddaapplication/summary';
+                        header( "Location: $url" );
+
                     } else if ($_COOKIE['regionalProgramSupervisorDecision'] == "deny") {
                         setcookie('ddaemergencysituationstatus', 'Complete', time()+36000000, '/');
+                        setcookie('ddaemergencysituationactive', 'Active', time()+36000000, '/');
                         setcookie('ddaemergencysituationdecision', 'Denied by Regional Program Supervisor', time()+36000000, '/');
+
+                        setcookie('ddaemergencysituationlastmodifiedby', $username, time()+36000000, '/');
+                        setcookie('ddaemergencysituationlastmodifieddate', $date, time()+36000000, '/');
+                        setcookie('confirmation', 'submitted', time()+36000000, '/');
+                        $this->load->helper('url');
+                        $url = base_url().'index.php/ddaapplication/summary';
+                        header( "Location: $url" );
                     }
+                } else {
+
+                    setcookie('confirmation', 'error-submit', time()+36000000, '/');
+
+                    $this->load->helper('url');
+                    $url = base_url().'index.php/ddaemergencysituation/details';
+                    header( "Location: $url" );
                 }
             }
             else  if ($_COOKIE['ddaemergencysituationstatus'] == "Pending Regional Director Review") {
                 if (isset($_COOKIE['regionalDirectorDecision'])) {
                     if ($_COOKIE['regionalDirectorDecision'] == "approve") {
                         setcookie('ddaemergencysituationstatus', 'Pending DDA Director Review', time()+36000000, '/');
+
+                        setcookie('ddaemergencysituationlastmodifiedby', $username, time()+36000000, '/');
+                        setcookie('ddaemergencysituationlastmodifieddate', $date, time()+36000000, '/');
+                        setcookie('confirmation', 'submitted', time()+36000000, '/');
+                        $this->load->helper('url');
+                        $url = base_url().'index.php/ddaapplication/summary';
+                        header( "Location: $url" );
+
                     } else if ($_COOKIE['regionalDirectorDecision'] == "deny") {
                         setcookie('ddaemergencysituationstatus', 'Complete', time()+36000000, '/');
+                        setcookie('ddaemergencysituationactive', 'Active', time()+36000000, '/');
                         setcookie('ddaemergencysituationdecision', 'Denied by Regional Director', time()+36000000, '/');
+
+                        setcookie('ddaemergencysituationlastmodifiedby', $username, time()+36000000, '/');
+                        setcookie('ddaemergencysituationlastmodifieddate', $date, time()+36000000, '/');
+                        setcookie('confirmation', 'submitted', time()+36000000, '/');
+                        $this->load->helper('url');
+                        $url = base_url().'index.php/ddaapplication/summary';
+                        header( "Location: $url" );
                     }
+                } else {
+
+                    setcookie('confirmation', 'error-submit', time()+36000000, '/');
+
+                    $this->load->helper('url');
+                    $url = base_url().'index.php/ddaemergencysituation/details';
+                    header( "Location: $url" );
                 }
             }
             else  if ($_COOKIE['ddaemergencysituationstatus'] == "Pending DDA Director Review") {
@@ -242,24 +288,44 @@ class DdaEmergencySituation extends CI_Controller {
                         setcookie('ddaemergencysituationstatus', 'Complete', time()+36000000, '/');
                         setcookie('ddaemergencysituationactive', 'Active', time()+36000000, '/');
                         setcookie('ddaemergencysituationdecision', 'Approved', time()+36000000, '/');
+
+                        setcookie('ddaemergencysituationlastmodifiedby', $username, time()+36000000, '/');
+                        setcookie('ddaemergencysituationlastmodifieddate', $date, time()+36000000, '/');
+                        setcookie('confirmation', 'submitted', time()+36000000, '/');
+                        $this->load->helper('url');
+                        $url = base_url().'index.php/ddaapplication/summary';
+                        header( "Location: $url" );
+
                     } else if ($_COOKIE['ddaDirectorDecision'] == "deny") {
                         setcookie('ddaemergencysituationstatus', 'Complete', time()+36000000, '/');
+                        setcookie('ddaemergencysituationactive', 'Active', time()+36000000, '/');
                         setcookie('ddaemergencysituationdecision', 'Denied by DDA Director', time()+36000000, '/');
+
+                        setcookie('ddaemergencysituationlastmodifiedby', $username, time()+36000000, '/');
+                        setcookie('ddaemergencysituationlastmodifieddate', $date, time()+36000000, '/');
+                        setcookie('confirmation', 'submitted', time()+36000000, '/');
+                        $this->load->helper('url');
+                        $url = base_url().'index.php/ddaapplication/summary';
+                        header( "Location: $url" );
                     }
+                } else {
+
+                    setcookie('confirmation', 'error-submit', time()+36000000, '/');
+
+                    $this->load->helper('url');
+                    $url = base_url().'index.php/ddaemergencysituation/details';
+                    header( "Location: $url" );
                 }
 
+            } else {
+
+                setcookie('confirmation', 'error', time()+36000000, '/');
+                $this->load->helper('url');
+                $url = base_url().'index.php/ddaapplication/summary';
+                header( "Location: $url" );
             }
         }
 
-        setcookie('ddaemergencysituationlastmodifiedby', $username, time()+36000000, '/');
-        setcookie('ddaemergencysituationlastmodifieddate', $date, time()+36000000, '/');
-
-
-        setcookie('confirmation', 'submitted', time()+36000000, '/');
-
-        $this->load->helper('url');
-        $url = base_url().'index.php/ddaapplication/summary';
-        header( "Location: $url" );
     }
 
     //Approve
