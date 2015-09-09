@@ -382,11 +382,11 @@ $applicantsSelfAssessmentContent = '
                         <div class="row">
                             <label class="submit-required" for="dssStatus">Status</label>
                             <select name="dssStatus" id="dssStatus">
-                                <options value=""></options>
-                                <options value="AppliedStatus">Applied</options>
-                                <options value="currentlyServedStatus">Currently served</options>
-                                <options value="servedInPastStatus">Served in the past</options>
-                                <options value="notAppliedStatus">Have not applied</options>
+                                <option value=""></option>
+                                <option value="AppliedStatus">Applied</option>
+                                <option value="currentlyServedStatus">Currently served</option>
+                                <option value="servedInPastStatus">Served in the past</option>
+                                <option value="notAppliedStatus">Have not applied</option>
                             </select>
                         </div>
                     </div>
@@ -398,11 +398,11 @@ $applicantsSelfAssessmentContent = '
                         <div class="row">
                             <label class="submit-required" for="boardOfEducationStatus">Status</label>
                             <select name="boardOfEducationStatus" id="boardOfEducationStatus">
-                                <options value=""></options>
-                                <options value="AppliedStatus">Applied</options>
-                                <options value="currentlyServedStatus">Currently served</options>
-                                <options value="servedInPastStatus">Served in the past</options>
-                                <options value="notAppliedStatus">Have not applied</options>
+                                <option value=""></option>
+                                <option value="AppliedStatus">Applied</option>
+                                <option value="currentlyServedStatus">Currently served</option>
+                                <option value="servedInPastStatus">Served in the past</option>
+                                <option value="notAppliedStatus">Have not applied</option>
                             </select>
                         </div>
                     </div>
@@ -414,11 +414,11 @@ $applicantsSelfAssessmentContent = '
                         <div class="row">
                             <label class="submit-required" for="localHealthDeptStatus">Status</label>
                             <select name="localHealthDeptStatus" id="localHealthDeptStatus">
-                                <options value=""></options>
-                                <options value="AppliedStatus">Applied</options>
-                                <options value="currentlyServedStatus">Currently served</options>
-                                <options value="servedInPastStatus">Served in the past</options>
-                                <options value="notAppliedStatus">Have not applied</options>
+                                <option value=""></option>
+                                <option value="AppliedStatus">Applied</option>
+                                <option value="currentlyServedStatus">Currently served</option>
+                                <option value="servedInPastStatus">Served in the past</option>
+                                <option value="notAppliedStatus">Have not applied</option>
                             </select>
                         </div>
                     </div>
@@ -430,11 +430,11 @@ $applicantsSelfAssessmentContent = '
                         <div class="row">
                             <label class="submit-required" for="officeOnAgingStatus">Status</label>
                             <select name="officeOnAgingStatus" id="officeOnAgingStatus">
-                                <options value=""></options>
-                                <options value="AppliedStatus">Applied</options>
-                                <options value="currentlyServedStatus">Currently served</options>
-                                <options value="servedInPastStatus">Served in the past</options>
-                                <options value="notAppliedStatus">Have not applied</options>
+                                <option value=""></option>
+                                <option value="AppliedStatus">Applied</option>
+                                <option value="currentlyServedStatus">Currently served</option>
+                                <option value="servedInPastStatus">Served in the past</option>
+                                <option value="notAppliedStatus">Have not applied</option>
                             </select>
                         </div>
                     </div>
@@ -458,11 +458,11 @@ $applicantsSelfAssessmentContent = '
                         <div class="row">
                             <label class="submit-required" for="dorsStatus">Status</label>
                             <select name="dorsStatus" id="dorsStatus">
-                                <options value=""></options>
-                                <options value="AppliedStatus">Applied</options>
-                                <options value="currentlyServedStatus">Currently served</options>
-                                <options value="servedInPastStatus">Served in the past</options>
-                                <options value="notAppliedStatus">Have not applied</options>
+                                <option value=""></option>
+                                <option value="AppliedStatus">Applied</option>
+                                <option value="currentlyServedStatus">Currently served</option>
+                                <option value="servedInPastStatus">Served in the past</option>
+                                <option value="notAppliedStatus">Have not applied</option>
                             </select>
                         </div>
                     </div>
@@ -474,11 +474,11 @@ $applicantsSelfAssessmentContent = '
                         <div class="row">
                             <label for="mentalHealthServicesStatus">Status</label>
                             <select class="submit-required" name="mentalHealthServicesStatus" id="mentalHealthServicesStatus">
-                                <options value=""></options>
-                                <options value="AppliedStatus">Applied</options>
-                                <options value="currentlyServedStatus">Currently served</options>
-                                <options value="servedInPastStatus">Served in the past</options>
-                                <options value="notAppliedStatus">Have not applied</options>
+                                <option value=""></option>
+                                <option value="AppliedStatus">Applied</option>
+                                <option value="currentlyServedStatus">Currently served</option>
+                                <option value="servedInPastStatus">Served in the past</option>
+                                <option value="notAppliedStatus">Have not applied</option>
                             </select>
                         </div>
                     </div>
@@ -490,11 +490,11 @@ $applicantsSelfAssessmentContent = '
                         <div class="row">
                             <label class="submit-required" for="nursingHomeServicesStatus">Status</label>
                             <select name="nursingHomeServicesStatus" id="nursingHomeServicesStatus">
-                                <options value=""></options>
-                                <options value="AppliedStatus">Applied</options>
-                                <options value="currentlyServedStatus">Currently served</options>
-                                <options value="servedInPastStatus">Served in the past</options>
-                                <options value="notAppliedStatus">Have not applied</options>
+                                <option value=""></option>
+                                <option value="AppliedStatus">Applied</option>
+                                <option value="currentlyServedStatus">Currently served</option>
+                                <option value="servedInPastStatus">Served in the past</option>
+                                <option value="notAppliedStatus">Have not applied</option>
                             </select>
                         </div>
                     </div>
@@ -506,11 +506,11 @@ $applicantsSelfAssessmentContent = '
                         <div class="row">
                             <label class="submit-required" for="assistedLivingServicesStatus">Status</label>
                             <select name="assistedLivingServicesStatus" id="assistedLivingServicesStatus">
-                                <options value=""></options>
-                                <options value="AppliedStatus">Applied</options>
-                                <options value="currentlyServedStatus">Currently served</options>
-                                <options value="servedInPastStatus">Served in the past</options>
-                                <options value="notAppliedStatus">Have not applied</options>
+                                <option value=""></option>
+                                <option value="AppliedStatus">Applied</option>
+                                <option value="currentlyServedStatus">Currently served</option>
+                                <option value="servedInPastStatus">Served in the past</option>
+                                <option value="notAppliedStatus">Have not applied</option>
                             </select>
                         </div>
                     </div>
@@ -532,10 +532,10 @@ $applicantsSelfAssessmentContent = '
                         <div class="row">
                             <label class="submit-required" for="autismWaiverStatus">Status</label>
                             <select name="autismWaiverStatus" id="autismWaiverStatus">
-                                <options value=""></options>
-                                <options value="AppliedStatus">Applied</options>
-                                <options value="currentlyServedStatus">Currently served</options>
-                                <options value="previouslyServedStatus">Previously served</options>
+                                <option value=""></option>
+                                <option value="AppliedStatus">Applied</option>
+                                <option value="currentlyServedStatus">Currently served</option>
+                                <option value="previouslyServedStatus">Previously served</option>
                             </select>
                         </div>
                     </div>
@@ -547,10 +547,10 @@ $applicantsSelfAssessmentContent = '
                         <div class="row">
                             <label class="submit-required" for="medicaidServiceStatus">Status</label>
                             <select name="medicaidServiceStatus" id="medicaidServiceStatus">
-                                <options value=""></options>
-                                <options value="AppliedStatus">Applied</options>
-                                <options value="currentlyServedStatus">Currently served</options>
-                                <options value="previouslyServedStatus">Previously served</options>
+                                <option value=""></option>
+                                <option value="AppliedStatus">Applied</option>
+                                <option value="currentlyServedStatus">Currently served</option>
+                                <option value="previouslyServedStatus">Previously served</option>
                             </select>
                         </div>
                     </div>
@@ -562,10 +562,10 @@ $applicantsSelfAssessmentContent = '
                         <div class="row">
                             <label class=submit-required" for="lahWaiverStatus">Status</label>
                             <select name="lahWaiverStatus" id="lahWaiverStatus">
-                                <options value=""></options>
-                                <options value="AppliedStatus">Applied</options>
-                                <options value="currentlyServedStatus">Currently served</options>
-                                <options value="previouslyServedStatus">Previously served</options>
+                                <option value=""></option>
+                                <option value="AppliedStatus">Applied</option>
+                                <option value="currentlyServedStatus">Currently served</option>
+                                <option value="previouslyServedStatus">Previously served</option>
                             </select>
                         </div>
                     </div>
@@ -577,10 +577,10 @@ $applicantsSelfAssessmentContent = '
                         <div class="row">
                             <label class="submit-required" for="mdcWaiverStatus">Status</label>
                             <select name="mdcWaiverStatus" id="mdcWaiverStatus">
-                                <options value=""></options>
-                                <options value="AppliedStatus">Applied</options>
-                                <options value="currentlyServedStatus">Currently served</options>
-                                <options value="previouslyServedStatus">Previously served</options>
+                                <option value=""></option>
+                                <option value="AppliedStatus">Applied</option>
+                                <option value="currentlyServedStatus">Currently served</option>
+                                <option value="previouslyServedStatus">Previously served</option>
                             </select>
                         </div>
                     </div>
@@ -594,10 +594,10 @@ $applicantsSelfAssessmentContent = '
                         <div class="row">
                             <label class="submit-required" for="woaWaiverStatus">Status</label>
                             <select name="woaWaiverStatus" id="woaWaiverStatus">
-                                <options value=""></options>
-                                <options value="AppliedStatus">Applied</options>
-                                <options value="currentlyServedStatus">Currently served</options>
-                                <options value="previouslyServedStatus">Previously served</options>
+                                <option value=""></option>
+                                <option value="AppliedStatus">Applied</option>
+                                <option value="currentlyServedStatus">Currently served</option>
+                                <option value="previouslyServedStatus">Previously served</option>
                             </select>
                         </div>
                     </div>
@@ -609,10 +609,10 @@ $applicantsSelfAssessmentContent = '
                         <div class="row">
                             <label class="submit-required" for="mfcWaiverStatus">Status</label>
                             <select name="mfcWaiverStatus" id="mfcWaiverStatus">
-                                <options value=""></options>
-                                <options value="AppliedStatus">Applied</options>
-                                <options value="currentlyServedStatus">Currently served</options>
-                                <options value="previouslyServedStatus">Previously served</options>
+                                <option value=""></option>
+                                <option value="AppliedStatus">Applied</option>
+                                <option value="currentlyServedStatus">Currently served</option>
+                                <option value="previouslyServedStatus">Previously served</option>
                             </select>
                         </div>
                     </div>
@@ -624,10 +624,10 @@ $applicantsSelfAssessmentContent = '
                         <div class="row">
                             <label class="submit-required" for="remProgramStatus">Status</label>
                             <select name="remProgramStatus" id="remProgramStatus">
-                                <options value=""></options>
-                                <options value="AppliedStatus">Applied</options>
-                                <options value="currentlyServedStatus">Currently served</options>
-                                <options value="previouslyServedStatus">Previously served</options>
+                                <option value=""></option>
+                                <option value="AppliedStatus">Applied</option>
+                                <option value="currentlyServedStatus">Currently served</option>
+                                <option value="previouslyServedStatus">Previously served</option>
                             </select>
                         </div>
                     </div>
@@ -639,10 +639,10 @@ $applicantsSelfAssessmentContent = '
                         <div class="row">
                             <label class="submit-required" for="tbiWaiverStatus">Status</label>
                             <select name="tbiWaiverStatus" id=tbiWaiverStatus">
-                                <options value=""></options>
-                                <options value="AppliedStatus">Applied</options>
-                                <options value="currentlyServedStatus">Currently served</options>
-                                <options value="previouslyServedStatus">Previously served</options>
+                                <option value=""></option>
+                                <option value="AppliedStatus">Applied</option>
+                                <option value="currentlyServedStatus">Currently served</option>
+                                <option value="previouslyServedStatus">Previously served</option>
                             </select>
                         </div>
                     </div>
