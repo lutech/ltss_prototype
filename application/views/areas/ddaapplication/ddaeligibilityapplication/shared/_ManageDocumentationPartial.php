@@ -113,6 +113,16 @@ $documentationContent = '
           tableRows = "";
 
           documents.forEach(function(document) {
+            var manageLinks = "";
+
+            if (document.uploadedBy == "'.$_COOKIE["role"].'") {
+                manageLinks = "<span class=\'tableRowActions\'>" +
+                                    "<a href=\'#\' id=\'editDocumentRow" + document.ID + "\' onclick=\'enableEditManageTable(this); editDocument\(" + document.ID + "\)\'>" +
+                                    "Edit</a>" +
+                                    "<a href=\'#\' id=\'deleteDocumentRow" + document.ID + "\' onclick=\'deleteDocument\(" + document.ID + "\)\'>" +
+                                    "Delete</a>" +
+                                "</span>"
+            }
             tableRows += "<tr class=\'editItemRow\'>" +
                 "<td>" +
                     document.categoryName +
@@ -128,12 +138,7 @@ $documentationContent = '
                     "sample_document.pdf</a>" +
                 "</td>" +
                 "<td>" +
-                    "<span class=\'tableRowActions\'>" +
-                        "<a href=\'#\' id=\'editDocumentRow" + document.ID + "\' onclick=\'enableEditManageTable(this); editDocument\(" + document.ID + "\)\'>" +
-                        "Edit</a>" +
-                        "<a href=\'#\' id=\'deleteDocumentRow" + document.ID + "\' onclick=\'deleteDocument\(" + document.ID + "\)\'>" +
-                        "Delete</a>" +
-                    "</span>" +
+                     manageLinks +
                     "<span class=\'editRowIndicator\' style=\'display: none;\'>" +
                         "<span class=\'icon-pencil\'></span>" +
                         "<b>Editing...</b> " +
@@ -222,11 +227,12 @@ $documentationContent = '
             category = $("#documentCategory").val(),
             categoryName = $("#documentCategory option:selected").text(),
             title = $("#documentTitle").val(),
-            description = $("#documentDescription").val();
+            description = $("#documentDescription").val(),
+            uploadedBy = "'.$_COOKIE["role"].'";
             $(form).valid();
 
             if ($(form).valid() && documentId == "") {
-                ddaEligbilityApplicationDocuments.insert("documents", {category: category, categoryName: categoryName, title: title, description: description});
+                ddaEligbilityApplicationDocuments.insert("documents", {category: category, categoryName: categoryName, title: title, description: description, uploadedBy: uploadedBy});
                 ddaEligbilityApplicationDocuments.commit();
                 $("#noDataRow").remove();
                 clearForm();
@@ -236,7 +242,7 @@ $documentationContent = '
                 showSuccessMessage("Record has been saved.");
 
             } else if ($(form).valid() && documentId != "") {
-                ddaEligbilityApplicationDocuments.insertOrUpdate("documents", {ID: documentId},{ category: category, categoryName: categoryName, title: title, description: description});
+                ddaEligbilityApplicationDocuments.insertOrUpdate("documents", {ID: documentId},{ category: category, categoryName: categoryName, title: title, description: description, uploadedBy: uploadedBy});
                 ddaEligbilityApplicationDocuments.commit();
                 $("#noDataRow").remove();
                 clearForm();

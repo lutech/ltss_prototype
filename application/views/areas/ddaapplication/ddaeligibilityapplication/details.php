@@ -132,30 +132,32 @@ $Script='
 
             });
              $("#checkDocumentsForSubmit").on("click", function(){
-                if (ddaEligbilityApplicationDocuments.queryAll("documents", {query : {category : "application"}}).length > 0) {
-                    if (ddaEligbilityApplicationDocuments.queryAll("documents", {query : {category : "psychologicalEvaluations"}}).length == 0 ||
-                        ddaEligbilityApplicationDocuments.queryAll("documents", {query : {category : "specialEducationRecords"}}).length == 0 ) {
+                 if ("'.$ddaEligibilityApplicationData->status.'" == "In Progress") {
+                    if (ddaEligbilityApplicationDocuments.queryAll("documents", {query : {category : "application"}}).length > 0) {
+                        if (ddaEligbilityApplicationDocuments.queryAll("documents", {query : {category : "psychologicalEvaluations"}}).length == 0 ||
+                            ddaEligbilityApplicationDocuments.queryAll("documents", {query : {category : "specialEducationRecords"}}).length == 0 ) {
 
-                            ltss.overlay.show(
-                                {
-                                contentSelector: "#documentationWarningDialog",
-                                options: {
-                                        modal: true,
-                                        helpers: {
-                                        overlay: {
-                                                opacity: 0.3
-                                                }
-                                        }
-                                }
-                            });
-                        } else {
-                            window.location.href = "'.base_url()."index.php/ddaeligibilityapplication/submit".'";
-                        }
-                } else {
-                    showErrorMessage("Your record could not be submitted. The \'Application\' document must be uploaded in order to submit.");
-                }
-
-
+                                ltss.overlay.show(
+                                    {
+                                    contentSelector: "#documentationWarningDialog",
+                                    options: {
+                                            modal: true,
+                                            helpers: {
+                                            overlay: {
+                                                    opacity: 0.3
+                                                    }
+                                            }
+                                    }
+                                });
+                            } else {
+                                window.location.href = "'.base_url()."index.php/ddaeligibilityapplication/submit".'";
+                            }
+                    } else {
+                        showErrorMessage("Your record could not be submitted. The \'Application\' document must be uploaded in order to submit.");
+                    }
+                 } else {
+                    window.location.href = "'.base_url()."index.php/ddaeligibilityapplication/submit".'";
+                 }
             });
 
 
