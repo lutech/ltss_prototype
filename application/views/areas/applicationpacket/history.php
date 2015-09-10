@@ -1,8 +1,8 @@
 <?php $WorkspaceHeader = '
-    <h3>Application Packet</h3>
+    <h3>Applications</h3>
     <div class="workspace-header-bar">
         <div class="float-right">
-            '.$createNewDdaApplicationPacket.'
+
         </div>
     </div>
 '?>
@@ -44,8 +44,71 @@ $ddaApplicationPacketRow = $ddaApplicationPacketData->status != '' ? '
 ' : '';
 
 $Body = '
-<table class="dataTable-list-style">
-        <thead>
+<div class="panelbar-task-style">
+    <div class="panel startExpanded">
+        <div class="header">
+            <h5>Freedom of Choice Forms</h5>
+            <div class="task-action TaskDetailLink">
+                <a class="TaskDetailLink" formname="FreedomOfChoice" href="#" role="tooltip" title="Add Freedom of Choice">Add</a>
+            </div>
+        </div>
+        <div class="body">
+            <div class="panelbar-content">
+                <table class="inline-dataTable">
+                    <thead>
+                        <tr>
+                            <th>Last Modified Date</th>
+                            <th>Last Modified By</th>
+                            <th>Status</th>
+                            <th>Signature Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel startExpanded">
+        <div class="header">
+            <h5>Application</h5>
+            <div class="task-action TaskDetailLink">
+                <a class="TaskDetailLink" href="#" role="tooltip" title="Add Freedom of Choice">Add</a><a class="TaskDetailLink" href="#" role="tooltip" title="Documentation Reminder">Documentation Reminder</a>
+
+            </div>
+        </div>
+        <div class="body">
+            <div class="panelbar-content">
+                <table class="inline-dataTable">
+                    <thead>
+                        <tr>
+                            <th>Program Type</th>
+                            <th>Last Modified Date</th>
+                            <th>Last Modified By</th>
+                            <th>Date Stamp on Application of Receiving Agency</th>
+                            <th>Application Submit Date</th>
+                            <th>Status</th>
+                            <th>Active</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel startExpanded">
+        <div class="header">
+            <h5>DDA Application Packet</h5>
+            <div class="task-action TaskDetailLink">
+                '.$createNewDdaApplicationPacket.'
+            </div>
+        </div>
+        <div class="body">
+            <div class="panelbar-content">
+
+                <table class="inline-dataTable">
+                    <thead>
             <tr>
                 <th>
                     Create Date
@@ -76,10 +139,14 @@ $Body = '
                 </th>
             </tr>
         </thead>
-        <tbody>
-            '.$ddaApplicationPacketRow.'
-        </tbody>
-    </table>
+                    <tbody>
+                    '.$ddaApplicationPacketRow.'
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 '?>
 
 

@@ -101,7 +101,7 @@
                     </ul>
                 </li>
                 <li>
-                    <?php echo new MenuItem("Application Packet", "applicationpacket", "history", "", true, false, "", $this->uri); ?>
+                    <?php echo new MenuItem("Applications", "applicationpacket", "history", "", true, false, "", $this->uri); ?>
                     <ul>
                         <li>
                             <?php echo new MenuItem("Summary", "applicationpacket", "summary", "", true, true, "", $this->uri); ?>

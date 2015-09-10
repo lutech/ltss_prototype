@@ -67,7 +67,7 @@ $Body = '
         <div class="header">
             <h5>Eligibility Worksheets</h5>
             <div class="TaskDetailLink">
-                <a href="#">Add</a>
+                <a href="#">History</a><a href="#">Add</a>
             </div>
         </div>
         <div class="body">
@@ -113,7 +113,7 @@ $Body = '
         <div class="header">
             <h5>Cost of Care Worksheets</h5>
             <div class="TaskDetailLink">
-                <a href="#">Add</a>
+                <a href="#">History</a><a href="#">Add</a>
             </div>
         </div>
         <div class="body">
