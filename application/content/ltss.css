@@ -14119,8 +14119,11 @@ select.required.input-validation-error {
 }
 .panelbar-task-style .panel .header h4 span,
 .panelbar-task-style .panel .header h5 span,
+.panelbar-task-style .panel .header span,
 .panelbar-task-style .panel .header .header span {
     color: inherit;
+    text-indent: 20px;
+    display: inline-block;
 }
 .panelbar-task-style .panel .header .TaskDetailLink {
     padding-left: 4px;
