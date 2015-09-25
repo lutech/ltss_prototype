@@ -40,7 +40,7 @@ if (isset($_COOKIE['locstatus']) && isset($_COOKIE['role'])){
 };
 
 $WorkspaceHeader = '
-<h3>PSS - Summary <span>Status: Approved</span></h3>
+<h3>SSM - Summary <span>Status: In Progress</span></h3>
 <div class="workspace-header-bar">
 
     <div class="float-left">
@@ -50,7 +50,7 @@ $WorkspaceHeader = '
     <div class="float-right">
         <button type="button" id="requestClarification" '.$hideClarificationRequest.'>Request Clarification</button>
         <button type="button" id="submitLoc" '.$hideSubmit.'>Submit</button>
-        <button id="expandCollapseAll"></button>
+        <button id="expandCollapseAll" runat="server"></button>
     </div>
 
 </div>
@@ -67,7 +67,9 @@ $Body = '
 <div class="genericform-style read-only panelbar-formheader-style">
     <div class="panel">
         <div class="header">
-            <h4>Overview</h4>
+            <h4>SSM Type</h4>
+            <div class="TaskDetailLink"><a href="'.base_url()."index.php/ssm/ssmGeneral".'">Edit</a></div>
+
         </div>
         <div class="body">
             <div class="form-panelbar-content">
@@ -76,7 +78,7 @@ $Body = '
     </div>
     <div class="panel">
         <div class="header">
-            <h4>Part I. Essential Information</h4>
+            <h4>Services</h4>
             <div class="TaskDetailLink">
             </div>
         </div>
@@ -454,72 +456,9 @@ Ace Mannger
     </div>
     <div class="panel">
         <div class="header">
-            <h4>Part II. Personal Profile</h4>
+            <h4>Signatures</h4>
             <div class="TaskDetailLink">
             </div>
-        </div>
-        <div class="body">
-            <div class="form-panelbar-content">
-            </div>
-        </div>
-    </div>
-    <div class="panel">
-        <div class="header">
-            <h4>Part III. Person Centeredness</h4>
-        </div>
-        <div class="body">
-            <div class="form-panelbar-content">
-            </div>
-        </div>
-    </div>
-    <div class="panel">
-        <div class="header">
-            <h4>Part IV. Shared Planning</h4>
-            <div class="TaskDetailLink">
-            </div>
-        </div>
-        <div class="body">
-            <div class="form-panelbar-content">
-            </div>
-        </div>
-    </div>
-    <div class="panel">
-        <div class="header">
-            <h4>Attachments</h4>
-        </div>
-        <div class="body">
-            <div class="form-panelbar-content">
-            </div>
-        </div>
-    </div>
-    <div class="panel">
-        <div class="header">
-            <h4>Decision and Clarification Requests</h4>
-        </div>
-        <div class="body">
-            <div class="form-panelbar-content">
-            </div>
-        </div>
-    </div>
-    <div class="panel">
-        <div class="header">
-            <h4>Activity Support Plans</h4>
-            <div class="TaskDetailLink">
-                <a id="outcomesList">View Outcomes</a>
-            </div>
-        </div>
-        <div class="body">
-            <div class="form-panelbar-content">
-
-    '.
-    $ASPSummaryContent
- .'
-            </div>
-        </div>
-    </div>
-    <div class="panel">
-        <div class="header">
-            <h4>Workflow History</h4>
         </div>
         <div class="body">
             <div class="form-panelbar-content">

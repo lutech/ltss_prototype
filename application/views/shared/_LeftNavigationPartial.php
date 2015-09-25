@@ -117,6 +117,34 @@
 <!--                        </li>-->
                     </ul>
                 </li>
+
+                <li>
+                    <?php echo new MenuItem("SSM", "ssm", "history", "", true, false, "" , $this->uri);?>
+                    <ul>
+                        <li>
+                            <?php echo new MenuItem("Summary", "ssm", "summary", "", true, true, "" , $this->uri);
+
+                            if ($this->uri->segment(2) == "ssmGeneral" ||
+                                $this->uri->segment(2) == "" ||
+                                $this->uri->segment(1) == "" ){
+                                echo new MenuItem("Summary", "ssm", "summary", "", true, false, "" , $this->uri);
+                            }
+                            ?>
+                        </li>
+                        <ul>
+                            <li>
+                                <?php echo new MenuItem("SSM Type", "ssm", "ssmGeneral", "", true, true, "" , $this->uri);?>
+                            </li>
+                            <li>
+                                <?php echo new MenuItem("Services", "ssm", "medicationchangerequestview", "", true, true, "" , $this->uri);?>
+                            </li>
+                            <li>
+                                <?php echo new MenuItem("Signatures", "ssm", "details", "", true, true, "" , $this->uri);?>
+                            </li>
+
+                        </ul>
+                    </ul>
+                </li>
             </ul>
         </li>
     </ul>

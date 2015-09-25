@@ -6137,6 +6137,16 @@ a.comment-icon:active .ltss-icon-container::before {
     color: #ff0000 !important;
     cursor: pointer;
 }
+
+.icon-ok-circle,
+.icon-circle-blank,
+.icon-lock
+{
+    color: #3CA8FB;
+    font-size: 105%;
+    padding: 0 4px 0 1px;
+}
+
 /* Jump Navigation and related items*/
 .keyword {
     background: #e9ff99;
