@@ -68,7 +68,7 @@
             </li>
             <li role="menuitem"><a href="#Account_Menu" id="" onclick="return false" class="subMenuHeader">Account</a>
                 <ul role="menu">
-                    <li role="menuitem"><a href="'.base_url().'index.php/providerportal/home" id="" class="subMenuHeader">Provider Portal<span aria-hidden="true"> ></span></a>
+                    <li role="menuitem"><a href="'.base_url().'index.php/providerportal/announcements" id="" class="subMenuHeader">Provider Portal<span aria-hidden="true"> ></span></a>
                     </li>
                     <li role="menuitem"><a href="'.base_url().'index.php/site/logout">Sign Out</a></li>
                 </ul>
