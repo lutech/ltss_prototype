@@ -23,7 +23,7 @@
 		if (isset($_COOKIE['role'])) {
 			$role = $_COOKIE['role'];
 			if ($role == 'client') {
-				$layout = '_ClientLayoutView_CP';	
+				$layout = '_ClientLayoutView_CP';
 				
 				$data['layout'] = $layout;
 				$data['area'] = $area;
@@ -35,9 +35,9 @@
 			} else {
 				$data['layout'] = $layout;
 				$data['page'] = $page;
-				$data['area'] = $area;		
+				$data['area'] = $area;
 				$data['topnavtab'] = $topnavtab;
-				$this->load->helper('url');		
+				$this->load->helper('url');
 				$data['_breadcrumbarea'] = $this->load->view('shared/_ClientProfileBreadCrumbPartial.php', $data, true);
 				$data['_leftnavigation'] = $this->load->view('shared/_LeftNavigationPartial.php', $data, true);
 				$this->load->view("shared/_MasterLayout.php", $data);
@@ -45,7 +45,7 @@
 		} else {
 			$this->load->helper('url');
 			$url = base_url().'index.php';
-			header( "Location: $url" );	
+			header( "Location: $url" );
 		}
 		
 	}

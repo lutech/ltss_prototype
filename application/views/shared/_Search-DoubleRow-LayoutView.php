@@ -4,11 +4,23 @@
     <a href="#Search_Fields" class="ui-hide js-skip-link">Skip to Search Fields</a>
     <nav class="tabbed-nav">
         <ul>
-            <?php require 'application/views/shared/_TopNavClientDefault.php'; 
-		   		if (!empty($topnavtab)) {
-					echo '<li><a href="#" class="selected">'.$topnavtab. 'Details</a></li>';
-				};
-		   ?>
+            <?php
+            if (empty($topnav)) {
+                require 'application/views/shared/_TopNavClientDefault.php';
+                if (!empty($topnavtab)) {
+                    if ($topnavtab == 'client') {
+                        echo '<li><a href="#" class="ltss-icon-left client-details-icon selected">'.$_COOKIE["CommonLabel_Clients_Ownership"].' Details</a></li>';
+                    };
+                };
+            } else {
+                require "{$topnav}";
+                if (!empty($topnavtab)) {
+                    if ($topnavtab == 'client') {
+                        echo '<li><a href="#" class="ltss-icon-left client-details-icon selected">'.$_COOKIE["CommonLabel_Clients_Ownership"].' Details</a></li>';
+                    };
+                };
+            }
+            ?>
         </ul>
     </nav>
 </div>

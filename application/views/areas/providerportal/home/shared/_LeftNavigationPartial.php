@@ -2,21 +2,21 @@
 
 <div>
     <ul class="left-side-nav js-accordion">
-        <li>
-            <?php echo new MenuItem("Dashboard", "providerportal", "home", "", true, false, "" , $this->uri);?>
-        </li>
-        <li>
-            <?php echo new MenuItem("Clients", "providerportal", "clientsearch", "", true, false, "" , $this->uri);?>
-        </li>
-        <li>
-            <?php echo new MenuItem("Service Activity", "providerportal", "servicesearch", "", true, false, "" , $this->uri);?>
-        </li>
+        <!-- <li> -->
+            <?php //echo new MenuItem("Dashboard", "providerportal", "home", "", true, false, "" , $this->uri);?>
+        <!-- </li> -->
+        <!-- <li>-->
+            <?php //echo new MenuItem("People", "providerportal", "clientsearch", "", true, false, "" , $this->uri);?>
+        <!-- </li>-->
+        <!-- <li> -->
+            <?php //echo new MenuItem("Service Activity", "providerportal", "servicesearch", "", true, false, "" , $this->uri);?>
+        <!-- </li> -->
 <!--        <li>-->
 <!--            --><?php //echo new MenuItem("Clients", "providerportal", "myclients", "", true, false, "" , $this->uri);?>
 <!--        </li>-->
-        <li>
-            <?php  echo new MenuItem("My Alerts", "providerportal", "alerts", "", true, false, "" , $this->uri);?>
-        </li>
+        <!--  <li>-->
+            <?php //echo new MenuItem("My Alerts", "providerportal", "alerts", "", true, false, "" , $this->uri);?>
+        <!-- </li>-->
         <li>
             <?php echo new MenuItem("Announcements", "providerportal", "announcements", "", true, false, "" , $this->uri);?>
         </li>

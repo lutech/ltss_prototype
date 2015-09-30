@@ -13180,6 +13180,7 @@ header #ltss-mainmenu-container li:hover ul ul {
 }
 .panelbar-formheader-style > .panel h5 {
     display: block;
+    background: inherit;
 }
 .panelbar-formheader-style > .panel .sub-panel-header-one {
     background: #757575;

@@ -36,7 +36,7 @@ if (isset($_COOKIE['locstatus']) && isset($_COOKIE['role'])){
 };
 
 $WorkspaceHeader = '
-<h3>PSS - Summary <span>Status: Approved</span></h3>
+<h3>Plans of Services and Supports &mdash; Summary <span>Status: Approved</span></h3>
 <div class="workspace-header-bar">
 
     <div class="float-left">

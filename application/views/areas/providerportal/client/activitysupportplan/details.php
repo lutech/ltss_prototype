@@ -1,14 +1,13 @@
 <?php
 $WorkspaceHeader = '
-<h3>PSS - Activity Support Plan <span>Status: In Progress</span></h3>
+<h3>Implementation &mdash; Activity Support Plan <span>Status: In Progress</span></h3>
 
-<div class="read-edit-toggle">
-    <span>View</span>
+<!-- <div class="read-edit-toggle">
     <a href="'.base_url('/index.php/providerclient/activitysupportplanedit').'">Edit</a>
-</div>
+</div> -->
 <div class="workspace-header-bar">
     <div class="float-left">
-        <button type="button" onclick="window.location.href= \''.base_url('/index.php/providerclient/psstasks').'\'">Back to List</button>
+        <button type="button" onclick="window.location.href= \''.base_url('/index.php/providerclient/psstasks').'\'">Back to PSS Implementation</button>
     </div>
     <div class="float-right">
         <button type="button" id="submitLoc">Submit</button>

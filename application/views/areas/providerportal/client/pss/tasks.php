@@ -36,7 +36,7 @@ if (isset($_COOKIE['locstatus']) && isset($_COOKIE['role'])){
 };
 
 $WorkspaceHeader = '
-<h3>Plans of Services and Supports - PSS Overview <span>Program Type: ID/DD</span> <span>PSS Type: Recertification</span></h3>
+<h3>Plans of Services and Supports &mdash; Implementation <span>Program Type: ID/DD</span> <span>PSS Type: Recertification</span></h3>
 <div class="workspace-header-bar">
 
     <div class="float-left">
@@ -60,13 +60,13 @@ if (isset($_COOKIE['referredToPhysician'])){
 };
 
 $Body = '
-<div class="panelbar-task-style">
+<div class="genericform-style read-only panelbar-formheader-style">
     <div class="panel">
         <div class="header">
             <h4>Overview</h4>
-            <div class="form-action TaskDetailLink">
+            <!--<div class="form-action TaskDetailLink">
                 <a href="'.base_url()."index.php/providerclient/psssummary".'">View Full PSS</a>
-            </div>
+            </div>-->
         </div>
         <div class="body">
             <div class="form-panelbar-content">
@@ -78,103 +78,95 @@ $Body = '
             <h4>Medications</h4>
         </div>
         <div class="body">
-                <div class="panelbar-content">
-                    <h5>Current Medications</h5>
-                    <div class="fieldset-container-one">
-                                <table class="generalTable">
-                                    <thead>
-                                        <tr>
-                                            <th>Medication</th>
-                                            <th>Physician</th>
-                                            <th>Dosage</th>
-                                            <th>Frequency</th>
-                                            <th>Reason(s) Prescribed</th>
-                                            <th>Psychotropic</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr id="editItemRow" style="display: none">
-                                            <td data-bind="text: Medication">Tylenol</td>
-                                            <td data-bind="text: Physician">Dr. Hibbert</td>
-                                            <td data-bind="text: Dosage">200mg</td>
-                                            <td data-bind="text: Frequency">Twice a day</td>
-                                            <td data-bind="text: ReasonsPrescribed">Migraines</td>
-                                            <td data-bind="yesNo: Psychotropic">Yes</td>
-                                        </tr>
-                                        <tr id="editItemRow">
-                                            <td data-bind="text: Medication">Tylenol</td>
-                                            <td data-bind="text: Physician">Dr. Hibbert</td>
-                                            <td data-bind="text: Dosage">50mg</td>
-                                            <td data-bind="text: Frequency">As needed</td>
-                                            <td data-bind="text: ReasonsPrescribed">Headaches</td>
-                                            <td data-bind="yesNo: Psychotropic">Yes</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                    </div>
-
-                    <h5>Medication Change Requests</h5>
-                    <div class="fieldset-container-one">
-                        <div class="header-link">
-                            <a href="'.base_url()."index.php/providerclient/medicationchangerequestnew".'">Request Medication Change</a>
-                        </div>
-                                <table class="generalTable">
-                                    <thead>
-                                        <tr>
-                                            <th>Last Modified By</th>
-                                            <th>Last Modified Date</th>
-                                            <th>Status</th>
-                                            <th>Comments</th>
-                                            <th>Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr id="editItemRow" >
-                                            <td data-bind="text: Medication">
-                                                Candace Kind
-                                            </td>
-                                            <td data-bind="text: Physician">
-                                                05/10/2015
-                                            </td>
-                                            <td data-bind="text: Dosage">
-                                                Reviewed
-                                            </td>
-                                            <td data-bind="text: Frequency">
-                                                Is comments needed?
-                                            </td>
-                                            <td data-bind="yesNo: Psychotropic" style="display:none">
-                                                <a href="'.base_url()."index.php/providerclient/medicationchangerequestnew".'">Manage</a>
-                                                <a href="#">Submit</a>
-                                                <a href="#">Discard</a>
-                                            </td>
-                                            <td data-bind="yesNo: Psychotropic">
-                                                <a href="#">View</a>
-                                            </td>
-                                        </tr>
-                                        <tr id="editItemRow" style="display: none">
-                                            <td data-bind="text: Medication">
-                                                Candace Kind
-                                            </td>
-                                            <td data-bind="text: Physician">
-                                                03/30/2015
-                                            </td>
-                                            <td data-bind="text: Dosage">
-                                                Submitted
-                                            </td>
-                                            <td data-bind="text: Frequency">
-                                                Is comments needed?
-                                            </td>
-                                            <td data-bind="yesNo: Psychotropic">
-                                                <a href="'.base_url()."index.php/providerclient/medicationchangerequestview".'">View</a>
-                                            </td>
-                                        </tr>
-                                        <tr style="display: none">
-                                            <td colspan="5" class="text-center">No data to display</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                    </div>
-                </div>
+            <div class="panelbar-content">
+                <table class="generalTable">
+                    <caption class="caption-header">Current Medications</caption>
+                    <thead>
+                        <tr>
+                            <th>Medication</th>
+                            <th>Physician</th>
+                            <th>Dosage</th>
+                            <th>Frequency</th>
+                            <th>Reason(s) Prescribed</th>
+                            <th>Psychotropic</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="editItemRow" style="display: none">
+                            <td data-bind="text: Medication">Tylenol</td>
+                            <td data-bind="text: Physician">Dr. Hibbert</td>
+                            <td data-bind="text: Dosage">200mg</td>
+                            <td data-bind="text: Frequency">Twice a day</td>
+                            <td data-bind="text: ReasonsPrescribed">Migraines</td>
+                            <td data-bind="yesNo: Psychotropic">Yes</td>
+                        </tr>
+                        <tr id="editItemRow">
+                            <td data-bind="text: Medication">Tylenol</td>
+                            <td data-bind="text: Physician">Dr. Hibbert</td>
+                            <td data-bind="text: Dosage">50mg</td>
+                            <td data-bind="text: Frequency">As needed</td>
+                            <td data-bind="text: ReasonsPrescribed">Headaches</td>
+                            <td data-bind="yesNo: Psychotropic">Yes</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="generalTable">
+                    <caption class="caption-header"><span>Medication Change Requests</span><span class="TaskDetailLink"><a href="'.base_url()."index.php/providerclient/medicationchangerequestnew".'">Request Medication Change</a></span></caption>
+                    <thead>
+                        <tr>
+                            <th>Last Modified By</th>
+                            <th>Last Modified Date</th>
+                            <th>Status</th>
+                            <th>Comments</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="editItemRow" >
+                            <td data-bind="text: Medication">
+                                Candace Kind
+                            </td>
+                            <td data-bind="text: Physician">
+                                05/10/2015
+                            </td>
+                            <td data-bind="text: Dosage">
+                                Reviewed
+                            </td>
+                            <td data-bind="text: Frequency">
+                                Is comments needed?
+                            </td>
+                            <td data-bind="yesNo: Psychotropic" style="display:none">
+                                <a href="'.base_url()."index.php/providerclient/medicationchangerequestnew".'">Manage</a>
+                                <a href="#">Submit</a>
+                                <a href="#">Discard</a>
+                            </td>
+                            <td data-bind="yesNo: Psychotropic">
+                                <a href="#">Manage</a>
+                            </td>
+                        </tr>
+                        <tr id="editItemRow" style="display: none">
+                            <td data-bind="text: Medication">
+                                Candace Kind
+                            </td>
+                            <td data-bind="text: Physician">
+                                03/30/2015
+                            </td>
+                            <td data-bind="text: Dosage">
+                                Submitted
+                            </td>
+                            <td data-bind="text: Frequency">
+                                Is comments needed?
+                            </td>
+                            <td data-bind="yesNo: Psychotropic">
+                                <a href="'.base_url()."index.php/providerclient/medicationchangerequestview".'">Manage</a>
+                            </td>
+                        </tr>
+                        <tr style="display: none">
+                            <td colspan="5" class="text-center">No data to display</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     <div class="panel">
@@ -185,157 +177,176 @@ $Body = '
         </div>
         <div class="body">
             <div class="panelbar-content">
-            <h5>Activity Support Plans Information</h5>
-                <div class="fieldset-container-one">
-                    <div class="row">
-                        <div class="column-left">
-                            <div class="row summary">
-                                <span class="label">Effective Start Date:</span>
-                                <span class="data-element">05/01/2015</span>
-                            </div>
-                        </div>
-                        <div class="column-left">
-                            <div class="row summary">
-                                <span class="label">Effective End Date:</span>
-                                <span class="data-element">04/30/2016</span>
-                            </div>
+            <h5>Details</h5>
+            <div class="fieldset-container-one">
+                <div class="row">
+                    <div class="column-left">
+                        <div class="row summary">
+                            <span class="label">Start Date:</span>
+                            <span class="data-element">05/01/2015</span>
                         </div>
                     </div>
-                    <table class="generalTable">
-                        <thead>
-                            <tr>
-                                <th>Service Name</th>
-                                <th>Last Modified By</th>
-                                <th>Date Modified</th>
-                                <th>Due Date</th>
-                                <th>Status</th>
-                                <th width="20%">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr id="editItemRow" >
-                                <td data-bind="text: Medication">
-                                    Dental Care
-                                </td>
-                                <td data-bind="text: Medication">
-                                    Candace Kind
-                                </td>
-                                <td data-bind="text: Physician">
-                                    05/10/2015
-                                </td>
-                                <td data-bind="text: Dosage">
-                                    05/31/2015
-                                </td>
-                                <td data-bind="text: Dosage">
-                                    Pending Review
-                                </td>
-                                <td data-bind="yesNo: Psychotropic">
-                                    <a href="#" >View</a>
-                                </td>
-                            </tr>
-                            <tr id="editItemRow" >
-                                <td data-bind="text: Medication">
-                                    Exercise
-                                </td>
-                                <td data-bind="text: Medication">
-
-                                </td>
-                                <td data-bind="text: Physician">
-
-                                </td>
-                                <td data-bind="text: Dosage">
-                                    05/31/2015
-                                </td>
-                                <td data-bind="text: Dosage">
-                                    Not Started
-                                </td>
-                                <td data-bind="yesNo: Psychotropic">
-                                    <a href="'.base_url()."index.php/providerclient/activitysupportplandetails".'" >View</a>
-                                </td>
-                            </tr>
-                            <tr id="editItemRow" >
-                                <td data-bind="text: Medication">
-                                    Grocery Delivery
-                                </td>
-                                <td data-bind="text: Medication">
-                                    Brenda Bright
-                                </td>
-                                <td data-bind="text: Physician">
-                                    05/28/2015
-                                </td>
-                                <td data-bind="text: Dosage">
-                                    06/14/2015
-                                </td>
-                                <td data-bind="text: Dosage">
-                                    Clarification Requested
-                                </td>
-                                <td data-bind="yesNo: Psychotropic">
-                                    <a href="#" >View</a>
-                                </td>
-                            </tr>
-                            <tr id="editItemRow" >
-                                <td data-bind="text: Medication">
-                                    Immunizations
-                                </td>
-                                <td data-bind="text: Medication">
-                                    Harold Peters
-                                </td>
-                                <td data-bind="text: Physician">
-                                    05/10/2015
-                                </td>
-                                <td data-bind="text: Dosage">
-                                    05/30/2015
-                                </td>
-                                <td data-bind="text: Dosage">
-                                    <span class="icon-warning-sign"></span>In Progress (Late)
-                                </td>
-                                <td data-bind="yesNo: Psychotropic">
-                                    <a href="#" >View</a>
-                                </td>
-                            </tr>
-                            <tr id="editItemRow" >
-                                <td data-bind="text: Medication">
-                                    Bathing
-                                </td>
-                                <td data-bind="text: Medication">
-                                    Candace Kind
-                                </td>
-                                <td data-bind="text: Physician">
-                                    05/10/2015
-                                </td>
-                                <td data-bind="text: Dosage">
-                                    05/30/2015
-                                </td>
-                                <td data-bind="text: Dosage">
-                                    Approved
-                                </td>
-                                <td data-bind="yesNo: Psychotropic">
-                                    <a href="#" >View</a>
-                                </td>
-                            </tr>
-                            <tr id="editItemRow" >
-                                <td data-bind="text: Medication">
-                                    Eye Care
-                                </td>
-                                <td data-bind="text: Medication">
-                                    Brenda Bright
-                                </td>
-                                <td data-bind="text: Physician">
-                                    05/10/2015
-                                </td>
-                                <td data-bind="text: Dosage">
-                                    05/30/2015
-                                </td>
-                                <td data-bind="text: Dosage">
-                                    Locked/Inactive
-                                </td>
-                                <td data-bind="yesNo: Psychotropic">
-                                    <a href="#" >View</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="column-left">
+                        <div class="row summary">
+                            <span class="label">End Date:</span>
+                            <span class="data-element">04/30/2016</span>
+                        </div>
+                    </div>
                 </div>
+            </div>
+                <table class="generalTable">
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Last Edited By</th>
+                            <th>Date of Action</th>
+                            <th>Due Date</th>
+                            <th>PSS Type</th>
+                            <th>Status</th>
+                            <th width="20%">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="editItemRow" >
+                            <td data-bind="text: Medication">
+                                Dental Care
+                            </td>
+                            <td data-bind="text: Medication">
+                                Candace Kind
+                            </td>
+                            <td data-bind="text: Physician">
+                                05/10/2015
+                            </td>
+                            <td data-bind="text: Dosage">
+                                05/31/2015
+                            </td>
+                            <td data-bind="text: Dosage">
+                                Change Request
+                            </td>
+                            <td data-bind="text: Dosage">
+                                Pending Review
+                            </td>
+                            <td data-bind="yesNo: Psychotropic">
+                                <a href="#" >Summary</a>
+                            </td>
+                        </tr>
+                        <tr id="editItemRow" >
+                            <td data-bind="text: Medication">
+                                Exercise
+                            </td>
+                            <td data-bind="text: Medication">
+
+                            </td>
+                            <td data-bind="text: Physician">
+
+                            </td>
+                            <td data-bind="text: Dosage">
+                                05/31/2015
+                            </td>
+                            <td data-bind="text: Dosage">
+                                Change Request
+                            </td>
+                            <td data-bind="text: Dosage">
+                                Not Started
+                            </td>
+                            <td data-bind="yesNo: Psychotropic">
+                                <a href="'.base_url()."index.php/providerclient/activitysupportplandetails".'" >Summary</a>
+                            </td>
+                        </tr>
+                        <tr id="editItemRow" >
+                            <td data-bind="text: Medication">
+                                Grocery Delivery
+                            </td>
+                            <td data-bind="text: Medication">
+                                Brenda Bright
+                            </td>
+                            <td data-bind="text: Physician">
+                                05/28/2015
+                            </td>
+                            <td data-bind="text: Dosage">
+                                06/14/2015
+                            </td>
+                            <td data-bind="text: Dosage">
+                                Change Request
+                            </td>
+                            <td data-bind="text: Dosage">
+                                Clarification Requested
+                            </td>
+                            <td data-bind="yesNo: Psychotropic">
+                                <a href="#" >Summary</a>
+                            </td>
+                        </tr>
+                        <tr id="editItemRow" >
+                            <td data-bind="text: Medication">
+                                Immunizations
+                            </td>
+                            <td data-bind="text: Medication">
+                                Harold Peters
+                            </td>
+                            <td data-bind="text: Physician">
+                                05/10/2015
+                            </td>
+                            <td data-bind="text: Dosage">
+                                05/30/2015
+                            </td>
+                            <td data-bind="text: Dosage">
+                                Change Request
+                            </td>
+                            <td data-bind="text: Dosage">
+                                <span class="icon-warning-sign"></span>In Progress (Late)
+                            </td>
+                            <td data-bind="yesNo: Psychotropic">
+                                <a href="#" >Summary</a>
+                            </td>
+                        </tr>
+                        <tr id="editItemRow" >
+                            <td data-bind="text: Medication">
+                                Bathing
+                            </td>
+                            <td data-bind="text: Medication">
+                                Candace Kind
+                            </td>
+                            <td data-bind="text: Physician">
+                                05/10/2015
+                            </td>
+                            <td data-bind="text: Dosage">
+                                05/30/2015
+                            </td>
+                            <td data-bind="text: Dosage">
+                                Change Request
+                            </td>
+                            <td data-bind="text: Dosage">
+                                Approved
+                            </td>
+                            <td data-bind="yesNo: Psychotropic">
+                                <a href="#" >Summary</a>
+                            </td>
+                        </tr>
+                        <tr id="editItemRow" >
+                            <td data-bind="text: Medication">
+                                Eye Care
+                            </td>
+                            <td data-bind="text: Medication">
+                                Brenda Bright
+                            </td>
+                            <td data-bind="text: Physician">
+                                05/10/2015
+                            </td>
+                            <td data-bind="text: Dosage">
+                                05/30/2015
+                            </td>
+                            <td data-bind="text: Dosage">
+                                Change Request
+                            </td>
+                            <td data-bind="text: Dosage">
+                                Locked/Inactive
+                            </td>
+                            <td data-bind="yesNo: Psychotropic">
+                                <a href="#" >Summary</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
         </div>
     </div>
 </div>

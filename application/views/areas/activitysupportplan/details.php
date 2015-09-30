@@ -1,6 +1,6 @@
 <?php
 $WorkspaceHeader = '
-<h3>PSS - Activity Support Plan <span>Status: Pending Review</span></h3>
+<h3>PSS Implementation — Activity Support Plan <span>Status: Pending Review</span></h3>
 
 <div class="read-edit-toggle">
     <span>View</span>

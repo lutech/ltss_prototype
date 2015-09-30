@@ -1,11 +1,11 @@
 <?php
 $WorkspaceHeader = '
-<h3>PSS - Activity Support Plan <span>Status: In Progress</span></h3>
+<h3>Implementation &mdash; ASP &mdash; Exercise Service<span>Status: In Progress</span></h3>
 
-<div class="read-edit-toggle">
+<!-- <div class="read-edit-toggle">
     <a href="' . base_url('/index.php/providerclient/activitysupportplandetails') . '">View</a>
     <span>Edit</span>
-</div>
+</div> -->
 <div class="workspace-header-bar">
     <div class="float-left">
         <button type="button" onclick="window.location.href= \'' . base_url('/index.php/providerclient/activitysupportplandetails') . '\'">Cancel</button>
@@ -40,37 +40,42 @@ $Body = '
 </style>
 
 <div class="genericform-style">
-    <h4>Activity Support Plan</h4>
-    <div class="header-info">
-        <div class="row">
-            <div class="column-left">
-                <span class="h4"><small>Service:</small><br/>Dental Care</span>
-            </div>
-            <div class="column-left text-right">
-                <span class="h5"><small>Effective Date:</small><br/>05/01/2015 - 06/30/2015</span>
-            </div>
-        </div>
-        <hr/>
+    <h4>Exercise Service</h4>
+    <fieldset class="fieldset-container-one">
+        <legend class="legend-header-one">Service Details</legend>
         <div class="row">
             <div class="column-left">
                 <div class="row summary">
-                    <span class="label">Last Modified By:</span>
+                    <span class="label">Last Edited By:</span>
                     <span class="data-element">Candace Kind</span>
                 </div>
                 <div class="row summary">
-                    <span class="label">Date Modified:</span>
-                    <span class="data-element">05/30/2015</span>
+                    <span class="label">Date of Action:</span>
+                    <span id="Stamp_LastModifiedTimeStamp" class="display-date data-element">05/30/2015</span>
                 </div>
-            </div>
-            <div class="column-left">
                 <div class="row summary">
                     <span class="label">Due Date:</span>
-                    <span class="data-element">06/01/2015</span>
+                    <span id="DueDate" class="display-date data-element"> 06/01/2015</span>
+                </div>
+            </div>
+            <div class="column-right">
+                <div class="row summary">
+                    <span class="label">PSS Type:</span>
+                    <span class="data-element">Change Request</span>
+                </div>
+                <div class="row summary">
+                    <span class="label">Service Provider:</span>
+                    <span class="data-element">MEMORIAL HOSPITAL AT GULFPORT</span>
+                </div>
+                <div class="row summary">
+                    <span class="label">Effective Dates:</span>
+                    <span class="data-element">09/23/2015 – 12/31/9999</span>
                 </div>
             </div>
         </div>
-    </div>
-    <h4>Outcomes</h4>
+    </fieldset>
+    <fieldset class="fieldset-container-one">
+        <legend class="legend-header-one">Outcomes</legend>
         <div class="panelbar-formheader-style">
             <div class="panel">
                 <div class="header sub-panel-header-one">
@@ -124,7 +129,8 @@ $Body = '
                </div>
             </div>
         </div>
-    </div>
+    </fieldset>
+</div>
 
 <div id="aspFormTemplate" style="display: none;">
     <fieldset class="fieldset-container-four">

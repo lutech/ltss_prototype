@@ -1,5 +1,5 @@
 <?php $WorkspaceHeader = '
-<h3>PSS - Activity Support Plan</h3>
+<h3>PSS &mdash; Activity Support Plan</h3>
 
 <div class="read-edit-toggle">
     <span>Manage</span>

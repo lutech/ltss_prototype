@@ -14,7 +14,10 @@ $Body = '
         <thead>
             <tr>
                 <th>
-                    Program Type
+                    Create Date
+                </th>
+                <th>
+                    Program
                 </th>
                 <th>
                     PSS Type
@@ -36,6 +39,9 @@ $Body = '
         <tbody>
             <tr>
                 <td>
+                    09/23/2015
+                </td>
+                <td>
                     ID/DD
                 </td>
                 <td>
@@ -51,10 +57,14 @@ $Body = '
                     Active
                 </td>
                 <td>
-                    <a href="'.base_url()."index.php/providerclient/psstasks".'">View</a>
+                    <a href="'.base_url()."index.php/providerclient/psssummary".'">Summary</a>
+                    <a href="'.base_url()."index.php/providerclient/psstasks".'">PSS Implementation</a>
                 </td>
             </tr>
             <tr>
+                <td>
+                    09/28/2014
+                </td>
                 <td>
                     ID/DD
                 </td>
@@ -65,13 +75,14 @@ $Body = '
                     05/15/2014
                 </td>
                 <td>
-                04/24/2015
+                    04/24/2015
                 </td>
                 <td>
                     Inactive
                 </td>
                 <td>
-                    <a href="#">View</a>
+                    <a href="#">Summary</a>
+
                 </td>
             </tr>
         </tbody>
