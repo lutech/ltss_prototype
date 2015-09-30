@@ -13,20 +13,20 @@
                 </li>
             </ul>
         </li>-->
-        <li>
+        <!--<li>
             <span class="leftNavHeader">Provider Management</span>
-            <ul class="leftnav-groupcontainer" style="display: none;">
+            <ul class="leftnav-groupcontainer" style="display: none;">-->
                 <!--<li>-->
                     <?php //echo new MenuItem("Alerts", "casemanagement", "alerts", "", false, false, "" , $this->uri);?>
                 <!--</li>-->
-                <li>
-                    <?php echo new MenuItem("Reportable Events", "casemanagement", "reportableevent", "", false, false, "" , $this->uri);?>
+                <!--<li>
+                    <?php //echo new MenuItem("Reportable Events", "casemanagement", "reportableevent", "", false, false, "" , $this->uri);?>
                 </li>
                 <li>
-                    <?php echo new MenuItem("Case Notes", "casemanagement", "casenotes", "", false, false, "" , $this->uri);?>
+                    <?php //echo new MenuItem("Case Notes", "casemanagement", "casenotes", "", false, false, "" , $this->uri);?>
                 </li>
             </ul>
-        </li>
+        </li>-->
         <!-- Waivers -->
         <li>
             <span class="leftNavHeader">Services and Supports</span>
@@ -92,6 +92,9 @@
             <!--<li>-->
                     <?php //echo new MenuItem("Activity Support Planning", "levelofcare", "history", "", true, false, "" , $this->uri);?>
             <!--</li>-->
+                <li>
+                    <?php echo new MenuItem("Reportable Events", "casemanagement", "reportableevent", "", false, false, "" , $this->uri);?>
+                </li>
             </ul>
         </li>
     </ul>
