@@ -1,7 +1,7 @@
 <?php
 require "application/views/shared/tabMenuItem_builder.php";
 
-echo new TabMenuItem("Home", "providerportal", "home", "home-icon", true,  $this->uri);
+echo new TabMenuItem("Home", "providerportal", "announcements", "home-icon", true,  $this->uri);
 echo new TabMenuItem("My Organization", "assignments", "index", "client-match-icon", false,  $this->uri);
 echo new TabMenuItem("My Assignments", "assignments", "index", "client-match-icon", false,  $this->uri);
 echo new TabMenuItem("My Alerts", "alerts", "alerts", "client-match-icon", false,  $this->uri);
