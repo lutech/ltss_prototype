@@ -92,9 +92,7 @@
             <!--<li>-->
                     <?php //echo new MenuItem("Activity Support Planning", "levelofcare", "history", "", true, false, "" , $this->uri);?>
             <!--</li>-->
-                <li>
-                    <?php echo new MenuItem("Reportable Events", "casemanagement", "reportableevent", "", false, false, "" , $this->uri);?>
-                </li>
+
             </ul>
         </li>
     </ul>

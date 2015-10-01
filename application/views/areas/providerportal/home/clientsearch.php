@@ -59,47 +59,28 @@
     <table class="dataTable-list-style" summary="Nurse Monitoring List">
         <thead>
             <tr>
-                <th>
-                    Create Date
-                </th>
-                <th>
-                    Effective Date
-                </th>
-                <th>
-                    Expiration Date
-                </th>
-                <th>
-                    Status
-                </th>
-                <th>
-                    Active/Inactive
-                </th>
-                <th>
-                    Actions
-                </th>
+                <th>Person&apos;s ID</th>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Date of Birth</th>
+                <th>County</th>
+                <th>Facility</th>
+                <th>SSN #</th>
+                <th>Active/Inactive</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>
-                    09/15/2014
-                </td>
-                <td>
-
-                </td>
-                <td>
-
-                </td>
-                <td>
-                    '.((isset($_COOKIE["locstatus"])) ? $_COOKIE["locstatus"] : "In Progress" ).'
-                </td>
-                <td>
-                    Inactive
-                </td>
-                <td>
-                    <a href="'.base_url()."index.php/providerclient/psshistory".'">PSS</a>
-                    <!--<a href="#">Print</a>-->
-                </td>
+                <td>2750068OJ75-210</td>
+                <td>Smith</td>
+                <td>Cicio</td>
+                <td>07/15/2000</td>
+                <td>Leftore</td>
+                <td></td>
+                <td>Do providers needs this?</td>
+                <td>Inactive</td>
+                <td><a href="'.base_url()."index.php/providerclient/psshistory".'">PSS</a></td>
             </tr>
         </tbody>
     </table>

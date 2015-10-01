@@ -58,7 +58,7 @@ $Body = '
                 </td>
                 <td>
                     <a href="'.base_url()."index.php/providerclient/psssummary".'">Summary</a>
-                    <a href="'.base_url()."index.php/providerclient/psstasks".'">PSS Implementation</a>
+                    <a href="'.base_url()."index.php/providerclient/psstasks".'">Implementation</a>
                 </td>
             </tr>
             <tr>

@@ -13179,7 +13179,7 @@ header #ltss-mainmenu-container li:hover ul ul {
     background: none;
 }
 .panelbar-formheader-style > .panel h5 {
-    display: block;
+    display: inline-block;
     background: inherit;
 }
 .panelbar-formheader-style > .panel .sub-panel-header-one {

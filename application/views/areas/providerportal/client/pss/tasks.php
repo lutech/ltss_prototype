@@ -177,7 +177,7 @@ $Body = '
         </div>
         <div class="body">
             <div class="panelbar-content">
-            <h5>Details</h5>
+            <h5 style="background: #e4e4e4;">Details</h5>
             <div class="fieldset-container-one">
                 <div class="row">
                     <div class="column-left">
@@ -347,6 +347,32 @@ $Body = '
                         </tr>
                     </tbody>
                 </table>
+        </div>
+    </div>
+    </div>
+    <div class="panel">
+        <div class="header">
+            <h4>Reportable Events</h4>
+            <div class="form-action TaskDetailLink"><a href="#">Create New</a></div>
+        </div>
+        <div class="body">
+            <div class="panelbar-content">
+                <table class="dataTable-list-style inline-dataTable">
+                    <thead>
+                        <tr>
+                            <th width="8%">RE #</th>
+                            <th>Report Submit Date</th>
+                            <th>Event Date</th>
+                            <th>Program Type</th>
+                            <th>Intervention and Action Plan(s) Submit Date</th>
+                            <th>Case Closure Date</th>
+                            <th>Status</th>
+                            <th width="10%">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
